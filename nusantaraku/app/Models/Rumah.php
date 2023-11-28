@@ -11,14 +11,14 @@ class Rumah extends Model
     protected $guarded = ['id'];
     public function budaya()
     {
-        $this->belongsTo(Budaya::class, 'budaya_id');
+        return $this->belongsTo(Budaya::class, 'budaya_id');
     }
     public function province()
     {
-        $this->belongsTo(Province::class, 'province_id');
+        return $this->belongsTo(Province::class, 'province_id');
     }
     public function comment()
     {
-        $this->hasMany(Comment::class, 'category_id');
+        return $this->hasMany(Comment::class, 'category_id');
     }
 }

@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Tari;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,6 +19,13 @@ Route::get('/', function () {
 });
 Route::prefix('admin')->group(function () {
     Route::get('/dashboard', function () {
-        return view("admin.dashboard");
+        $tarian = Tari::firstWhere('id', 1);
+        $province = $tarian->province;
+        $budaya = $tarian->budaya;
+        return view("admin.dashboard", [
+            'tarian' => $tarian,
+            'province' => $province,
+            'budaya' => $budaya
+        ]);
     });
 });

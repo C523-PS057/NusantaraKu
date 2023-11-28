@@ -12,27 +12,27 @@ class Comment extends Model
 
     public function user()
     {
-        $this->belongsTo(User::class, 'user_id');
+        return $this->belongsTo(User::class, 'user_id');
     }
 
     public function masakan()
     {
-        $this->belongsTo(Masakan::class, 'category_id');
+        return $this->belongsTo(Masakan::class, 'category_id');
     }
     public function musik()
     {
-        $this->belongsTo(Musik::class, 'category_id');
+        return $this->belongsTo(Musik::class, 'category_id');
     }
     public function pakaian()
     {
-        $this->belongsTo(Pakaian::class, 'category_id');
+        return $this->belongsTo(Pakaian::class, 'category_id');
     }
     public function rumah()
     {
-        $this->belongsTo(Rumah::class, 'category_id');
+        return $this->belongsTo(Rumah::class, 'category_id');
     }
     public function tari()
     {
-        $this->belongsTo(Tari::class, 'category_id');
+        return $this->belongsTo(Tari::class, 'category_id');
     }
 }

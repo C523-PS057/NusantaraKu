@@ -10,22 +10,22 @@ class Province extends Model
     use HasFactory;
     public function masakan()
     {
-        $this->hasMany(Masakan::class, 'province_id');
+        return $this->hasMany(Masakan::class, 'province_id');
     }
     public function musik()
     {
-        $this->hasMany(Musik::class, 'province_id');
+        return $this->hasMany(Musik::class, 'province_id');
     }
     public function pakaian()
     {
-        $this->hasMany(Pakaian::class, 'province_id');
+        return $this->hasMany(Pakaian::class, 'province_id');
     }
     public function rumah()
     {
-        $this->hasMany(Rumah::class, 'province_id');
+        return $this->hasMany(Rumah::class, 'province_id');
     }
     public function tari()
     {
-        $this->hasMany(Tari::class, 'province_id');
+        return $this->hasMany(Tari::class, 'province_id');
     }
 }
