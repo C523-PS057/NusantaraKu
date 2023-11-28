@@ -1,7 +1,14 @@
 // Utilities
 @import './utilities/variables';
 @import './utilities/global';
+@import './utilities/typography';
 
 // Components
 @import './components/buttons';
 @import './components/navbar';
+
+// Layout
+@import './layout/hero';
+
+// Pages
+@import './pages/homepage';
