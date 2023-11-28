@@ -5,19 +5,32 @@
     padding: 0.75rem 1.5rem !important;
     text-decoration: none;
     border-radius: 0.5rem;
-    background-color: #e23535;
+    background-color: $red;
     color: #fff;
     font-weight: 600;
+    font-size: 14px;
+    transition: all 0.3s ease;
 
     &-primary {
-        background-color: #e23535;
+        background-color: $red;
         color: #fff;
-        border: 1px solid #e23535;
+        border: 1px solid $red;
+
+        &:hover {
+            background-color: $red-darken;
+            border: 1px solid $red;
+            color: $text-white;
+        }
     }
 
     &-outline {
         background-color: transparent;
         color: #000;
         border: 1px solid #000;
+
+        &:hover {
+            border: 1px solid $red;
+            color: $red;
+        }
     }
 }

@@ -121,16 +121,26 @@ h6 {
   color: #fff;
   font-weight: 600;
   font-size: 14px;
+  transition: all 0.3s ease;
 }
 .btn-primary {
   background-color: #e23535;
   color: #fff;
   border: 1px solid #e23535;
 }
+.btn-primary:hover {
+  background-color: #c71d1d;
+  border: 1px solid #e23535;
+  color: #f1f1f1;
+}
 .btn-outline {
   background-color: transparent;
   color: #000;
   border: 1px solid #000;
+}
+.btn-outline:hover {
+  border: 1px solid #e23535;
+  color: #e23535;
 }
 
 .navbar-brand img {
