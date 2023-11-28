@@ -10,27 +10,47 @@
         <!-- <link rel="stylesheet" href="./css/main.css" /> -->
 
         <style>
-            .btn-primary {
+            .navbar-brand img {
+                width: 100%;
+                max-width: 200px;
+            }
+
+            .btn {
                 display: inline-flex;
                 align-items: center;
                 gap: 0.5rem;
-                padding: 1rem 2rem;
+                padding: 0.75rem 1.5rem !important;
                 text-decoration: none;
                 border-radius: 0.5rem;
                 background-color: #e23535;
                 color: #fff;
+                font-weight: 600g;
+            }
+
+            .btn-primary {
+                background-color: #e23535;
+                color: #fff;
+                border: 1px solid #e23535;
+            }
+
+            .btn-outline {
+                background-color: transparent;
+                color: #000;
+                border: 1px solid #000;
             }
         </style>
     </head>
     <body>
         <nav class="navbar navbar-expand-lg bg-light">
             <div class="container">
-                <a class="navbar-brand" href="#">Navbar</a>
+                <a class="navbar-brand" href="#">
+                    <img src="./img/logo-wide.svg" alt="Logo NusantaraKu Wide" />
+                </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-auto">
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="#">Home</a>
                         </li>
@@ -50,17 +70,21 @@
                             <a class="nav-link disabled">Disabled</a>
                         </li>
                     </ul>
-                    <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                        <button class="btn btn-outline-success" type="submit">Search</button>
-                    </form>
+                    <ul class="navbar-nav mb-2 mb-lg-0 d-flex justify-content-end gap-2">
+                        <li class="nav-item">
+                            <a class="nav-link btn btn-outline" href="#">Daftar</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link btn btn-primary" href="#">Masuk</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </nav>
         <main>
             <section class="hero">
                 <div class="container">
-                    <a href="#" class="btn-primary">Jelajahi Sekarang <i class="ri-arrow-right-up-line"></i></a>
+                    <a href="#" class="btn btn-primary">Jelajahi Sekarang <i class="ri-arrow-right-up-line"></i></a>
                 </div>
             </section>
         </main>
