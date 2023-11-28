@@ -1,0 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a,
+button,
+textarea,
+input {
+    min-height: 44px !important;
+    min-width: 44px !important;
+}
+
+a {
+    display: inline-flex;
+    align-items: center;
+}
+
+body {
+    background-color: $body;
+}
+
+section {
+    padding: 5rem 0;
+}
