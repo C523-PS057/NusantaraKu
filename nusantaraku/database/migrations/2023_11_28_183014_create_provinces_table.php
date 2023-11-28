@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('province_name');
             $table->string('video_link');
-            $table->string('description');
-            $table->string('sejarah');
+            $table->string('deskripsi', 2000);
+            $table->string('sejarah', 2000);
             $table->timestamps();
         });
     }

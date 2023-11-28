@@ -16,9 +16,9 @@ return new class extends Migration
             $table->foreignId('budaya_id');
             $table->foreignId('province_id');
             $table->string('alat_musik_name');
-            $table->string('sejarah');
-            $table->string('gambar');
-            $table->string('deskripsi');
+            $table->string('sejarah', 2000);
+            $table->string('gambar')->nullable();
+            $table->string('deskripsi', 2000);
             $table->timestamps();
         });
     }

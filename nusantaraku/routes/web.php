@@ -22,6 +22,7 @@ Route::prefix('admin')->middleware([])->group(function () {
         $tarian = Tari::firstWhere('id', 1);
         $province = $tarian->province;
         $budaya = $tarian->budaya;
+        dd($province);
         return view("admin.dashboard", [
             'tarian' => $tarian,
             'province' => $province,
