@@ -14,4 +14,25 @@ class Comment extends Model
     {
         $this->belongsTo(User::class, 'user_id');
     }
+
+    public function masakan()
+    {
+        $this->belongsTo(Masakan::class, 'category_id');
+    }
+    public function musik()
+    {
+        $this->belongsTo(Musik::class, 'category_id');
+    }
+    public function pakaian()
+    {
+        $this->belongsTo(Pakaian::class, 'category_id');
+    }
+    public function rumah()
+    {
+        $this->belongsTo(Rumah::class, 'category_id');
+    }
+    public function tari()
+    {
+        $this->belongsTo(Tari::class, 'category_id');
+    }
 }

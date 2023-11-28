@@ -14,4 +14,12 @@ class Tari extends Model
     {
         $this->belongsTo(Budaya::class, 'budaya_id');
     }
+    public function province()
+    {
+        $this->belongsTo(Province::class, 'province_id');
+    }
+    public function comment()
+    {
+        $this->hasMany(Comment::class, 'category_id');
+    }
 }
