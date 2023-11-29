@@ -1,5 +1,16 @@
 @media screen and (max-width: 992px) {
+    html {
+        font-size: 14px;
+    }
+
+    h1 {
+        line-height: 1;
+    }
+
     .navbar {
+        background-color: rgba($color: $text-white, $alpha: 0.5);
+        backdrop-filter: blur(10px);
+
         &-nav {
             gap: 0.5rem;
         }
@@ -64,6 +75,75 @@
         &__button {
             display: flex;
             flex-direction: column;
+        }
+    }
+
+    .footer {
+        &__left {
+            width: 100%;
+            text-align: center;
+
+            h2 {
+                margin-bottom: 1rem;
+            }
+        }
+
+        &__right {
+            width: 100%;
+            text-align: center;
+
+            .footer__social {
+                justify-content: center;
+            }
+        }
+
+        &__row {
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+
+            span.headline {
+                display: inline-flex !important;
+                text-align: center;
+            }
+
+            h2 {
+                text-align: center;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .footer {
+        h2 {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+        span.headline {
+            display: flex;
+            text-align: center !important;
+        }
+
+        &__left,
+        &__right {
+            width: 100%;
+        }
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .footer {
+        &__right {
+            .row {
+                flex-direction: column;
+                align-items: center;
+                gap: 2rem;
+
+                .col-6 {
+                    width: 100%;
+                }
+            }
         }
     }
 }

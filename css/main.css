@@ -358,6 +358,65 @@ h6 {
   top: 520%;
 }
 
+.footer {
+  padding: 4rem 0;
+  background-color: #171717;
+}
+.footer .headline {
+  color: #f1f1f1;
+}
+.footer__bottom {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.footer hr {
+  border: 1.5px solid rgba(255, 255, 255, 0.5);
+}
+.footer h2 {
+  color: #f1f1f1;
+  margin-top: 1rem;
+}
+.footer__social {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem !important;
+}
+.footer__social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 0.25rem;
+}
+.footer__social a:hover {
+  background-color: #e23535;
+}
+.footer__social a:hover i {
+  color: #f1f1f1;
+}
+.footer p {
+  color: #f1f1f1;
+  margin-bottom: 0.25rem;
+}
+.footer ul {
+  margin: 0;
+  padding: 0;
+}
+.footer ul li {
+  list-style: none;
+}
+.footer ul li a {
+  text-decoration: none;
+  color: rgba(241, 241, 241, 0.75);
+  transition: all 0.3s ease;
+}
+.footer ul li a:hover {
+  color: #e23535;
+}
+
 .hero {
   height: 100vh;
 }
@@ -380,6 +439,17 @@ h6 {
 }
 
 @media screen and (max-width: 992px) {
+  html {
+    font-size: 14px;
+  }
+  h1 {
+    line-height: 1;
+  }
+  .navbar {
+    background-color: rgba(241, 241, 241, 0.5);
+    -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+  }
   .navbar-nav {
     gap: 0.5rem;
   }
@@ -433,6 +503,55 @@ h6 {
   .dropdown-v2__button {
     display: flex;
     flex-direction: column;
+  }
+  .footer__left {
+    width: 100%;
+    text-align: center;
+  }
+  .footer__left h2 {
+    margin-bottom: 1rem;
+  }
+  .footer__right {
+    width: 100%;
+    text-align: center;
+  }
+  .footer__right .footer__social {
+    justify-content: center;
+  }
+  .footer__row {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  .footer__row span.headline {
+    display: inline-flex !important;
+    text-align: center;
+  }
+  .footer__row h2 {
+    text-align: center;
+  }
+}
+@media screen and (max-width: 768px) {
+  .footer h2 {
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+  .footer span.headline {
+    display: flex;
+    text-align: center !important;
+  }
+  .footer__left, .footer__right {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 425px) {
+  .footer__right .row {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+  .footer__right .row .col-6 {
+    width: 100%;
   }
 }
 @media screen and (min-width: 993px) {
