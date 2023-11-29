@@ -417,6 +417,49 @@ h6 {
   color: #e23535;
 }
 
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+.marquee {
+  overflow: hidden;
+  padding: 60px 0;
+  white-space: nowrap;
+  position: relative;
+}
+.marquee__asterix {
+  width: 1.5rem;
+  height: 1.5rem;
+  aspect-ratio: 1/1;
+}
+.marquee:before, .marquee:after {
+  position: absolute;
+  top: 0;
+  width: 250px;
+  height: 100%;
+  content: "";
+  z-index: 2;
+}
+.marquee:before {
+  left: 0;
+}
+.marquee:after {
+  right: 0;
+}
+.marquee-slide {
+  display: inline-flex;
+  align-items: center;
+  animation: 30s slide infinite linear;
+}
+.marquee-slide img {
+  height: 2rem;
+  margin: 0 15px;
+}
+
 .hero {
   height: 100vh;
 }
