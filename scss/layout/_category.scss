@@ -1,0 +1,75 @@
+.category {
+    padding: 10rem 0;
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+    }
+
+    &__footer {
+        text-align: center;
+    }
+
+    &__header {
+        text-align: center;
+
+        .headline {
+            display: flex;
+            justify-content: center;
+        }
+    }
+
+    &__content {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-gap: 1.5rem;
+    }
+
+    &__item {
+        position: relative;
+        border-radius: 1rem;
+        height: 365px;
+        background-size: cover;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        color: $text-white;
+        transition: all 0.3s ease;
+        background-position: center;
+
+        &:hover {
+            scale: 1.1;
+        }
+
+        &:nth-child(1) {
+            background-image: url('../../img/kategori-tari.jpg');
+        }
+        &:nth-child(2) {
+            background-image: url('../../img/kategori-rumah.jpg');
+        }
+        &:nth-child(3) {
+            background-image: url('../../img/kategori-pakaian.jpg');
+        }
+        &:nth-child(4) {
+            background-image: url('../../img/kategori-alat.jpg');
+        }
+        &:nth-child(5) {
+            background-image: url('../../img/kategori-masakan.jpg');
+        }
+
+        h6 {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+    }
+
+    &__link {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        border-radius: 1rem;
+    }
+}

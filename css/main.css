@@ -525,6 +525,72 @@ h6 {
   font-family: "Inter", sans-serif;
 }
 
+.category {
+  padding: 10rem 0;
+}
+.category__container {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+.category__footer {
+  text-align: center;
+}
+.category__header {
+  text-align: center;
+}
+.category__header .headline {
+  display: flex;
+  justify-content: center;
+}
+.category__content {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 1.5rem;
+}
+.category__item {
+  position: relative;
+  border-radius: 1rem;
+  height: 365px;
+  background-size: cover;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  color: #f1f1f1;
+  transition: all 0.3s ease;
+  background-position: center;
+}
+.category__item:hover {
+  scale: 1.1;
+}
+.category__item:nth-child(1) {
+  background-image: url("../../img/kategori-tari.jpg");
+}
+.category__item:nth-child(2) {
+  background-image: url("../../img/kategori-rumah.jpg");
+}
+.category__item:nth-child(3) {
+  background-image: url("../../img/kategori-pakaian.jpg");
+}
+.category__item:nth-child(4) {
+  background-image: url("../../img/kategori-alat.jpg");
+}
+.category__item:nth-child(5) {
+  background-image: url("../../img/kategori-masakan.jpg");
+}
+.category__item h6 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.category__link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: 1rem;
+}
+
 @media screen and (max-width: 992px) {
   html {
     font-size: 14px;
