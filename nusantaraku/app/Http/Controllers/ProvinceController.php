@@ -16,13 +16,13 @@ class ProvinceController extends Controller
     {
         if ($request->filled('search')) {
             $search = $request->input('search');
-            $province = Province::search($search)->paginate(10);
+            $provinces = Province::search($search)->paginate(10);
         } else {
-            $province = Province::all();
+            $provinces = Province::paginate(10);
         }
 
         return view('admin.province.index', [
-            'province' => $province
+            'provinces' => $provinces
         ]);
     }
 
@@ -98,7 +98,7 @@ class ProvinceController extends Controller
     public function destroy(Province $province)
     {
         $province->delete();
-        flash()->addError('Berhasil Menghapus Data');
+        flash('Berhasil Menghapus Data');
         return back();
     }
 }

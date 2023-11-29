@@ -4,7 +4,7 @@
         <li class="nav-item">
           <a class="nav-link {{ Request::is('admin/dashboard') ? 'active' :'' }}" aria-current="page" href="/admin/dashboard">
             <span data-feather="home"></span>
-            Beranda
+            Dashboard
           </a>
         </li>
         <li class="nav-item">

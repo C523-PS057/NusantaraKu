@@ -1,5 +1,6 @@
 @extends('admin.layouts.app')
 @section('container')
+@if ($provinces->count() > 0)
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
     <h1 class="h2">Province</h1>
   </div>
@@ -27,7 +28,7 @@
         </tr>
       </thead>
       <tbody>
-        @foreach ($province as $item)
+        @foreach ($provinces as $item)
 
         <tr>
           <td>{{ $loop->iteration }}</td>
@@ -55,4 +56,12 @@
       </tbody>
     </table>
   </div>
+  @else
+    <div class="d-flex justify-content-center my-3">
+        <div class=""><h2>No Province Found</h2></div>
+    </div>
+@endif
+<div class="d-flex justify-content-center">
+    {!! $provinces->links() !!}
+</div>
 @endsection
