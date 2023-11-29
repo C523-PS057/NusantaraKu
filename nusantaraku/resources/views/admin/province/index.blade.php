@@ -3,6 +3,16 @@
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
     <h1 class="h2">Province</h1>
   </div>
+  <form action="{{ route('province.index') }}" method="GET">
+  <div class="input-group mb-3">
+    <div class="col-md-5">
+        <input name="search" type="text" class="form-control" placeholder="Cari Nama Siswa" aria-label="Cari Nama" aria-describedby="basic-addon2" value="{{ request('search') }}">
+    </div>
+    <button class="btn btn-outline-primary" type="submit" id="button-addon2">
+        <i class="ri-search-line"></i>
+    </button>
+  </div>
+  </form>
   <div class="table-responsive col-lg-8">
     <a href="{{ route('province.create') }}" class="btn btn-primary mb-3">Create new Province</a>
     <table class="table table-striped table-sm">

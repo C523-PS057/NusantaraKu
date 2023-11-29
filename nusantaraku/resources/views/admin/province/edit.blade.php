@@ -40,7 +40,7 @@
           <trix-editor input="sejarah"></trix-editor>
         </div>
 
-        <button type="submit" class="btn btn-primary">Update Province</button>
+        <button type="submit" class="btn btn-warning">Update Province</button>
       </form>
   </div>
 @endsection

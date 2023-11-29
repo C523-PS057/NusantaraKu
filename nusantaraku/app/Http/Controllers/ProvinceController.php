@@ -12,9 +12,14 @@ class ProvinceController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $province = Province::all();
+        if ($request->filled('search')) {
+            $search = $request->input('search');
+            $province = Province::search($search)->paginate(10);
+        } else {
+            $province = Province::all();
+        }
 
         return view('admin.province.index', [
             'province' => $province

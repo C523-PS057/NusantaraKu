@@ -29,4 +29,9 @@ class Province extends Model
     {
         return $this->hasMany(Tari::class, 'province_id');
     }
+
+    public function scopeSearch($query, $search)
+    {
+        return $query->where('province_name', 'like', '%' . $search . '%');
+    }
 }
