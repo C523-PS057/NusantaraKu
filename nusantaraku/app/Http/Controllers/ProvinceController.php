@@ -41,7 +41,7 @@ class ProvinceController extends Controller
     {
         $validatedData = [
             'province_name' => 'required|max:255',
-            'video_link' => 'required',
+            'video_link' => 'required|max:2000',
             'deskripsi' => 'required',
             'sejarah' => 'required',
         ];
@@ -80,7 +80,7 @@ class ProvinceController extends Controller
     {
         $validatedData = [
             'province_name' => 'required|max:255',
-            'video_link' => 'required',
+            'video_link' => 'required|max:2000',
             'deskripsi' => 'required',
             'sejarah' => 'required',
         ];

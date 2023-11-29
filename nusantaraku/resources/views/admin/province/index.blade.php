@@ -56,12 +56,15 @@
       </tbody>
     </table>
   </div>
-  @else
-    <div class="d-flex justify-content-center my-3">
-        <div class=""><h2>No Province Found</h2></div>
-    </div>
-@endif
-<div class="d-flex justify-content-center">
+  <div class="d-flex justify-content-center">
     {!! $provinces->links() !!}
 </div>
+  @else
+    <div class="d-flex justify-content-center my-2">
+        <div class=""><h2>No Province Found</h2></div>
+    </div>
+    <div class="d-flex justify-content-center my-1">
+        <div class=""><a href="{{ route('province.create') }}" class="btn btn-primary">Create new Province</a></div>
+    </div>
+@endif
 @endsection

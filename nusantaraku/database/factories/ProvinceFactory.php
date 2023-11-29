@@ -17,7 +17,12 @@ class ProvinceFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'province_name' => 'JAMBI',
+            'video_link' => 'nanan',
+            'deskripsi' => 'Kektulah',
+            'sejarah' => 'cemtu',
+            'created_at' => now(),
+            'updated_at' => now()
         ];
     }
 }
