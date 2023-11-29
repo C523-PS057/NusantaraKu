@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Province;
 use App\Http\Requests\StoreProvinceRequest;
 use App\Http\Requests\UpdateProvinceRequest;
+use Illuminate\Http\Request;
 
 class ProvinceController extends Controller
 {
@@ -25,15 +26,26 @@ class ProvinceController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.province.create');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreProvinceRequest $request)
+    public function store(Request $request)
     {
-        //
+        $validatedData = [
+            'province_name' => 'required|max:255',
+            'video_link' => 'required',
+            'deskripsi' => 'required',
+            'sejarah' => 'required',
+        ];
+        $rules = $request->validate($validatedData);
+        $rules['deskripsi'] = strip_tags($request->deskripsi);
+        $rules['sejarah'] = strip_tags($request->sejarah);
+        Province::create($rules);
+        flash('Berhasil Menambahkan data');
+        return redirect()->route('province.index');
     }
 
     /**

@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Province extends Model
 {
     use HasFactory;
+    protected $guarded = ['id'];
     public function masakan()
     {
         return $this->hasMany(Masakan::class, 'province_id');

@@ -2,21 +2,27 @@
     <div class="position-sticky pt-3">
       <ul class="nav flex-column">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/admin/dashboard">
+          <a class="nav-link {{ Request::is('admin/dashboard') ? 'active' :'' }}" aria-current="page" href="/admin/dashboard">
             <span data-feather="home"></span>
             Beranda
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/admin/province">
+          <a class="nav-link {{ Request::is('admin/province*') ? 'active' :'' }}" href="/admin/province">
             <span data-feather="file"></span>
             Provinsi
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/admin/category">
+          <a class="nav-link {{ Request::is('admin/category*') ? 'active' :'' }}" href="/admin/category">
             <span data-feather="file"></span>
             Kategori
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link {{ Request::is('admin/budaya*') ? 'active' :'' }}" href="/admin/budaya">
+            <span data-feather="file"></span>
+            budaya
           </a>
         </li>
         <li>
