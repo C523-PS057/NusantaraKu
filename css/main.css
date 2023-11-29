@@ -65,6 +65,18 @@ h2,
 h3,
 h4,
 h5,
+h6,
+p,
+ul,
+li {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
 h6 {
   font-family: "Playfair Display", serif;
   font-weight: 900;
@@ -78,6 +90,10 @@ body {
   font-style: normal;
   font-display: swap;
   font-size: 1rem;
+}
+
+p {
+  line-height: 1.5;
 }
 
 p,
@@ -108,6 +124,20 @@ h5 {
 
 h6 {
   font-size: 1.25rem;
+}
+
+.headline {
+  letter-spacing: 3px;
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #e23535;
+}
+
+.red {
+  color: #e23535;
 }
 
 .btn {
@@ -155,4 +185,25 @@ h6 {
 .navbar-nav .nav-item {
   font-size: 14px;
   font-weight: 600;
+}
+
+.hero {
+  height: 100vh;
+}
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.hero-title {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.hero-right {
+  display: flex;
+  justify-content: end;
+}
+.hero-right img {
+  width: 90%;
 }/*# sourceMappingURL=main.css.map */
