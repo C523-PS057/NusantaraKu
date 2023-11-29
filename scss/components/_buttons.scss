@@ -11,6 +11,20 @@
     font-size: 14px;
     transition: all 0.3s ease;
 
+    &--small {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0 1.2rem !important;
+        text-decoration: none;
+        border-radius: 0.5rem;
+        background-color: $red;
+        color: #fff;
+        font-weight: 600;
+        font-size: 14px;
+        transition: all 0.3s ease;
+    }
+
     &-primary {
         background-color: $red;
         color: #fff;
@@ -19,7 +33,7 @@
         &:hover {
             background-color: $red-darken;
             border: 1px solid $red;
-            color: $text-white;
+            color: $text-white !important;
         }
     }
 

@@ -1,4 +1,11 @@
 .navbar {
+    padding: 1rem 0;
+    transition: all 0.3s ease;
+
+    .container {
+        position: relative;
+    }
+
     &-brand {
         img {
             width: 100%;
@@ -16,6 +23,23 @@
         .nav-item {
             font-size: 14px;
             font-weight: 600;
+        }
+    }
+
+    &.scrolled {
+        background-color: rgba($color: $text-white, $alpha: 0.5);
+        backdrop-filter: blur(10px);
+    }
+}
+
+.nav {
+    &-link {
+        &:hover {
+            color: $red;
+        }
+
+        &.active {
+            color: $red !important;
         }
     }
 }
