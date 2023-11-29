@@ -13,7 +13,11 @@ class ProvinceController extends Controller
      */
     public function index()
     {
-        //
+        $province = Province::all();
+
+        return view('admin.province.index', [
+            'province' => $province
+        ]);
     }
 
     /**

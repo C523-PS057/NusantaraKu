@@ -1,9 +1,9 @@
 <?php
 
+use App\Http\Controllers\ProvinceController;
 use App\Models\Tari;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,6 +27,7 @@ Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
         $data['tarian'] = $tarian;
         return view("admin.dashboard", $data);
     });
+    Route::resource('province', ProvinceController::class);
 });
 
 Auth::routes();
