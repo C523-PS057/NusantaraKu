@@ -53,7 +53,9 @@ class ProvinceController extends Controller
      */
     public function show(Province $province)
     {
-        //
+        return view('admin.province.show', [
+            'province' => $province
+        ]);
     }
 
     /**
@@ -61,15 +63,28 @@ class ProvinceController extends Controller
      */
     public function edit(Province $province)
     {
-        //
+        return view('admin.province.edit', [
+            'province' => $province
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateProvinceRequest $request, Province $province)
+    public function update(Request $request, Province $province)
     {
-        //
+        $validatedData = [
+            'province_name' => 'required|max:255',
+            'video_link' => 'required',
+            'deskripsi' => 'required',
+            'sejarah' => 'required',
+        ];
+        $rules = $request->validate($validatedData);
+        $rules['deskripsi'] = strip_tags($request->deskripsi);
+        $rules['sejarah'] = strip_tags($request->sejarah);
+        $province->update($rules);
+        flash('Berhasil Mengubah data');
+        return redirect()->route('province.index');
     }
 
     /**
@@ -77,6 +92,8 @@ class ProvinceController extends Controller
      */
     public function destroy(Province $province)
     {
-        //
+        $province->delete();
+        flash()->addError('Berhasil Menghapus Data');
+        return back();
     }
 }
