@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Tari;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::prefix('admin')->middleware([])->group(function () {
+Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
     Route::get('/dashboard', function () {
         $tarian = Tari::firstWhere('id', 1);
         $data['prov'] = $tarian->province;
@@ -27,3 +28,7 @@ Route::prefix('admin')->middleware([])->group(function () {
         return view("admin.dashboard", $data);
     });
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
