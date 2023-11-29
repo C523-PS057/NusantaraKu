@@ -20,13 +20,10 @@ Route::get('/', function () {
 Route::prefix('admin')->middleware([])->group(function () {
     Route::get('/dashboard', function () {
         $tarian = Tari::firstWhere('id', 1);
-        $province = $tarian->province;
-        $budaya = $tarian->budaya;
-        dd($province);
-        return view("admin.dashboard", [
-            'tarian' => $tarian,
-            'province' => $province,
-            'budaya' => $budaya
-        ]);
+        $data['prov'] = $tarian->province;
+        $data['budaya'] = $tarian->budaya;
+        $data['komentar'] = $tarian->comment;
+        $data['tarian'] = $tarian;
+        return view("admin.dashboard", $data);
     });
 });
