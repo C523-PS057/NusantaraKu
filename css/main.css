@@ -385,7 +385,7 @@ h6 {
   }
   .navbar-right {
     flex-direction: column;
-    gap: 1rem;
+    gap: 1rem !important;
   }
   .navbar-collapse {
     padding: 1rem;
@@ -437,11 +437,11 @@ h6 {
 }
 @media screen and (min-width: 993px) {
   .navbar-nav {
-    gap: 1rem !important;
+    gap: 0.75rem !important;
   }
 }
 @media screen and (min-width: 1280px) {
   .navbar-nav {
-    gap: 2rem !important;
+    gap: 1rem !important;
   }
 }/*# sourceMappingURL=main.css.map */
