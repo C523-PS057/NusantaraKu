@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Playfair Display';
-    src: url('fonts/PlayfairDisplay-Black.woff2') format('woff2');
+    src: url('/fonts/PlayfairDisplay-Black.woff2') format('woff2');
     font-weight: 900;
     font-style: normal;
     font-display: swap;
@@ -8,31 +8,43 @@
 
 @font-face {
     font-family: 'Inter';
-    src: url('fonts/Inter-Regular.woff2') format('woff2');
+    src: url('/fonts/Inter-Regular.woff2') format('woff2');
     font-weight: 400;
     font-style: normal;
     font-display: swap;
 }
 @font-face {
     font-family: 'Inter';
-    src: url('fonts/Inter-SemiBold.woff2') format('woff2');
+    src: url('/fonts/Inter-SemiBold.woff2') format('woff2');
     font-weight: 600;
     font-style: normal;
     font-display: swap;
 }
 @font-face {
     font-family: 'Inter';
-    src: url('fonts/Inter-Bold.woff2') format('woff2');
+    src: url('/fonts/Inter-Bold.woff2') format('woff2');
     font-weight: 700;
     font-style: normal;
     font-display: swap;
 }
 @font-face {
     font-family: 'Inter';
-    src: url('fonts/Inter-Italic.woff2') format('woff2');
+    src: url('/fonts/Inter-Italic.woff2') format('woff2');
     font-weight: 400;
     font-style: italic;
     font-display: swap;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+li {
+    margin: 0;
 }
 
 h1,
@@ -53,6 +65,10 @@ body {
     font-style: normal;
     font-display: swap;
     font-size: 1rem;
+}
+
+p {
+    line-height: 1.5;
 }
 
 p,
@@ -83,4 +99,18 @@ h5 {
 
 h6 {
     font-size: 1.25rem;
+}
+
+.headline {
+    letter-spacing: 3px;
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: $red;
+}
+
+.red {
+    color: $red;
 }
