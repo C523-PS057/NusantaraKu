@@ -591,6 +591,75 @@ h6 {
   border-radius: 1rem;
 }
 
+.province__container {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+.province__header {
+  text-align: center;
+}
+.province__header .headline {
+  display: flex;
+  justify-content: center;
+}
+.province__item {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e23535;
+  border-radius: 0.5rem;
+  text-align: center;
+  font-weight: 600;
+  color: #ffffff;
+  transition: all 0.3s ease;
+  background-size: cover;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+  height: 75px !important;
+}
+.province__item img {
+  width: 100%;
+  height: 100%;
+  transition: all 0.3s ease;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.province__item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5); /* Warna latar belakang overlay dan tingkat transparansi */
+  z-index: 1;
+  transition: opacity 0.3s ease; /* Transisi kegelapan */
+}
+.province__item:hover img {
+  scale: 1.2;
+}
+.province__item:hover::before {
+  opacity: 0.5;
+}
+.province__item p {
+  z-index: 2;
+  color: #f1f1f1;
+  position: absolute;
+  padding: 1rem;
+  line-height: 1.2;
+}
+.province__link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: 1rem;
+  z-index: 3;
+}
+
 @media screen and (max-width: 992px) {
   html {
     font-size: 14px;

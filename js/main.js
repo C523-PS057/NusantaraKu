@@ -1,16 +1,15 @@
+import province from '../data/province.js';
+
 // Render Daftar Provinsi di Navbar
-import provinceArray from '../data/provinsi.js';
 document.addEventListener('DOMContentLoaded', () => {
     const dropdownV2List2 = document.querySelector('.dropdown-v2__list2');
 
-    const HTML = provinceArray.map((province, index) => {
+    const HTML = province.map((prov, index) => {
         return `
         <li class='dropdown-v2__item2'>
-            <a href=/provinsi/${index + 1}>${province}</a>
+            <a href=/provinsi/${index + 1}>${prov.name}</a>
         </li>`;
     });
-
-    console.log(dropdownV2List2);
 
     dropdownV2List2.innerHTML = HTML.join('');
 });
