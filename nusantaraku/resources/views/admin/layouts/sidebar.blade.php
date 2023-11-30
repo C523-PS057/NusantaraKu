@@ -16,7 +16,7 @@
         <li class="nav-item">
           <a class="nav-link {{ Request::is('admin/category*') ? 'active' :'' }}" href="/admin/category">
             <span data-feather="file"></span>
-            Kategori
+            Category
           </a>
         </li>
         <li class="nav-item">

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BudayaController;
 use App\Http\Controllers\ProvinceController;
 use App\Models\Tari;
 use Illuminate\Support\Facades\Auth;
@@ -28,6 +29,7 @@ Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
         return view("admin.dashboard", $data);
     });
     Route::resource('province', ProvinceController::class);
+    Route::resource('budaya', BudayaController::class);
 });
 
 Auth::routes();

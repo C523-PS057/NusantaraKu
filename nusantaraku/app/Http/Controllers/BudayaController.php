@@ -13,7 +13,10 @@ class BudayaController extends Controller
      */
     public function index()
     {
-        //
+        $kategori = Budaya::paginate(10);
+        return view('admin.category.index', [
+            'kategori' => $kategori
+        ]);
     }
 
     /**
