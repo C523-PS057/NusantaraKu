@@ -6,6 +6,7 @@ use App\Models\Budaya;
 use App\Http\Requests\StoreBudayaRequest;
 use App\Http\Requests\UpdateBudayaRequest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class BudayaController extends Controller
 {
@@ -83,7 +84,9 @@ class BudayaController extends Controller
         if ($request->hasFile('gambar')) {
             $rules['gambar'] = $request->file('gambar')->store('/public/images');
         }
-        Budaya::findOrFail($id)->update($rules);
+        $category = Budaya::findOrFail($id);
+        Storage::delete($category->gambar);
+        $category->update($rules);
         flash('Berhasil Mengubah Data');
         return redirect()->route('category.index');
     }
@@ -91,8 +94,12 @@ class BudayaController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Budaya $budaya)
+    public function destroy($id)
     {
-        //
+        $category = Budaya::findOrFail($id);
+        Storage::delete($category->gambar);
+        $category->delete();
+        flash('Berhasil Menghapus Data');
+        return back();
     }
 }
