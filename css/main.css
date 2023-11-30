@@ -140,6 +140,11 @@ h6 {
   color: #e23535;
 }
 
+.text-sm {
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
 .btn {
   display: inline-flex;
   align-items: center;
@@ -654,6 +659,33 @@ h6 {
   width: 100%;
   border-radius: 1rem;
   z-index: 3;
+}
+
+.benefit__container {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+.benefit__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  background-color: #ffffff;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: help;
+}
+.benefit__item:hover {
+  transform: translateY(-1rem);
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+}
+.benefit__item img {
+  width: 3rem;
+  height: 3rem;
 }
 
 @media screen and (max-width: 992px) {
