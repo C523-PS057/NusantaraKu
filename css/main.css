@@ -751,6 +751,26 @@ h6 {
   font-weight: 600;
 }
 
+.offer {
+  padding: 5rem 0;
+  background-image: url("../../img/bg-pattern.jpg");
+  color: #f1f1f1;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.offer p {
+  color: rgba(241, 241, 241, 0.75);
+}
+.offer .btn {
+  margin-top: 1.5rem;
+  color: #f1f1f1;
+  border: 1px solid #f1f1f1;
+}
+.offer .btn:hover {
+  background-color: #f1f1f1;
+  color: #1c1c1c;
+}
+
 @media screen and (max-width: 992px) {
   html {
     font-size: 14px;
