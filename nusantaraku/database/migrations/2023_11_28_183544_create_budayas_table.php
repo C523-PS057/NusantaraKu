@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('budayas', function (Blueprint $table) {
             $table->id();
             $table->string('category_name');
-            $table->string('gambar')->nullable();
+            $table->string('gambar');
             $table->timestamps();
         });
     }

@@ -34,8 +34,13 @@
             margin-right: 1rem;
             background-color: #e4e4e492;
         }
+        .card-body{
+            display: grid;
+            grid-template-columns: repeat(1,1fr);
+        }
         @media screen and (max-width: 599px) {
-            .card-dis{grid-template-columns: 1fr;}
+            .card-dis{display: flex; flex-direction: column;}
+            .card{display: flex}
         }
         @media screen and (min-width: 600px) {
             .card-dis{grid-template-columns: repeat(2,1fr)}

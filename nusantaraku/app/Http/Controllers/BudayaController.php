@@ -12,9 +12,14 @@ class BudayaController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $category = Budaya::paginate(10);
+        if ($request->filled('search')) {
+            $search = $request->input('search');
+            $category = Budaya::search($search)->paginate(10);
+        } else {
+            $category = Budaya::paginate(10);
+        }
         return view('admin.category.index', [
             'category' => $category
         ]);
@@ -35,7 +40,7 @@ class BudayaController extends Controller
     {
         $validatedData = [
             'category_name' => 'required',
-            'gambar' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ];
         $rules = $request->validate($validatedData);
         if ($request->hasFile('gambar')) {
@@ -57,17 +62,30 @@ class BudayaController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Budaya $budaya)
+    public function edit($id)
     {
-        //
+        $budaya = Budaya::findOrFail($id);
+        return view('admin.category.edit', [
+            'category' => $budaya
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateBudayaRequest $request, Budaya $budaya)
+    public function update(Request $request, $id)
     {
-        //
+        $validatedData = [
+            'category_name' => 'required',
+            'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ];
+        $rules = $request->validate($validatedData);
+        if ($request->hasFile('gambar')) {
+            $rules['gambar'] = $request->file('gambar')->store('/public/images');
+        }
+        Budaya::findOrFail($id)->update($rules);
+        flash('Berhasil Mengubah Data');
+        return redirect()->route('category.index');
     }
 
     /**

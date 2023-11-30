@@ -29,4 +29,9 @@ class Budaya extends Model
     {
         return $this->hasMany(Tari::class, 'budaya_id');
     }
+
+    public function scopeSearch($query, $search)
+    {
+        return $query->where('category_name', 'like', '%' . $search . '%');
+    }
 }

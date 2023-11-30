@@ -17,11 +17,17 @@
     <a href="{{ route('category.create') }}" class="btn btn-primary mb-3">Create new Budaya</a>
     <div class="card-dis">
     @foreach ($category as $item)
-        <div class="card" style="width: 18rem;">
+        <div class="card">
             <img class="card-img-top" src="{{ Storage::url($item->gambar) }}" alt="Card image cap">
             <div class="card-body">
               <h5 class="card-title">{{ $item->category_name }}</h5>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+              <a href="{{ route('category.show',$item->id) }}" class="btn btn-primary">Detail</a>
+              <a href="{{ route('category.edit',$item->id) }}" class="btn btn-warning my-2">Edit</a>
+              <form action="{{ route('category.destroy',$item->id) }}" method="POST">
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="btn btn-danger" style="width: 100%">Delete</button>
+            </form>
             </div>
           </div>
           @endforeach
