@@ -8,9 +8,14 @@
 @import './components/navbar';
 @import './components/dropdown';
 @import './components/footer';
+@import './components/marquee';
 
 // Layout
 @import './layout/hero';
+@import './layout/intro';
+@import './layout/category';
+@import './layout/province';
+@import './layout/benefit';
 
 // Pages
 @import './pages/homepage';

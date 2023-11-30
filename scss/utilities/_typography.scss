@@ -68,7 +68,7 @@ body {
 }
 
 p {
-    line-height: 1.5;
+    line-height: 1.75;
 }
 
 p,
@@ -113,4 +113,9 @@ h6 {
 
 .red {
     color: $red;
+}
+
+.text-sm {
+    font-size: 0.9rem;
+    line-height: 1.5;
 }
