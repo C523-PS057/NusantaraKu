@@ -6,11 +6,12 @@
   </div>
   <div class="col-lg-8">
 
-      <form method="POST" action="{{ route('masakan.store') }}" class="mb-5" enctype="multipart/form-data">
+      <form method="POST" action="{{ route('masakan.update',$data->id) }}" class="mb-5" enctype="multipart/form-data">
         @csrf
+        @method('PUT')
         <div class="mb-3">
           <label for="masakan_name" class="form-label">Masakan Name</label>
-          <input type="text" class="form-control" id="masakan_name" name="masakan_name" autofocus value="{{ old('masakan_name') }}">
+          <input type="text" class="form-control" id="masakan_name" name="masakan_name" autofocus value="{{ old('masakan_name',$data->masakan_name) }}">
           @error('masakan_name')
                 <p class="text-danger">{{ $message }}</p>
           @enderror
@@ -33,7 +34,7 @@
           @error('deskripsi')
              <p class="text-danger">{{ $message }}</p>
           @enderror
-          <input id="deskripsi" type="hidden" name="deskripsi" value="{{ old('deskripsi') }}">
+          <input id="deskripsi" type="hidden" name="deskripsi" value="{{ old('deskripsi',$data->deskripsi) }}">
           <trix-editor input="deskripsi"></trix-editor>
         </div>
         <div class="mb-3">
@@ -41,18 +42,18 @@
           @error('sejarah')
              <p class="text-danger">{{ $message }}</p>
           @enderror
-          <input id="sejarah" type="hidden" name="sejarah" value="{{ old('sejarah') }}">
+          <input id="sejarah" type="hidden" name="sejarah" value="{{ old('sejarah',$data->sejarah) }}">
           <trix-editor input="sejarah"></trix-editor>
         </div>
         <div class="mb-3">
             <label for="gambar" class="form-label">Image</label>
-            <img class="img-preview img-fluid mb-3">
-            <input class="form-control" type="file" name="gambar" id="gambar" value="" onchange="previewImage()">
+            <img class="img-preview img-fluid mb-3" src="{{ Storage::url($data->gambar) }}" style="width: 50%; display:block;">
+            <input class="form-control" type="file" name="gambar" value="{{ old('gambar',$data->gambar) }}" id="gambar" onchange="previewImage()">
             @error('gambar')
             <p class="text-danger">{{ $message }}</p>
           @enderror
         </div>
-        <button type="submit" class="btn btn-primary">Create Masakan</button>
+        <button type="submit" class="btn btn-warning">Update Masakan</button>
       </form>
   </div>
   <script>

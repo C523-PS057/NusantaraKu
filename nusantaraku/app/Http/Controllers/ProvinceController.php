@@ -6,6 +6,7 @@ use App\Models\Province;
 use App\Http\Requests\StoreProvinceRequest;
 use App\Http\Requests\UpdateProvinceRequest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ProvinceController extends Controller
 {
@@ -97,6 +98,36 @@ class ProvinceController extends Controller
      */
     public function destroy(Province $province)
     {
+        if ($province->masakan->count() > 0) {
+            foreach ($province->masakan as $masakan) {
+                Storage::delete($masakan->gambar);
+                $masakan->delete();
+            }
+        }
+        if ($province->musik->count() > 0) {
+            foreach ($province->musik as $musik) {
+                Storage::delete($musik->gambar);
+                $musik->delete();
+            }
+        }
+        if ($province->pakaian->count() > 0) {
+            foreach ($province->pakaian as $pakaian) {
+                Storage::delete($pakaian->gambar);
+                $pakaian->delete();
+            }
+        }
+        if ($province->rumah->count() > 0) {
+            foreach ($province->rumah as $rumah) {
+                Storage::delete($rumah->gambar);
+                $rumah->delete();
+            }
+        }
+        if ($province->tari->count() > 0) {
+            foreach ($province->tari as $tari) {
+                Storage::delete($tari->gambar);
+                $tari->delete();
+            }
+        }
         $province->delete();
         flash('Berhasil Menghapus Data');
         return back();

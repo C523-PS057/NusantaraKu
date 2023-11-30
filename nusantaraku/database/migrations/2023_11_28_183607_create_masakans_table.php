@@ -17,7 +17,7 @@ return new class extends Migration
             $table->foreignId('province_id');
             $table->string('masakan_name');
             $table->string('sejarah', 2000);
-            $table->string('gambar')->nullable();
+            $table->string('gambar');
             $table->string('deskripsi', 2000);
             $table->timestamps();
         });

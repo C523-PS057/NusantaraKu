@@ -9,6 +9,7 @@ use App\Models\Budaya;
 use App\Models\Province;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Storage;
 
 class MasakanController extends Controller
 {
@@ -34,9 +35,17 @@ class MasakanController extends Controller
      */
     public function create()
     {
-        $category = $categories = Budaya::where('category_name', 'LIKE', 'masakan')->first();
+        $category = Budaya::where('category_name', 'LIKE', 'masakan')->first();
+        if (!$category) {
+            flash()->addError('Buat Budaya Dengan Nama "Masakan" Terlebih Dahulu');
+            return back();
+        }
         $categories = $category->id;
         $province = Province::all();
+        if ($province->count() < 1) {
+            flash()->addError('Minimal Buat 1 Provinsi');
+            return back();
+        }
         return view('admin.masakan.create', [
             'categories' => $categories,
             'province' => $province
@@ -78,15 +87,39 @@ class MasakanController extends Controller
      */
     public function edit(Masakan $masakan)
     {
-        //
+        $category = Budaya::where('category_name', 'LIKE', 'masakan')->first();
+        $categories = $category->id;
+        $province = Province::all();
+        return view('admin.masakan.edit', [
+            'categories' => $categories,
+            'province' => $province,
+            'data' => $masakan
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateMasakanRequest $request, Masakan $masakan)
+    public function update(Request $request, Masakan $masakan)
     {
-        //
+        $validatedData = [
+            'masakan_name' => 'required',
+            'budaya_id' => 'required|exists:budayas,id',
+            'province_id' => 'required',
+            'sejarah' => 'required',
+            'gambar' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'deskripsi' => 'required',
+        ];
+        $rules = $request->validate($validatedData);
+        $rules['deskripsi'] = strip_tags($request->deskripsi);
+        $rules['sejarah'] = strip_tags($request->sejarah);
+        if ($request->hasFile('gambar')) {
+            Storage::delete($masakan->gambar);
+            $rules['gambar'] = $request->file('gambar')->store('/public/images');
+        }
+        $masakan->update($rules);
+        flash('Berhasil Mengubah data');
+        return redirect()->route('masakan.index');
     }
 
     /**
@@ -94,6 +127,9 @@ class MasakanController extends Controller
      */
     public function destroy(Masakan $masakan)
     {
-        //
+        Storage::delete($masakan->gambar);
+        $masakan->delete();
+        flash('Berhasil Hapus Data');
+        return back();
     }
 }

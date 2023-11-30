@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Budaya;
 use App\Http\Requests\StoreBudayaRequest;
 use App\Http\Requests\UpdateBudayaRequest;
+use App\Models\Masakan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -100,6 +101,36 @@ class BudayaController extends Controller
     public function destroy($id)
     {
         $category = Budaya::findOrFail($id);
+        if ($category->masakan->count() > 0) {
+            foreach ($category->masakan as $masakan) {
+                Storage::delete($masakan->gambar);
+                $masakan->delete();
+            }
+        }
+        if ($category->musik->count() > 0) {
+            foreach ($category->musik as $musik) {
+                Storage::delete($musik->gambar);
+                $musik->delete();
+            }
+        }
+        if ($category->pakaian->count() > 0) {
+            foreach ($category->pakaian as $pakaian) {
+                Storage::delete($pakaian->gambar);
+                $pakaian->delete();
+            }
+        }
+        if ($category->rumah->count() > 0) {
+            foreach ($category->rumah as $rumah) {
+                Storage::delete($rumah->gambar);
+                $rumah->delete();
+            }
+        }
+        if ($category->tari->count() > 0) {
+            foreach ($category->tari as $tari) {
+                Storage::delete($tari->gambar);
+                $tari->delete();
+            }
+        }
         Storage::delete($category->gambar);
         $category->delete();
         flash('Berhasil Menghapus Data');
