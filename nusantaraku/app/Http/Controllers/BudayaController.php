@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Budaya;
 use App\Http\Requests\StoreBudayaRequest;
 use App\Http\Requests\UpdateBudayaRequest;
+use Illuminate\Http\Request;
 
 class BudayaController extends Controller
 {
@@ -13,9 +14,9 @@ class BudayaController extends Controller
      */
     public function index()
     {
-        $kategori = Budaya::paginate(10);
+        $category = Budaya::paginate(10);
         return view('admin.category.index', [
-            'kategori' => $kategori
+            'category' => $category
         ]);
     }
 
@@ -24,15 +25,25 @@ class BudayaController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.category.create');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreBudayaRequest $request)
+    public function store(Request $request)
     {
-        //
+        $validatedData = [
+            'category_name' => 'required',
+            'gambar' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ];
+        $rules = $request->validate($validatedData);
+        if ($request->hasFile('gambar')) {
+            $rules['gambar'] = $request->file('gambar')->store('/public/images');
+        }
+        Budaya::create($rules);
+        flash('Berhasil Menambahkan Data');
+        return redirect()->route('category.index');
     }
 
     /**

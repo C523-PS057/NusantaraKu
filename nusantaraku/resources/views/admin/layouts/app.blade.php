@@ -15,8 +15,33 @@
   <script type="text/javascript" src="https://unpkg.com/trix@2.0.0/dist/trix.umd.min.js"></script>
 
     <style>
+        body {
+            margin: 0;
+            padding: 0;
+            align-items: center;
+        }
         trix-toolbar [data-trix-button-group="file-tools"]{
             display: none;
+        }
+        .card-dis{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            margin-bottom: 1rem;
+        }
+        .card{
+            margin-top: 1rem;
+            margin-left: 1rem;
+            margin-right: 1rem;
+            background-color: #e4e4e492;
+        }
+        @media screen and (max-width: 599px) {
+            .card-dis{grid-template-columns: 1fr;}
+        }
+        @media screen and (min-width: 600px) {
+            .card-dis{grid-template-columns: repeat(2,1fr)}
+        }
+        @media screen and (min-width: 1200px) {
+            .card-dis{grid-template-columns: repeat(3,1fr)}
         }
       .bd-placeholder-img {
         font-size: 1.125rem;

@@ -29,7 +29,7 @@ Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
         return view("admin.dashboard", $data);
     });
     Route::resource('province', ProvinceController::class);
-    Route::resource('budaya', BudayaController::class);
+    Route::resource('category', BudayaController::class);
 });
 
 Auth::routes();

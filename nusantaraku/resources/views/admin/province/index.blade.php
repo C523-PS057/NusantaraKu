@@ -7,7 +7,7 @@
   <form action="{{ route('province.index') }}" method="GET">
   <div class="input-group mb-3">
     <div class="col-md-5">
-        <input name="search" type="text" class="form-control" placeholder="Cari Nama Siswa" aria-label="Cari Nama" aria-describedby="basic-addon2" value="{{ request('search') }}">
+        <input name="search" type="text" class="form-control" placeholder="search" aria-label="search" aria-describedby="basic-addon2" value="{{ request('search') }}">
     </div>
     <button class="btn btn-outline-primary" type="submit" id="button-addon2">
         <i class="ri-search-line"></i>
