@@ -688,6 +688,71 @@ h6 {
   height: 3rem;
 }
 
+.testimonial {
+  padding: 10rem 0;
+}
+.testimonial__col {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+.testimonial__header {
+  text-align: center;
+}
+.testimonial__header .headline {
+  display: flex;
+  justify-content: center;
+}
+.testimonial__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 2rem;
+  padding: 2rem;
+  border-radius: 1rem;
+}
+.testimonial__content p {
+  color: #f1f1f1;
+}
+.testimonial__content p.testimonial__job {
+  font-size: 0.9rem;
+  color: rgba(241, 241, 241, 0.75);
+}
+.testimonial__list {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1.5rem;
+}
+.testimonial__item {
+  border: 2px solid transparent;
+  outline: none;
+  background: transparent;
+  transition: all 0.3s ease;
+  border-radius: 50%;
+}
+.testimonial__item.active {
+  border: 2px solid #e23535;
+}
+.testimonial__item.active img {
+  width: 4rem;
+  height: 4rem;
+  padding: 0.25rem;
+}
+.testimonial__item img {
+  aspect-ratio: 1/1;
+  width: 2.5rem;
+  transition: all 0.3s ease;
+  height: 2.5rem;
+}
+.testimonial__content {
+  background-color: #e23535;
+}
+.testimonial__name {
+  font-weight: 600;
+}
+
 @media screen and (max-width: 992px) {
   html {
     font-size: 14px;
