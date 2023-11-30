@@ -6,7 +6,7 @@
   </div>
   <div class="col-lg-8">
 
-      <form method="POST" action="{{ route('category.update',$category->id) }}" class="mb-5"  enctype="multipart/form-data">
+      <form method="POST" action="{{ route('budaya.update',$category->id) }}" class="mb-5"  enctype="multipart/form-data">
         @csrf
         @method('PUT')
         <div class="mb-3">
@@ -19,12 +19,12 @@
         <div class="mb-3">
             <label for="gambar" class="form-label">Image</label>
             <img class="img-preview img-fluid mb-3" src="{{ Storage::url($category->gambar) }}" style="width: 50%; display:block;">
-            <input class="form-control" type="file" name="gambar" id="gambar" onchange="previewImage()">
+            <input class="form-control" type="file" name="gambar" id="gambar" value="{{ old('gambar',$category->gambar) }}" onchange="previewImage()">
             @error('gambar')
             <p class="text-danger">{{ $message }}</p>
           @enderror
           </div>
-        <button type="submit" class="btn btn-warning">Update Category</button>
+        <button type="submit" class="btn btn-warning">Update Budaya</button>
       </form>
   </div>
   <script>

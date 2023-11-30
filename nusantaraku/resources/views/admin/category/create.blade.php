@@ -6,7 +6,7 @@
   </div>
   <div class="col-lg-8">
 
-      <form method="POST" action="{{ route('category.store') }}" class="mb-5"  enctype="multipart/form-data">
+      <form method="POST" action="{{ route('budaya.store') }}" class="mb-5"  enctype="multipart/form-data">
         @csrf
         <div class="mb-3">
           <label for="category_name" class="form-label">Budaya Name</label>
@@ -17,13 +17,13 @@
         </div>
         <div class="mb-3">
             <label for="gambar" class="form-label">Image</label>
-            <img class="img-preview img-fluid mb-3" style="display: none">
+            <img class="img-preview img-fluid mb-3">
             <input class="form-control" type="file" name="gambar" id="gambar" onchange="previewImage()">
             @error('gambar')
             <p class="text-danger">{{ $message }}</p>
           @enderror
           </div>
-        <button type="submit" class="btn btn-primary">Create Category</button>
+        <button type="submit" class="btn btn-primary">Create Budaya</button>
       </form>
   </div>
   <script>

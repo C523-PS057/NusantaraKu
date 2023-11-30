@@ -40,24 +40,25 @@ class BudayaController extends Controller
     public function store(Request $request)
     {
         $validatedData = [
-            'category_name' => 'required',
+            'category_name' => 'unique:budayas,category_name|required',
             'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ];
         $rules = $request->validate($validatedData);
-        if ($request->hasFile('gambar')) {
-            $rules['gambar'] = $request->file('gambar')->store('/public/images');
-        }
+        $rules['gambar'] = $request->file('gambar')->store('/public/images');
         Budaya::create($rules);
         flash('Berhasil Menambahkan Data');
-        return redirect()->route('category.index');
+        return redirect()->route('budaya.index');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Budaya $budaya)
+    public function show($id)
     {
-        //
+        $category = Budaya::findOrFail($id);
+        return view('admin.category.show', [
+            'category' => $category
+        ]);
     }
 
     /**
@@ -76,19 +77,21 @@ class BudayaController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $category = Budaya::findOrFail($id);
         $validatedData = [
-            'category_name' => 'required',
-            'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'gambar' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ];
+        if ($request->category_name != $category->category_name) {
+            $validatedData['category_name'] = 'required|unique:budayas,category_name|required';
+        }
         $rules = $request->validate($validatedData);
         if ($request->hasFile('gambar')) {
             $rules['gambar'] = $request->file('gambar')->store('/public/images');
+            Storage::delete($category->gambar);
         }
-        $category = Budaya::findOrFail($id);
-        Storage::delete($category->gambar);
         $category->update($rules);
         flash('Berhasil Mengubah Data');
-        return redirect()->route('category.index');
+        return redirect()->route('budaya.index');
     }
 
     /**

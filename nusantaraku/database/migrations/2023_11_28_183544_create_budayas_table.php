@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('budayas', function (Blueprint $table) {
             $table->id();
-            $table->string('category_name');
+            $table->string('category_name')->unique();
             $table->string('gambar');
             $table->timestamps();
         });

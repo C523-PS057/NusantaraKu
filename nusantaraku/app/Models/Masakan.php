@@ -21,4 +21,9 @@ class Masakan extends Model
     {
         return $this->hasMany(Comment::class, 'category_id');
     }
+
+    public function scopeSearch($query, $search)
+    {
+        return $query->where('masakan_name', 'like', '%' . $search . '%');
+    }
 }

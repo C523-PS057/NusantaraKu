@@ -14,15 +14,39 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link {{ Request::is('admin/category*') ? 'active' :'' }}" href="/admin/category">
+          <a class="nav-link {{ Request::is('admin/budaya*') ? 'active' :'' }}" href="/admin/budaya">
             <span data-feather="file"></span>
-            Category
+            Budaya
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link {{ Request::is('admin/budaya*') ? 'active' :'' }}" href="/admin/budaya">
+          <a class="nav-link {{ Request::is('admin/masakan*') ? 'active' :'' }}" href="/admin/masakan">
             <span data-feather="file"></span>
-            budaya
+            Masakan
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link {{ Request::is('admin/musik*') ? 'active' :'' }}" href="/admin/musik">
+            <span data-feather="file"></span>
+            Musik
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link {{ Request::is('admin/pakaian*') ? 'active' :'' }}" href="/admin/pakaian">
+            <span data-feather="file"></span>
+            Pakaian
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link {{ Request::is('admin/rumah*') ? 'active' :'' }}" href="/admin/rumah">
+            <span data-feather="file"></span>
+            Rumah Adat
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link {{ Request::is('admin/tarian*') ? 'active' :'' }}" href="/admin/tarian">
+            <span data-feather="file"></span>
+            Tarian
           </a>
         </li>
         <li>

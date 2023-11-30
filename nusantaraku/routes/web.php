@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\BudayaController;
+use App\Http\Controllers\MasakanController;
 use App\Http\Controllers\ProvinceController;
+use App\Http\Controllers\SubBudayaController;
 use App\Models\Tari;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -29,7 +31,8 @@ Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
         return view("admin.dashboard", $data);
     });
     Route::resource('province', ProvinceController::class);
-    Route::resource('category', BudayaController::class);
+    Route::resource('budaya', BudayaController::class);
+    Route::resource('masakan', MasakanController::class);
 });
 
 Auth::routes();
