@@ -239,7 +239,7 @@ h6 {
   align-items: stretch;
   justify-content: center;
   position: absolute;
-  top: 450%;
+  top: 400%;
   left: 50%;
   transform: translate(-50%, -50%);
   opacity: 0;
