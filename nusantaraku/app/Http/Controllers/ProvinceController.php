@@ -5,6 +5,11 @@ namespace App\Http\Controllers;
 use App\Models\Province;
 use App\Http\Requests\StoreProvinceRequest;
 use App\Http\Requests\UpdateProvinceRequest;
+use App\Models\Masakan;
+use App\Models\Musik;
+use App\Models\Pakaian;
+use App\Models\Rumah;
+use App\Models\Tari;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -59,8 +64,18 @@ class ProvinceController extends Controller
      */
     public function show(Province $province)
     {
+        $masakan = Masakan::with('province')->where('province_id', $province->id)->get();
+        $musik = Musik::with('province')->where('province_id', $province->id)->get();
+        $pakaian = Pakaian::with('province')->where('province_id', $province->id)->get();
+        $rumah = Rumah::with('province')->where('province_id', $province->id)->get();
+        $tarian = Tari::with('province')->where('province_id', $province->id)->get();
         return view('admin.province.show', [
-            'province' => $province
+            'province' => $province,
+            'masakan' => $masakan,
+            'musik' => $musik,
+            'pakaian' => $pakaian,
+            'rumah' => $rumah,
+            'tarian' => $tarian
         ]);
     }
 

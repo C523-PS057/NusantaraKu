@@ -29,7 +29,7 @@
 <div class="container">
     <h2>Masakan</h2>
     <div class="card-dis">
-        @foreach ($province->masakan as $item)
+        @foreach ($masakan as $item)
             <div class="card">
                 <img class="card-img-top" src="{{ Storage::url($item->gambar) }}" alt="Card image cap">
                 <div class="card-body">
@@ -50,7 +50,7 @@
 <div class="container">
     <h2>Musik</h2>
     <div class="card-dis">
-        @foreach ($province->musik as $item)
+        @foreach ($musik as $item)
             <div class="card">
                 <img class="card-img-top" src="{{ Storage::url($item->gambar) }}" alt="Card image cap">
                 <div class="card-body">
@@ -71,7 +71,7 @@
 <div class="container">
     <h2>Pakaian</h2>
     <div class="card-dis">
-        @foreach ($province->pakaian as $item)
+        @foreach ($pakaian as $item)
             <div class="card">
                 <img class="card-img-top" src="{{ Storage::url($item->gambar) }}" alt="Card image cap">
                 <div class="card-body">
@@ -92,7 +92,7 @@
 <div class="container">
     <h2>Rumah Adat</h2>
     <div class="card-dis">
-        @foreach ($province->rumah as $item)
+        @foreach ($rumah as $item)
             <div class="card">
                 <img class="card-img-top" src="{{ Storage::url($item->gambar) }}" alt="Card image cap">
                 <div class="card-body">
@@ -108,7 +108,7 @@
 <div class="container">
     <h2>Tarian</h2>
     <div class="card-dis">
-        @foreach ($province->tari as $item)
+        @foreach ($tarian as $item)
             <div class="card">
                 <img class="card-img-top" src="{{ Storage::url($item->gambar) }}" alt="Card image cap">
                 <div class="card-body">

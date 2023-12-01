@@ -22,7 +22,7 @@
     @if ($category->id == 1)
     <h2>{{ $category->category_name }}</h2>
     <div class="card-dis">
-        @foreach ($category->masakan as $item)
+        @foreach ($masakan as $item)
             <div class="card">
                 <img class="card-img-top" src="{{ Storage::url($item->gambar) }}" alt="Card image cap">
                 <div class="card-body">
@@ -43,7 +43,7 @@
     @elseif ($category->id == 2)
     <h2>{{ $category->category_name }}</h2>
     <div class="card-dis">
-        @foreach ($category->musik as $item)
+        @foreach ($musik as $item)
             <div class="card">
                 <img class="card-img-top" src="{{ Storage::url($item->gambar) }}" alt="Card image cap">
                 <div class="card-body">
@@ -64,7 +64,7 @@
     @elseif ($category->id == 3)
     <h2>{{ $category->category_name }}</h2>
     <div class="card-dis">
-        @foreach ($category->pakaian as $item)
+        @foreach ($pakaian as $item)
             <div class="card">
                 <img class="card-img-top" src="{{ Storage::url($item->gambar) }}" alt="Card image cap">
                 <div class="card-body">
@@ -85,7 +85,7 @@
     @elseif ($category->id == 4)
     <h2>{{ $category->category_name }}</h2>
     <div class="card-dis">
-        @foreach ($category->rumah as $item)
+        @foreach ($rumah as $item)
             <div class="card">
                 <img class="card-img-top" src="{{ Storage::url($item->gambar) }}" alt="Card image cap">
                 <div class="card-body">
@@ -106,7 +106,7 @@
     @elseif ($category->id == 5)
     <h2>{{ $category->category_name }}</h2>
     <div class="card-dis">
-        @foreach ($category->tari as $item)
+        @foreach ($tari as $item)
             <div class="card">
                 <img class="card-img-top" src="{{ Storage::url($item->gambar) }}" alt="Card image cap">
                 <div class="card-body">

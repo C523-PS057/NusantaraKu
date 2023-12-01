@@ -6,6 +6,10 @@ use App\Models\Budaya;
 use App\Http\Requests\StoreBudayaRequest;
 use App\Http\Requests\UpdateBudayaRequest;
 use App\Models\Masakan;
+use App\Models\Musik;
+use App\Models\Pakaian;
+use App\Models\Rumah;
+use App\Models\Tari;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
@@ -58,8 +62,18 @@ class BudayaController extends Controller
     public function show($id)
     {
         $category = Budaya::findOrFail($id);
+        $masakan = Masakan::with(['budaya', 'province'])->where('budaya_id', $category->id)->get();
+        $musik = Musik::with(['budaya', 'province'])->where('budaya_id', $category->id)->get();
+        $pakaian = Pakaian::with(['budaya', 'province'])->where('budaya_id', $category->id)->get();
+        $rumah = Rumah::with(['budaya', 'province'])->where('budaya_id', $category->id)->get();
+        $tari = Tari::with(['budaya', 'province'])->where('budaya_id', $category->id)->get();
         return view('admin.category.show', [
-            'category' => $category
+            'category' => $category,
+            'masakan' => $masakan,
+            'musik' => $musik,
+            'pakaian' => $pakaian,
+            'rumah' => $rumah,
+            'tari' => $tari
         ]);
     }
 
