@@ -27,12 +27,7 @@ Route::get('/', function () {
 });
 Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
     Route::get('/dashboard', function () {
-        $tarian = Tari::firstWhere('id', 1);
-        $data['prov'] = $tarian->province;
-        $data['budaya'] = $tarian->budaya;
-        $data['komentar'] = $tarian->comment;
-        $data['tarian'] = $tarian;
-        return view("admin.dashboard", $data);
+        return view("admin.dashboard");
     });
     Route::resource('province', ProvinceController::class);
     Route::resource('budaya', BudayaController::class);

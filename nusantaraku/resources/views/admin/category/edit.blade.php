@@ -10,11 +10,8 @@
         @csrf
         @method('PUT')
         <div class="mb-3">
-          <label for="category_name" class="form-label">Budaya Name</label>
-          <input type="text" class="form-control" id="category_name" name="category_name" autofocus value="{{ old('category_name',$category->category_name) }}">
-          @error('category_name')
-                <p class="text-danger">{{ $message }}</p>
-          @enderror
+          <label for="" class="form-label">Budaya Name</label>
+          <input readonly type="text" class="form-control bg-secondary" id="" name="" autofocus value="{{ $category->category_name }}">
         </div>
         <div class="mb-3">
             <label for="gambar" class="form-label">Image</label>

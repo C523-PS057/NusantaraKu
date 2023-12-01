@@ -20,9 +20,9 @@ class RumahController extends Controller
     {
         if ($request->filled('search')) {
             $search = $request->input('search');
-            $data = Rumah::search($search)->latest()->paginate(10);
+            $data = Rumah::with('province')->search($search)->latest()->paginate(10);
         } else {
-            $data = Rumah::latest()->paginate(10);
+            $data = Rumah::with('province')->latest()->paginate(10);
         }
         return view('admin.rumah.index', [
             'data' => $data
@@ -34,9 +34,9 @@ class RumahController extends Controller
      */
     public function create()
     {
-        $category = Budaya::where('category_name', 'LIKE', 'rumah adat')->first();
+        $category = Budaya::where('id', 4)->first();
         if (!$category) {
-            flash()->addError('Buat Budaya Dengan Nama "Rumah Adat" Terlebih Dahulu');
+            flash()->addError('Kategori Tidak Ditemukan');
             return back();
         }
         $categories = $category->id;
@@ -89,7 +89,11 @@ class RumahController extends Controller
      */
     public function edit(Rumah $rumah)
     {
-        $category = Budaya::where('category_name', 'LIKE', 'rumah adat')->first();
+        $category = Budaya::where('id', 4)->first();
+        if (!$category) {
+            flash()->addError('Kategori Tidak Ditemukan');
+            return back();
+        }
         $categories = $category->id;
         $province = Province::all();
         return view('admin.rumah.edit', [

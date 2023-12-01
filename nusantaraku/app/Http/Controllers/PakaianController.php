@@ -19,9 +19,9 @@ class PakaianController extends Controller
     {
         if ($request->filled('search')) {
             $search = $request->input('search');
-            $data = Pakaian::search($search)->latest()->paginate(10);
+            $data = Pakaian::with('province')->search($search)->latest()->paginate(10);
         } else {
-            $data = Pakaian::latest()->paginate(10);
+            $data = Pakaian::with('province')->latest()->paginate(10);
         }
         return view('admin.pakaian.index', [
             'data' => $data
@@ -33,9 +33,9 @@ class PakaianController extends Controller
      */
     public function create()
     {
-        $category = Budaya::where('category_name', 'LIKE', 'pakaian')->first();
+        $category = Budaya::where('id', 3)->first();
         if (!$category) {
-            flash()->addError('Buat Budaya Dengan Nama "Pakaian" Terlebih Dahulu');
+            flash()->addError('Kategori Tidak Ditemukan');
             return back();
         }
         $categories = $category->id;
@@ -88,7 +88,11 @@ class PakaianController extends Controller
      */
     public function edit(Pakaian $pakaian)
     {
-        $category = Budaya::where('category_name', 'LIKE', 'pakaian')->first();
+        $category = Budaya::where('id', 3)->first();
+        if (!$category) {
+            flash()->addError('Kategori Tidak Ditemukan');
+            return back();
+        }
         $categories = $category->id;
         $province = Province::all();
         return view('admin.pakaian.edit', [

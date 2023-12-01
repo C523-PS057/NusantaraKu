@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Budaya extends Model
 {
     use HasFactory;
-    protected $guarded = ['id'];
+    protected $guarded = [''];
     public function masakan()
     {
         return $this->hasMany(Masakan::class, 'budaya_id');

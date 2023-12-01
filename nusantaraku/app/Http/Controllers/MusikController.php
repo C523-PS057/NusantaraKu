@@ -19,9 +19,9 @@ class MusikController extends Controller
     {
         if ($request->filled('search')) {
             $search = $request->input('search');
-            $data = Musik::search($search)->latest()->paginate(10);
+            $data = Musik::with('province')->search($search)->latest()->paginate(10);
         } else {
-            $data = Musik::latest()->paginate(10);
+            $data = Musik::with('province')->latest()->paginate(10);
         }
         return view('admin.musik.index', [
             'data' => $data
@@ -33,9 +33,9 @@ class MusikController extends Controller
      */
     public function create()
     {
-        $category = Budaya::where('category_name', 'LIKE', 'musik')->first();
+        $category = Budaya::where('id', 2)->first();
         if (!$category) {
-            flash()->addError('Buat Budaya Dengan Nama "Musik" Terlebih Dahulu');
+            flash()->addError('Kategori Tidak Ditemukan');
             return back();
         }
         $categories = $category->id;
@@ -88,7 +88,11 @@ class MusikController extends Controller
      */
     public function edit(Musik $musik)
     {
-        $category = Budaya::where('category_name', 'LIKE', 'musik')->first();
+        $category = Budaya::where('id', 2)->first();
+        if (!$category) {
+            flash()->addError('Kategori Tidak Ditemukan');
+            return back();
+        }
         $categories = $category->id;
         $province = Province::all();
         return view('admin.musik.edit', [

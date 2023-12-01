@@ -14,7 +14,7 @@
     </button>
   </div>
   </form>
-    <a href="{{ route('budaya.create') }}" class="btn btn-primary mb-3">Create new Budaya</a>
+    {{-- <a href="{{ route('budaya.create') }}" class="btn btn-primary mb-3">Create new Budaya</a> --}}
     <div class="card-dis">
     @foreach ($category as $item)
         <div class="card">
@@ -23,11 +23,11 @@
               <h5 class="card-title">{{ $item->category_name }}</h5>
               <a href="{{ route('budaya.show',$item->id) }}" class="btn btn-primary">Detail</a>
               <a href="{{ route('budaya.edit',$item->id) }}" class="btn btn-warning my-2">Edit</a>
-              <form action="{{ route('budaya.destroy',$item->id) }}" method="POST">
+              {{-- <form action="{{ route('budaya.destroy',$item->id) }}" method="POST">
                 @csrf
                 @method('DELETE')
                 <button type="submit" class="btn btn-danger" style="width: 100%" onclick="return confirm('Yakin Di Hapus?')">Delete</button>
-            </form>
+            </form> --}}
             </div>
           </div>
           @endforeach

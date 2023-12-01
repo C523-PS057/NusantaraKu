@@ -19,9 +19,9 @@ class TariController extends Controller
     {
         if ($request->filled('search')) {
             $search = $request->input('search');
-            $data = Tari::search($search)->latest()->paginate(10);
+            $data = Tari::with('province')->search($search)->latest()->paginate(10);
         } else {
-            $data = Tari::latest()->paginate(10);
+            $data = Tari::with('province')->latest()->paginate(10);
         }
         return view('admin.tari.index', [
             'data' => $data
@@ -33,9 +33,9 @@ class TariController extends Controller
      */
     public function create()
     {
-        $category = Budaya::where('category_name', 'LIKE', 'tarian')->first();
+        $category = Budaya::where('id', 5)->first();
         if (!$category) {
-            flash()->addError('Buat Budaya Dengan Nama "Tarian" Terlebih Dahulu');
+            flash()->addError('Kategori Tidak Ditemukan');
             return back();
         }
         $categories = $category->id;
@@ -88,7 +88,11 @@ class TariController extends Controller
      */
     public function edit(Tari $tari)
     {
-        $category = Budaya::where('category_name', 'LIKE', 'tarian')->first();
+        $category = Budaya::where('id', 5)->first();
+        if (!$category) {
+            flash()->addError('Kategori Tidak Ditemukan');
+            return back();
+        }
         $categories = $category->id;
         $province = Province::all();
         return view('admin.tari.edit', [
