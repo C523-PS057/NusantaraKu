@@ -7,7 +7,8 @@
 a,
 button,
 textarea,
-input {
+input[type='text'],
+input[type='email'] {
     min-height: 44px !important;
     min-width: 44px !important;
 }
@@ -15,6 +16,7 @@ input {
 a {
     display: inline-flex;
     align-items: center;
+    text-decoration: none;
 }
 
 body {
