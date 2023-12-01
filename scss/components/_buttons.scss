@@ -10,6 +10,7 @@
     font-weight: 600;
     font-size: 14px;
     transition: all 0.3s ease;
+    outline: none;
 
     &--small {
         display: inline-flex;
@@ -47,4 +48,24 @@
             color: $red;
         }
     }
+
+    &-icon {
+        background-color: transparent;
+        color: #000;
+        border: none;
+        outline: none;
+        transition: all 0.3s ease;
+
+        &:hover {
+            color: red;
+        }
+
+        i {
+            font-size: 1.25rem;
+        }
+    }
+}
+
+input[type='checkbox'] {
+    accent-color: $red;
 }
