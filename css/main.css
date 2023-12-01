@@ -947,6 +947,9 @@ h6 {
     grid-template-columns: repeat(3, 1fr);
     justify-content: center;
   }
+  .offer p {
+    margin-top: 1rem;
+  }
 }
 @media screen and (max-width: 576px) {
   .category__content {
