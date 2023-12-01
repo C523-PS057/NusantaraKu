@@ -22,4 +22,9 @@ class Tari extends Model
     {
         return $this->hasMany(Comment::class, 'category_id');
     }
+
+    public function scopeSearch($query, $search)
+    {
+        return $query->where('tarian_name', 'like', '%' . $search . '%');
+    }
 }

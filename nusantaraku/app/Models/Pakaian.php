@@ -21,4 +21,8 @@ class Pakaian extends Model
     {
         return $this->hasMany(Comment::class, 'category_id');
     }
+    public function scopeSearch($query, $search)
+    {
+        return $query->where('pakaian_name', 'like', '%' . $search . '%');
+    }
 }

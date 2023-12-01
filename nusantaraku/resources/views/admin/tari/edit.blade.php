@@ -2,17 +2,17 @@
 
 @section('container')
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-    <h1 class="h2">Create New Masakan Khas</h1>
+    <h1 class="h2">Create New Tarian</h1>
   </div>
   <div class="col-lg-8">
 
-      <form method="POST" action="{{ route('masakan.update',$data->id) }}" class="mb-5" enctype="multipart/form-data">
+      <form method="POST" action="{{ route('tari.update',$data->id) }}" class="mb-5" enctype="multipart/form-data">
         @csrf
         @method('PUT')
         <div class="mb-3">
-          <label for="masakan_name" class="form-label">Masakan Name</label>
-          <input type="text" class="form-control" id="masakan_name" name="masakan_name" autofocus value="{{ old('masakan_name',$data->masakan_name) }}">
-          @error('masakan_name')
+          <label for="tarian_name" class="form-label">Tarian Name</label>
+          <input type="text" class="form-control" id="tarian_name" name="tarian_name" autofocus value="{{ old('tarian_name',$data->tarian_name) }}">
+          @error('tarian_name')
                 <p class="text-danger">{{ $message }}</p>
           @enderror
         </div>
@@ -53,7 +53,7 @@
             <p class="text-danger">{{ $message }}</p>
           @enderror
         </div>
-        <button type="submit" class="btn btn-warning">Update Masakan</button>
+        <button type="submit" class="btn btn-warning">Update Tarian</button>
       </form>
   </div>
   <script>

@@ -2,8 +2,12 @@
 
 use App\Http\Controllers\BudayaController;
 use App\Http\Controllers\MasakanController;
+use App\Http\Controllers\MusikController;
+use App\Http\Controllers\PakaianController;
 use App\Http\Controllers\ProvinceController;
+use App\Http\Controllers\RumahController;
 use App\Http\Controllers\SubBudayaController;
+use App\Http\Controllers\TariController;
 use App\Models\Tari;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -33,6 +37,10 @@ Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
     Route::resource('province', ProvinceController::class);
     Route::resource('budaya', BudayaController::class);
     Route::resource('masakan', MasakanController::class);
+    Route::resource('musik', MusikController::class);
+    Route::resource('pakaian', PakaianController::class);
+    Route::resource('rumah', RumahController::class);
+    Route::resource('tari', TariController::class);
 });
 
 Auth::routes();

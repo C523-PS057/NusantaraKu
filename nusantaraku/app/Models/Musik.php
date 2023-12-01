@@ -21,4 +21,8 @@ class Musik extends Model
     {
         return $this->hasMany(Comment::class, 'category_id');
     }
+    public function scopeSearch($query, $search)
+    {
+        return $query->where('alat_musik_name', 'like', '%' . $search . '%');
+    }
 }

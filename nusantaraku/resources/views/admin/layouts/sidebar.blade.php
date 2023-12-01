@@ -44,12 +44,13 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link {{ Request::is('admin/tarian*') ? 'active' :'' }}" href="/admin/tarian">
+          <a class="nav-link {{ Request::is('admin/tari*') ? 'active' :'' }}" href="/admin/tari">
             <span data-feather="file"></span>
             Tarian
           </a>
         </li>
         <li>
+            <hr>
           <form action="/logout" method="POST">
               @csrf
               <button type="submit" class="nav-link px-3 border-0" style="background-color: #f8f9fa ">

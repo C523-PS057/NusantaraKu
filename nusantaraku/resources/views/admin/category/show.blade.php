@@ -31,9 +31,9 @@
                 <img class="card-img-top" src="{{ Storage::url($item->gambar) }}" alt="Card image cap">
                 <div class="card-body">
                   <h5 class="card-title">{{ $item->category_name }}</h5>
-                  <a href="{{ route('budaya.show',$item->id) }}" class="btn btn-primary">Detail</a>
-                  <a href="{{ route('budaya.edit',$item->id) }}" class="btn btn-warning my-2">Edit</a>
-                  <form action="{{ route('budaya.destroy',$item->id) }}" method="POST">
+                  <a href="{{ route('masakan.show',$item->id) }}" class="btn btn-primary">Detail</a>
+                  <a href="{{ route('masakan.edit',$item->id) }}" class="btn btn-warning my-2">Edit</a>
+                  <form action="{{ route('masakan.destroy',$item->id) }}" method="POST">
                     @csrf
                     @method('DELETE')
                     <button type="submit" class="btn btn-danger" style="width: 100%" onclick="return confirm('Yakin Di Hapus?')">Delete</button>

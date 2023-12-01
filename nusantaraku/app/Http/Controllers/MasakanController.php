@@ -79,7 +79,10 @@ class MasakanController extends Controller
      */
     public function show(Masakan $masakan)
     {
-        //
+        $data = $masakan;
+        return view('admin.masakan.show', [
+            'data' => $data
+        ]);
     }
 
     /**

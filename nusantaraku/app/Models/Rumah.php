@@ -21,4 +21,8 @@ class Rumah extends Model
     {
         return $this->hasMany(Comment::class, 'category_id');
     }
+    public function scopeSearch($query, $search)
+    {
+        return $query->where('rumah_adat_name', 'like', '%' . $search . '%');
+    }
 }
