@@ -12,4 +12,10 @@
             top: 520% !important;
         }
     }
+
+    .login {
+        &__content {
+            padding: 4rem 7rem;
+        }
+    }
 }

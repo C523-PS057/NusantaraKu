@@ -163,6 +163,21 @@
             width: 100%;
         }
     }
+
+    .login {
+        &__container {
+            grid-template-columns: repeat(1, 1fr);
+        }
+
+        &__content {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        &__banner {
+            display: none;
+        }
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -225,6 +240,17 @@
     .offer {
         p {
             margin-top: 1rem;
+        }
+    }
+
+    .login {
+        &__content {
+            padding: 3rem 6rem;
+        }
+
+        &__content {
+            width: 100%;
+            margin: 0 auto;
         }
     }
 }
