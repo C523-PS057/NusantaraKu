@@ -1,19 +1,19 @@
 .hero {
     height: 100vh;
 
-    &-left {
+    &__left {
         display: flex;
         flex-direction: column;
         gap: 1.5rem;
     }
 
-    &-title {
+    &__title {
         display: flex;
         flex-direction: column;
         gap: 0.5rem;
     }
 
-    &-right {
+    &__right {
         display: flex;
         justify-content: end;
 
