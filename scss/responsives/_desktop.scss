@@ -4,4 +4,12 @@
             gap: 1rem !important;
         }
     }
+
+    .dropdown-provinsi {
+        top: 500% !important;
+
+        &.active {
+            top: 520% !important;
+        }
+    }
 }
