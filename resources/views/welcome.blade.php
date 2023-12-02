@@ -82,12 +82,19 @@
                         </li>
                     </ul>
                     <ul class="navbar-nav mb-2 mb-lg-0 navbar-right">
+                        @auth
+                        <form action="/logout" method="POST">
+                            @csrf
+                            <button type="submit" class="nav-link btn--small btn-outline"><i class="ri-logout-box-line"></i>Logout</button>
+                        </form>
+                        @else
                         <li class="nav-item">
                             <a class="nav-link btn--small btn-outline" href="/register">Daftar</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link btn--small btn-primary" href="/login">Masuk</a>
                         </li>
+                        @endauth
                     </ul>
                 </div>
             </div>

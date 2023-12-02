@@ -82,12 +82,19 @@
                         </li>
                     </ul>
                     <ul class="navbar-nav mb-2 mb-lg-0 navbar-right">
+                        @auth
+                        <form action="/logout" method="POST">
+                            @csrf
+                            <button type="submit" class="nav-link btn--small btn-outline"><i class="ri-logout-box-line"></i>Logout</button>
+                        </form>
+                        @else
                         <li class="nav-item">
                             <a class="nav-link btn--small btn-outline" href="/register">Daftar</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link btn--small btn-primary" href="/login">Masuk</a>
                         </li>
+                        @endauth
                     </ul>
                 </div>
             </div>
@@ -128,12 +135,12 @@
 
                                 <div class="detail__section">
                                     <h4>Tari Tradisional {{ ucfirst($provinsi->province_name) }}</h4>
-                                @foreach ($tarian as $item)
                                     <div class="row">
+                                        @foreach ($tarian as $item)
                                         <div class="col-6 col-md-4">
                                             <a href="/detail-tari/{{ $item->id }}" class="detail__item">
                                                 <div class="detail__item-image">
-                                                    <img src="../img/rumah-adat/aceh.webp" alt="Rumah Adat Aceh" />
+                                                    <img src="{{ Storage::url($item->gambar) }}" alt="Rumah Adat Aceh" />
                                                     <span class="detail__item-province">
                                                         <i class="ri-map-pin-line"></i>
                                                         {{ ucfirst($provinsi->province_name) }}
@@ -145,18 +152,18 @@
                                                 </div>
                                             </a>
                                         </div>
+                                        @endforeach
                                     </div>
-                                    @endforeach
                                 </div>
 
                                 <div class="detail__section">
                                     <h4>Rumah Adat {{ ucfirst($provinsi->province_name) }}</h4>
-                                    @foreach ($rumah as $item)
                                     <div class="row">
+                                        @foreach ($rumah as $item)
                                         <div class="col-6 col-md-4">
                                             <a href="/detail-rumah/{{ $item->id }}" class="detail__item">
                                                 <div class="detail__item-image">
-                                                    <img src="../img/rumah-adat/aceh.webp" alt="Rumah Adat Aceh" />
+                                                    <img src="{{ Storage::url($item->gambar) }}" alt="Rumah Adat Aceh" />
                                                     <span class="detail__item-province">
                                                         <i class="ri-map-pin-line"></i>
                                                         {{ ucfirst($provinsi->province_name) }}
@@ -168,18 +175,18 @@
                                                 </div>
                                             </a>
                                         </div>
+                                        @endforeach
                                     </div>
-                                    @endforeach
                                 </div>
 
                                 <div class="detail__section">
                                     <h4>Pakaian Adat {{ ucfirst($provinsi->province_name) }}</h4>
-                                    @foreach ($pakaian as $item)
                                     <div class="row">
+                                        @foreach ($pakaian as $item)
                                         <div class="col-6 col-md-4">
                                             <a href="/detail-pakaian/{{ $item->id }}" class="detail__item">
                                                 <div class="detail__item-image">
-                                                    <img src="../img/rumah-adat/aceh.webp" alt="Rumah Adat Aceh" />
+                                                    <img src="{{ Storage::url($item->gambar) }}" alt="Rumah Adat Aceh" />
                                                     <span class="detail__item-province">
                                                         <i class="ri-map-pin-line"></i>
                                                         {{ ucfirst($provinsi->province_name) }}
@@ -191,18 +198,18 @@
                                                 </div>
                                             </a>
                                         </div>
+                                        @endforeach
                                     </div>
-                                    @endforeach
                                 </div>
 
                                 <div class="detail__section">
                                     <h4>Alat Musik Tradisional {{ ucfirst($provinsi->province_name) }}</h4>
-                                    @foreach ($musik as $item)
                                     <div class="row">
+                                        @foreach ($musik as $item)
                                         <div class="col-6 col-md-4">
                                             <a href="/detail-musik/{{ $item->id }}" class="detail__item">
                                                 <div class="detail__item-image">
-                                                    <img src="../img/rumah-adat/aceh.webp" alt="Rumah Adat Aceh" />
+                                                    <img src="{{ Storage::url($item->gambar) }}" alt="Rumah Adat Aceh" />
                                                     <span class="detail__item-province">
                                                         <i class="ri-map-pin-line"></i>
                                                         {{ ucfirst($provinsi->province_name) }}
@@ -214,18 +221,18 @@
                                                 </div>
                                             </a>
                                         </div>
+                                        @endforeach
                                     </div>
-                                    @endforeach
                                 </div>
 
                                 <div class="detail__section">
                                     <h4>Masakan Khas {{ ucfirst($provinsi->province_name) }}</h4>
-                                    @foreach ($masakan as $item)
                                     <div class="row">
+                                        @foreach ($masakan as $item)
                                         <div class="col-6 col-md-4">
                                             <a href="/detail-masakan/{{ $item->id }}" class="detail__item">
                                                 <div class="detail__item-image">
-                                                    <img src="../img/rumah-adat/aceh.webp" alt="Rumah Adat Aceh" />
+                                                    <img src="{{ Storage::url($item->gambar) }}" alt="Rumah Adat Aceh" />
                                                     <span class="detail__item-province">
                                                         <i class="ri-map-pin-line"></i>
                                                         {{ ucfirst($provinsi->province_name) }}
@@ -237,8 +244,8 @@
                                                 </div>
                                             </a>
                                         </div>
+                                        @endforeach
                                     </div>
-                                    @endforeach
                                 </div>
                             </div>
                         </div>

@@ -82,12 +82,19 @@
                         </li>
                     </ul>
                     <ul class="navbar-nav mb-2 mb-lg-0 navbar-right">
+                        @auth
+                        <form action="/logout" method="POST">
+                            @csrf
+                            <button type="submit" class="nav-link btn--small btn-outline"><i class="ri-logout-box-line"></i>Logout</button>
+                        </form>
+                        @else
                         <li class="nav-item">
-                            <a class="nav-link btn--small btn-outline" href="register.html">Daftar</a>
+                            <a class="nav-link btn--small btn-outline" href="/register">Daftar</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link btn--small btn-primary" href="login.html">Masuk</a>
+                            <a class="nav-link btn--small btn-primary" href="/login">Masuk</a>
                         </li>
+                        @endauth
                     </ul>
                 </div>
             </div>
@@ -136,6 +143,7 @@
                                     </div>
                                 </div>
 
+                                @auth
                                 <!-- Jika Sudah Login Tampilkan ini -->
                                 <form method="POST" class="comment__form" action="/comment">
                                     @csrf
@@ -145,12 +153,13 @@
                                     <textarea name="body_comment" id="comment" style="resize: none" placeholder="Ketik komentar disini..."></textarea>
                                     <button type="submit" class="btn btn-primary">Kirim Komentar</button>
                                 </form>
-
                                 <!-- Jika belum login, tampilkan ini -->
+                                @else
                                 <div class="comment__message">
                                     <i class="ri-information-line"></i>
                                     <p>Masuk akun terlebih dahulu untuk dapat berkomentar</p>
                                 </div>
+                                @endauth
                             </div>
                         </div>
                     </div>
