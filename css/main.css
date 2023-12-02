@@ -956,10 +956,23 @@ input[type=checkbox] {
   background-repeat: no-repeat;
 }
 
-.province-profile {
+.detail {
   margin-top: -27.5rem;
 }
-.province-profile__header {
+.detail .carousel {
+  border-radius: 1rem;
+  overflow: hidden;
+}
+.detail .carousel-item {
+  aspect-ratio: 16/9;
+}
+.detail .carousel-item img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.detail__header {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -967,31 +980,31 @@ input[type=checkbox] {
   color: #f1f1f1 !important;
   text-align: center;
 }
-.province-profile__header h1 {
+.detail__header h1 {
   text-align: center;
 }
-.province-profile__header .headline {
+.detail__header .headline {
   color: #f1f1f1;
 }
-.province-profile__content {
+.detail__content {
   display: flex;
   flex-direction: column;
   gap: 4rem;
 }
-.province-profile__content iframe {
+.detail__content iframe {
   height: auto;
   border-radius: 1rem;
   aspect-ratio: 16/9;
 }
-.province-profile__section h4 {
+.detail__section h4 {
   margin-bottom: 1rem;
 }
-.province-profile__list {
+.detail__list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
 }
-.province-profile__item {
+.detail__item {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -1004,16 +1017,16 @@ input[type=checkbox] {
   transition: all 0.3s ease;
   margin-bottom: 1rem;
 }
-.province-profile__item:hover {
+.detail__item:hover {
   color: #e23535;
 }
-.province-profile__item:hover img {
+.detail__item:hover img {
   scale: 1.2;
 }
-.province-profile__item-content {
+.detail__item-content {
   padding: 1rem;
 }
-.province-profile__item-province {
+.detail__item-province {
   position: absolute;
   top: 1rem;
   left: 1rem;
@@ -1024,18 +1037,69 @@ input[type=checkbox] {
   font-size: 12px;
   font-weight: 600;
 }
-.province-profile__item-image {
+.detail__item-image {
   width: 100%;
   height: auto;
   overflow: hidden;
   aspect-ratio: 4/3;
   transition: 0.3s;
 }
-.province-profile__item img {
+.detail__item img {
   width: 100%;
   height: auto;
   aspect-ratio: 4/3;
   transition: all 0.3s ease;
+}
+.detail__comment-item {
+  padding: 1rem 1.5rem;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  border-radius: 0.5rem;
+}
+.detail__comment-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.detail__comment-name {
+  font-weight: 700;
+}
+.detail__comment-date {
+  color: rgba(28, 28, 28, 0.75);
+}
+.detail__comment-text {
+  margin-top: 0.5rem;
+}
+
+.comment__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  background-color: #ffffff;
+  border-radius: 1rem;
+  text-align: center;
+}
+.comment__form textarea {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid #b1b1b1;
+}
+.comment__form .btn {
+  justify-content: center;
+}
+.comment__message {
+  background-color: #c5f8d5;
+  color: #0d6628;
+  border-radius: 0.5rem;
+  padding: 1rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-weight: 600;
 }
 
 @media screen and (max-width: 992px) {
@@ -1178,7 +1242,7 @@ input[type=checkbox] {
   .login__banner {
     display: none;
   }
-  .province-profile__column {
+  .detail__column {
     width: 100% !important;
   }
 }
