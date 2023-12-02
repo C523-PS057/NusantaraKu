@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Province extends Model
 {
     use HasFactory;
-    protected $guarded = ['id'];
+    protected $guarded = [''];
     // protected $with = ['masakan', 'musik', 'pakaian', 'rumah', 'tari'];
     public function masakan()
     {
