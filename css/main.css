@@ -219,6 +219,9 @@ input[type=checkbox] {
 .navbar {
   padding: 1rem 0;
   transition: all 0.3s ease;
+  background-color: rgba(241, 241, 241, 0.5);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
 }
 .navbar-right {
   display: flex;
@@ -239,11 +242,6 @@ input[type=checkbox] {
 .navbar-nav .nav-item {
   font-size: 14px;
   font-weight: 600;
-}
-.navbar.scrolled {
-  background-color: rgba(241, 241, 241, 0.5);
-  -webkit-backdrop-filter: blur(10px);
-          backdrop-filter: blur(10px);
 }
 
 .nav-link {
@@ -951,6 +949,95 @@ input[type=checkbox] {
   line-height: 1.3;
 }
 
+.banner {
+  height: 480px;
+  background-image: url("../../img/bg-pattern.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.province-profile {
+  margin-top: -27.5rem;
+}
+.province-profile__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 4rem;
+  color: #f1f1f1 !important;
+  text-align: center;
+}
+.province-profile__header h1 {
+  text-align: center;
+}
+.province-profile__header .headline {
+  color: #f1f1f1;
+}
+.province-profile__content {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+.province-profile__content iframe {
+  height: auto;
+  border-radius: 1rem;
+  aspect-ratio: 16/9;
+}
+.province-profile__section h4 {
+  margin-bottom: 1rem;
+}
+.province-profile__list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+.province-profile__item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: #ffffff;
+  border-radius: 1rem;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  color: #1c1c1c;
+  transition: all 0.3s ease;
+  margin-bottom: 1rem;
+}
+.province-profile__item:hover {
+  color: #e23535;
+}
+.province-profile__item:hover img {
+  scale: 1.2;
+}
+.province-profile__item-content {
+  padding: 1rem;
+}
+.province-profile__item-province {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background-color: #e23535;
+  color: #f1f1f1;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 12px;
+  font-weight: 600;
+}
+.province-profile__item-image {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  transition: 0.3s;
+}
+.province-profile__item img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4/3;
+  transition: all 0.3s ease;
+}
+
 @media screen and (max-width: 992px) {
   html {
     font-size: 14px;
@@ -1090,6 +1177,9 @@ input[type=checkbox] {
   }
   .login__banner {
     display: none;
+  }
+  .province-profile__column {
+    width: 100% !important;
   }
 }
 @media screen and (max-width: 768px) {

@@ -178,6 +178,12 @@
             display: none;
         }
     }
+
+    .province-profile {
+        &__column {
+            width: 100% !important;
+        }
+    }
 }
 
 @media screen and (max-width: 768px) {
