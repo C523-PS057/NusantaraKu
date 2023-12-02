@@ -259,4 +259,24 @@
             margin: 0 auto;
         }
     }
+
+    .categories {
+        &__filter {
+            flex-direction: column;
+
+            &-search {
+                width: 100%;
+            }
+
+            &-group {
+                width: 100%;
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        &__select {
+            width: 33%;
+        }
+    }
 }
