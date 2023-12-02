@@ -14,19 +14,6 @@ document.addEventListener('DOMContentLoaded', () => {
     dropdownV2List2.innerHTML = HTML.join('');
 });
 
-// Change Navbar Background Color on scroll
-window.onscroll = function () {
-    scrolledNavbar();
-};
-
-function scrolledNavbar() {
-    if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-        document.querySelector('.navbar').classList.add('scrolled');
-    } else {
-        document.querySelector('.navbar').classList.remove('scrolled');
-    }
-}
-
 // Navbar Dropdown Toggle
 const dropdownButtons = document.querySelectorAll('.dropdown-v2__button');
 

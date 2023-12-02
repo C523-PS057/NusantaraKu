@@ -1,6 +1,8 @@
 .navbar {
     padding: 1rem 0;
     transition: all 0.3s ease;
+    background-color: rgba($color: $text-white, $alpha: 0.5);
+    backdrop-filter: blur(10px);
 
     &-right {
         display: flex;
@@ -29,11 +31,6 @@
             font-size: 14px;
             font-weight: 600;
         }
-    }
-
-    &.scrolled {
-        background-color: rgba($color: $text-white, $alpha: 0.5);
-        backdrop-filter: blur(10px);
     }
 }
 
