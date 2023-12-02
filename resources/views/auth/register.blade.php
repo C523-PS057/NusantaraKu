@@ -35,20 +35,32 @@
                                 <label class="input__label" for="name">Nama Lengkap</label>
                                 <input type="name" name="name" id="name" required />
                             </div>
+                            @error('name')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
                             <div class="input__group">
                                 <label class="input__label" for="email">Alamat Email</label>
                                 <input type="email" name="email" id="email" required />
                             </div>
+                            @error('email')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
                             <div class="input__group">
                                 <label class="input__label" for="password">Password </label>
                                 <input type="password" name="password" id="password" required autocomplete="true" />
                                 <button class="btn-icon btn-toggle-password"><i class="ri-eye-line"></i></button>
                             </div>
+                            @error('password')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
                             <div class="input__group">
                                 <label class="input__label" for="confirm-password">Konfirmasi Password</label>
                                 <input type="password" name="password_confirmation" id="confirm-password" required autocomplete="true" />
                                 <button class="btn-icon btn-toggle-password"><i class="ri-eye-line"></i></button>
                             </div>
+                            @error('password_confirmation')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
                             <label for="terms">
                                 <input type="checkbox" name="terms" id="terms" />
                                 <p>Dengan ini saya menyetujui <strong>Syarat dan Ketentuan</strong> yang berlaku di Platform NusantaraKu</p></label

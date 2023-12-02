@@ -83,7 +83,7 @@
                     </ul>
                     <ul class="navbar-nav mb-2 mb-lg-0 navbar-right">
                         <li class="nav-item">
-                            <a class="nav-link btn--small btn-outline" href="register.html">Daftar</a>
+                            <a class="nav-link btn--small btn-outline" href="/register">Daftar</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link btn--small btn-primary" href="/login">Masuk</a>
