@@ -19,7 +19,7 @@
                         <div class="col-md-8 mx-auto detail__column">
                             <div class="detail__header">
                                 <span class="headline">DETAIL BUDAYA</span>
-                                <h1>Masakan Khas {{ ucfirst($data->tarian_name) }}</h1>
+                                <h1>Rumah Adat{{ ucfirst($data->tarian_name) }}</h1>
                             </div>
                             <div class="detail__content">
                                 <div class="detail__image">
@@ -57,11 +57,11 @@
 
                                 @auth
                                 <!-- Jika Sudah Login Tampilkan ini -->
-                                <form method="POST" class="comment__form" action="{{ route('detail-masakan.store') }}">
+                                <form method="POST" class="comment__form" action="{{ route('detail-rumah.store') }}">
                                     @csrf
                                     <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
-                                    <input type="hidden" name="masakan_id"value="{{ $data->id }}">
                                     <input type="hidden" name="budaya_id"value="{{ $data->budaya_id }}">
+                                    <input type="hidden" name="rumah_id"value="{{ $data->id }}">
                                     <h5>Tambahkan Komentar</h5>
                                     <textarea name="body_comment" id="comment" style="resize: none" placeholder="Ketik komentar disini..."></textarea>
                                     <button type="submit" class="btn btn-primary">Kirim Komentar</button>
