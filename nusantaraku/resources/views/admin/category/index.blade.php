@@ -1,6 +1,6 @@
 @extends('admin.layouts.app')
 @section('container')
-@if ($category->count() > 0)
+{{-- @if ($category->count() > 0) --}}
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
     <h1 class="h2">Budaya</h1>
   </div>
@@ -35,12 +35,12 @@
   <div class="d-flex justify-content-center">
     {!! $category->links() !!}
 </div>
-  @else
+  {{-- @else
     <div class="d-flex justify-content-center my-2">
         <div class=""><h2>No Budaya Found</h2></div>
     </div>
     <div class="d-flex justify-content-center my-1">
         <div class=""><a href="{{ route('budaya.create') }}" class="btn btn-primary">Create new Budaya</a></div>
     </div>
-@endif
+@endif --}}
 @endsection

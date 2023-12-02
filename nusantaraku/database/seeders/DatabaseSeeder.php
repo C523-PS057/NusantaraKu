@@ -19,12 +19,12 @@ class DatabaseSeeder extends Seeder
         // \App\Models\User::factory(10)->create();
 
         // \App\Models\Province::factory(20)->create();
-        User::create([
-            'name' => 'Muhammad Zahran',
-            'email' => 'muhammadzahran02@gmail.com',
-            'email_verified_at' => now(),
-            'password' => bcrypt('1'),
-        ]);
+        // User::create([
+        //     'name' => 'Muhammad Zahran',
+        //     'email' => 'muhammadzahran02@gmail.com',
+        //     'email_verified_at' => now(),
+        //     'password' => bcrypt('1'),
+        // ]);
         Budaya::create([
             'category_name' => 'Masakan',
             'gambar' => 'null'
