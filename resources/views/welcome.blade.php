@@ -86,7 +86,7 @@
                             <a class="nav-link btn--small btn-outline" href="register.html">Daftar</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link btn--small btn-primary" href="login.html">Masuk</a>
+                            <a class="nav-link btn--small btn-primary" href="/login">Masuk</a>
                         </li>
                     </ul>
                 </div>
@@ -333,7 +333,7 @@
                         </div>
                         <div class="col-md-6">
                             <p>Ayo daftar sekarang! buat akun terlebih dahulu untuk dapat memberi komentar, kritik dan saran terhadap konten budaya yang kami sajikan.</p>
-                            <a href="register.html" class="btn btn-outline">Daftar Sekarang <i class="ri-arrow-right-up-line"></i></a>
+                            <a href="/register" class="btn btn-outline">Daftar Sekarang <i class="ri-arrow-right-up-line"></i></a>
                         </div>
                     </div>
                 </div>
