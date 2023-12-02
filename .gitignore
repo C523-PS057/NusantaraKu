@@ -3,6 +3,7 @@
 /public/build
 /public/hot
 /public/storage
+/package-lock.json
 /storage/*.key
 /vendor
 .phpunit.result.cache
