@@ -1134,6 +1134,9 @@ input[type=checkbox] {
   align-items: center;
   gap: 1rem;
 }
+.categories__filter-group form {
+  width: 100%;
+}
 .categories__filter select {
   width: 100%;
   display: flex;
@@ -1383,10 +1386,15 @@ input[type=checkbox] {
   .categories__filter-search {
     width: 100%;
   }
-  .categories__filter-group {
+  .categories__filter .group-3 {
     width: 100%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+  }
+  .categories__filter .group-2 {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
   }
   .categories__select {
     width: 33%;
