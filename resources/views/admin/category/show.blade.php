@@ -8,12 +8,10 @@
             <div class="mb-3">
             <a href="{{ route('budaya.index') }}" class="btn btn-success"><i class="bi bi-arrow-left-circle"></i>
                 Back To All Of My Budaya</a>
-            <a href="{{ route('budaya.edit',$category->id) }}" class="btn btn-warning"><i class="bi bi-pencil-fill"></i> Edit</a>
             </div>
             <article class="my-3 fs-5">
                 <label for=""><strong>Image : </strong></label>
                 <br>
-                <img src="{{ Storage::url($category->gambar) }}" alt="Budaya Image" style="width:100%">
             </article>
         </div>
     </div>

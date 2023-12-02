@@ -18,11 +18,9 @@
     <div class="card-dis">
     @foreach ($category as $item)
         <div class="card">
-            <img class="card-img-top" src="{{ Storage::url($item->gambar) }}" alt="Card image cap">
             <div class="card-body">
               <h5 class="card-title">{{ $item->category_name }}</h5>
               <a href="{{ route('budaya.show',$item->id) }}" class="btn btn-primary">Detail</a>
-              <a href="{{ route('budaya.edit',$item->id) }}" class="btn btn-warning my-2">Edit</a>
               {{-- <form action="{{ route('budaya.destroy',$item->id) }}" method="POST">
                 @csrf
                 @method('DELETE')

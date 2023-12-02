@@ -6,9 +6,26 @@
 // Components
 @import './components/buttons';
 @import './components/navbar';
+@import './components/dropdown';
+@import './components/footer';
+@import './components/marquee';
 
 // Layout
 @import './layout/hero';
+@import './layout/intro';
+@import './layout/category';
+@import './layout/province';
+@import './layout/benefit';
+@import './layout/testimonial';
+@import './layout/offer';
 
 // Pages
 @import './pages/homepage';
+@import './pages/login';
+@import './pages/detail';
+
+// Responsives
+@import './responsives/tablet';
+@import './responsives/mobile';
+@import './responsives/laptop';
+@import './responsives/desktop';

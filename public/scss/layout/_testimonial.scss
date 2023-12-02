@@ -1,0 +1,77 @@
+.testimonial {
+  padding: 5rem 0;
+
+  &__col {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  &__header {
+    text-align: center;
+
+    .headline {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+    padding: 2rem;
+    border-radius: 1rem;
+
+    p {
+      color: $text-white;
+    }
+
+    p.testimonial__job {
+      font-size: 0.9rem;
+      color: $text-white-secondary;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  &__item {
+    border: 2px solid transparent;
+    outline: none;
+    background: transparent;
+    transition: all 0.3s ease;
+    border-radius: 50%;
+
+    &.active {
+      border: 2px solid $red;
+
+      img {
+        width: 4rem;
+        height: 4rem;
+        padding: 0.25rem;
+      }
+    }
+
+    img {
+      aspect-ratio: 1/1;
+      width: 2.5rem;
+      transition: all 0.3s ease;
+      height: 2.5rem;
+    }
+  }
+
+  &__content {
+    background-color: $red;
+  }
+
+  &__name {
+    font-weight: 600;
+  }
+}
