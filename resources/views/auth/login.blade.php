@@ -23,13 +23,19 @@
                             @csrf
                             <div class="input__group">
                                 <label class="input__label" for="email">Alamat Email</label>
-                                <input type="email" name="email" id="email" required />
+                                <input type="email" name="email" id="email" value="{{ old('email') }}" required />
                             </div>
+                            @error('email')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
                             <div class="input__group">
                                 <label class="input__label" for="password">Password </label>
-                                <input type="password" name="password" id="password" required autocomplete="true" />
+                                <input type="password" name="password" id="password" value="{{ old('password') }}" required autocomplete="true" />
                                 <button class="btn-icon" id="btn-toggle-password"><i class="ri-eye-line"></i></button>
                             </div>
+                            @error('email')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
                             <div class="input__row">
                                 <label for="remember">
                                     <input type="checkbox" name="remember" id="remember" />
