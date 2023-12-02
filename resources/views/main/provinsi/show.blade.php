@@ -52,7 +52,7 @@
                                         <div class="col-6 col-md-4">
                                             <a href="/detail-tari/{{ $item->id }}" class="detail__item">
                                                 <div class="detail__item-image">
-                                                    <img src="{{ Storage::url($item->gambar) }}" alt="Rumah Adat Aceh" />
+                                                    <img src="{{ Storage::url($item->gambar) }}" alt="Tari Image" />
                                                     <span class="detail__item-province">
                                                         <i class="ri-map-pin-line"></i>
                                                         {{ ucfirst($provinsi->province_name) }}
@@ -75,7 +75,7 @@
                                         <div class="col-6 col-md-4">
                                             <a href="/detail-rumah/{{ $item->id }}" class="detail__item">
                                                 <div class="detail__item-image">
-                                                    <img src="{{ Storage::url($item->gambar) }}" alt="Rumah Adat Aceh" />
+                                                    <img src="{{ Storage::url($item->gambar) }}" alt="Rumah Adat" />
                                                     <span class="detail__item-province">
                                                         <i class="ri-map-pin-line"></i>
                                                         {{ ucfirst($provinsi->province_name) }}
@@ -98,7 +98,7 @@
                                         <div class="col-6 col-md-4">
                                             <a href="/detail-pakaian/{{ $item->id }}" class="detail__item">
                                                 <div class="detail__item-image">
-                                                    <img src="{{ Storage::url($item->gambar) }}" alt="Rumah Adat Aceh" />
+                                                    <img src="{{ Storage::url($item->gambar) }}" alt="Pakaian Image" />
                                                     <span class="detail__item-province">
                                                         <i class="ri-map-pin-line"></i>
                                                         {{ ucfirst($provinsi->province_name) }}
@@ -121,7 +121,7 @@
                                         <div class="col-6 col-md-4">
                                             <a href="/detail-musik/{{ $item->id }}" class="detail__item">
                                                 <div class="detail__item-image">
-                                                    <img src="{{ Storage::url($item->gambar) }}" alt="Rumah Adat Aceh" />
+                                                    <img src="{{ Storage::url($item->gambar) }}" alt="Alat Musik Image" />
                                                     <span class="detail__item-province">
                                                         <i class="ri-map-pin-line"></i>
                                                         {{ ucfirst($provinsi->province_name) }}
@@ -144,7 +144,7 @@
                                         <div class="col-6 col-md-4">
                                             <a href="/detail-masakan/{{ $item->id }}" class="detail__item">
                                                 <div class="detail__item-image">
-                                                    <img src="{{ Storage::url($item->gambar) }}" alt="Rumah Adat Aceh" />
+                                                    <img src="{{ Storage::url($item->gambar) }}" alt="Masakan Image" />
                                                     <span class="detail__item-province">
                                                         <i class="ri-map-pin-line"></i>
                                                         {{ ucfirst($provinsi->province_name) }}

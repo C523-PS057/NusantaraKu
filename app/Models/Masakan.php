@@ -19,7 +19,7 @@ class Masakan extends Model
     }
     public function comment()
     {
-        return $this->hasMany(Comment::class, 'category_id');
+        return $this->hasMany(Comment::class, 'masakan_id');
     }
 
     public function scopeSearch($query, $search)

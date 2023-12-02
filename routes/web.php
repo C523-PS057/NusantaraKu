@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BudayaController;
+use App\Http\Controllers\BudayaMasakanController;
 use App\Http\Controllers\BudayaTariController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\MasakanController;
@@ -42,6 +43,7 @@ Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
 });
 Route::resource('provinsi', ProvinsiController::class);
 Route::resource('detail-tari', BudayaTariController::class);
+Route::resource('detail-masakan', BudayaMasakanController::class);
 Route::post('/comment', [CommentController::class, 'store']);
 Auth::routes();
 

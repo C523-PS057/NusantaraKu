@@ -20,7 +20,7 @@ class Tari extends Model
     }
     public function comment()
     {
-        return $this->hasMany(Comment::class, 'category_id');
+        return $this->hasMany(Comment::class, 'tari_id');
     }
 
     public function scopeSearch($query, $search)
