@@ -11,3 +11,18 @@
         }
     }
 }
+
+@media screen and (max-width: 425px) {
+    .categories {
+        &__filter {
+            &-group {
+                display: flex !important;
+                flex-wrap: wrap !important;
+            }
+
+            select {
+                height: 40px;
+            }
+        }
+    }
+}
