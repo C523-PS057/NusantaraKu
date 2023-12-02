@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Profil Provinsi X - NusantaraKu</title>
+        <title>Detail Budaya X - NusantaraKu</title>
         <link rel="stylesheet" href="../css/bootstrap.min.css" />
         <link rel="stylesheet" href="../css/main.min.css" />
         <link rel="icon" type="image/x-icon" href="../img/favicon.ico" />
@@ -83,10 +83,10 @@
                     </ul>
                     <ul class="navbar-nav mb-2 mb-lg-0 navbar-right">
                         <li class="nav-item">
-                            <a class="nav-link btn--small btn-outline" href="/register">Daftar</a>
+                            <a class="nav-link btn--small btn-outline" href="register.html">Daftar</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link btn--small btn-primary" href="/login">Masuk</a>
+                            <a class="nav-link btn--small btn-primary" href="login.html">Masuk</a>
                         </li>
                     </ul>
                 </div>
@@ -99,146 +99,57 @@
                     <div class="row">
                         <div class="col-md-8 mx-auto detail__column">
                             <div class="detail__header">
-                                <span class="headline">PROFIL PROVINSI</span>
-                                <h1>Provinsi {{ ucfirst($provinsi->province_name) }}</h1>
+                                <span class="headline">DETAIL BUDAYA</span>
+                                <h1>Tari {{ ucfirst($data->tarian_name) }}</h1>
                             </div>
                             <div class="detail__content">
-                                <iframe
-                                    width="100%"
-                                    height="360px"
-                                    src="{{ $provinsi->video_link }}"
-                                    title="YouTube video player"
-                                    frameborder="0"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                    allowfullscreen></iframe>
+                                <div class="detail__image">
+                                    <img src="../img/banner-login.jpg" alt="Tari Sekapur Sirih" />
+                                </div>
 
                                 <div class="detail__section">
                                     <h4>Deskripsi Singkat</h4>
                                     <p>
-                                        {{ $provinsi->deskripsi }}
+                                        {{ $data->deskripsi }}
                                     </p>
                                 </div>
 
                                 <div class="detail__section">
                                     <h4>Sejarah Singkat</h4>
                                     <p>
-                                        {{ $provinsi->sejarah }}
+                                        {{ $data->sejarah }}
                                     </p>
                                 </div>
 
                                 <div class="detail__section">
-                                    <h4>Tari Tradisional {{ ucfirst($provinsi->province_name) }}</h4>
-                                @foreach ($tarian as $item)
-                                    <div class="row">
-                                        <div class="col-6 col-md-4">
-                                            <a href="/detail-tari/{{ $item->id }}" class="detail__item">
-                                                <div class="detail__item-image">
-                                                    <img src="../img/rumah-adat/aceh.webp" alt="Rumah Adat Aceh" />
-                                                    <span class="detail__item-province">
-                                                        <i class="ri-map-pin-line"></i>
-                                                        {{ ucfirst($provinsi->province_name) }}
-                                                    </span>
-                                                </div>
-                                                <div class="detail__item-content">
-                                                    <h6>{{ $item->tarian_name }}</h6>
-                                                    <p>{{ Str::limit($item->deskripsi, 10, '...') }}</p>
-                                                </div>
-                                            </a>
+                                    <h4>Komentar</h4>
+                                    <div class="detail__comment">
+                                        @foreach ($comments as $item)
+                                        <div class="detail__comment-item my-2">
+                                            <div class="detail__comment-header">
+                                                <span class="detail__comment-name">{{ $item->user->name }}</span>
+                                                <span class="detail__comment-date">{{ Carbon\Carbon::parse($item->created_at)->translatedFormat('d F Y') }}</span>
+                                            </div>
+                                            <div class="detail__comment-text">{{ $item->body_comment }}</div>
                                         </div>
+                                        @endforeach
                                     </div>
-                                    @endforeach
                                 </div>
 
-                                <div class="detail__section">
-                                    <h4>Rumah Adat {{ ucfirst($provinsi->province_name) }}</h4>
-                                    @foreach ($rumah as $item)
-                                    <div class="row">
-                                        <div class="col-6 col-md-4">
-                                            <a href="/detail-rumah/{{ $item->id }}" class="detail__item">
-                                                <div class="detail__item-image">
-                                                    <img src="../img/rumah-adat/aceh.webp" alt="Rumah Adat Aceh" />
-                                                    <span class="detail__item-province">
-                                                        <i class="ri-map-pin-line"></i>
-                                                        {{ ucfirst($provinsi->province_name) }}
-                                                    </span>
-                                                </div>
-                                                <div class="detail__item-content">
-                                                    <h6>{{ $item->rumah_adat_name }}</h6>
-                                                    <p>{{ Str::limit($item->deskripsi, 10, '...') }}</p>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    @endforeach
-                                </div>
+                                <!-- Jika Sudah Login Tampilkan ini -->
+                                <form method="POST" class="comment__form" action="/comment">
+                                    @csrf
+                                    <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
+                                    <input type="hidden" name="category_id"value="{{ $data->id }}">
+                                    <h5>Tambahkan Komentar</h5>
+                                    <textarea name="body_comment" id="comment" style="resize: none" placeholder="Ketik komentar disini..."></textarea>
+                                    <button type="submit" class="btn btn-primary">Kirim Komentar</button>
+                                </form>
 
-                                <div class="detail__section">
-                                    <h4>Pakaian Adat {{ ucfirst($provinsi->province_name) }}</h4>
-                                    @foreach ($pakaian as $item)
-                                    <div class="row">
-                                        <div class="col-6 col-md-4">
-                                            <a href="/detail-pakaian/{{ $item->id }}" class="detail__item">
-                                                <div class="detail__item-image">
-                                                    <img src="../img/rumah-adat/aceh.webp" alt="Rumah Adat Aceh" />
-                                                    <span class="detail__item-province">
-                                                        <i class="ri-map-pin-line"></i>
-                                                        {{ ucfirst($provinsi->province_name) }}
-                                                    </span>
-                                                </div>
-                                                <div class="detail__item-content">
-                                                    <h6>{{ $item->pakaian_name }}</h6>
-                                                    <p>{{ Str::limit($item->deskripsi, 10, '...') }}</p>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    @endforeach
-                                </div>
-
-                                <div class="detail__section">
-                                    <h4>Alat Musik Tradisional {{ ucfirst($provinsi->province_name) }}</h4>
-                                    @foreach ($musik as $item)
-                                    <div class="row">
-                                        <div class="col-6 col-md-4">
-                                            <a href="/detail-musik/{{ $item->id }}" class="detail__item">
-                                                <div class="detail__item-image">
-                                                    <img src="../img/rumah-adat/aceh.webp" alt="Rumah Adat Aceh" />
-                                                    <span class="detail__item-province">
-                                                        <i class="ri-map-pin-line"></i>
-                                                        {{ ucfirst($provinsi->province_name) }}
-                                                    </span>
-                                                </div>
-                                                <div class="detail__item-content">
-                                                    <h6>{{ $item->alat_musik_name }}</h6>
-                                                    <p>{{ Str::limit($item->deskripsi, 10, '...') }}</p>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    @endforeach
-                                </div>
-
-                                <div class="detail__section">
-                                    <h4>Masakan Khas {{ ucfirst($provinsi->province_name) }}</h4>
-                                    @foreach ($masakan as $item)
-                                    <div class="row">
-                                        <div class="col-6 col-md-4">
-                                            <a href="/detail-masakan/{{ $item->id }}" class="detail__item">
-                                                <div class="detail__item-image">
-                                                    <img src="../img/rumah-adat/aceh.webp" alt="Rumah Adat Aceh" />
-                                                    <span class="detail__item-province">
-                                                        <i class="ri-map-pin-line"></i>
-                                                        {{ ucfirst($provinsi->province_name) }}
-                                                    </span>
-                                                </div>
-                                                <div class="detail__item-content">
-                                                    <h6>{{ $item->masakan_name }}</h6>
-                                                    <p>{{ Str::limit($item->deskripsi, 10, '...') }}</p>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    @endforeach
+                                <!-- Jika belum login, tampilkan ini -->
+                                <div class="comment__message">
+                                    <i class="ri-information-line"></i>
+                                    <p>Masuk akun terlebih dahulu untuk dapat berkomentar</p>
                                 </div>
                             </div>
                         </div>

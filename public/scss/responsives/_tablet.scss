@@ -184,6 +184,18 @@
             width: 100% !important;
         }
     }
+
+    .categories {
+        &__filter {
+            &-search {
+                width: 40%;
+            }
+
+            &-group {
+                width: 60%;
+            }
+        }
+    }
 }
 
 @media screen and (max-width: 768px) {

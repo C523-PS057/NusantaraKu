@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\BudayaController;
+use App\Http\Controllers\BudayaTariController;
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\MasakanController;
 use App\Http\Controllers\MusikController;
 use App\Http\Controllers\PakaianController;
@@ -39,6 +41,8 @@ Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
     Route::resource('tari', TariController::class);
 });
 Route::resource('provinsi', ProvinsiController::class);
+Route::resource('detail-tari', BudayaTariController::class);
+Route::post('/comment', [CommentController::class, 'store']);
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
