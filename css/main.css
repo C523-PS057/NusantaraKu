@@ -980,18 +980,13 @@ input[type=checkbox] {
 .detail {
   margin-top: -27.5rem;
 }
-.detail .carousel {
-  border-radius: 1rem;
-  overflow: hidden;
-}
-.detail .carousel-item {
-  aspect-ratio: 16/9;
-}
-.detail .carousel-item img {
+.detail__image img {
   width: 100%;
-  height: 100%;
+  height: auto;
+  aspect-ratio: 16/9;
   -o-object-fit: cover;
      object-fit: cover;
+  border-radius: 1rem;
 }
 .detail__header {
   display: flex;

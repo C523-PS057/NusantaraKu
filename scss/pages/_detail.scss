@@ -1,18 +1,28 @@
 .detail {
     margin-top: -27.5rem;
 
-    .carousel {
-        border-radius: 1rem;
-        overflow: hidden;
+    // .carousel {
+    //     border-radius: 1rem;
+    //     overflow: hidden;
 
-        &-item {
+    //     &-item {
+    //         aspect-ratio: 16/9;
+
+    //         img {
+    //             width: 100%;
+    //             height: 100%;
+    //             object-fit: cover;
+    //         }
+    //     }
+    // }
+
+    &__image {
+        img {
+            width: 100%;
+            height: auto;
             aspect-ratio: 16/9;
-
-            img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-            }
+            object-fit: cover;
+            border-radius: 1rem;
         }
     }
 
