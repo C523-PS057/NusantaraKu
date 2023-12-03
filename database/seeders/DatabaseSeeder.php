@@ -25,20 +25,20 @@ class DatabaseSeeder extends Seeder
             'email_verified_at' => now(),
             'password' => bcrypt('1'),
         ]);
-        // Budaya::create([
-        //     'category_name' => 'Masakan',
-        // ]);
-        // Budaya::create([
-        //     'category_name' => 'Musik',
-        // ]);
-        // Budaya::create([
-        //     'category_name' => 'Pakaian',
-        // ]);
-        // Budaya::create([
-        //     'category_name' => 'Rumah Adat',
-        // ]);
-        // Budaya::create([
-        //     'category_name' => 'Tarian',
-        // ]);
+        Budaya::create([
+            'category_name' => 'Masakan',
+        ]);
+        Budaya::create([
+            'category_name' => 'Musik',
+        ]);
+        Budaya::create([
+            'category_name' => 'Pakaian',
+        ]);
+        Budaya::create([
+            'category_name' => 'Rumah Adat',
+        ]);
+        Budaya::create([
+            'category_name' => 'Tarian',
+        ]);
     }
 }

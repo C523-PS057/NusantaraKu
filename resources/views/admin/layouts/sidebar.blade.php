@@ -49,6 +49,13 @@
             Tarian
           </a>
         </li>
+        <hr>
+        <li class="nav-item">
+          <a class="nav-link text-dark" href="/">
+            <span data-feather="file"></span>
+            Beranda
+          </a>
+        </li>
         <li>
             <hr>
           <form action="/logout" method="POST">
