@@ -81,19 +81,38 @@ class SemuaBudayaController extends Controller
             }
         }
         if ($request->filled('filter-query')) {
-            $provinceSearch = $request->input('filter-query');
-            $province = Province::search($provinceSearch)->first();
-            if (!is_null($province)) {
-                $masakan = $masakanQuery->where('province_id', $province->id)->get();
-                $musik = $musikQuery->where('province_id', $province->id)->get();
-                $pakaian = $pakaianQuery->where('province_id', $province->id)->get();
-                $rumah = $rumahQuery->where('province_id', $province->id)->get();
-                $tari = $tariQuery->where('province_id', $province->id)->get();
-                $data = [$masakan, $musik, $pakaian, $rumah, $tari];
-                return view('main.all-budaya.semua', ['data' => $data]);
-            } else {
-                flash()->addError('Data Tidak Ditemukan');
-                return back();
+            $filterQuery = $request->input('filter-query');
+            switch ($filterQuery) {
+                case 'terbaru':
+                    $masakan = $masakanQuery->latest()->get();
+                    $musik = $musikQuery->latest()->get();
+                    $pakaian = $pakaianQuery->latest()->get();
+                    $rumah = $rumahQuery->latest()->get();
+                    $tari = $tariQuery->latest()->get();
+                    $data = [$masakan, $musik, $pakaian, $rumah, $tari];
+                    return view('main.all-budaya.semua', ['data' => $data]);
+                    break;
+                case 'A-Z':
+                    $masakan = $masakanQuery->orderBy('masakan_name', 'asc')->get();
+                    $musik = $musikQuery->orderBy('alat_musik_name', 'asc')->get();
+                    $pakaian = $pakaianQuery->orderBy('pakaian_name', 'asc')->get();
+                    $rumah = $rumahQuery->orderBy('rumah_adat_name', 'asc')->get();
+                    $tari = $tariQuery->orderBy('tarian_name', 'asc')->get();
+                    $data = [$masakan, $musik, $pakaian, $rumah, $tari];
+                    return view('main.all-budaya.semua', ['data' => $data]);
+                    break;
+                case 'Z-A':
+                    $masakan = $masakanQuery->orderBy('masakan_name', 'desc')->get();
+                    $musik = $musikQuery->orderBy('alat_musik_name', 'desc')->get();
+                    $pakaian = $pakaianQuery->orderBy('pakaian_name', 'desc')->get();
+                    $rumah = $rumahQuery->orderBy('rumah_adat_name', 'desc')->get();
+                    $tari = $tariQuery->orderBy('tarian_name', 'desc')->get();
+                    $data = [$masakan, $musik, $pakaian, $rumah, $tari];
+                    return view('main.all-budaya.semua', ['data' => $data]);
+                    break;
+                default:
+                    flash()->addError('Data Tidak Ditemukan');
+                    return back();
             }
         }
 
