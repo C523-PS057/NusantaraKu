@@ -8,39 +8,16 @@ use App\Models\Pakaian;
 use App\Models\Province;
 use App\Models\Rumah;
 use App\Models\Tari;
-use Illuminate\Http\Request;
 
 class ProvinsiController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
     public function show($id)
     {
+        $model = Province::find($id);
+        if (!$model) {
+            flash()->addError('Detail Provinsi Tidak Ditemukan');
+            return back();
+        }
         $provinsi = Province::findOrFail($id);
         $masakan = Masakan::with('province')->where('province_id', $provinsi->id)->get();
         $musik = Musik::with('province')->where('province_id', $provinsi->id)->get();
@@ -55,29 +32,5 @@ class ProvinsiController extends Controller
             'rumah' => $rumah,
             'tarian' => $tarian
         ]);
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
     }
 }

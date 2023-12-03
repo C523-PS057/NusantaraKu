@@ -46,10 +46,10 @@
 
                             <div class="login__button">
                                 <button type="submit" class="btn btn-primary">Masuk</button>
-                                <button type="submit" class="btn btn-outline">
+                                <a href="{{ route('google.redirect') }}" class="btn btn-outline">
                                     <img src="./img/logo-google.png" />
                                     Masuk Menggunakan Google
-                                </button>
+                                </a>
                             </div>
                         </form>
                         <div class="login__footer">
