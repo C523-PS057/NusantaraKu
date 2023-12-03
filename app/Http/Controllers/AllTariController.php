@@ -13,37 +13,40 @@ class AllTariController extends Controller
      */
     public function index(Request $request)
     {
+        $data = Tari::with('province');
+
         if ($request->filled('search')) {
             $search = $request->input('search');
-            $data = Tari::with('province')->search($search)->latest()->get();
-        } else if ($request->filled('filter-provinsi')) {
+            $data->search($search);
+        } elseif ($request->filled('filter-provinsi')) {
             $provinceSearch = $request->input('filter-provinsi');
             $province = Province::search($provinceSearch)->first();
             if (!is_null($province)) {
-                $data = Tari::with('province')->where('province_id', $province->id)->latest()->get();
+                $data->where('province_id', $province->id);
             } else {
                 flash()->addError('Data Tidak Ditemukan');
                 return back();
             }
-        } else if ($request->filled('filter-query')) {
-            $cekValue = $request->toArray($request->query);
-            if ($cekValue['filter-query'] == 'terbaru') {
-                $data = Tari::with('province')->latest()->get();
-            } else if ($cekValue['filter-query'] == 'A-Z') {
-                $data = Tari::with('province')
-                    ->orderBy('tarian_name', 'asc')
-                    ->get();
-            } else if ($cekValue['filter-query'] == 'Z-A') {
-                $data = Tari::with('province')
-                    ->orderBy('tarian_name', 'desc')
-                    ->get();
-            } else {
-                flash()->addError('Data Tidak Ditemukan');
-                return back();
+        } elseif ($request->filled('filter-query')) {
+            $filterQuery = $request->input('filter-query');
+            switch ($filterQuery) {
+                case 'terbaru':
+                    $data->latest();
+                    break;
+                case 'A-Z':
+                    $data->orderBy('tarian_name', 'asc');
+                    break;
+                case 'Z-A':
+                    $data->orderBy('tarian_name', 'desc');
+                    break;
+                default:
+                    flash()->addError('Data Tidak Ditemukan');
+                    return back();
             }
-        } else {
-            $data = Tari::with('province')->latest()->get();
         }
+
+        $data = $data->get();
+
         return view('main.all-budaya.tari', [
             'data' => $data,
         ]);
