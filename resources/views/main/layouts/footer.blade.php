@@ -21,11 +21,11 @@
                     <div class="col-12 col-sm-4">
                         <strong><p>Budaya</p></strong>
                         <ul>
-                            <li><a href="tari-tradisional">Tari Tradisional</a></li>
-                            <li><a href="rumah-adat.html">Rumah Adat</a></li>
-                            <li><a href="pakaian-adat.html">Pakaian Adat</a></li>
-                            <li><a href="alat-musik.html">Alat Musik</a></li>
-                            <li><a href="masakan-khas.html">Masakan Khas</a></li>
+                            <li><a href="/tari-tradisional">Tari Tradisional</a></li>
+                            <li><a href="/rumah-adat">Rumah Adat</a></li>
+                            <li><a href="/pakaian-adat">Pakaian Adat</a></li>
+                            <li><a href="/alat-musik">Alat Musik</a></li>
+                            <li><a href="/masakan-khas">Masakan Khas</a></li>
                         </ul>
                     </div>
                     <div class="col-12 col-sm-4">

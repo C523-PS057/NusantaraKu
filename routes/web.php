@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\AllAlatMusikController;
+use App\Http\Controllers\AllMasakanKhasController;
+use App\Http\Controllers\AllPakaianAdatController;
+use App\Http\Controllers\AllRumahAdatController;
 use App\Http\Controllers\AllTariController;
 use App\Http\Controllers\BudayaController;
 use App\Http\Controllers\BudayaMasakanController;
@@ -51,6 +55,10 @@ Route::resource('detail-pakaian', BudayaPakaianController::class);
 Route::resource('detail-musik', BudayaMusikController::class);
 
 Route::resource('tari-tradisional', AllTariController::class);
+Route::resource('rumah-adat', AllRumahAdatController::class);
+Route::resource('pakaian-adat', AllPakaianAdatController::class);
+Route::resource('alat-musik', AllAlatMusikController::class);
+Route::resource('masakan-khas', AllMasakanKhasController::class);
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

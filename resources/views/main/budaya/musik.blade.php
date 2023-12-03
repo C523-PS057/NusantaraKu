@@ -19,7 +19,7 @@
                         <div class="col-md-8 mx-auto detail__column">
                             <div class="detail__header">
                                 <span class="headline">DETAIL BUDAYA</span>
-                                <h1>Alat Musik Tradisional {{ ucfirst($data->tarian_name) }}</h1>
+                                <h1>Alat Musik Tradisional {{ ucfirst($data->alat_musik_name) }}</h1>
                             </div>
                             <div class="detail__content">
                                 <div class="detail__image">
