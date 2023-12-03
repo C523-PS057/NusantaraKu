@@ -30,4 +30,11 @@ class BudayaTariController extends Controller
         flash('Berhasil Menambah Komentar');
         return back();
     }
+    public function destroy($id)
+    {
+        $comment = Comment::findOrFail($id);
+        $comment->delete();
+        flash("Berhasil Menghapus Data");
+        return back();
+    }
 }

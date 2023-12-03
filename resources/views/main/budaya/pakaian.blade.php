@@ -50,6 +50,13 @@
                                                 <span class="detail__comment-date">{{ Carbon\Carbon::parse($item->created_at)->translatedFormat('d F Y') }}</span>
                                             </div>
                                             <div class="detail__comment-text">{{ $item->body_comment }}</div>
+                                            @can('admin')
+                                            <form class="detail__comment-action" method="POST" action="{{ route('detail-pakaian.destroy',$item->id) }}">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button class="btn btn-primary btn--small" onclick="confirm('Yakin Ingin Menghapus Komentar Ini?')"><i class="ri-delete-bin-line"></i></button>
+                                            </form>
+                                            @endcan
                                         </div>
                                         @endforeach
                                     </div>

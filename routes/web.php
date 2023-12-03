@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AllTariController;
 use App\Http\Controllers\BudayaController;
 use App\Http\Controllers\BudayaMasakanController;
 use App\Http\Controllers\BudayaMusikController;
@@ -42,11 +43,14 @@ Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
     Route::resource('tari', TariController::class);
 });
 Route::resource('provinsi', ProvinsiController::class);
+
 Route::resource('detail-tari', BudayaTariController::class);
 Route::resource('detail-masakan', BudayaMasakanController::class);
 Route::resource('detail-rumah', BudayaRumahAdatController::class);
 Route::resource('detail-pakaian', BudayaPakaianController::class);
 Route::resource('detail-musik', BudayaMusikController::class);
+
+Route::resource('tari-tradisional', AllTariController::class);
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
