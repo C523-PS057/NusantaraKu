@@ -6,6 +6,7 @@ use App\Models\Budaya;
 use App\Models\Masakan;
 use App\Models\Musik;
 use App\Models\Pakaian;
+use App\Models\Province;
 use App\Models\Rumah;
 use App\Models\Tari;
 use Illuminate\Http\Request;
@@ -58,8 +59,25 @@ class SemuaBudayaController extends Controller
                     return view('main.all-budaya.semua', ['data' => $tari]);
                     break;
                 default:
-                    // Default jika tidak ada kategori yang dipilih
+                    flash()->addError('Data Tidak Ditemukan');
+                    return back();
                     break;
+            }
+        }
+        if ($request->filled('filter-provinsi')) {
+            $provinceSearch = $request->input('filter-provinsi');
+            $province = Province::search($provinceSearch)->first();
+            if (!is_null($province)) {
+                $masakan = $masakanQuery->where('province_id', $province->id)->get();
+                $musik = $musikQuery->where('province_id', $province->id)->get();
+                $pakaian = $pakaianQuery->where('province_id', $province->id)->get();
+                $rumah = $rumahQuery->where('province_id', $province->id)->get();
+                $tari = $tariQuery->where('province_id', $province->id)->get();
+                $data = [$masakan, $musik, $pakaian, $rumah, $tari];
+                return view('main.all-budaya.semua', ['data' => $data]);
+            } else {
+                flash()->addError('Data Tidak Ditemukan');
+                return back();
             }
         }
 

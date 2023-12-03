@@ -38,9 +38,9 @@
                                     <option value="5">Tari Tradisional</option>
                                 </select>
                             </form>
-                            <form action="">
+                            <form action="{{ route('semua-budaya.index') }}" method="GET" id="filterForm">
                                 <select class="categories__filter-select" name="filter-provinsi" id="filter-provinsi">
-                                    <option value="" selected disabled>Asal Provinsi</option>
+                                    <option selected disabled>Asal Provinsi</option>
                                 </select>
                             </form>
                             <form action="">
