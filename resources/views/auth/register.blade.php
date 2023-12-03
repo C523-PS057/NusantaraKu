@@ -68,10 +68,10 @@
 
                             <div class="login__button">
                                 <button type="submit" class="btn btn-primary">Daftar</button>
-                                <button type="submit" class="btn btn-outline">
+                                <a href="{{ route('google.redirect') }}" type="submit" class="btn btn-outline">
                                     <img src="./img/logo-google.png" />
                                     Daftar Menggunakan Google
-                                </button>
+                                </a>
                             </div>
                         </form>
                         <div class="login__footer">
