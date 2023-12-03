@@ -21,24 +21,26 @@
             <div class="categories">
                 <div class="container">
                     <div class="categories__filter">
-                        <div class="categories__filter-search">
-                            <form action="{{ route('tari-tradisional.index') }}" method="GET">
-                                <input type="search" name="search" id="search" placeholder="Cari nama budaya disini...." />
-                                <button class="btn-icon">
+                            <form class="categories__filter-search" action="{{ route('tari-tradisional.index') }}" method="GET">
+                                <input type="search" value="{{ request('search') }}" name="search" id="search" placeholder="Cari nama budaya disini...." />
+                                <button class="btn-icon" type="submit">
                                     <i class="ri-search-line"></i>
                                 </button>
                             </form>
-                        </div>
-                        <div class="categories__filter-group">
-                            <select class="categories__filter-select" name="filter-provinsi" id="filter-provinsi">
-                                <option value="" selected disabled>Asal Provinsi</option>
-                            </select>
-                            <select class="categories__filter-select" name="filter-urutkan" id="filter-urutkan">
-                                <option value="" selected disabled>Urutkan</option>
-                                <option value="terbaru">Terbaru</option>
-                                <option value="A-Z">A-Z</option>
-                                <option value="Z-A">Z-A</option>
-                            </select>
+                        <div class="categories__filter-group group-2">
+                            <form action="{{ route('tari-tradisional.index') }}" method="GET" id="filterForm">
+                                <select class="categories__filter-select" name="filter-provinsi" id="filter-provinsi">
+                                    <option selected disabled>Asal Provinsi</option>
+                                </select>
+                            </form>
+                            <form action="{{ route('tari-tradisional.index') }}" method="GET" id="filterUrutkan">
+                                <select class="categories__filter-select" name="filter-query" id="filter-query">
+                                    <option value="" selected disabled>Urutkan</option>
+                                    <option value="terbaru">Terbaru</option>
+                                    <option value="A-Z">A-Z</option>
+                                    <option value="Z-A">Z-A</option>
+                                </select>
+                            </form>
                         </div>
                     </div>
                     <div class="categories__content">
@@ -71,5 +73,13 @@
         <script src="../js/category.js" type="module"></script>
         <script src="../js/bootstrap.bundle.min.js"></script>
         <link rel="stylesheet" href="../icons/remixicon.css" />
+        <script>
+            document.getElementById('filter-provinsi').addEventListener('change', function() {
+                document.getElementById('filterForm').submit();
+            });
+            document.getElementById('filter-query').addEventListener('change', function() {
+                document.getElementById('filterUrutkan').submit();
+            });
+        </script>
     </body>
 </html>
