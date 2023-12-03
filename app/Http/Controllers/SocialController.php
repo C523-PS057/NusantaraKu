@@ -33,7 +33,7 @@ class SocialController extends Controller
                 ];
                 $newUser = User::create($rules);
                 Auth::login($newUser);
-                flash('Berhasil Mendaftar! Password Anda Adalah "12345678", Silahkan rubah Password Anda Sesegera Mungkin');
+                flash('Berhasil Mendaftar! Password Anda Adalah "12345678", Silahkan rubah Password Anda Sesegera Mungkin Di Halaman Rubah/Forgot Password');
                 return redirect()->to('/');
             }
         } catch (\Exception $e) {

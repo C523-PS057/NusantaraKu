@@ -74,12 +74,14 @@
         <script src="../js/bootstrap.bundle.min.js"></script>
         <link rel="stylesheet" href="../icons/remixicon.css" />
         <script>
+            document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('filter-provinsi').addEventListener('change', function() {
                 document.getElementById('filterForm').submit();
             });
             document.getElementById('filter-query').addEventListener('change', function() {
                 document.getElementById('filterUrutkan').submit();
             });
+        });
         </script>
     </body>
 </html>

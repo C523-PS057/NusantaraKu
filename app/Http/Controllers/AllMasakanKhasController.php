@@ -14,7 +14,6 @@ class AllMasakanKhasController extends Controller
     public function index(Request $request)
     {
         $data = Masakan::with('province');
-
         if ($request->filled('search')) {
             $search = $request->input('search');
             $data->search($search);

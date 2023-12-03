@@ -17,6 +17,7 @@ use App\Http\Controllers\PakaianController;
 use App\Http\Controllers\ProvinceController;
 use App\Http\Controllers\ProvinsiController;
 use App\Http\Controllers\RumahController;
+use App\Http\Controllers\SemuaBudayaController;
 use App\Http\Controllers\SocialController;
 use App\Http\Controllers\TariController;
 use Illuminate\Support\Facades\Auth;
@@ -60,7 +61,8 @@ Route::resource('rumah-adat', AllRumahAdatController::class);
 Route::resource('pakaian-adat', AllPakaianAdatController::class);
 Route::resource('alat-musik', AllAlatMusikController::class);
 Route::resource('masakan-khas', AllMasakanKhasController::class);
-Route::resource('semua-budaya', AllMasakanKhasController::class);
+Route::resource('semua-budaya', SemuaBudayaController::class);
+
 Route::get('/auth/redirect', [SocialController::class, 'redirect'])->name('google.redirect');
 Route::get('/google/redirect', [SocialController::class, 'googleCallback'])->name('google.callback');
 Auth::routes();

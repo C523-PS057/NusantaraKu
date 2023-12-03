@@ -12,7 +12,7 @@
                     <a class="nav-link" href="/">Beranda</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="semua-budaya.html">Semua Budaya</a>
+                    <a class="nav-link" href="/semua-budaya">Semua Budaya</a>
                 </li>
                 <li class="nav-item dropdown-v2__button">
                     <button class="nav-link">
