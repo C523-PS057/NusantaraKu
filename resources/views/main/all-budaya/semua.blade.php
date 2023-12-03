@@ -43,8 +43,8 @@
                                     <option selected disabled>Asal Provinsi</option>
                                 </select>
                             </form>
-                            <form action="">
-                                <select class="categories__filter-select" name="filter-urutkan" id="filter-urutkan">
+                            <form action="{{ route('semua-budaya.index') }}" method="GET" id="filterUrutkan">
+                                <select class="categories__filter-select" name="filter-query" id="filter-query">
                                     <option value="" selected disabled>Urutkan</option>
                                     <option value="terbaru">Terbaru</option>
                                     <option value="A-Z">A-Z</option>

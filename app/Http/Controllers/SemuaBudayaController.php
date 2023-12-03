@@ -80,6 +80,22 @@ class SemuaBudayaController extends Controller
                 return back();
             }
         }
+        if ($request->filled('filter-query')) {
+            $provinceSearch = $request->input('filter-query');
+            $province = Province::search($provinceSearch)->first();
+            if (!is_null($province)) {
+                $masakan = $masakanQuery->where('province_id', $province->id)->get();
+                $musik = $musikQuery->where('province_id', $province->id)->get();
+                $pakaian = $pakaianQuery->where('province_id', $province->id)->get();
+                $rumah = $rumahQuery->where('province_id', $province->id)->get();
+                $tari = $tariQuery->where('province_id', $province->id)->get();
+                $data = [$masakan, $musik, $pakaian, $rumah, $tari];
+                return view('main.all-budaya.semua', ['data' => $data]);
+            } else {
+                flash()->addError('Data Tidak Ditemukan');
+                return back();
+            }
+        }
 
 
         $masakan = $masakanQuery->get();
