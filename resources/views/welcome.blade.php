@@ -23,7 +23,7 @@
                             <p>Perluas pengetahuanmu dengan menggali informasi tentang beragam budaya dari Sabang hingga Merauke. Temukan keindahan tradisi budaya Indonesia, termasuk Tari Tradisional, Rumah Adat, Pakaian Adat, Alat Musik Tradisional dan Masakan Khas yang begitu beragam.</p>
                             <div class="d-flex align-items-center gap-3">
                                 <a href="#kategori" class="btn btn-primary">Jelajahi Sekarang <i class="ri-arrow-right-up-line"></i></a>
-                                <a href="semua-budaya.html" class="btn btn-outline">Cari Budaya <i class="ri-search-line"></i></a>
+                                <a href="/semua-budaya" class="btn btn-outline">Cari Budaya <i class="ri-search-line"></i></a>
                             </div>
                         </div>
                         <div class="col-md-6 hero__right">
