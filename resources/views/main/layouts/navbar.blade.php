@@ -25,23 +25,23 @@
                                 <h6>Kategori Budaya</h6>
                                 <p>Berbagai jenis kategori budaya yang dapat anda jelajahi</p>
                             </div>
-                            <a href="semua-budaya.html" class="btn btn-outline">Lihat Semua Budaya <i class="ri-arrow-right-up-line"></i></a>
+                            <a href="/semua-budaya" class="btn btn-outline">Lihat Semua Budaya <i class="ri-arrow-right-up-line"></i></a>
                         </div>
                         <ul class="dropdown-v2__list">
                             <li class="dropdown-v2__item">
-                                <a href="tari-tradisional.html">Tari Tradisional</a>
+                                <a href="/tari-tradisional">Tari Tradisional</a>
                             </li>
                             <li class="dropdown-v2__item">
-                                <a href="rumah-adat.html">Rumah Adat</a>
+                                <a href="/rumah-adat">Rumah Adat</a>
                             </li>
                             <li class="dropdown-v2__item">
-                                <a href="pakaian-adat.html">Pakaian Adat</a>
+                                <a href="/pakaian-adat">Pakaian Adat</a>
                             </li>
                             <li class="dropdown-v2__item">
-                                <a href="alat-musik.html">Alat Musik</a>
+                                <a href="/alat-musik">Alat Musik</a>
                             </li>
                             <li class="dropdown-v2__item">
-                                <a href="masakan-khas.html">Masakan Khas</a>
+                                <a href="/masakan-khas">Masakan Khas</a>
                             </li>
                         </ul>
                     </div>
