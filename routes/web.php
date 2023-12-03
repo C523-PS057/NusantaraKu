@@ -60,6 +60,7 @@ Route::resource('rumah-adat', AllRumahAdatController::class);
 Route::resource('pakaian-adat', AllPakaianAdatController::class);
 Route::resource('alat-musik', AllAlatMusikController::class);
 Route::resource('masakan-khas', AllMasakanKhasController::class);
+Route::resource('semua-budaya', AllMasakanKhasController::class);
 Route::get('/auth/redirect', [SocialController::class, 'redirect'])->name('google.redirect');
 Route::get('/google/redirect', [SocialController::class, 'googleCallback'])->name('google.callback');
 Auth::routes();
