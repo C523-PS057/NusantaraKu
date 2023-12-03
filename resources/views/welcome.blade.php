@@ -97,31 +97,31 @@
                         <div class="category__item">
                             <h6>Tari Tradisional</h6>
                             <img src="./img/kategori-tari.jpg" />
-                            <a href="tari-tradisional.html" class="category__link"></a>
+                            <a href="/tari-tradisional" class="category__link"></a>
                         </div>
                         <div class="category__item">
                             <h6>Rumah Adat</h6>
                             <img src="./img/kategori-rumah.jpg" />
-                            <a href="rumah-adat.html" class="category__link"></a>
+                            <a href="/rumah-adat" class="category__link"></a>
                         </div>
                         <div class="category__item">
                             <h6>Pakaian Adat</h6>
                             <img src="./img/kategori-pakaian.jpg" />
-                            <a href="pakaian-adat.html" class="category__link"></a>
+                            <a href="/pakaian-adat" class="category__link"></a>
                         </div>
                         <div class="category__item">
                             <h6>Alat Musik</h6>
                             <img src="./img/kategori-alat.jpg" />
-                            <a href="alat-musik.html" class="category__link"></a>
+                            <a href="/alat-musik" class="category__link"></a>
                         </div>
                         <div class="category__item">
                             <h6>Masakan Khas</h6>
                             <img src="./img/kategori-masakan.jpg" />
-                            <a href="masakan-khas.html" class="category__link"></a>
+                            <a href="/masakan-khas" class="category__link"></a>
                         </div>
                     </div>
                     <div class="category__footer">
-                        <a href="semua-budaya.html" class="btn btn-outline">Lihat Semua Budaya <i class="ri-arrow-right-up-line"></i></a>
+                        <a href="/semua-budaya" class="btn btn-outline">Lihat Semua Budaya <i class="ri-arrow-right-up-line"></i></a>
                     </div>
                 </div>
             </section>
