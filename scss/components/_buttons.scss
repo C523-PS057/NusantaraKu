@@ -32,8 +32,7 @@
         border: 1px solid $red;
 
         &:hover,
-        &:active,
-        &:visited {
+        &:active {
             background-color: $red-darken !important;
             border: 1px solid $red !important;
             color: $text-white !important;
@@ -46,8 +45,7 @@
         border: 1px solid #000;
 
         &:hover,
-        &:active,
-        &:visited {
+        &:active {
             border: 1px solid $red;
             background-color: transparent;
             color: $red;
@@ -62,8 +60,7 @@
         transition: all 0.3s ease;
 
         &:hover,
-        &:active,
-        &:visited {
+        &:active {
             background-color: transparent;
             color: red;
             border: none;
