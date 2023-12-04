@@ -16,7 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Navbar Dropdown Toggle
 const dropdownButtons = document.querySelectorAll('.dropdown-v2__button');
-
 dropdownButtons.forEach((btn) => {
     btn.addEventListener('click', function () {
         dropdownButtons.forEach((otherBtn) => {

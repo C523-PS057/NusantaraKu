@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Dashboard User: Profil Saya - NusantaraKu</title>
+        <link rel="stylesheet" href="./css/bootstrap.min.css" />
+        <link rel="stylesheet" href="./css/main.min.css" />
+        <link rel="icon" type="image/x-icon" href="./img/favicon.ico" />
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="/">
+                    <img src="./img/logo-wide.svg" alt="Logo NusantaraKu Wide" />
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/">Beranda</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="semua-budaya.html">Semua Budaya</a>
+                        </li>
+                        <li class="nav-item dropdown-v2__button">
+                            <button class="nav-link">
+                                Budaya
+                                <i class="ri-arrow-down-s-line"></i>
+                            </button>
+                            <div class="dropdown-v2">
+                                <div class="dropdown-v2__left">
+                                    <div class="dropdown-v2__text">
+                                        <h6>Kategori Budaya</h6>
+                                        <p>Berbagai jenis kategori budaya yang dapat anda jelajahi</p>
+                                    </div>
+                                    <a href="semua-budaya.html" class="btn btn-outline">Lihat Semua Budaya <i class="ri-arrow-right-up-line"></i></a>
+                                </div>
+                                <ul class="dropdown-v2__list">
+                                    <li class="dropdown-v2__item">
+                                        <a href="tari-tradisional.html">Tari Tradisional</a>
+                                    </li>
+                                    <li class="dropdown-v2__item">
+                                        <a href="rumah-adat.html">Rumah Adat</a>
+                                    </li>
+                                    <li class="dropdown-v2__item">
+                                        <a href="pakaian-adat.html">Pakaian Adat</a>
+                                    </li>
+                                    <li class="dropdown-v2__item">
+                                        <a href="alat-musik.html">Alat Musik</a>
+                                    </li>
+                                    <li class="dropdown-v2__item">
+                                        <a href="masakan-khas.html">Masakan Khas</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown-v2__button">
+                            <button class="nav-link">
+                                Provinsi
+                                <i class="ri-arrow-down-s-line"></i>
+                            </button>
+                            <div class="dropdown-v2 dropdown-provinsi">
+                                <div class="dropdown-v2__left">
+                                    <div class="dropdown-v2__text">
+                                        <h6>Profil Provinsi</h6>
+                                        <p>Cari tahu profil dan budaya dari masing-masing provinsi.</p>
+                                    </div>
+                                </div>
+                                <ul class="dropdown-v2__list2">
+                                    <li class="dropdown-v2__item2">
+                                        <a href="#">Aceh</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="tentang.html">Tentang</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav mb-2 mb-lg-0 navbar-right">
+                        <div class="dropdown">
+                            <div class="btn-group">
+                                <button type="button" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <img src="./img/foto-profil.png" alt="Foto Profil User" />
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-end fade">
+                                    <li><a href="dashboard-user-profil.html" class="dropdown-item">Profil Saya</a></li>
+                                    <li><a href="dashboard-user-edit.html" class="dropdown-item">Edit Profil</a></li>
+                                    <li><a href="dashboard-user-ubah.html" class="dropdown-item">Ubah Password</a></li>
+                                    <li><a href="logout.html" class="dropdown-item">Keluar Akun</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <main>
+            <section class="user">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4 mx-auto user__col">
+                            <div class="user__header">
+                                <h2>Profil Saya</h2>
+                            </div>
+                            <div class="user__content">
+                                <div class="user__picture">
+                                    <img src="./img/foto-profil.png" alt="Foto Profil User" />
+                                </div>
+                                <div class="user__detail">
+                                    <h5 class="user__fullname">John Doe</h5>
+                                    <p class="user__email">johndoe@gmail.com</p>
+                                    <p class="user__joined">Pengguna sejak 27/10/2023</p>
+                                </div>
+                                <div class="user__buttons">
+                                    <a href="#" class="btn btn-primary">Edit Profil <i class="ri-edit-line"></i></a>
+                                    <a href="#" class="btn btn-outline">Ubah Password <i class="ri-key-2-line"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <script src="./js/main.js" type="module"></script>
+        <script src="./js/user.js" type="module"></script>
+        <script src="./js/bootstrap.bundle.min.js"></script>
+        <link rel="stylesheet" href="./icons/remixicon.css" />
+    </body>
+</html>
