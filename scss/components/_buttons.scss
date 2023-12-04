@@ -31,9 +31,11 @@
         color: #fff;
         border: 1px solid $red;
 
-        &:hover {
-            background-color: $red-darken;
-            border: 1px solid $red;
+        &:hover,
+        &:active,
+        &:visited {
+            background-color: $red-darken !important;
+            border: 1px solid $red !important;
             color: $text-white !important;
         }
     }
@@ -43,8 +45,11 @@
         color: #000;
         border: 1px solid #000;
 
-        &:hover {
+        &:hover,
+        &:active,
+        &:visited {
             border: 1px solid $red;
+            background-color: transparent;
             color: $red;
         }
     }
@@ -56,8 +61,12 @@
         outline: none;
         transition: all 0.3s ease;
 
-        &:hover {
+        &:hover,
+        &:active,
+        &:visited {
+            background-color: transparent;
             color: red;
+            border: none;
         }
 
         i {
