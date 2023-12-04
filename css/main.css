@@ -165,6 +165,8 @@ h6 {
   font-size: 14px;
   transition: all 0.3s ease;
   outline: none;
+  text-align: center;
+  justify-content: center;
 }
 .btn--small {
   display: inline-flex;

@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Dashboard User: Edit Profil - NusantaraKu</title>
+        <title>Dashboard User: Ubah Password - NusantaraKu</title>
         <link rel="stylesheet" href="./css/bootstrap.min.css" />
         <link rel="stylesheet" href="./css/main.min.css" />
         <link rel="icon" type="image/x-icon" href="./img/favicon.ico" />
@@ -105,28 +105,24 @@
                     <div class="row">
                         <div class="col-md-4 mx-auto user__col">
                             <div class="user__header">
-                                <h2>Edit Profil</h2>
+                                <h2>Ubah Password</h2>
                             </div>
                             <form class="user__content">
-                                <div class="user__picture">
-                                    <img src="./img/foto-profil.png" alt="Foto Profil User" id="profile-pic"/>
-                                    <label for="select-photo" class="btn-icon">
-                                        <i class="ri-camera-line"></i>
-                                    <label/>
-                                    <input type="file" name="select-photo" id="select-photo">
-                                </div>
                                 <div class="user__detail">
                                     <div class="input__group">
-                                        <label class="input__label" for="name">Nama Lengkap</label>
-                                        <input type="text" name="name" id="name" required value="John Doe"/>
+                                        <label class="input__label" for="old-password">Password Lama</label>
+                                        <input type="password" name="old-password" id="old-password" required autocomplete="true" />
+                                        <button class="btn-icon btn-toggle-password"><i class="ri-eye-line"></i></button>
                                     </div>
                                     <div class="input__group">
-                                        <label class="input__label" for="email">Alamat Email</label>
-                                        <input type="email" name="email" id="email" required value="johndoe@gmail.com" />
+                                        <label class="input__label" for="new-password">Password Baru</label>
+                                        <input type="password" name="new-password" id="new-password" required autocomplete="true" />
+                                        <button class="btn-icon btn-toggle-password"><i class="ri-eye-line"></i></button>
                                     </div>
                                     <div class="input__group">
-                                        <label class="input__label" for="tgl-lahir">Tanggal Lahir</label>
-                                        <input type="date" name="tgl-lahir" id="tgl-lahir" required value="1993-02-01"/>
+                                        <label class="input__label" for="confirm-new-password">Konfirmasi Password Baru</label>
+                                        <input type="password" name="confirm-new-password" id="confirm-new-password" required autocomplete="true" />
+                                        <button class="btn-icon btn-toggle-password"><i class="ri-eye-line"></i></button>
                                     </div>
                                 </div>
                                 <div class="user__buttons">
@@ -138,20 +134,32 @@
                 </div>
             </section>
             <script>
+                const btnTogglePasswords = document.querySelectorAll('.btn-toggle-password');
+                const passwordFields = document.querySelectorAll('[type="password"]');
 
-        const gantiFoto = document.querySelector("#select-photo");
-            const fotoProfil = document.querySelector("#profile-pic");
+                btnTogglePasswords.forEach((btnTogglePassword, index) => {
+                    btnTogglePassword.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        if (passwordFields[index].type === 'password') {
+                            passwordFields[index].type = 'text';
+                            btnTogglePassword.innerHTML = '<i class="ri-eye-off-line"></i>';
+                        } else {
+                            passwordFields[index].type = 'password';
+                            btnTogglePassword.innerHTML = '<i class="ri-eye-line"></i>';
+                        }
+                    });
+                });
 
-            gantiFoto.addEventListener("change", (e) => {
-                const file = e.target.files[0];
-                const reader = new FileReader();
+                const newPassword = document.getElementById('new-password');
+                const confirmNewPassword = document.getElementById('confirm-new-password');
 
-                reader.onload = () => {
-                    fotoProfil.src = reader.result;
-                };
-
-                reader.readAsDataURL(file);
-            });
+                confirmNewPassword.addEventListener('input', (e) => {
+                    if (newPassword.value !== confirmNewPassword.value) {
+                        confirmNewPassword.setCustomValidity('Password tidak sama');
+                    } else {
+                        confirmNewPassword.setCustomValidity('');
+                    }
+                });
             </script>
         </main>
 
