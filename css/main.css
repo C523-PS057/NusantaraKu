@@ -1375,6 +1375,34 @@ input[type=checkbox] {
 .user__header {
   text-align: center;
 }
+.user__picture {
+  width: 10rem !important;
+  height: 10rem !important;
+  position: relative;
+}
+.user__picture .btn-icon {
+  position: absolute;
+  bottom: 0.5rem;
+  right: 0.5rem;
+  background-color: #e23535;
+  color: #f1f1f1;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.user__picture input[type=file] {
+  display: none;
+}
+.user__picture img {
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  aspect-ratio: 1/1;
+}
 .user__col {
   display: flex;
   flex-direction: column;
@@ -1387,6 +1415,9 @@ input[type=checkbox] {
   flex-direction: column;
   align-items: center;
   gap: 0.25rem;
+}
+.user__detail .input__group {
+  margin-bottom: 1rem;
 }
 .user__content {
   display: flex;
