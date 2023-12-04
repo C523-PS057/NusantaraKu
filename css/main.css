@@ -1328,6 +1328,7 @@ input[type=checkbox] {
   border-radius: 1rem;
 }
 .about__content h3 {
+  text-align: center;
   margin-bottom: 1rem;
 }
 .about__item {
