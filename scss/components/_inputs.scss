@@ -25,11 +25,16 @@
         position: relative;
         height: 100%;
         border-radius: 0.5rem;
+        transition: all 0.3s ease;
+
+        &:has(input:focus) {
+            border: 1px solid $red;
+        }
 
         input {
             display: block;
             border: none;
-            background: none;
+            background: $white;
             width: 100%;
             padding: 0.5rem 1rem;
             border-radius: 0.5rem;
