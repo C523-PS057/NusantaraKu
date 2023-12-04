@@ -535,6 +535,7 @@ input[type=checkbox] {
   min-height: unset !important;
 }
 .input__group {
+  background: #ffffff;
   display: flex;
   gap: 1rem;
   width: 100%;
@@ -550,7 +551,6 @@ input[type=checkbox] {
 .input__group input {
   display: block;
   border: none;
-  background: #ffffff;
   width: 100%;
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
