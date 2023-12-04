@@ -1639,6 +1639,9 @@ input[type=checkbox] {
     grid-template-columns: repeat(3, 1fr);
     justify-content: center;
   }
+  .offer {
+    text-align: center;
+  }
   .offer p {
     margin-top: 1rem;
   }
