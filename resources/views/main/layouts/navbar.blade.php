@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg fixed-top">
     <div class="container">
         <a class="navbar-brand" href="/">
-            <img src="../img/logo-wide.svg" alt="Logo NusantaraKu Wide" />
+            <img src="/img/logo-wide.svg" alt="Logo NusantaraKu Wide" />
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -71,17 +71,26 @@
             </ul>
             <ul class="navbar-nav mb-2 mb-lg-0 navbar-right">
                 @auth
-                <li class="nav-item">
-                <form action="/logout" method="POST">
-                    @csrf
-                    <button type="submit" class="nav-link btn--small btn-outline"><i class="ri-logout-box-line"></i>Logout</button>
-                </form>
-                </li>
+                <ul class="navbar-nav mb-2 mb-lg-0 navbar-right">
                 @can('admin')
                 <li class="nav-item">
                     <a class="nav-link btn--small btn-outline" href="/admin/dashboard">Dashboard Admin</a>
                 </li>
                 @endcan
+                    <div class="dropdown">
+                        <div class="btn-group">
+                            <button type="button" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="{{ Storage::url(auth()->user()->gambar) }}" alt="Foto Profil User" />
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end fade">
+                                <li><a href="{{ route('user-settings.show',auth()->user()->id) }}" class="dropdown-item">Profil Saya</a></li>
+                                <li><a href="dashboard-user-edit.html" class="dropdown-item">Edit Profil</a></li>
+                                <li><a href="dashboard-user-ubah.html" class="dropdown-item">Ubah Password</a></li>
+                                <li><a href="logout.html" class="dropdown-item">Keluar Akun</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </ul>
                 @else
                 <li class="nav-item">
                     <a class="nav-link btn--small btn-outline" href="/register">Daftar</a>

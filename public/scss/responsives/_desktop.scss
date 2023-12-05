@@ -3,6 +3,11 @@
         &-nav {
             gap: 1rem !important;
         }
+
+        &-right {
+            min-width: 200px;
+            justify-content: flex-end;
+        }
     }
 
     .dropdown-provinsi {

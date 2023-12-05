@@ -37,6 +37,8 @@
 .nav {
     &-link {
         text-align: center;
+        display: flex;
+        align-items: center;
 
         &:hover {
             color: $red;
@@ -44,6 +46,12 @@
 
         &.active {
             color: $red !important;
+        }
+
+        img {
+            width: 3rem;
+            height: 3rem;
+            aspect-ratio: 1/1;
         }
     }
 }

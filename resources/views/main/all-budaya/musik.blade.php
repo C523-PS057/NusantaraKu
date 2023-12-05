@@ -12,7 +12,7 @@
     <body>
         @extends('main.layouts.navbar')
         <main>
-            <div class="banner-category" style="background-image: url('../img/bg-alat-musik.jpg')">
+            <div class="banner-category" style="background-image: url('../img/bg-alat-musik.webp')">
                 <div class="banner-category__content">
                     <h2>Alat Musik</h2>
                     <p><strong>Alat Musik</strong> yang dilestarikan turun temurun hingga saat ini</p>

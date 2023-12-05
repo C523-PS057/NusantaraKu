@@ -12,7 +12,7 @@
     <body>
         @extends('main.layouts.navbar')
         <main>
-            <div class="banner-category" style="background-image: url('../img/bg-rumah-adat.jpg')">
+            <div class="banner-category" style="background-image: url('../img/bg-rumah-adat.webp')">
                 <div class="banner-category__content">
                     <h2>Rumah Adat</h2>
                     <p><strong>Rumah Adat</strong> yang dilestarikan turun temurun hingga saat ini</p>

@@ -10,6 +10,7 @@
 @import './components/footer';
 @import './components/marquee';
 @import './components/banner';
+@import './components/inputs';
 
 // Layout
 @import './layout/hero';
@@ -25,6 +26,9 @@
 @import './pages/login';
 @import './pages/detail';
 @import './pages/categories';
+@import './pages/reset';
+@import './pages/about';
+@import './pages/dashboard-user';
 
 // Responsives
 @import './responsives/tablet';

@@ -47,7 +47,7 @@
                             <div class="login__button">
                                 <button type="submit" class="btn btn-primary">Masuk</button>
                                 <a href="{{ route('google.redirect') }}" class="btn btn-outline">
-                                    <img src="./img/logo-google.png" />
+                                    <img src="./img/logo-google.webp" />
                                     Masuk Menggunakan Google
                                 </a>
                             </div>
@@ -59,7 +59,7 @@
                         </div>
                     </div>
                     <div class="login__banner">
-                        <img src="./img/banner-login.jpg" alt="Banner Login Page" />
+                        <img src="./img/banner-login.webp" alt="Banner Login Page" />
                         <div class="login__information">
                             <h6>Tari Piring</h6>
                             <p>

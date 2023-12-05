@@ -14,7 +14,7 @@
             <section class="login">
                 <div class="container login__container">
                     <div class="login__banner">
-                        <img src="./img/banner-register.jpg" alt="Banner Login Page" />
+                        <img src="./img/banner-register.webp" alt="Banner Login Page" />
                         <div class="login__information">
                             <h6>Rumah Adat Kajang Lako</h6>
                             <p>
@@ -69,7 +69,7 @@
                             <div class="login__button">
                                 <button type="submit" class="btn btn-primary">Daftar</button>
                                 <a href="{{ route('google.redirect') }}" type="submit" class="btn btn-outline">
-                                    <img src="./img/logo-google.png" />
+                                    <img src="./img/logo-google.webp" />
                                     Daftar Menggunakan Google
                                 </a>
                             </div>

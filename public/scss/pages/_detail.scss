@@ -141,8 +141,19 @@
 
         &-header {
             display: flex;
-            align-items: center;
-            justify-content: space-between;
+            gap: 0.75rem;
+
+            img {
+                height: 3rem;
+                width: 3rem;
+                aspect-ratio: 1/1;
+            }
+        }
+
+        &-info {
+            gap: 0.1rem;
+            display: flex;
+            flex-direction: column;
         }
 
         &-name {
@@ -150,6 +161,7 @@
         }
 
         &-date {
+            font-size: 0.9rem;
             color: $text-black-secondary;
         }
 
@@ -182,8 +194,8 @@
     }
 
     &__message {
-        background-color: #c5f8d5;
-        color: #0d6628;
+        background-color: #b3caf5;
+        color: #09204b;
         border-radius: 0.5rem;
         padding: 1rem 0;
         display: flex;
@@ -193,5 +205,9 @@
         align-items: center;
         text-align: center;
         font-weight: 600;
+
+        p {
+            color: #09204b;
+        }
     }
 }

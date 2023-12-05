@@ -20,6 +20,7 @@ use App\Http\Controllers\RumahController;
 use App\Http\Controllers\SemuaBudayaController;
 use App\Http\Controllers\SocialController;
 use App\Http\Controllers\TariController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 /*
@@ -65,6 +66,8 @@ Route::resource('semua-budaya', SemuaBudayaController::class);
 
 Route::get('/auth/redirect', [SocialController::class, 'redirect'])->name('google.redirect');
 Route::get('/google/redirect', [SocialController::class, 'googleCallback'])->name('google.callback');
+
+Route::resource('user-settings', UserController::class);
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

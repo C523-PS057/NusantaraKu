@@ -27,34 +27,34 @@
                             </div>
                         </div>
                         <div class="col-md-6 hero__right">
-                            <img src="./img/hero-image.png" alt="Hero Image" />
+                            <img src="/img/hero-image.webp" alt="Hero Image" />
                         </div>
                     </div>
                 </div>
             </section>
             <section class="marquee">
                 <div class="marquee-slide">
-                    <img src="./img/text-tari-tradisional.svg" />
+                    <img src="/img/text-tari-tradisional.svg" />
                     <img class="marquee__asterix" src="./img/asterix.svg" />
-                    <img src="./img/text-rumah-adat.svg" />
+                    <img src="/img/text-rumah-adat.svg" />
                     <img class="marquee__asterix" src="./img/asterix.svg" />
-                    <img src="./img/text-pakaian-adat.svg" />
+                    <img src="/img/text-pakaian-adat.svg" />
                     <img class="marquee__asterix" src="./img/asterix.svg" />
-                    <img src="./img/text-alat-musik.svg" />
+                    <img src="/img/text-alat-musik.svg" />
                     <img class="marquee__asterix" src="./img/asterix.svg" />
-                    <img src="./img/text-masakan-khas.svg" />
+                    <img src="/img/text-masakan-khas.svg" />
                 </div>
                 <div class="marquee-slide">
                     <img class="marquee__asterix" src="./img/asterix.svg" />
-                    <img src="./img/text-tari-tradisional.svg" />
+                    <img src="/img/text-tari-tradisional.svg" />
                     <img class="marquee__asterix" src="./img/asterix.svg" />
-                    <img src="./img/text-rumah-adat.svg" />
+                    <img src="/img/text-rumah-adat.svg" />
                     <img class="marquee__asterix" src="./img/asterix.svg" />
-                    <img src="./img/text-pakaian-adat.svg" />
+                    <img src="/img/text-pakaian-adat.svg" />
                     <img class="marquee__asterix" src="./img/asterix.svg" />
-                    <img src="./img/text-alat-musik.svg" />
+                    <img src="/img/text-alat-musik.svg" />
                     <img class="marquee__asterix" src="./img/asterix.svg" />
-                    <img src="./img/text-masakan-khas.svg" />
+                    <img src="/img/text-masakan-khas.svg" />
                 </div>
             </section>
             <section class="intro">
@@ -96,27 +96,27 @@
                     <div class="category__content">
                         <div class="category__item">
                             <h6>Tari Tradisional</h6>
-                            <img src="./img/kategori-tari.jpg" />
+                            <img src="/img/kategori-tari.webp" />
                             <a href="/tari-tradisional" class="category__link"></a>
                         </div>
                         <div class="category__item">
                             <h6>Rumah Adat</h6>
-                            <img src="./img/kategori-rumah.jpg" />
+                            <img src="/img/kategori-rumah.webp" />
                             <a href="/rumah-adat" class="category__link"></a>
                         </div>
                         <div class="category__item">
                             <h6>Pakaian Adat</h6>
-                            <img src="./img/kategori-pakaian.jpg" />
+                            <img src="/img/kategori-pakaian.webp" />
                             <a href="/pakaian-adat" class="category__link"></a>
                         </div>
                         <div class="category__item">
                             <h6>Alat Musik</h6>
-                            <img src="./img/kategori-alat.jpg" />
+                            <img src="/img/kategori-alat.webp" />
                             <a href="/alat-musik" class="category__link"></a>
                         </div>
                         <div class="category__item">
                             <h6>Masakan Khas</h6>
-                            <img src="./img/kategori-masakan.jpg" />
+                            <img src="/img/kategori-masakan.webp" />
                             <a href="/masakan-khas" class="category__link"></a>
                         </div>
                     </div>
@@ -148,56 +148,56 @@
                         <div class="row">
                             <div class="col-md-3">
                                 <div class="benefit__item">
-                                    <img src="./img/benefit1.svg" alt="Benefit Icon" />
+                                    <img src="/img/benefit1.svg" alt="Benefit Icon" />
                                     <h6>Edukasi Budaya</h6>
                                     <p class="text-sm">NusantaraKu adalah panduan edukatif budaya Indonesia, membawa pengguna menjelajahi tari tradisional, rumah adat, pakaian adat, musik tradisional, dan masakan khas.</p>
                                 </div>
                             </div>
                             <div class="col-md-3">
                                 <div class="benefit__item">
-                                    <img src="./img/benefit2.svg" alt="Benefit Icon" />
+                                    <img src="/img/benefit2.svg" alt="Benefit Icon" />
                                     <h6>Pelestarian Warisan</h6>
                                     <p class="text-sm">Berperan aktif dalam pelestarian dan promosi warisan budaya lokal, dari puluhan ribu pulau hingga ratusan bahasa dan etnis di Indonesia.</p>
                                 </div>
                             </div>
                             <div class="col-md-3">
                                 <div class="benefit__item">
-                                    <img src="./img/benefit3.svg" alt="Benefit Icon" />
+                                    <img src="/img/benefit3.svg" alt="Benefit Icon" />
                                     <h6>Interaksi Pengguna</h6>
                                     <p class="text-sm">Memberikan ruang interaktif bagi pengguna untuk berpartisipasi dan berbagi pengalaman melalui komentar, menciptakan komunitas yang mendukung keberagaman budaya.</p>
                                 </div>
                             </div>
                             <div class="col-md-3">
                                 <div class="benefit__item">
-                                    <img src="./img/benefit4.svg" alt="Benefit Icon" />
+                                    <img src="/img/benefit4.svg" alt="Benefit Icon" />
                                     <h6>Wisata Budaya</h6>
                                     <p class="text-sm">Menjadi panduan wisata budaya dengan menghadirkan seni dan kuliner dari setiap provinsi, memberikan inspirasi untuk menjelajahi keberagaman Indonesia.</p>
                                 </div>
                             </div>
                             <div class="col-md-3">
                                 <div class="benefit__item">
-                                    <img src="./img/benefit5.svg" alt="Benefit Icon" />
+                                    <img src="/img/benefit5.svg" alt="Benefit Icon" />
                                     <h6>Akses Mudah</h6>
                                     <p class="text-sm">Dengan tata letak yang bersih dan intuitif, NusantaraKu memastikan informasi tentang budaya Indonesia dapat diakses dengan mudah oleh pengguna.</p>
                                 </div>
                             </div>
                             <div class="col-md-3">
                                 <div class="benefit__item">
-                                    <img src="./img/benefit6.svg" alt="Benefit Icon" />
+                                    <img src="/img/benefit6.svg" alt="Benefit Icon" />
                                     <h6>Inspirasi Pembelajaran</h6>
                                     <p class="text-sm">Sebagai sumber inspirasi pembelajaran, NusantaraKu menyajikan konten multimedia yang menarik, membantu pemahaman tentang kekayaan budaya Indonesia melalui pengalaman yang interaktif.</p>
                                 </div>
                             </div>
                             <div class="col-md-3">
                                 <div class="benefit__item">
-                                    <img src="./img/benefit7.svg" alt="Benefit Icon" />
+                                    <img src="/img/benefit7.svg" alt="Benefit Icon" />
                                     <h6>Komunitas Pecinta Budaya</h6>
                                     <p class="text-sm">Menyediakan platform bagi komunitas pecinta budaya untuk terhubung, berbagi pengetahuan, dan saling menginspirasi dalam menjaga keberagaman warisan budaya Indonesia.</p>
                                 </div>
                             </div>
                             <div class="col-md-3">
                                 <div class="benefit__item">
-                                    <img src="./img/benefit8.svg" alt="Benefit Icon" />
+                                    <img src="/img/benefit8.svg" alt="Benefit Icon" />
                                     <h6>Eksplorasi Virtual</h6>
                                     <p class="text-sm">Memberikan pengalaman eksplorasi virtual yang mendalam, memungkinkan pengguna untuk menjelajahi keindahan budaya Indonesia dari kenyamanan rumah mereka sendiri.</p>
                                 </div>
@@ -228,16 +228,16 @@
                             </div>
                             <div class="testimonial__list">
                                 <button class="testimonial__item active" data-index="0">
-                                    <img src="./img/testimonial1.png" />
+                                    <img src="/img/testimonial1.webp" />
                                 </button>
                                 <button class="testimonial__item" data-index="1">
-                                    <img src="./img/testimonial2.png" />
+                                    <img src="/img/testimonial2.webp" />
                                 </button>
                                 <button class="testimonial__item" data-index="2">
-                                    <img src="./img/testimonial3.png" />
+                                    <img src="/img/testimonial3.webp" />
                                 </button>
                                 <button class="testimonial__item" data-index="3">
-                                    <img src="./img/testimonial4.png" />
+                                    <img src="/img/testimonial4.webp" />
                                 </button>
                             </div>
                         </div>
@@ -259,9 +259,9 @@
             </section>
         </main>
         @extends('main.layouts.footer')
-        <script src="./js/main.js" type="module"></script>
-        <script src="./js/homepage.js" type="module"></script>
-        <script src="./js/bootstrap.bundle.min.js"></script>
-        <link rel="stylesheet" href="./icons/remixicon.css" />
+        <script src="/js/main.js" type="module"></script>
+        <script src="/js/homepage.js" type="module"></script>
+        <script src="/js/bootstrap.bundle.min.js"></script>
+        <link rel="stylesheet" href="/icons/remixicon.css" />
     </body>
 </html>

@@ -12,7 +12,7 @@
     <body>
         @extends('main.layouts.navbar')
         <main>
-            <div class="banner-category" style="background-image: url('../img/bg-masakan-khas.jpg')">
+            <div class="banner-category" style="background-image: url('../img/bg-masakan-khas.webp')">
                 <div class="banner-category__content">
                     <h2>Masakan Khas</h2>
                     <p><strong>Masakan Khas</strong> yang dilestarikan turun temurun hingga saat ini</p>

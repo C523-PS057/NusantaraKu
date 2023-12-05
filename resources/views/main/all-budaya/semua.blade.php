@@ -12,7 +12,7 @@
     <body>
         @extends('main.layouts.navbar')
         <main>
-            <div class="banner-category" style="background-image: url('../img/bg-pattern.jpg')">
+            <div class="banner-category" style="background-image: url('../img/bg-pattern.webp')">
                 <div class="banner-category__content">
                     <h2>Semua Budaya</h2>
                     <p>Jelajahi beragam budaya yang ada di seluruh Indonesia</p>
