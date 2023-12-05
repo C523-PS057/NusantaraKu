@@ -1,22 +1,22 @@
 .offer {
-  padding: 5rem 0;
-  background-image: url('../../img/bg-pattern.jpg');
-  color: $text-white;
-  background-size: cover;
-  background-repeat: no-repeat;
-
-  p {
-    color: $text-white-secondary;
-  }
-
-  .btn {
-    margin-top: 1.5rem;
+    padding: 5rem 0;
+    background-image: url('../../img/bg-pattern.webp');
     color: $text-white;
-    border: 1px solid $text-white;
+    background-size: cover;
+    background-repeat: no-repeat;
 
-    &:hover {
-      background-color: $text-white;
-      color: $text-black;
+    p {
+        color: $text-white-secondary;
     }
-  }
+
+    .btn {
+        margin-top: 1.5rem;
+        color: $text-white;
+        border: 1px solid $text-white;
+
+        &:hover {
+            background-color: $text-white;
+            color: $text-black;
+        }
+    }
 }
