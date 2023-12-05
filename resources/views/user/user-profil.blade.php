@@ -30,7 +30,7 @@
                                 </div>
                                 <div class="user__buttons">
                                     <a href="{{ route('user-settings.edit',$data->id) }}" class="btn btn-primary">Edit Profil <i class="ri-edit-line"></i></a>
-                                    <a href="dashboard-user-ubah.html" class="btn btn-outline">Ubah Password <i class="ri-key-2-line"></i></a>
+                                    <a href="{{ route('change-password.edit',auth()->user()->id) }}" class="btn btn-outline">Ubah Password <i class="ri-key-2-line"></i></a>
                                 </div>
                             </div>
                         </div>

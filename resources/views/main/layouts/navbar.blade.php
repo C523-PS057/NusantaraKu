@@ -85,8 +85,13 @@
                             <ul class="dropdown-menu dropdown-menu-end fade">
                                 <li><a href="{{ route('user-settings.show',auth()->user()->id) }}" class="dropdown-item">Profil Saya</a></li>
                                 <li><a href="{{ route('user-settings.edit',auth()->user()->id) }}" class="dropdown-item">Edit Profil</a></li>
-                                <li><a href="dashboard-user-ubah.html" class="dropdown-item">Ubah Password</a></li>
-                                <li><a href="logout.html" class="dropdown-item">Keluar Akun</a></li>
+                                <li><a href="{{ route('change-password.edit',auth()->user()->id) }}" class="dropdown-item">Ubah Password</a></li>
+                                <li>
+                                <form style="padding:0;" action="/logout" method="POST" class="dropdown-item">
+                                    @csrf
+                                    <button class="dropdown-item" type="submit" style="border:none; display:inherit ">Keluar Akun</button>
+                                </form>
+                            </li>
                             </ul>
                         </div>
                     </div>

@@ -11,6 +11,7 @@ use App\Http\Controllers\BudayaMusikController;
 use App\Http\Controllers\BudayaPakaianController;
 use App\Http\Controllers\BudayaRumahAdatController;
 use App\Http\Controllers\BudayaTariController;
+use App\Http\Controllers\ChangePasswordController;
 use App\Http\Controllers\MasakanController;
 use App\Http\Controllers\MusikController;
 use App\Http\Controllers\PakaianController;
@@ -68,6 +69,7 @@ Route::get('/auth/redirect', [SocialController::class, 'redirect'])->name('googl
 Route::get('/google/redirect', [SocialController::class, 'googleCallback'])->name('google.callback');
 
 Route::resource('user-settings', UserController::class);
+Route::resource('change-password', ChangePasswordController::class);
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
