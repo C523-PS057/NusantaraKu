@@ -67,6 +67,9 @@ Route::resource('semua-budaya', SemuaBudayaController::class);
 
 Route::get('/auth/redirect', [SocialController::class, 'redirect'])->name('google.redirect');
 Route::get('/google/redirect', [SocialController::class, 'googleCallback'])->name('google.callback');
+Route::get('/tentang', function () {
+    return view('main.tentang');
+});
 Route::get('/reset-berhasil', function () {
     return view('auth.passwords.confirm');
 });

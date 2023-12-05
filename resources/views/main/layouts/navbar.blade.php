@@ -66,7 +66,7 @@
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="tentang.html">Tentang</a>
+                    <a class="nav-link" href="/tentang">Tentang</a>
                 </li>
             </ul>
             <ul class="navbar-nav mb-2 mb-lg-0 navbar-right">
