@@ -84,7 +84,7 @@
                             </button>
                             <ul class="dropdown-menu dropdown-menu-end fade">
                                 <li><a href="{{ route('user-settings.show',auth()->user()->id) }}" class="dropdown-item">Profil Saya</a></li>
-                                <li><a href="dashboard-user-edit.html" class="dropdown-item">Edit Profil</a></li>
+                                <li><a href="{{ route('user-settings.edit',auth()->user()->id) }}" class="dropdown-item">Edit Profil</a></li>
                                 <li><a href="dashboard-user-ubah.html" class="dropdown-item">Ubah Password</a></li>
                                 <li><a href="logout.html" class="dropdown-item">Keluar Akun</a></li>
                             </ul>
