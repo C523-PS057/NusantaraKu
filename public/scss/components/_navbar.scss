@@ -40,6 +40,12 @@
         display: flex;
         align-items: center;
 
+        &.text-danger {
+            border-radius: 0.5rem;
+            background-color: lighten($color: $red, $amount: 35%);
+            font-weight: 600;
+        }
+
         &:hover {
             color: $red;
         }

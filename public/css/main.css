@@ -254,6 +254,11 @@ input[type=checkbox] {
   display: flex;
   align-items: center;
 }
+.nav-link.text-danger {
+  border-radius: 0.5rem;
+  background-color: #f8d1d1;
+  font-weight: 600;
+}
 .nav-link:hover {
   color: #e23535;
 }

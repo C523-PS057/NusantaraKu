@@ -39,11 +39,11 @@
                 <td><a href="{{ $item->video_link }}" target="blank">Klik Disini</a></td>
                 <td class="column-action">
                     <a href="{{ route('provinsi.show',$item->id) }}" class="btn-icon" style="text-decoration: none" target="_blank" rel="noopener noreferrer">
-                        <i class="ri-eye-fill" style="font-size: 20px; color:#005bfc"></i>
+                        <i class="ri-eye-fill"></i>
                     </a>
                     <a href="{{ route('province.edit',$item->id) }}" class="btn-icon mx-2"
                         style="text-decoration: none">
-                        <i class="ri-edit-line" style="font-size: 20px; color: #fcba03"></i>
+                        <i class="ri-edit-line"></i>
                     </a>
                     <form class="d-inline" action="{{ route('province.destroy',$item->id) }}" method="POST">
                         @csrf
@@ -63,12 +63,12 @@
 </div>
 @else
 <div class="d-flex justify-content-center my-2">
-    <div class="">
-        <h2>No Province Found</h2>
+    <div>
+        <h3>Tidak ada data provinsi</h2>
     </div>
 </div>
 <div class="d-flex justify-content-center my-1">
-    <div class=""><a href="{{ route('province.create') }}" class="btn btn-primary">Create new Province</a></div>
+    <div class=""><a href="{{ route('province.create') }}" class="btn btn-primary">Tambahkan Data Provinsi</a></div>
 </div>
 @endif
 @endsection
