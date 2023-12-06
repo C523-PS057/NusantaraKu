@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Budaya;
 use App\Models\Masakan;
 use App\Models\Musik;
 use App\Models\Pakaian;
@@ -20,7 +19,7 @@ class SemuaBudayaController extends Controller
         $pakaianQuery = Pakaian::with('province');
         $rumahQuery = Rumah::with('province');
         $tariQuery = Tari::with('province');
-
+        $selectedValue = null;
         if ($request->filled('search')) {
             $search = $request->input('search');
             $masakanQuery->search($search);
@@ -36,27 +35,32 @@ class SemuaBudayaController extends Controller
                 case '1':
                     // Jika masakan yang dipilih
                     $masakan[] = $masakanQuery->where('budaya_id', $filterKategori)->get();
-                    return view('main.all-budaya.semua', ['data' => $masakan]);
+                    $selectedValue = $request->input('filter-kategori');
+                    return view('main.all-budaya.semua', ['data' => $masakan, 'selectedValue' => $selectedValue]);
                     break;
                 case '2':
                     // Jika musik yang dipilih
                     $musik[] = $musikQuery->where('budaya_id', $filterKategori)->get();
-                    return view('main.all-budaya.semua', ['data' => $musik]);
+                    $selectedValue = $request->input('filter-kategori');
+                    return view('main.all-budaya.semua', ['data' => $musik, 'selectedValue' => $selectedValue]);
                     break;
                 case '3':
                     // Jika pakaian yang dipilih
                     $pakaian[] = $pakaianQuery->where('budaya_id', $filterKategori)->get();
-                    return view('main.all-budaya.semua', ['data' => $pakaian]);
+                    $selectedValue = $request->input('filter-kategori');
+                    return view('main.all-budaya.semua', ['data' => $pakaian, 'selectedValue' => $selectedValue]);
                     break;
                 case '4':
                     // Jika rumah yang dipilih
                     $rumah[] = $rumahQuery->where('budaya_id', $filterKategori)->get();
-                    return view('main.all-budaya.semua', ['data' => $rumah]);
+                    $selectedValue = $request->input('filter-kategori');
+                    return view('main.all-budaya.semua', ['data' => $rumah, 'selectedValue' => $selectedValue]);
                     break;
                 case '5':
                     // Jika tari yang dipilih
+                    $selectedValue = $request->input('filter-kategori');
                     $tari[] = $tariQuery->where('budaya_id', $filterKategori)->get();
-                    return view('main.all-budaya.semua', ['data' => $tari]);
+                    return view('main.all-budaya.semua', ['data' => $tari, 'selectedValue' => $selectedValue]);
                     break;
                 default:
                     flash()->addError('Data Tidak Ditemukan');
@@ -74,7 +78,8 @@ class SemuaBudayaController extends Controller
                 $rumah = $rumahQuery->where('province_id', $province->id)->get();
                 $tari = $tariQuery->where('province_id', $province->id)->get();
                 $data = [$masakan, $musik, $pakaian, $rumah, $tari];
-                return view('main.all-budaya.semua', ['data' => $data]);
+                $selectedValue = $request->input('filter-provinsi');
+                return view('main.all-budaya.semua', ['data' => $data, 'selectedValue' => $selectedValue]);
             } else {
                 flash()->addError('Data Tidak Ditemukan');
                 return back();
@@ -90,7 +95,8 @@ class SemuaBudayaController extends Controller
                     $rumah = $rumahQuery->latest()->get();
                     $tari = $tariQuery->latest()->get();
                     $data = [$masakan, $musik, $pakaian, $rumah, $tari];
-                    return view('main.all-budaya.semua', ['data' => $data]);
+                    $selectedValue = 'terbaru';
+                    return view('main.all-budaya.semua', ['data' => $data, 'selectedValue' => $selectedValue]);
                     break;
                 case 'A-Z':
                     $masakan = $masakanQuery->orderBy('masakan_name', 'asc')->get();
@@ -99,7 +105,8 @@ class SemuaBudayaController extends Controller
                     $rumah = $rumahQuery->orderBy('rumah_adat_name', 'asc')->get();
                     $tari = $tariQuery->orderBy('tarian_name', 'asc')->get();
                     $data = [$masakan, $musik, $pakaian, $rumah, $tari];
-                    return view('main.all-budaya.semua', ['data' => $data]);
+                    $selectedValue = 'A-Z';
+                    return view('main.all-budaya.semua', ['data' => $data, 'selectedValue' => $selectedValue]);
                     break;
                 case 'Z-A':
                     $masakan = $masakanQuery->orderBy('masakan_name', 'desc')->get();
@@ -108,7 +115,8 @@ class SemuaBudayaController extends Controller
                     $rumah = $rumahQuery->orderBy('rumah_adat_name', 'desc')->get();
                     $tari = $tariQuery->orderBy('tarian_name', 'desc')->get();
                     $data = [$masakan, $musik, $pakaian, $rumah, $tari];
-                    return view('main.all-budaya.semua', ['data' => $data]);
+                    $selectedValue = 'Z-A';
+                    return view('main.all-budaya.semua', ['data' => $data, 'selectedValue' => $selectedValue]);
                     break;
                 default:
                     flash()->addError('Data Tidak Ditemukan');
@@ -126,7 +134,8 @@ class SemuaBudayaController extends Controller
         $data = [$masakan, $musik, $pakaian, $rumah, $tari];
 
         return view('main.all-budaya.semua', [
-            'data' => collect($data)
+            'data' => collect($data),
+            'selectedValue' => $selectedValue
         ]);
     }
 }
