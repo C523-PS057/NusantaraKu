@@ -7,7 +7,7 @@
   <form action="{{ route('musik.index') }}" method="GET">
   <div class="input-group mb-3">
     <div class="col-md-5">
-        <input name="search" type="text" class="form-control" placeholder="Cari Masakan Khas.." aria-label="search" aria-describedby="basic-addon2" value="{{ request('search') }}">
+        <input name="search" type="text" class="form-control" placeholder="Cari Alat Musik.." aria-label="search" aria-describedby="basic-addon2" value="{{ request('search') }}">
     </div>
     <button class="btn btn-primary" type="submit" id="button-addon2">
         <i class="ri-search-line"></i>
@@ -29,7 +29,7 @@
                                 </div>
                                 <div class="detail__item-content">
                                     <h6>{{ $item->alat_musik_name }}</h6>
-                                    <p>Masakan Khas</p>
+                                    <p>Alat Musik</p>
                                     <div class="detail__item-buttons">
                                       <a href="/detail-musik/{{ $item->id }}" class="btn btn-outline" target="_blank" rel="noopener noreferrer"><i class="ri-eye-line"></i> Lihat</a>
                                       <a href="{{ route('musik.edit',$item->id) }}" class="btn btn-outline"><i class="ri-edit-line"></i>Ubah</a>
@@ -51,10 +51,10 @@
 </div>
   @else
     <div class="d-flex justify-content-center my-2">
-        <div class=""><h2>Tidak ada masakan yang ditemukan</h2></div>
+        <div class=""><h2>Tidak ada alat musik yang ditemukan</h2></div>
     </div>
     <div class="d-flex justify-content-center my-1">
-        <div class=""><a href="{{ route('musik.create') }}" class="btn btn-primary">Tambahkan Data Masakan</a></div>
+        <div class=""><a href="{{ route('musik.create') }}" class="btn btn-primary">Tambahkan Data Alat Musik</a></div>
     </div>
 @endif
 @endsection
