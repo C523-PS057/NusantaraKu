@@ -28,7 +28,6 @@ class UserController extends Controller
     {
         $validatedData = [
             'name' => 'required',
-            'email' => 'required',
             'tanggal_lahir' => 'required',
             'gambar' => 'nullable|image|mimes:jpeg,png,jpg|max:5000'
         ];
