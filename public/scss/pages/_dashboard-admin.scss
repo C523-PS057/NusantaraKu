@@ -67,3 +67,27 @@ trix-toolbar .trix-button {
         gap: 1.5rem;
     }
 }
+
+.navbar-dark {
+    padding: 0.5rem 1rem !important;
+    flex-wrap: wrap;
+
+    .navbar-brand {
+        display: block;
+        font-size: 1rem;
+        color: $text-white-secondary;
+
+        strong {
+            color: $text-white;
+        }
+    }
+
+    img {
+        width: 200px;
+    }
+
+    button,
+    .navbar-nav {
+        display: none;
+    }
+}

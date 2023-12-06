@@ -1553,6 +1553,26 @@ trix-toolbar .trix-button {
   gap: 1.5rem;
 }
 
+.navbar-dark {
+  padding: 0.5rem 1rem !important;
+  flex-wrap: wrap;
+}
+.navbar-dark .navbar-brand {
+  display: block;
+  font-size: 1rem;
+  color: rgba(241, 241, 241, 0.75);
+}
+.navbar-dark .navbar-brand strong {
+  color: #f1f1f1;
+}
+.navbar-dark img {
+  width: 200px;
+}
+.navbar-dark button,
+.navbar-dark .navbar-nav {
+  display: none;
+}
+
 @media screen and (max-width: 992px) {
   html {
     font-size: 14px;
@@ -1780,6 +1800,23 @@ trix-toolbar .trix-button {
   }
   hr {
     margin: 2.5rem 0;
+  }
+  .sidebar {
+    padding: 1rem;
+    background-color: #fff !important;
+    z-index: 999;
+  }
+  .sidebar hr {
+    margin: 0.5rem 0;
+  }
+  .sidebar .nav-link {
+    justify-content: center;
+  }
+  .navbar-dark {
+    padding: 1rem !important;
+  }
+  .navbar-toggler {
+    right: 1rem;
   }
 }
 @media screen and (max-width: 576px) {

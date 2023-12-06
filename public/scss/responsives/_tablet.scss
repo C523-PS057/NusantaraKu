@@ -313,4 +313,26 @@
     hr {
         margin: 2.5rem 0;
     }
+
+    .sidebar {
+        padding: 1rem;
+        background-color: #fff !important;
+        z-index: 999;
+
+        hr {
+            margin: 0.5rem 0;
+        }
+
+        .nav-link {
+            justify-content: center;
+        }
+    }
+
+    .navbar-dark {
+        padding: 1rem !important;
+    }
+
+    .navbar-toggler {
+        right: 1rem;
+    }
 }
