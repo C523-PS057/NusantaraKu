@@ -2864,7 +2864,7 @@ fieldset:disabled .btn {
     --bs-btn-disabled-bg: #0dcaf0;
     --bs-btn-disabled-border-color: #0dcaf0;
 }
-.btn-warning {
+.btn-primary {
     --bs-btn-color: #000;
     --bs-btn-bg: #ffc107;
     --bs-btn-border-color: #ffc107;

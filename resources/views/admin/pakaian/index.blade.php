@@ -23,7 +23,7 @@
               <h5 class="card-title">{{ $item->province->province_name }}</h5>
               <h5 class="card-title">{{ $item->pakaian_name }}</h5>
               <a href="{{ route('pakaian.show',$item->id) }}" class="btn btn-primary">Detail</a>
-              <a href="{{ route('pakaian.edit',$item->id) }}" class="btn btn-warning my-2">Edit</a>
+              <a href="{{ route('pakaian.edit',$item->id) }}" class="btn btn-primary my-2">Edit</a>
               <form action="{{ route('pakaian.destroy',$item->id) }}" method="POST">
                 @csrf
                 @method('DELETE')

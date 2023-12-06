@@ -1105,7 +1105,18 @@ input[type=checkbox] {
 .detail__item:hover img {
   scale: 1.2;
 }
+.detail__item-buttons {
+  margin-top: 0.5rem;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+}
+.detail__item-buttons form {
+  grid-column: span 2/span 2;
+}
 .detail__item-content {
+  width: 100%;
   padding: 1rem;
 }
 .detail__item-province {
@@ -1788,6 +1799,9 @@ trix-toolbar .trix-button {
   }
   .dashboard-admin__grid {
     grid-template-columns: repeat(1, 1fr);
+  }
+  .categories__content-admin .col-6 {
+    width: 100%;
   }
 }
 @media screen and (min-width: 993px) {

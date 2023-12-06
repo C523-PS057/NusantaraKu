@@ -73,7 +73,20 @@
             }
         }
 
+        &-buttons {
+            margin-top: 0.5rem;
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.5rem;
+
+            form {
+                grid-column: span 2 / span 2;
+            }
+        }
+
         &-content {
+            width: 100%;
             padding: 1rem;
         }
 

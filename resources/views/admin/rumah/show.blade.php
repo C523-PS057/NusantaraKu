@@ -8,7 +8,7 @@
             <div class="mb-3">
             <a href="{{ route('rumah.index') }}" class="btn btn-success"><i class="bi bi-arrow-left-circle"></i>
                 Back To All Of Rumah Adat</a>
-            <a href="{{ route('rumah.edit',$data->id) }}" class="btn btn-warning"><i class="bi bi-pencil-fill"></i> Edit</a>
+            <a href="{{ route('rumah.edit',$data->id) }}" class="btn btn-primary"><i class="bi bi-pencil-fill"></i> Edit</a>
             <a href="{{ route('province.show',$data->province->id) }}" class="btn btn-primary"><i class="bi bi-pencil-fill"></i>Province</a>
             <form class="d-inline" action="{{ route('rumah.destroy',$data->id) }}" method="POST">
                 @csrf

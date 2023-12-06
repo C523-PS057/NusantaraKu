@@ -8,7 +8,7 @@
             <div class="mb-3">
             <a href="{{ route('tari.index') }}" class="btn btn-success"><i class="bi bi-arrow-left-circle"></i>
                 Back To All Of Tarian</a>
-            <a href="{{ route('tari.edit',$data->id) }}" class="btn btn-warning"><i class="bi bi-pencil-fill"></i> Edit</a>
+            <a href="{{ route('tari.edit',$data->id) }}" class="btn btn-primary"><i class="bi bi-pencil-fill"></i> Edit</a>
             <a href="{{ route('province.show',$data->province->id) }}" class="btn btn-primary"><i class="bi bi-pencil-fill"></i>Province</a>
             <form class="d-inline" action="{{ route('tari.destroy',$data->id) }}" method="POST">
                 @csrf

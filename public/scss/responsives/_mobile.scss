@@ -31,4 +31,10 @@
             grid-template-columns: repeat(1, 1fr);
         }
     }
+
+    .categories__content-admin {
+        .col-6 {
+            width: 100%;
+        }
+    }
 }

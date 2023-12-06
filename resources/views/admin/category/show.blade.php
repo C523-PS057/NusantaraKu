@@ -23,7 +23,7 @@
                     <h5 class="card-title">{{ $item->province->province_name }}</h5>
                     <h5 class="card-title">{{ $item->alat_musik_name }}</h5>
                   <a href="{{ route('masakan.show',$item->id) }}" class="btn btn-primary">Detail</a>
-                  <a href="{{ route('masakan.edit',$item->id) }}" class="btn btn-warning my-2">Edit</a>
+                  <a href="{{ route('masakan.edit',$item->id) }}" class="btn btn-primary my-2">Edit</a>
                   <form action="{{ route('masakan.destroy',$item->id) }}" method="POST">
                     @csrf
                     @method('DELETE')
@@ -44,7 +44,7 @@
                   <h5 class="card-title">{{ $item->province->province_name }}</h5>
                   <h5 class="card-title">{{ $item->alat_musik_name }}</h5>
                   <a href="{{ route('musik.show',$item->id) }}" class="btn btn-primary">Detail</a>
-                  <a href="{{ route('musik.edit',$item->id) }}" class="btn btn-warning my-2">Edit</a>
+                  <a href="{{ route('musik.edit',$item->id) }}" class="btn btn-primary my-2">Edit</a>
                   <form action="{{ route('musik.destroy',$item->id) }}" method="POST">
                     @csrf
                     @method('DELETE')
@@ -65,7 +65,7 @@
                   <h5 class="card-title">{{ $item->province->province_name }}</h5>
                   <h5 class="card-title">{{ $item->pakaian_name }}</h5>
                   <a href="{{ route('pakaian.show',$item->id) }}" class="btn btn-primary">Detail</a>
-                  <a href="{{ route('pakaian.edit',$item->id) }}" class="btn btn-warning my-2">Edit</a>
+                  <a href="{{ route('pakaian.edit',$item->id) }}" class="btn btn-primary my-2">Edit</a>
                   <form action="{{ route('pakaian.destroy',$item->id) }}" method="POST">
                     @csrf
                     @method('DELETE')
@@ -86,7 +86,7 @@
                   <h5 class="card-title">{{ $item->province->province_name }}</h5>
                   <h5 class="card-title">{{ $item->rumah_adat_name }}</h5>
                   <a href="{{ route('rumah.show',$item->id) }}" class="btn btn-primary">Detail</a>
-                  <a href="{{ route('rumah.edit',$item->id) }}" class="btn btn-warning my-2">Edit</a>
+                  <a href="{{ route('rumah.edit',$item->id) }}" class="btn btn-primary my-2">Edit</a>
                   <form action="{{ route('rumah.destroy',$item->id) }}" method="POST">
                     @csrf
                     @method('DELETE')
@@ -107,7 +107,7 @@
                   <h5 class="card-title">{{ $item->province->province_name }}</h5>
                   <h5 class="card-title">{{ $item->tarian_name }}</h5>
                   <a href="{{ route('tari.show',$item->id) }}" class="btn btn-primary">Detail</a>
-                  <a href="{{ route('tari.edit',$item->id) }}" class="btn btn-warning my-2">Edit</a>
+                  <a href="{{ route('tari.edit',$item->id) }}" class="btn btn-primary my-2">Edit</a>
                   <form action="{{ route('tari.destroy',$item->id) }}" method="POST">
                     @csrf
                     @method('DELETE')
