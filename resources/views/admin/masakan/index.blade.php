@@ -2,7 +2,7 @@
 @section('container')
 @if ($data->count() > 0)
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-    <h1 class="h2">Masakan Khas</h1>
+    <h1 class="h2">Kelola Data Masakan Khas</h1>
   </div>
   <form action="{{ route('masakan.index') }}" method="GET">
   <div class="input-group mb-3">
@@ -51,10 +51,10 @@
 </div>
   @else
     <div class="d-flex justify-content-center my-2">
-        <div class=""><h2>No Masakan Found</h2></div>
+        <div class=""><h2>Tidak ada masakan yang ditemukan</h2></div>
     </div>
     <div class="d-flex justify-content-center my-1">
-        <div class=""><a href="{{ route('masakan.create') }}" class="btn btn-primary">Create New Masakan</a></div>
+        <div class=""><a href="{{ route('masakan.create') }}" class="btn btn-primary">Tambahkan Data Masakan</a></div>
     </div>
 @endif
 @endsection
