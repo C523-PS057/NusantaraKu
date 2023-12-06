@@ -122,14 +122,14 @@
                                 </div>
                                 <div class="detail__item-content">
                                     @if ($itemData->budaya_id == '1')
-                                    <h6>Masakan {{ $itemData->masakan_name }}</h6>
+                                    <h6>{{ $itemData->masakan_name }}</h6>
                                     <p>Masakan Khas</p>
                                     @elseif ($itemData->budaya_id == '2')
-                                    <h6>Alat Musik {{ $itemData->alat_musik_name }}</h6>
+                                    <h6>{{ $itemData->alat_musik_name }}</h6>
                                     <p>Alat Musik</p>
                                     @elseif ($itemData->budaya_id == '3')
-                                    <h6>Pakaian {{ $itemData->pakaian_name }}</h6>
-                                    <p>Pakaian Tradisional</p>
+                                    <h6>{{ $itemData->pakaian_name }}</h6>
+                                    <p>Pakaian Adat</p>
                                     @elseif ($itemData->budaya_id == '4')
                                     <h6>Rumah {{ $itemData->rumah_adat_name }}</h6>
                                     <p>Rumah Adat</p>

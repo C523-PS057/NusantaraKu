@@ -96,7 +96,7 @@
                                     </span>
                                 </div>
                                 <div class="detail__item-content">
-                                    <h6>Alat Musik {{ $item->alat_musik_name }}</h6>
+                                    <h6>{{ $item->alat_musik_name }}</h6>
                                     <p>Alat Musik Tradisional</p>
                                 </div>
                             </a>

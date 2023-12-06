@@ -94,8 +94,8 @@
                                     </span>
                                 </div>
                                 <div class="detail__item-content">
-                                    <h6>Masakan Khas {{ $item->masakan_name }}</h6>
-                                    <p>{{ Str::limit($item->deskripsi, 10, '...') }}</p>
+                                    <h6>{{ $item->masakan_name }}</h6>
+                                    <p>Masakan Khas</p>
                                 </div>
                             </a>
                         </div>

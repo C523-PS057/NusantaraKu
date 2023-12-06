@@ -96,7 +96,7 @@
                                     </span>
                                 </div>
                                 <div class="detail__item-content">
-                                    <h6>Pakaian {{ $item->pakaian_name }}</h6>
+                                    <h6>{{ $item->pakaian_name }}</h6>
                                     <p>Pakaian Adat</p>
                                 </div>
                             </a>
