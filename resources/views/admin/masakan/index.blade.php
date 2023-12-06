@@ -28,7 +28,7 @@
                                     </span>
                                 </div>
                                 <div class="detail__item-content">
-                                    <h6>Tari {{ $item->masakan_name }}</h6>
+                                    <h6>{{ $item->masakan_name }}</h6>
                                     <p>Masakan Khas</p>
                                     <div class="detail__item-buttons">
                                       <a href="/detail-masakan/{{ $item->id }}" class="btn btn-outline" target="_blank" rel="noopener noreferrer"><i class="ri-eye-line"></i> Lihat</a>
