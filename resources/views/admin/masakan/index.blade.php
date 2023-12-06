@@ -14,7 +14,7 @@
     </button>
   </div>
   </form>
-    <a href="{{ route('masakan.create') }}" class="btn btn-primary mb-3">Tambahkan Data Masakan</a>
+    <a href="{{ route('masakan.create') }}" class="btn btn-primary mb-3">Tambahkan Data Masakan Khas</a>
     <div class="categories__content categories__content-admin">
                     <div class="row">
                         @foreach ($data as $item)
