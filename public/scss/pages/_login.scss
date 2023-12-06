@@ -75,6 +75,15 @@
                 aspect-ratio: 1/1;
             }
         }
+
+        .btn-outline {
+            color: $text-black;
+
+            &:hover {
+                text-decoration: none;
+                color: $red;
+            }
+        }
     }
 
     &__footer {
@@ -102,7 +111,7 @@
         }
     }
 
-    label[for='terms'] {
+    label[for="terms"] {
         width: 100%;
         display: flex;
         align-items: center;

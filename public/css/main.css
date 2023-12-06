@@ -193,13 +193,15 @@ h6 {
 }
 .btn-outline {
   background-color: transparent;
-  color: #000;
-  border: 1px solid #000;
+  color: #1c1c1c;
+  border: 1px solid #1c1c1c;
+  text-decoration: none;
 }
 .btn-outline:hover, .btn-outline:active, .btn-outline:focus {
   border: 1px solid #e23535;
   background-color: transparent;
   color: #e23535;
+  text-decoration: none;
 }
 .btn-icon {
   background-color: transparent;
@@ -1003,6 +1005,13 @@ input[type=checkbox] {
   width: 1.2rem;
   height: 1.2rem;
   aspect-ratio: 1/1;
+}
+.login__button .btn-outline {
+  color: #1c1c1c;
+}
+.login__button .btn-outline:hover {
+  text-decoration: none;
+  color: #e23535;
 }
 .login__footer p {
   font-size: 0.9rem;
