@@ -58,3 +58,12 @@ trix-toolbar .trix-button {
     align-items: center;
     background-color: $white;
 }
+
+.dashboard-admin {
+    &__grid {
+        padding: 0;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+    }
+}
