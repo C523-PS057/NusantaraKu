@@ -9,10 +9,6 @@
             <a href="{{ route('budaya.index') }}" class="btn btn-success"><i class="bi bi-arrow-left-circle"></i>
                 Back To All Of My Budaya</a>
             </div>
-            <article class="my-3 fs-5">
-                <label for=""><strong>Image : </strong></label>
-                <br>
-            </article>
         </div>
     </div>
 </div>
