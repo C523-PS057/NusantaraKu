@@ -26,7 +26,7 @@
             cursor: pointer;
         }
 
-        input[type='file'] {
+        input[type="file"] {
             display: none;
         }
 
@@ -35,6 +35,7 @@
             height: 100%;
             border-radius: 100%;
             aspect-ratio: 1/1;
+            object-fit: cover;
         }
     }
 
