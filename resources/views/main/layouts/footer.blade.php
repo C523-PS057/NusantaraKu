@@ -14,8 +14,8 @@
                         <strong><p>Halaman</p></strong>
                         <ul>
                             <li><a href="/">Beranda</a></li>
-                            <li><a href="semua-budaya.html">Semua Budaya</a></li>
-                            <li><a href="tentang.html">Tentang</a></li>
+                            <li><a href="/semua-budaya">Semua Budaya</a></li>
+                            <li><a href="/tentang">Tentang</a></li>
                         </ul>
                     </div>
                     <div class="col-12 col-sm-4">
