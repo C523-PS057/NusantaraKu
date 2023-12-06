@@ -48,7 +48,8 @@
                             <div class="input__group">
                                 <label class="input__label" for="password">Password </label>
                                 <input type="password" name="password" value="{{ old('password') }}" id="password" required autocomplete="true" />
-                                <button class="btn-icon btn-toggle-password"><i class="ri-eye-line"></i></button>
+                                <button class="btn-icon btn-toggle-password" tabindex="-1"><i
+                                            class="ri-eye-line"></i></button>
                             </div>
                             @error('password')
                                 <span class="text-danger">{{ $message }}</span>
@@ -56,7 +57,8 @@
                             <div class="input__group">
                                 <label class="input__label" for="confirm-password">Konfirmasi Password</label>
                                 <input type="password" name="password_confirmation" value="{{ old('password_confirmation') }}" id="confirm-password" required autocomplete="true" />
-                                <button class="btn-icon btn-toggle-password"><i class="ri-eye-line"></i></button>
+                                <button class="btn-icon btn-toggle-password" tabindex="-1"><i
+                                            class="ri-eye-line"></i></button>
                             </div>
                             @error('password_confirmation')
                                 <span class="text-danger">{{ $message }}</span>

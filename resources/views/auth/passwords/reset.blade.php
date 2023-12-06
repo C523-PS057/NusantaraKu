@@ -29,7 +29,8 @@
                                     <div class="input__group">
                                         <label class="input__label" for="password">Password </label>
                                         <input type="password" name="password" id="password" required autocomplete="true" />
-                                        <button class="btn-icon btn-toggle-password"><i class="ri-eye-line"></i></button>
+                                        <button class="btn-icon btn-toggle-password" tabindex="-1"><i
+                                            class="ri-eye-line"></i></button>
                                         @error('password')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -39,7 +40,8 @@
                                     <div class="input__group">
                                         <label class="input__label" for="confirm-password">Konfirmasi Password</label>
                                         <input type="password" name="password_confirmation" id="confirm-password" required autocomplete="true" />
-                                        <button class="btn-icon btn-toggle-password"><i class="ri-eye-line"></i></button>
+                                        <button class="btn-icon btn-toggle-password" tabindex="-1"><i
+                                            class="ri-eye-line"></i></button>
                                         @error('password_confirmation')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
