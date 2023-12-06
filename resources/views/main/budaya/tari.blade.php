@@ -48,9 +48,11 @@
                                     @foreach ($comments as $item)
                                     <div class="detail__comment-item">
                                         <div class="detail__comment-header">
-                                            <span class="detail__comment-name">{{ $item->user->name }}</span>
-                                            <span
-                                                class="detail__comment-date">{{ Carbon\Carbon::parse($item->created_at)->translatedFormat('d F Y') }}</span>
+                                            <img src="{{ Storage::url($item->user->gambar) }}" alt="Foto Profil User" class="detail__comment-image rounded-circle" />
+                                            <div class="detail__comment-info">
+                                                <span class="detail__comment-name">{{ $item->user->name }}</span>
+                                                <span class="detail__comment-date">{{ Carbon\Carbon::parse($item->created_at)->translatedFormat('d F Y') }}</span>
+                                            </div>
                                         </div>
                                         <div class="detail__comment-text">{{ $item->body_comment }}</div>
                                         @can('admin')

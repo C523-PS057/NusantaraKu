@@ -73,10 +73,10 @@
                         </form>
                         <form action="{{ route('masakan-khas.index') }}" method="GET" id="filterUrutkan">
                             <select class="categories__filter-select" name="filter-query" id="filter-query">
-                                <option value="" selected disabled>Urutkan</option>
-                                <option value="terbaru">Terbaru</option>
-                                <option value="A-Z">A-Z</option>
-                                <option value="Z-A">Z-A</option>
+                                <option value="" {{ $selectedValue === null ? 'selected' : '' }} disabled>Urutkan</option>
+                                    <option value="terbaru" {{ $selectedValue === 'terbaru' ? 'selected' : '' }}>Terbaru</option>
+                                    <option value="A-Z" {{ $selectedValue === 'A-Z' ? 'selected' : '' }}>A-Z</option>
+                                    <option value="Z-A" {{ $selectedValue === 'Z-A' ? 'selected' : '' }}>Z-A</option>
                             </select>
                         </form>
                     </div>
