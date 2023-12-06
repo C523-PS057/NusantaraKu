@@ -31,7 +31,7 @@
                             <div class="input__group">
                                 <label class="input__label" for="password">Password </label>
                                 <input type="password" name="password" id="password" value="{{ old('password') }}" required autocomplete="true" />
-                                <button class="btn-icon" id="btn-toggle-password"><i class="ri-eye-line"></i></button>
+                                <button class="btn-icon" id="btn-toggle-password" tabindex="-1"><i class="ri-eye-line"></i></button>
                             </div>
                             @error('email')
                                 <span class="text-danger">{{ $message }}</span>

@@ -18,25 +18,25 @@
             <li class="nav-item">
                 <a class="nav-link text-{{ Request::is('admin/budaya*') ? 'danger' :'dark' }}" href="/admin/budaya">
                     <span data-feather="file"></span>
-                    Budaya
+                    Kategori Budaya
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link text-{{ Request::is('admin/masakan*') ? 'danger' :'dark' }}" href="/admin/masakan">
                     <span data-feather="file"></span>
-                    Masakan
+                    Masakan Khas
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link text-{{ Request::is('admin/musik*') ? 'danger' :'dark' }}" href="/admin/musik">
                     <span data-feather="file"></span>
-                    Musik
+                    Alat Musik
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link text-{{ Request::is('admin/pakaian*') ? 'danger' :'dark' }}" href="/admin/pakaian">
                     <span data-feather="file"></span>
-                    Pakaian
+                    Pakaian Adat
                 </a>
             </li>
             <li class="nav-item">
@@ -48,7 +48,7 @@
             <li class="nav-item">
                 <a class="nav-link text-{{ Request::is('admin/tari*') ? 'danger' :'dark' }}" href="/admin/tari">
                     <span data-feather="file"></span>
-                    Tarian
+                    Tari Tradisional
                 </a>
             </li>
             <hr>
@@ -60,9 +60,9 @@
             </li>
             <li>
                 <hr>
-                <form action="/logout" method="POST">
+                <form action="/logout" method="POST" style="width:100%">
                     @csrf
-                    <button type="submit" class="nav-link text-dark px-3 border-0" style="background-color: #f8f9fa ">
+                    <button type="submit" class="nav-link btn-outline"  style="width:100%;gap:.5rem;border-radius:.5rem">
                         <i class="ri-logout-box-line"></i>
                         Logout
                     </button>
