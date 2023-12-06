@@ -1,0 +1,60 @@
+.form-label {
+    font-weight: 600 !important;
+}
+
+table {
+    border: 1px solid $border;
+    tbody {
+        td {
+            vertical-align: middle;
+            color: $text-black;
+        }
+    }
+
+    .column-action {
+        display: inline-flex;
+        gap: 0;
+
+        a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid $border;
+            border-radius: 0.25rem;
+
+            &:hover {
+                border: 1px solid $red;
+
+                i {
+                    color: $red !important;
+                }
+            }
+        }
+
+        .bg-danger {
+            transition: all 0.3s ease;
+            background-color: $red !important;
+
+            &:hover {
+                background-color: darken($red, 10%) !important;
+            }
+        }
+    }
+}
+
+trix-editor {
+    background-color: $white;
+}
+
+trix-toolbar .trix-button--icon::before {
+    height: 1.5rem;
+    width: 1.5rem;
+    background-position: center;
+}
+
+trix-toolbar .trix-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $white;
+}

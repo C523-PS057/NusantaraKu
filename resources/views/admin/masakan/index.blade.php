@@ -9,7 +9,7 @@
     <div class="col-md-5">
         <input name="search" type="text" class="form-control" placeholder="search" aria-label="search" aria-describedby="basic-addon2" value="{{ request('search') }}">
     </div>
-    <button class="btn btn-outline-primary" type="submit" id="button-addon2">
+    <button class="btn btn-primary" type="submit" id="button-addon2">
         <i class="ri-search-line"></i>
     </button>
   </div>
