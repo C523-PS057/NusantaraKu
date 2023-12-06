@@ -57,7 +57,7 @@
                                                 </span>
                                             </div>
                                             <div class="detail__item-content">
-                                                <h6>{{ $item->tarian_name }}</h6>
+                                                <h6>Tari {{ $item->tarian_name }}</h6>
                                                 <p>Tari Tradisional</p>
                                             </div>
                                         </a>
@@ -80,7 +80,7 @@
                                                 </span>
                                             </div>
                                             <div class="detail__item-content">
-                                                <h6>{{ $item->rumah_adat_name }}</h6>
+                                                <h6>Rumah {{ $item->rumah_adat_name }}</h6>
                                                 <p>Rumah Adat</p>
                                             </div>
                                         </a>
@@ -103,7 +103,7 @@
                                                 </span>
                                             </div>
                                             <div class="detail__item-content">
-                                                <h6>{{ $item->pakaian_name }}</h6>
+                                                <h6>Pakaian {{ $item->pakaian_name }}</h6>
                                                 <p>Pakaian Adat</p>
                                             </div>
                                         </a>
@@ -126,7 +126,7 @@
                                                 </span>
                                             </div>
                                             <div class="detail__item-content">
-                                                <h6>{{ $item->alat_musik_name }}</h6>
+                                                <h6>Alat Musik {{ $item->alat_musik_name }}</h6>
                                                 <p>Alat Musik</p>
                                             </div>
                                         </a>
@@ -149,7 +149,7 @@
                                                 </span>
                                             </div>
                                             <div class="detail__item-content">
-                                                <h6>{{ $item->masakan_name }}</h6>
+                                                <h6>Masakan {{ $item->masakan_name }}</h6>
                                                 <p>Masakan Khas</p>
                                             </div>
                                         </a>
