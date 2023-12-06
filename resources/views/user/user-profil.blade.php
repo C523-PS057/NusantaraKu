@@ -25,7 +25,7 @@
                                 </div>
                                 <div class="user__detail">
                                     <h5 class="user__fullname">{{ $data->name }}</h5>
-                                    <p class="user__email">{{ $data->name }}</p>
+                                    <p class="user__email">{{ $data->email }}</p>
                                     <p class="user__joined">Pengguna sejak {{ $data->created_at->format('d/m/Y') }}</p>
                                 </div>
                                 <div class="user__buttons">
