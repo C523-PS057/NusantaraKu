@@ -44,7 +44,7 @@
                                     <h4>Komentar</h4>
                                     <div class="detail__comment">
                                         @foreach ($comments as $item)
-                                        <div class="detail__comment-item my-2">
+                                        <div class="detail__comment-item">
                                             <div class="detail__comment-header">
                                                 <img src="{{ Storage::url($item->user->gambar) }}" alt="Foto Profil User" class="detail__comment-image rounded-circle" />
                                                 <div class="detail__comment-info">

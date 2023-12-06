@@ -44,7 +44,7 @@
                                     <h4>Komentar</h4>
                                     <div class="detail__comment">
                                         @foreach ($comments as $item)
-                                        <div class="detail__comment-item my-2">
+                                        <div class="detail__comment-item">
                                             <div class="detail__comment-header">
                                                 <span class="detail__comment-name">{{ $item->user->name }}</span>
                                                 <span class="detail__comment-date">{{ Carbon\Carbon::parse($item->created_at)->translatedFormat('d F Y') }}</span>
