@@ -2,7 +2,7 @@
 
 @section('container')
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-    <h1 class="h2">Create New Tarian</h1>
+    <h1 class="h2">Ubah Data Tari Tradisional</h1>
   </div>
   <div class="col-lg-8">
 
@@ -10,7 +10,7 @@
         @csrf
         @method('PUT')
         <div class="mb-3">
-          <label for="tarian_name" class="form-label">Tarian Name</label>
+          <label for="tarian_name" class="form-label">Nama Tari Tradisional</label>
           <input type="text" class="form-control" id="tarian_name" name="tarian_name" autofocus value="{{ old('tarian_name',$data->tarian_name) }}">
           @error('tarian_name')
                 <p class="text-danger">{{ $message }}</p>
@@ -18,7 +18,7 @@
         </div>
           <input type="hidden" name="budaya_id" value={{ $categories }}>
         <div class="mb-3">
-            <label for="province_id" class="form-label">Province</label>
+            <label for="province_id" class="form-label">Provinsi</label>
             <select class="form-select" name="province_id">
               @foreach ($province as $item)
               @if (old('province_id') == $item->id)
@@ -30,7 +30,7 @@
             </select>
           </div>
         <div class="mb-3">
-          <label for="deskripsi" class="form-label">Description</label>
+          <label for="deskripsi" class="form-label">Deskripsi</label>
           @error('deskripsi')
              <p class="text-danger">{{ $message }}</p>
           @enderror
@@ -38,7 +38,7 @@
           <trix-editor input="deskripsi"></trix-editor>
         </div>
         <div class="mb-3">
-          <label for="sejarah" class="form-label">History</label>
+          <label for="sejarah" class="form-label">Sejarah</label>
           @error('sejarah')
              <p class="text-danger">{{ $message }}</p>
           @enderror
@@ -46,14 +46,14 @@
           <trix-editor input="sejarah"></trix-editor>
         </div>
         <div class="mb-3">
-            <label for="gambar" class="form-label">Image</label>
+            <label for="gambar" class="form-label">Gambar</label>
             <img class="img-preview img-fluid mb-3" src="{{ Storage::url($data->gambar) }}" style="width: 50%; display:block;">
             <input class="form-control" type="file" name="gambar" value="{{ old('gambar',$data->gambar) }}" id="gambar" onchange="previewImage()">
             @error('gambar')
             <p class="text-danger">{{ $message }}</p>
           @enderror
         </div>
-        <button type="submit" class="btn btn-primary">Update Tarian</button>
+        <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
       </form>
   </div>
   <script>
