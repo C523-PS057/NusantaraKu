@@ -74,8 +74,8 @@ Route::get('/reset-berhasil', function () {
     return view('auth.passwords.confirm');
 });
 
-Route::resource('user-settings', UserController::class);
-Route::resource('change-password', ChangePasswordController::class);
+Route::resource('user-settings', UserController::class)->middleware(['auth', 'verifyUserAccess']);
+Route::resource('change-password', ChangePasswordController::class)->middleware(['auth', 'verifyUserAccess']);
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

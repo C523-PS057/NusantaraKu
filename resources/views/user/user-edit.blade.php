@@ -40,7 +40,7 @@
                                     </div>
                                     <div class="input__group">
                                         <label class="input__label" for="tgl-lahir">Tanggal Lahir</label>
-                                        <input type="date" name="tanggal_lahir" id="tgl-lahir" required value="{{ \Carbon\Carbon::parse($data->tanggal_lahir)->format('Y-m-d') }}"/>
+                                        <input type="date" name="tanggal_lahir" id="tgl-lahir" required value="{{ !empty($data->tanggal_lahir) ? \Carbon\Carbon::parse($data->tanggal_lahir)->format('Y-m-d') : 'mm/dd/yy' }}"/>
                                     </div>
                                 </div>
                                 <div class="user__buttons">
