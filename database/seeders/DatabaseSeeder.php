@@ -296,14 +296,14 @@ class DatabaseSeeder extends Seeder
         ]);
         Province::create([
             'id' => 35,
-            'province_name' => 'Sulawesi Barat',
+            'province_name' => 'Sumatera Barat',
             'video_link' => '#',
             'deskripsi' => 'kosong',
             'sejarah' => 'kosong'
         ]);
         Province::create([
             'id' => 36,
-            'province_name' => 'Sulawesi Selatan',
+            'province_name' => 'Sumatera Selatan',
             'video_link' => '#',
             'deskripsi' => 'kosong',
             'sejarah' => 'kosong'
