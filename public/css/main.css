@@ -1573,6 +1573,21 @@ trix-toolbar .trix-button {
   display: none;
 }
 
+.dashboard__stats-item {
+  background-color: #fff;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+}
+.dashboard__stats-item:hover {
+  background-color: #e23535;
+  color: #f1f1f1;
+}
+.dashboard__stats-item:hover p {
+  color: #f1f1f1;
+}
+
 @media screen and (max-width: 992px) {
   html {
     font-size: 14px;

@@ -3,26 +3,33 @@
 <div class="d-flex justify-content-start flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
     <h1 class="h2">Kelola Data User</h1>
 </div>
-<div class="d-flex justify-content-start flex-row my-2">
-    <div class="d-flex align-items-center flex-column p-2 border-bottom bg-white">
-        <h5>Total User</h5>
-        <h6>{{ $totalUser }}</h6>
+
+<div class="row dashboard__stats">
+    <div class="col-6 col-md-4">
+        <div class="dashboard__stats-item">
+            <h6>Total Pengguna</h6>
+            <p>{{ $totalUser }} Orang</p>
+        </div>
     </div>
-    <div class="d-flex align-items-center flex-column p-2 border-bottom bg-white mx-3">
-        <h5>Total Komentar</h5>
-        <h6>{{ $totalComment }}</h6>
+    <div class="col-6 col-md-4">
+        <div class="dashboard__stats-item">
+            <h6>Total Komentar</h6>
+            <p>{{ $totalComment }} Komentar</p>
+        </div>
     </div>
-    <div class="d-flex align-items-center flex-column p-2 border-bottom bg-white">
-        <h5>Total Budaya</h5>
-        <h6>{{ $totalBudaya }}</h6>
+    <div class="col-6 col-md-4">
+        <div class="dashboard__stats-item">
+            <h6>Total Budaya</h6>
+            <p>{{ $totalBudaya }} Halaman</p>
+        </div>
     </div>
 </div>
 
 <form action="{{ route('data-user.index') }}" method="GET">
     <div class="input-group mb-3">
         <div class="col-md-5">
-            <input name="search" type="text" class="form-control" placeholder="Cari Data User..."
-                aria-label="search" aria-describedby="basic-addon2" value="{{ request('search') }}">
+            <input name="search" type="text" class="form-control" placeholder="Cari Data User..." aria-label="search"
+                aria-describedby="basic-addon2" value="{{ request('search') }}">
         </div>
         <button class="btn btn-primary" type="submit" id="button-addon2">
             <i class="ri-search-line"></i>
@@ -48,7 +55,8 @@
                 <td>{{ $item->email }}</td>
                 <td>{{ $item->role }}</td>
                 <td class="column-action">
-                    <a href="{{ route('user-settings.show',$item->id) }}" class="btn-icon" style="text-decoration: none" target="_blank" rel="noopener noreferrer">
+                    <a href="{{ route('user-settings.show',$item->id) }}" class="btn-icon" style="text-decoration: none"
+                        target="_blank" rel="noopener noreferrer">
                         <i class="ri-eye-fill"></i>
                     </a>
                     <a href="{{ route('user-settings.edit',$item->id) }}" class="btn-icon mx-2"
