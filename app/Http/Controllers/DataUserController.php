@@ -10,6 +10,7 @@ use App\Models\Rumah;
 use App\Models\Tari;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class DataUserController extends Controller
 {
@@ -18,12 +19,13 @@ class DataUserController extends Controller
      */
     public function index(Request $request)
     {
-        $masakan = Masakan::count();
-        $pakaian = Pakaian::count();
-        $tari = Tari::count();
-        $rumah = Rumah::count();
-        $musik = Musik::count();
-        $totalBudaya = $masakan + $pakaian + $tari + $rumah + $musik;
+        $totalBudaya = $totalBudaya = DB::table('masakans')
+            ->selectRaw('COUNT(*) as count')
+            ->unionAll(DB::table('pakaians')->selectRaw('COUNT(*)'))
+            ->unionAll(DB::table('taris')->selectRaw('COUNT(*)'))
+            ->unionAll(DB::table('rumahs')->selectRaw('COUNT(*)'))
+            ->unionAll(DB::table('musiks')->selectRaw('COUNT(*)'))
+            ->sum('count');
         $totalUser = User::count();
         $totalComment = Comment::count();
         if ($request->filled('search')) {
