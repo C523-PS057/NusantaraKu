@@ -16,22 +16,27 @@ class DataUserController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
         $masakan = Masakan::count();
         $pakaian = Pakaian::count();
         $tari = Tari::count();
         $rumah = Rumah::count();
         $musik = Musik::count();
-        $jumlahBudaya = $masakan + $pakaian + $tari + $rumah + $musik;
+        $totalBudaya = $masakan + $pakaian + $tari + $rumah + $musik;
         $totalUser = User::count();
-        $comment = Comment::count();
-        $users = User::paginate(10);
+        $totalComment = Comment::count();
+        if ($request->filled('search')) {
+            $search = $request->input('search');
+            $users = User::search($search)->paginate(10);
+        } else {
+            $users = User::paginate(10);
+        }
 
         return view('admin.data-user.index', [
-            'jumlahBudaya' => $jumlahBudaya,
+            'totalBudaya' => $totalBudaya,
             'totalUser' => $totalUser,
-            'comment' => $comment,
+            'totalComment' => $totalComment,
             'users' => $users
         ]);
     }
