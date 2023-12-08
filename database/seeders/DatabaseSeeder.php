@@ -21,7 +21,7 @@ class DatabaseSeeder extends Seeder
 
         $gambarDefaultPath = public_path('img/user-profile-default.svg');
         User::create([
-            'name' => 'Muhammad Zahran',
+            'name' => 'Muhamad Zahran Yudha',
             'email' => 'muhammadzahran02@gmail.com',
             'email_verified_at' => now(),
             'role' => 'admin',
