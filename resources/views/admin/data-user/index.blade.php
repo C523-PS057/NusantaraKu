@@ -4,26 +4,6 @@
     <h1 class="h2">Kelola Data Pengguna</h1>
 </div>
 
-<div class="row dashboard__stats">
-    <div class="col-6 col-md-4">
-        <div class="dashboard__stats-item">
-            <h6>Total Pengguna</h6>
-            <p>{{ $totalUser }} Orang</p>
-        </div>
-    </div>
-    <div class="col-6 col-md-4">
-        <div class="dashboard__stats-item">
-            <h6>Total Komentar</h6>
-            <p>{{ $totalComment }} Komentar</p>
-        </div>
-    </div>
-    <div class="col-6 col-md-4">
-        <div class="dashboard__stats-item">
-            <h6>Total Budaya</h6>
-            <p>{{ $totalBudaya }} Halaman</p>
-        </div>
-    </div>
-</div>
 
 <form action="{{ route('data-user.index') }}" method="GET">
     <div class="input-group mb-3">
@@ -36,13 +16,20 @@
         </button>
     </div>
 </form>
+
+<div class="my-4 d-flex align-items-center gap-2">
+    <p>Total Pengguna: <strong>
+            <div class="badge bg-primary">{{ $totalUser }} Orang</div>
+        </strong></p>
+</div>
+
 <div class="table-responsive col-lg-8">
     <table class="table table-striped table-sm">
         <thead>
             <tr>
                 <th scope="col">No</th>
-                <th scope="col">Name</th>
-                <th scope="col">Email</th>
+                <th scope="col">Nama Lengkap</th>
+                <th scope="col">Alamat Email</th>
                 <th scope="col">Role</th>
                 <th scope="col">Aksi</th>
             </tr>

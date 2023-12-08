@@ -19,15 +19,7 @@ class DataUserController extends Controller
      */
     public function index(Request $request)
     {
-        $totalBudaya = $totalBudaya = DB::table('masakans')
-            ->selectRaw('COUNT(*) as count')
-            ->unionAll(DB::table('pakaians')->selectRaw('COUNT(*)'))
-            ->unionAll(DB::table('taris')->selectRaw('COUNT(*)'))
-            ->unionAll(DB::table('rumahs')->selectRaw('COUNT(*)'))
-            ->unionAll(DB::table('musiks')->selectRaw('COUNT(*)'))
-            ->sum('count');
         $totalUser = User::count();
-        $totalComment = Comment::count();
         if ($request->filled('search')) {
             $search = $request->input('search');
             $users = User::search($search)->paginate(10);
@@ -36,9 +28,7 @@ class DataUserController extends Controller
         }
 
         return view('admin.data-user.index', [
-            'totalBudaya' => $totalBudaya,
             'totalUser' => $totalUser,
-            'totalComment' => $totalComment,
             'users' => $users
         ]);
     }

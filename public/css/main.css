@@ -32,6 +32,10 @@ section {
   background: #e23535;
 }
 
+.bg-primary {
+  background-color: #e23535 !important;
+}
+
 @font-face {
   font-family: "Playfair Display";
   src: url("/fonts/PlayfairDisplay-Black.woff2") format("woff2");

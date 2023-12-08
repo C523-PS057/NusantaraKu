@@ -13,6 +13,7 @@ use App\Http\Controllers\BudayaRumahAdatController;
 use App\Http\Controllers\BudayaTariController;
 use App\Http\Controllers\ChangePasswordController;
 use App\Http\Controllers\DataUserController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\MasakanController;
 use App\Http\Controllers\MusikController;
 use App\Http\Controllers\PakaianController;
@@ -40,9 +41,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
-    Route::get('/dashboard', function () {
-        return view("admin.dashboard");
-    });
+    // Route::get('/dashboard', function () {
+    //     return view("admin.dashboard");
+    // });
+    Route::resource('dashboard', DashboardController::class);
     Route::resource('province', ProvinceController::class);
     Route::resource('budaya', BudayaController::class);
     Route::resource('masakan', MasakanController::class);
