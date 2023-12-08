@@ -51,6 +51,12 @@
                     Tari Tradisional
                 </a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link text-{{ Request::is('admin/data-user*') ? 'danger' :'dark' }}" href="/admin/data-user">
+                    <span data-feather="file"></span>
+                    Data User
+                </a>
+            </li>
             <hr>
             <li class="nav-item">
                 <a class="nav-link text-dark" href="/">

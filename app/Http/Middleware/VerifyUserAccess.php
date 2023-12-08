@@ -14,7 +14,7 @@ class VerifyUserAccess
         $requestedUserId = User::findOrFail($request->segment(2));
         $loggedInUserId = Auth::id();
 
-        if ($requestedUserId->id == $loggedInUserId) {
+        if ($requestedUserId->id == $loggedInUserId || auth()->user()->role == 'admin') {
             return $next($request);
         }
         return abort(403, 'Unauthorized access to user profile');

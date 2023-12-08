@@ -12,6 +12,7 @@ use App\Http\Controllers\BudayaPakaianController;
 use App\Http\Controllers\BudayaRumahAdatController;
 use App\Http\Controllers\BudayaTariController;
 use App\Http\Controllers\ChangePasswordController;
+use App\Http\Controllers\DataUserController;
 use App\Http\Controllers\MasakanController;
 use App\Http\Controllers\MusikController;
 use App\Http\Controllers\PakaianController;
@@ -49,6 +50,7 @@ Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
     Route::resource('pakaian', PakaianController::class);
     Route::resource('rumah', RumahController::class);
     Route::resource('tari', TariController::class);
+    Route::resource('data-user', DataUserController::class);
 });
 Route::resource('provinsi', ProvinsiController::class);
 
