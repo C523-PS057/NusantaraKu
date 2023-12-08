@@ -21,6 +21,50 @@
                         <div class="user__header">
                             <h2>Edit Profil</h2>
                         </div>
+                        @if (auth()->user()->role == 'admin' && auth()->user()->id !== $data->id)
+                        <form class="user__content" method="POST" action="{{ route('user-settings.update',$data->id) }}"
+                            enctype="multipart/form-data">
+                            @csrf
+                            @method('PUT')
+                            <div class="user__picture">
+                                <img src="{{ Storage::url($data->gambar) }}" alt="Foto Profil User" id="profile-pic" />
+                            </div>
+                            <div class="user__detail">
+                                <div class="input__group">
+                                    <label class="input__label" for="name">Nama Lengkap</label>
+                                    <input type="text" name="name" id="name" readonly value="{{ $data->name }}" />
+                                </div>
+                                <div class="input__group">
+                                    <label class="input__label" for="email">Alamat Email</label>
+                                    <input type="email" name="email" id="email" readonly value="{{ $data->email }}" />
+                                </div>
+                                <div class="input__group">
+                                    <label class="input__label" for="tgl-lahir">Tanggal Lahir</label>
+                                    <input type="date" name="tanggal_lahir" id="tgl-lahir" readonly
+                                        value="{{ !empty($data->tanggal_lahir) ? \Carbon\Carbon::parse($data->tanggal_lahir)->format('Y-m-d') : 'mm/dd/yy' }}" />
+                                </div>
+                                <div class="input__group">
+                                    <label class="input__label" for="role">Role</label>
+                                    <select name="role" id="role" @if($data->role === 'admin') disabled @endif>
+                                        <option value="admin" @if($data->role === 'admin') selected @endif>Admin</option>
+                                        <option value="user" @if($data->role === 'user') selected @endif>User</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="user__buttons">
+                                @if ($data->role == 'admin')
+                                <button type="submit" class="btn btn-danger" disabled>Tidak Dapat Mengubah Admin Lain</button>
+                                @else
+                                <button type="submit" class="btn btn-primary" onclick="return confirm('Yakin Ingin Menyimpan Perubahan Ini?')">Simpan Perubahan</button>
+                                <form action="{{ route('user-settings.destroy',$data->id) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger" onclick="return confirm('Yakin Ingin Menghapus User Ini?')">Hapus User Ini</button>
+                                </form>
+                                @endif
+                            </div>
+                        </form>
+                        @else
                         <form class="user__content" method="POST" action="{{ route('user-settings.update',$data->id) }}"
                             enctype="multipart/form-data">
                             @csrf
@@ -48,9 +92,10 @@
                                 </div>
                             </div>
                             <div class="user__buttons">
-                                <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
+                                <button type="submit" class="btn btn-primary" onclick="return confirm('Yakin Ingin Menyimpan Perubahan Ini?')">Simpan Perubahan</button>
                             </div>
                         </form>
+                        @endif
                     </div>
                 </div>
             </div>

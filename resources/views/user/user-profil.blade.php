@@ -29,8 +29,12 @@
                                     <p class="user__joined">Pengguna sejak {{ $data->created_at->format('d/m/Y') }}</p>
                                 </div>
                                 <div class="user__buttons">
+                                    @if ($data->id == auth()->user()->id)
                                     <a href="{{ route('user-settings.edit',$data->id) }}" class="btn btn-primary">Edit Profil <i class="ri-edit-line"></i></a>
-                                    <a href="{{ route('change-password.edit',auth()->user()->id) }}" class="btn btn-outline">Ubah Password <i class="ri-key-2-line"></i></a>
+                                    <a href="{{ route('change-password.edit',$data->id) }}" class="btn btn-outline">Ubah Password <i class="ri-key-2-line"></i></a>
+                                    @else
+                                    <a href="{{ route('user-settings.edit',$data->id) }}" class="btn btn-primary">Edit Profil <i class="ri-edit-line"></i></a>
+                                    @endif
                                 </div>
                             </div>
                         </div>
