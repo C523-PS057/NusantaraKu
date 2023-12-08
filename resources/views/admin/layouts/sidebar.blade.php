@@ -52,9 +52,10 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-{{ Request::is('admin/data-user*') ? 'danger' :'dark' }}" href="/admin/data-user">
+                <a class="nav-link text-{{ Request::is('admin/data-user*') ? 'danger' :'dark' }}"
+                    href="/admin/data-user">
                     <span data-feather="file"></span>
-                    Data User
+                    Data Pengguna
                 </a>
             </li>
             <hr>
@@ -68,7 +69,7 @@
                 <hr>
                 <form action="/logout" method="POST" style="width:100%">
                     @csrf
-                    <button type="submit" class="nav-link btn-outline"  style="width:100%;gap:.5rem;border-radius:.5rem">
+                    <button type="submit" class="nav-link btn-outline" style="width:100%;gap:.5rem;border-radius:.5rem">
                         <i class="ri-logout-box-line"></i>
                         Logout
                     </button>

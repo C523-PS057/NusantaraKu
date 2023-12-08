@@ -1,7 +1,7 @@
 @extends('admin.layouts.app')
 @section('container')
 <div class="d-flex justify-content-start flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-    <h1 class="h2">Kelola Data User</h1>
+    <h1 class="h2">Kelola Data Pengguna</h1>
 </div>
 
 <div class="row dashboard__stats">
@@ -28,7 +28,7 @@
 <form action="{{ route('data-user.index') }}" method="GET">
     <div class="input-group mb-3">
         <div class="col-md-5">
-            <input name="search" type="text" class="form-control" placeholder="Cari Data User..." aria-label="search"
+            <input name="search" type="text" class="form-control" placeholder="Cari Data Pengguna.." aria-label="search"
                 aria-describedby="basic-addon2" value="{{ request('search') }}">
         </div>
         <button class="btn btn-primary" type="submit" id="button-addon2">
