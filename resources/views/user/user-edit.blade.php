@@ -60,16 +60,16 @@
                                 <button type="submit" class="btn btn-primary"
                                     onclick="return confirm('Yakin Ingin Menyimpan Perubahan Ini?')">Simpan
                                     Perubahan</button>
-                                <form action="{{ route('user-settings.destroy',$data->id) }}" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="btn btn-outline"
-                                        onclick="return confirm('Yakin Ingin Menghapus User Ini?')">Hapus User
-                                        Ini</button>
-                                </form>
-                                @endif
-                            </div>
-                        </form>
+                                </div>
+                            </form>
+                            <form action="{{ route('user-settings.destroy',$data->id) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-outline"
+                                    onclick="return confirm('Yakin Ingin Menghapus User Ini?')">Hapus User
+                                    Ini</button>
+                            </form>
+                        @endif
                         @else
                         <form class="user__content" method="POST" action="{{ route('user-settings.update',$data->id) }}"
                             enctype="multipart/form-data">

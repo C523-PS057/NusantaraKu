@@ -29,12 +29,15 @@ class UserController extends Controller
     {
         $validatedData = [
             'name' => 'required',
-            'tanggal_lahir' => 'required',
+            'tanggal_lahir' => 'nullable',
             'gambar' => 'nullable|image|mimes:jpeg,png,jpg|max:5000',
-            'role' => 'required',
+            'role' => 'nullable',
         ];
         $rules = $request->validate($validatedData);
         $user = User::findOrFail($id);
+        if ($request->filled('role')) {
+            $rules['role'] = $request->role;
+        }
         if ($request->hasFile('gambar')) {
             if ($user->gambar !== null) {
                 Storage::delete($user->gambar);

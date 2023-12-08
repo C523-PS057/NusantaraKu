@@ -244,6 +244,7 @@
                     </div>
                 </div>
             </section>
+            @guest
             <section class="offer">
                 <div class="container">
                     <div class="row">
@@ -257,6 +258,7 @@
                     </div>
                 </div>
             </section>
+            @endguest
         </main>
         @extends('main.layouts.footer')
         <script src="/js/main.js" type="module"></script>
