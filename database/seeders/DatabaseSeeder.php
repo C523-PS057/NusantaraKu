@@ -37,18 +37,23 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('1'),
         ]);
         Budaya::create([
+            'id' => 1,
             'category_name' => 'Masakan Khas',
         ]);
         Budaya::create([
+            'id' => 2,
             'category_name' => 'Alat Musik',
         ]);
         Budaya::create([
+            'id' => 3,
             'category_name' => 'Pakaian Adat',
         ]);
         Budaya::create([
+            'id' => 4,
             'category_name' => 'Rumah Adat',
         ]);
         Budaya::create([
+            'id' => 5,
             'category_name' => 'Tari Tradisional',
         ]);
         Province::create([
