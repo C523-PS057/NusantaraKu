@@ -186,6 +186,11 @@ h6 {
   color: #fff;
   border: 1px solid #e23535;
 }
+.btn-primary[disabled] {
+  background-color: #e23535;
+  border: 1px solid #e23535;
+  color: #f1f1f1;
+}
 .btn-primary:hover, .btn-primary:active, .btn-primary:focus {
   background-color: #c71d1d !important;
   border: 1px solid #e23535 !important;
@@ -603,13 +608,19 @@ input[type=checkbox] {
 .input__group:has(input:focus) {
   border: 1px solid #e23535;
 }
+.input__group select#role {
+  display: block;
+  border: none;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+}
 .input__group input {
   display: block;
   border: none;
   width: 100%;
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
-  display: block;
 }
 .input__group input:focus {
   outline: none;

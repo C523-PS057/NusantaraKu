@@ -33,6 +33,12 @@
         color: #fff;
         border: 1px solid $red;
 
+        &[disabled] {
+            background-color: $red;
+            border: 1px solid $red;
+            color: $text-white;
+        }
+
         &:hover,
         &:active,
         &:focus {

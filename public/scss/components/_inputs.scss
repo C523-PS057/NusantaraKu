@@ -32,13 +32,20 @@
             border: 1px solid $red;
         }
 
+        select#role {
+            display: block;
+            border: none;
+            width: 100%;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+        }
+
         input {
             display: block;
             border: none;
             width: 100%;
             padding: 0.5rem 1rem;
             border-radius: 0.5rem;
-            display: block;
 
             &:focus {
                 outline: none;

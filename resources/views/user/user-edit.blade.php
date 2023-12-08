@@ -46,20 +46,26 @@
                                 <div class="input__group">
                                     <label class="input__label" for="role">Role</label>
                                     <select name="role" id="role" @if($data->role === 'admin') disabled @endif>
-                                        <option value="admin" @if($data->role === 'admin') selected @endif>Admin</option>
+                                        <option value="admin" @if($data->role === 'admin') selected @endif>Admin
+                                        </option>
                                         <option value="user" @if($data->role === 'user') selected @endif>User</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="user__buttons">
                                 @if ($data->role == 'admin')
-                                <button type="submit" class="btn btn-danger" disabled>Tidak Dapat Mengubah Admin Lain</button>
+                                <button type="submit" class="btn btn-primary" disabled>Tidak Dapat Mengubah Admin
+                                    Lain</button>
                                 @else
-                                <button type="submit" class="btn btn-primary" onclick="return confirm('Yakin Ingin Menyimpan Perubahan Ini?')">Simpan Perubahan</button>
+                                <button type="submit" class="btn btn-primary"
+                                    onclick="return confirm('Yakin Ingin Menyimpan Perubahan Ini?')">Simpan
+                                    Perubahan</button>
                                 <form action="{{ route('user-settings.destroy',$data->id) }}" method="POST">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-danger" onclick="return confirm('Yakin Ingin Menghapus User Ini?')">Hapus User Ini</button>
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-outline"
+                                        onclick="return confirm('Yakin Ingin Menghapus User Ini?')">Hapus User
+                                        Ini</button>
                                 </form>
                                 @endif
                             </div>
@@ -92,7 +98,9 @@
                                 </div>
                             </div>
                             <div class="user__buttons">
-                                <button type="submit" class="btn btn-primary" onclick="return confirm('Yakin Ingin Menyimpan Perubahan Ini?')">Simpan Perubahan</button>
+                                <button type="submit" class="btn btn-primary"
+                                    onclick="return confirm('Yakin Ingin Menyimpan Perubahan Ini?')">Simpan
+                                    Perubahan</button>
                             </div>
                         </form>
                         @endif
