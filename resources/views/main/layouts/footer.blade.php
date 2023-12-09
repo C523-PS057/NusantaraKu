@@ -38,7 +38,7 @@
                                     <a target="_blank" rel="noopener" href="https://facebook.com/nusantaraku-capstone"><i class="ri-facebook-fill"></i></a>
                                 </li>
                                 <li>
-                                    <a target="_blank" rel="noopener" href="https://instagram.com/nusantaraku-capstone"><i class="ri-instagram-fill"></i></a>
+                                    <a target="_blank" rel="noopener" href="https://www.instagram.com/nusantaraku_capstone/"><i class="ri-instagram-fill"></i></a>
                                 </li>
                                 <li>
                                     <a target="_blank" rel="noopener" href="https://x.com/nusantaraku-capstone"><i class="ri-twitter-fill"></i></a>
