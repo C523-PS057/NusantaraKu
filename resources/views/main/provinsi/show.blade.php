@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Profil Provinsi X - NusantaraKu</title>
+    <title>Profil Provinsi {{ ucfirst($provinsi->province_name) }} - NusantaraKu</title>
     <link rel="stylesheet" href="../css/bootstrap.min.css" />
     <link rel="stylesheet" href="../css/main.min.css" />
     <link rel="icon" type="image/x-icon" href="../img/favicon.ico" />
@@ -20,7 +20,7 @@
                 <div class="row">
                     <div class="col-md-8 mx-auto detail__column">
                         <div class="detail__header">
-                            <span class="headline">PROFIL PROVINSI</span>
+                            <span class="headline text-primary">PROFIL PROVINSI</span>
                             <h1>Provinsi {{ ucfirst($provinsi->province_name) }}</h1>
                         </div>
                         <div class="detail__content">
