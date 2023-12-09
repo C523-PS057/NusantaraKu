@@ -41,7 +41,7 @@
                                     <a target="_blank" rel="noopener" href="https://www.instagram.com/nusantaraku_capstone/"><i class="ri-instagram-fill"></i></a>
                                 </li>
                                 <li>
-                                    <a target="_blank" rel="noopener" href="https://x.com/nusantaraku-capstone"><i class="ri-twitter-fill"></i></a>
+                                    <a target="_blank" rel="noopener" href="https://x.com/nusantarakujrbi?s=11"><i class="ri-twitter-fill"></i></a>
                                 </li>
                             </ul>
                         </ul>
