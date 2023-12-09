@@ -35,7 +35,7 @@
                             <li><a href="callto:02837539385">028 3753 9385</a></li>
                             <ul class="footer__social">
                                 <li>
-                                    <a target="_blank" rel="noopener" href="https://facebook.com/nusantaraku-capstone"><i class="ri-facebook-fill"></i></a>
+                                    <a target="_blank" rel="noopener" href="https://www.facebook.com/profile.php?id=61554347674959&mibextid=hrBMPu"><i class="ri-facebook-fill"></i></a>
                                 </li>
                                 <li>
                                     <a target="_blank" rel="noopener" href="https://www.instagram.com/nusantaraku_capstone/"><i class="ri-instagram-fill"></i></a>
