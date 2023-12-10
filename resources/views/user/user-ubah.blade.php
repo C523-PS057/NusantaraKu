@@ -29,7 +29,7 @@
                                 <div class="input__group">
                                     <label class="input__label" for="old-password">Password Lama</label>
                                     <input type="password" value="{{ old('password') }}" name="oldPassword"
-                                        id="old-password" required autocomplete="true" />
+                                        id="old-password" required autocomplete="true" minlength="8" />
                                     <button class="btn-icon btn-toggle-password" tabindex="-1"><i
                                             class="ri-eye-line"></i></button>
                                     @error('old-password')
@@ -39,7 +39,7 @@
                                 <div class="input__group">
                                     <label class="input__label" for="new-password">Password Baru</label>
                                     <input type="password" name="password" id="new-password" required
-                                        autocomplete="true" />
+                                        autocomplete="true" minlength="8" />
                                     <button class="btn-icon btn-toggle-password" tabindex="-1"><i
                                             class="ri-eye-line"></i></button>
                                     @error('password')
@@ -50,7 +50,7 @@
                                     <label class="input__label" for="confirm-new-password">Konfirmasi Password
                                         Baru</label>
                                     <input type="password" name="password_confirmation" id="confirm-new-password"
-                                        required autocomplete="true" />
+                                        required autocomplete="true" minlength="8" />
                                     <button class="btn-icon btn-toggle-password" tabindex="-1"><i
                                             class="ri-eye-line"></i></button>
                                     @error('confirm-new-password')

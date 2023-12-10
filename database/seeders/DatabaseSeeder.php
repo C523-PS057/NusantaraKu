@@ -25,7 +25,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'muhammadzahran02@gmail.com',
             'email_verified_at' => now(),
             'role' => 'admin',
-            'password' => bcrypt('1'),
+            'password' => bcrypt('12345678'),
             'gambar' => Storage::putFile('/public/images', $gambarDefaultPath),
         ]);
         User::create([
@@ -34,7 +34,7 @@ class DatabaseSeeder extends Seeder
             'email_verified_at' => now(),
             'role' => 'admin',
             'gambar' => Storage::putFile('/public/images', $gambarDefaultPath),
-            'password' => bcrypt('1'),
+            'password' => bcrypt('12345678'),
         ]);
         Budaya::create([
             'id' => 1,
