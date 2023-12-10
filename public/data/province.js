@@ -148,7 +148,7 @@ const province = [
         urlImg: "img/rumah-adat/sumatera-utara.webp",
     },
     {
-        name: "Yogyakarta",
+        name: "Daerah Istimewa Yogyakarta",
         urlImg: "img/rumah-adat/yogyakarta.webp",
     },
 ];

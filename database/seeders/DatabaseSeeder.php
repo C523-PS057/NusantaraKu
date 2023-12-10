@@ -303,7 +303,7 @@ class DatabaseSeeder extends Seeder
             'id' => 23,
             'province_name' => 'Papua',
             'video_link' => '#',
-            'deskripsi' => 'Papua, adalah provinsi yang terletak di pesisir utara Papua Indonesia. Provinsi Papua sebelumnya bernama Irian Barat (1956 – 1973) dan Irian Jaya (1973 – 2000) yang mencakup seluruh Tanah Papua bekas Keresidenan Nugini Barat. Ibu kota Papua berada di Kota Jayapura, yang berbatasan langsung dengan negara Papua Nugini. Pada tanggal 30 Juni 2022, wilayah provinsi Papua mengalami pemekaran, yang membentuk provinsi baru yakni provinsi Papua Tengah, Papua Pegunungan, serta Papua Selatan. Setelah pemekaran provinsi baru, pada pertengahan tahun 2023, jumlah penduduk provinsi Papua sebanyak 1.077.141 jiwa.',
+            'deskripsi' => 'Papua, adalah provinsi yang terletak di pesisir utara Papua Indonesia. Provinsi Papua sebelumnya bernama Irian Barat (1956 - 1973) dan Irian Jaya (1973 - 2000) yang mencakup seluruh Tanah Papua bekas Keresidenan Nugini Barat. Ibu kota Papua berada di Kota Jayapura, yang berbatasan langsung dengan negara Papua Nugini. Pada tanggal 30 Juni 2022, wilayah provinsi Papua mengalami pemekaran, yang membentuk provinsi baru yakni provinsi Papua Tengah, Papua Pegunungan, serta Papua Selatan. Setelah pemekaran provinsi baru, pada pertengahan tahun 2023, jumlah penduduk provinsi Papua sebanyak 1.077.141 jiwa.',
 
             'sejarah' => 'Papua berada di wilayah paling timur negara Indonesia. Ia merupakan pulau terbesar kedua setelah Pulau Greenland di Denmark. Luasnya mencapai 890.000 km2 (ini jika digabung dengan Papua New Guinea).
             Pada sekitar tahun 200 M, ahli geografi bernama Klaudius Ptolemaeus (Ptolamy) menyebut pulau Papua dengan nama Labadios. Sampai saat ini tak ada yang tahu, kenapa pulau Papua diberi nama Labadios. Sekitar akhir tahun 500 M, oleh bangsa Tiongkok diberi nama Tungki. Hal ini dapat diketahui setelah mereka menemukan sebuah catatan harian seorang pedagang Tiongkok, Ghau Yu Kuan yang menggambarkan bahwa asal rempah-rempah yang mereka peroleh berasal dari Tungki, nama yang digunakan oleh para pedagang Tiongkok saat itu untuk Papua.
@@ -327,7 +327,7 @@ class DatabaseSeeder extends Seeder
         Province::create([
             'id' => 25,
             'province_name' => 'Papua Barat Daya',
-            'video_link' => '#',
+            'video_link' => 'https://www.youtube.com/embed/GNkIhkJW92Q?si=1eAxwqUS021B8GCn',
             'deskripsi' => 'Papua Barat Daya (disingkat PBD) adalah sebuah provinsi di Indonesia, dan merupakan pemekaran dari Papua Barat. Nama provinsi ini dianggap misnomer karena terletak di bagian barat laut Pulau Papua. Wilayah yang termasuk dalam provinsi ini meliputi kawasan Sorong Raya yang terdiri dari Kota Sorong, Kabupaten Sorong, Kabupaten Sorong Selatan, Kabupaten Maybrat, Kabupaten Tambrauw, dan Kabupaten Raja Ampat. Papua Barat Daya adalah provinsi ke-38 di Indonesia.
 
             Papua Barat Daya terletak di ujung barat laut Semenanjung Doberai atau Semenanjung Kepala Burung. Ujung paling barat provinsi ini merupakan Kawasan Konservasi Perairan Daerah Kabupaten Raja Ampat yang keindahannya sudah mendunia dan memiliki keanekaragaman biota laut yang tinggi seperti terumbu karang, penyu raksasa, pari manta hingga hiu paus sehingga disebut surganya penyelam. Kepulauan Raja Ampat terdiri dari berbagai pulau seperti Batanta, Misool, Salawati, dan Waigeo.',
@@ -339,7 +339,7 @@ class DatabaseSeeder extends Seeder
         Province::create([
             'id' => 26,
             'province_name' => 'Papua Pegunungan',
-            'video_link' => '#',
+            'video_link' => 'https://www.youtube.com/embed/ujIoFrvbsJU?si=9k-B20LiVm3XKsZN',
             'deskripsi' => 'Papua Pegunungan adalah sebuah provinsi di Indonesia dengan ibu kota yang berkedudukan di Kabupaten Jayawijaya, tepatnya di perbatasan Distrik Walesi dan Wouma. Papua Pegunungan dimekarkan dari provinsi Papua bersama dua provinsi lainnya yakni Papua Selatan dan Papua Tengah pada 30 Juni 2022 berdasarkan Undang-Undang Nomor 16 Tahun 2022. Sebelumnya nama usulan provinsi ini bernama "Provinsi Papua Pegunungan Tengah". Papua Pegunungan adalah satu-satunya provinsi di Indonesia yang tidak memiliki garis pantai (terkurung daratan).
 
             Provinsi Papua Pegunungan berlokasi di Pegunungan Jayawijaya bagian timur. Pegunungan ini merupakan jajaran pegunungan tertinggi di Indonesia dengan puncak seperti Puncak Mandala dan Puncak Trikora. Provinsi ini termasuk dalam wilayah adat La Pago dengan berbagai macam suku yang tinggal di lembah yang diapit gunung-gunung tinggi, mereka menanam ubi dan beternak babi. Salah satu lembahnya adalah Lembah Baliem yang terkenal dengan festival tradisionalnya. Lembah Baliem juga merupakan lokasi Kota Wamena sebagai ibu kota provinsi ini.',
@@ -349,7 +349,7 @@ class DatabaseSeeder extends Seeder
         Province::create([
             'id' => 27,
             'province_name' => 'Papua Selatan',
-            'video_link' => '#',
+            'video_link' => 'https://www.youtube.com/embed/ujIoFrvbsJU?si=9k-B20LiVm3XKsZN',
             'deskripsi' => 'Papua Selatan adalah salah satu provinsi di Indonesia yang telah dimekarkan dari provinsi Papua pada 2022. Ibu kota provinsi ini berada di Kabupaten Merauke, tepatnya di Kota Terpadu Mandiri (KTM) Salor yang terletak di Distrik Kurik sekitar 60 km dari Kota Merauke.
 
             Provinsi ini dimekarkan dari provinsi Papua bersama dengan dua provinsi lainnya, yakni Papua Pegunungan dan Papua Tengah berdasarkan UU Nomor 14 Tahun 2022, yang ditandatangani presiden Indonesia, Joko Widodo, tanggal 25 Juli 2022.Papua Selatan merupakan provinsi dengan jumlah penduduk paling sedikit di Indonesia.
@@ -361,7 +361,7 @@ class DatabaseSeeder extends Seeder
         Province::create([
             'id' => 28,
             'province_name' => 'Papua Tengah',
-            'video_link' => '#',
+            'video_link' => 'https://www.youtube.com/embed/ujIoFrvbsJU?si=9k-B20LiVm3XKsZN',
             'deskripsi' => 'Papua Tengah adalah sebuah provinsi di Indonesia bagian timur yang telah dimekarkan dari provinsi Papua pada tahun 2022. Ibu kota provinsi ini berada di Kabupaten Nabire. Papua Tengah dimekarkan dari Provinsi Papua bersama dua provinsi lainnya yakni Papua Pegunungan dan Papua Selatan pada 30 Juni 2022 berdasarkan Undang-Undang Nomor 15 Tahun 2022. Cakupan wilayah Papua Tengah kira-kira sesuai dengan wilayah adat Mee Pago dan Saireri.
 
             Kabupaten Nabire di bagian utara Papua Tengah merupakan dataran rendah berbatasan langsung dengan Taman Nasional Teluk Cenderawasih yang memiliki potensi pariwisata bahari seperti terumbu karang, pulau-pulau berpasir putih dan hiu paus. Bagian tengah Papua Tengah terdapat kawasan Danau Paniai dan Pegunungan Jayawijaya. Di provinsi ini terdapat gunung tertinggi di Indonesia yaitu Puncak Jaya yang terdapat gletser abadi serta tambang emas Grasberg yang dioperasikan oleh Freeport Indonesia. Bagian selatan Papua Tengah adalah Kabupaten Mimika dengan ibu kotanya di Timika, yang merupakan salah satu kota besar di Pulau Papua. Sedangkan topografi Mimika berupa rawa-rawa, sungai, dan pantai.',
@@ -373,14 +373,14 @@ class DatabaseSeeder extends Seeder
         Province::create([
             'id' => 29,
             'province_name' => 'Riau',
-            'video_link' => '#',
+            'video_link' => 'https://www.youtube.com/embed/-25jzPDI7is?si=oA8c1LM0aZymbK2y',
             'deskripsi' => 'Riau (Jawi: رياو) adalah sebuah provinsi di Indonesia yang terletak di pantai timur pulau Sumatera bagian tengah. Wilayah pesisirnya berbatasan dengan Selat Malaka. Hingga tahun 2004, provinsi ini juga meliputi Kepulauan Riau, sekelompok besar pulau-pulau kecil (pulau-pulau utamanya antara lain Pulau Batam dan Pulau Bintan) yang terletak di sebelah Timur Sumatra dan sebelah Selatan Singapura. Kepulauan ini dimekarkan menjadi provinsi tersendiri pada Juli 2004. Ibu kota dan kota terbesar di provinsi Riau adalah Pekanbaru, dan kota besar lainnya setelah Pekanbaru adalah kota Dumai. Berdasarkan hasil Badan Pusat Statistik Riau tahun 2022, penduduk provinsi Riau berjumlah 6.493.603 jiwa, dengan kepadatan penduduk 75 jiwa/km².',
             'sejarah' => 'Riau diduga telah dihuni sejak masa antara 10.000-40.000 SM. Kesimpulan ini diambil setelah penemuan alat-alat dari zaman Pleistosin di daerah aliran sungai Sungai Sengingi di Kabupaten Kuantan Singingi pada bulan Agustus 2009. Alat batu yang ditemukan antara lain kapak penetak, perimbas, serut, serpih dan batu inti yang merupakan bahan dasar pembuatan alat serut dan serpih. Tim peneliti juga menemukan beberapa fosil kayu yang diprakirakan berusia lebih tua dari alat-alat batu itu. Diduga manusia pengguna alat-alat yang ditemukan di Riau adalah pithecanthropus erectus seperti yang pernah ditemukan di Sangiran, Jawa Tengah. Penemuan bukti ini membuktikan ada kehidupan lebih tua di Riau yang selama ini selalu mengacu pada penemuan Candi Muara Takus di Kampar sebagai titik awalnya.'
         ]);
         Province::create([
             'id' => 30,
             'province_name' => 'Sulawesi Barat',
-            'video_link' => '#',
+            'video_link' => 'https://www.youtube.com/embed/bfTX6WHmbto?si=7LBjRMOATWtlGb_e',
             'deskripsi' => 'Sulawesi Barat (disingkat Sulbar, Lontara: ᨔᨘᨒᨓᨙᨔᨗ ᨅᨑ) adalah sebuah provinsi yang terletak di bagian barat Pulau Sulawesi, Indonesia. Daerah ini pernah menjadi bagian dari provinsi Sulawesi Selatan hingga pemekaran provinsi pada 2004. Ibu kota provinsi Sulawesi Barat adalah Kabupaten Mamuju. Pada pertengahan tahun 2023, jumlah penduduk Sulawesi Barat sebanyak 1.457.481 prang.
 
             Pembentukan provinsi Sulawesi Barat merupakan hasil pemekaran dari provinsi Sulawesi Selatan yang didasarkan pada Undang-Undang Nomor 26 Tahun 2004 yang disahkan dalam rapat Paripurna antara Pemerintah dan DPR RI, dan diresmikan oleh Menteri Dalam Negeri atas nama Presiden Republik Indonesia pada tanggal 16 Oktober 2004. Sulawesi Barat memiliki daratan dengan luas 16.937, 16 km2 dan lautan dengan luas 20.342 km2 serta pesisir pantai sepanjang 677 km. Jumlah kecamatan di Sulawesi barat sebanyak 69 dengan jumlah desa/kelurahan sebanyak 649.',
@@ -390,7 +390,7 @@ class DatabaseSeeder extends Seeder
         Province::create([
             'id' => 31,
             'province_name' => 'Sulawesi Selatan',
-            'video_link' => '#',
+            'video_link' => 'https://www.youtube.com/embed/4VPFNfOsv2s?si=0_edbN0ub3cT8Wgq',
             'deskripsi' => 'Sulawesi Selatan (disingkat Sulsel, Lontara: ᨔᨘᨒᨓᨙᨔᨗ ᨔᨛᨒᨈ ) adalah sebuah provinsi di semenanjung selatan Sulawesi. Kepulauan Selayar di selatan Sulawesi juga merupakan bagian dari provinsi tersebut. Ibu kota provinsi ini berada di Kota Makassar. Provinsi ini berbatasan dengan Sulawesi Tengah dan Sulawesi Barat di utara, Teluk Bone dan Sulawesi Tenggara di timur, Selat Makassar di barat, dan Laut Flores di selatan.
 
             Sensus 2010 memperkirakan jumlah penduduk sebanyak 8.032.551 jiwa yang menjadikan Sulawesi Selatan sebagai provinsi terpadat di pulau itu (46% dari populasi Sulawesi ada di Sulawesi Selatan), dan provinsi terpadat keenam di Indonesia. Pada Sensus 2020 ini telah meningkat menjadi 9.073.509. Suku bangsa utama di Sulawesi Selatan adalah suku Bugis, Makassar, Toraja, dan Mandar. Perekonomian provinsi ini didasarkan pada pertanian, perikanan, dan pertambangan emas , magnesium , besi dan logam lainnya. pinisi adalah sebuah kapal layar tradisional Indonesia bertiang dua, masih digunakan secara luas oleh orang Bugis dan Makassar, sebagian besar untuk tujuan transportasi, kargo, dan penangkapan ikan antar pulau di kepulauan Indonesia.',
@@ -404,14 +404,14 @@ class DatabaseSeeder extends Seeder
         Province::create([
             'id' => 32,
             'province_name' => 'Sulawesi Tengah',
-            'video_link' => '#',
+            'video_link' => 'https://www.youtube.com/embed/SME_4IM3V7M?si=hzsFjYo9hVwTXA8N',
             'deskripsi' => 'Sulawesi Tengah (disingkat Sulteng) adalah sebuah provinsi di bagian tengah Pulau Sulawesi, Indonesia. Ibu kota provinsi ini adalah Kota Palu. Luas wilayahnya 61.841,29 km², dan jumlah penduduk sebanyak 3.021.879 jiwa (2021). Sulawesi Tengah memiliki wilayah terluas di antara semua provinsi di Pulau Sulawesi, dan memiliki jumlah penduduk terbanyak kedua di Pulau Sulawesi setelah provinsi Sulawesi Selatan.',
             'sejarah' => 'Wilayah sepanjang pesisir barat Sulawesi Tengah, dari Kaili hingga Tolitoli, ditaklukkan oleh Kerajaan Gowa sekitar pertengahan abad ke-16 di bawah kepemimpinan Raja Tunipalangga. Wilayah di sekitar Teluk Palu merupakan pusat dan rute perdagangan yang penting, produsen minyak kelapa, dan "pintu masuk" ke pedalaman Sulawesi Tengah. Di sisi lain, daerah Teluk Tomini sebagian besar berada di bawah kekuasaan Kerajaan Parigi. Pada tahun 1824, perwakilan Kerajaan Banawa dan Kerajaan Palu menandatangani Korte Verklaring (Perjanjian Pendek) dengan pemerintah kolonial. Kapal-kapal Belanda mulai sering berlayar di bagian selatan Teluk Tomini setelah tahun 1830.'
         ]);
         Province::create([
             'id' => 33,
             'province_name' => 'Sulawesi Tenggara',
-            'video_link' => '#',
+            'video_link' => 'https://www.youtube.com/embed/tJL6XHkrZrk?si=KcwUQvdTks6VlG34',
             'deskripsi' => 'Sulawesi Tenggara (disingkat Sultra) adalah sebuah provinsi di Indonesia yang terletak bagian tenggara pulau Sulawesi dengan ibu kota Kendari. Sulawesi Tenggara awalnya merupakan nama salah satu kabupaten di provinsi Sulawesi Selatan dan Tenggara Sulselra dengan Bau-Bau sebagai ibu kota kabupaten. Sulawesi Tenggara ditetapkan sebagai Daerah Otonom berdasarkan Perpu No. 2 tahun 1964 Juncto UU No.13 Tahun 1964.
 
             Provinsi Sulawesi Tenggara terletak di Jazirah Tenggara Pulau Sulawesi, secara geografis terletak di bagian selatan garis khatulistiwa di antara 02°45 – 06°15 Lintang Selatan dan 120°45 – 124°30 Bujur Timur serta mempunyai wilayah daratan seluas 38.140 km² (3.814.000 ha) dan perairan (laut) seluas 110.000 km² (11.000.000 ha). Pada pertengahan tahun 2023, jumlah penduduk Sulawesi Tenggara sebanyak 2.726.590 orang.',
@@ -423,7 +423,7 @@ class DatabaseSeeder extends Seeder
         Province::create([
             'id' => 34,
             'province_name' => 'Sulawesi Utara',
-            'video_link' => '#',
+            'video_link' => 'https://www.youtube.com/embed/bsmRpzs1Yu4?si=-S6SGpJT1Qb7ILgj',
             'deskripsi' => 'Sulawesi Utara (disingkat Sulut) adalah salah satu provinsi yang terletak di ujung utara Pulau Sulawesi, Indonesia, dengan ibu kota terletak di kota Manado. Sulawesi Utara atau Sulut berbatasan dengan Laut Maluku dan Samudra Pasifik di sebelah timur, Laut Maluku dan Teluk Tomini di sebelah selatan, Laut Sulawesi dan Provinsi Gorontalo di sebelah barat, dan Provinsi Davao Occidental di sebelah utara. Penduduk Sulawesi Utara pada pertengahan tahun 2023 berjumlah 2.676.012 jiwa, dan luas wilayahnya adalah 13.892,47 km2.
 
             Sulawesi Utara memiliki kepulauan dengan jumlah pulau sebanyak 287 pulau dengan 59 di antaranya berpenghuni. Wilayah administratif Sulawesi Utara terbagi menjadi 4 kota dan 11 kabupaten dengan 1.664 desa/kelurahan. Sulawesi Utara terbagi menjadi dua zona yaitu zona selatan yang berupa dataran rendah dan dataran tinggi serta zona utara yang meliputi kepulauan. Zona ekonomi eksklusif Sulawesi Utara mencapai 190.000 km2 dengan pesisir pantai sepanjang 2.395,99 km dan luas hutan mencapai 701. 885 hektare. Wilayah Sulawesi Utara juga memiliki banyak gunung berapi, dikarenakan letaknya yang berada di tepian Lempeng Sunda.',
@@ -435,7 +435,7 @@ class DatabaseSeeder extends Seeder
         Province::create([
             'id' => 35,
             'province_name' => 'Sumatera Barat',
-            'video_link' => '#',
+            'video_link' => 'https://www.youtube.com/embed/_ywqYhtZk-o?si=USG4PP7c3k_YIHtB',
             'deskripsi' => 'Sumatera Barat (disingkat Sumbar)[8] adalah sebuah provinsi di Indonesia yang terletak di Pulau Sumatra dengan ibu kota Padang. Provinsi Sumatera Barat terletak sepanjang pesisir barat Sumatra bagian tengah, dataran tinggi Bukit Barisan di sebelah timur, dan sejumlah pulau di lepas pantainya seperti Kepulauan Mentawai. Dari utara ke selatan, provinsi dengan wilayah seluas 42.012,89 km² ini berbatasan dengan empat provinsi, yakni Sumatera Utara, Riau, Jambi, dan Bengkulu.
 
             Sumatera Barat adalah rumah bagi etnis Minangkabau, walaupun wilayah adat Minangkabau sendiri lebih luas dari wilayah administratif Provinsi Sumatera Barat saat ini. Pada tahun 2023, provinsi ini memiliki penduduk sebanyak 5.640.629 jiwa dengan mayoritas beragama Islam. Sumatera Barat terdiri dari 12 kabupaten dan 7 kota dengan pembagian wilayah administratif sesudah kecamatan di seluruh kabupaten (kecuali Kabupaten Kepulauan Mentawai) dinamakan sebagai nagari.',
@@ -447,7 +447,7 @@ class DatabaseSeeder extends Seeder
         Province::create([
             'id' => 36,
             'province_name' => 'Sumatera Selatan',
-            'video_link' => '#',
+            'video_link' => 'https://www.youtube.com/embed/-KzNpvyeGMw?si=J2gq-_O22fWbYqxT',
             'deskripsi' => 'Sumatra Selatan adalah provinsi di Indonesia yang terletak di bagian Selatan pulau Sumatera. Ibu kota Sumatera Selatan berada di kota Palembang, dan pada tahun 2021 penduduk provinsi ini berjumlah 8.550.849 jiwa. Secara geografis, Sumatera Selatan berbatasan dengan provinsi Jambi di utara, provinsi Kepulauan Bangka-Belitung di timur, provinsi Lampung di selatan dan Provinsi Bengkulu di barat. Provinsi ini kaya akan sumber daya alam, seperti minyak bumi, gas alam dan batu bara. Selain itu, ibu kota provinsi Sumatera Selatan, Palembang, telah terkenal sejak dahulu karena menjadi pusat Kedatuan Sriwijaya.',
 
             'sejarah' => 'Provinsi Sumatera Selatan dikenal juga dengan sebutan "Bumi Sriwijaya". Pada abad ke-7 hingga abad ke-12 Masehi wilayah ini merupakan pusat Kedatuan Sriwijaya yang juga terkenal dengan kerajaan maritim terbesar dan terkuat di Nusantara. Gaung dan pengaruhnya bahkan sampai ke Madagaskar di Benua Afrika.
@@ -459,7 +459,7 @@ class DatabaseSeeder extends Seeder
         Province::create([
             'id' => 37,
             'province_name' => 'Sumatera Utara',
-            'video_link' => '#',
+            'video_link' => 'https://www.youtube.com/embed/ELEGkJKzJjY?si=74tmhfyg15JNDVIY',
             'deskripsi' => 'Sumatera Utara atau Sumatra Utara adalah sebuah provinsi di Indonesia yang terletak di bagian utara Pulau Sumatra. Provinsi ini beribu kota di Kota Medan, dengan luas wilayah 72.981,23 km2. Sumatera Utara merupakan provinsi dengan jumlah penduduk terbesar keempat di Indonesia, setelah provinsi Jawa Barat, Jawa Timur, dan Jawa Tengah, dan terbanyak di Pulau Sumatra. Pada 31 Desember 2022 penduduk Sumatera Utara berjumlah 15.372.437 jiwa, dengan kepadatan penduduk 210 jiwa/km2.',
 
             'sejarah' => 'Pada zaman pemerintahan Belanda, Sumatera Utara merupakan suatu pemerintahan yang bernama Gouvernement van Sumatra dengan wilayah meliputi seluruh pulau Sumatra yang dipimpin oleh seorang gubernur yang berkedudukan di Kota Medan. Kemudian pada tahun 1948, berdasarkan Undang-undang Republik Indonesia No. 10 Tahun 1948, Provinsi Sumatera dibagi menjadi tiga provinsi berbeda yaitu: Sumatera Utara, Sumatera Tengah, dan Sumatera Selatan. Provinsi Sumatera Utara sendiri merupakan penggabungan dari tiga daerah administratif yang disebut keresidenan yaitu: Keresidenan Aceh, Keresidenan Sumatera Timur, dan Keresidenan Tapanuli.
@@ -468,8 +468,8 @@ class DatabaseSeeder extends Seeder
         ]);
         Province::create([
             'id' => 38,
-            'province_name' => 'Yogyakarta',
-            'video_link' => '#',
+            'province_name' => 'Daerah Istimewa Yogyakarta',
+            'video_link' => 'https://www.youtube.com/embed/NUq-bF-zld4?si=-gHtNqfvlBk2YOGZ',
             'deskripsi' => 'Daerah Istimewa Yogyakarta (disingkat DIY, Jawa: ꦝꦌꦫꦃꦆꦱ꧀ꦠꦶꦩꦺꦮꦪꦺꦴꦒꦾꦏꦂꦠ, pengucapan bahasa Jawa: [ŋajogjɔˈkart̪ɔ], pelafalan tidak resmi: Jogja/Jogjakarta) adalah Daerah Istimewa setingkat provinsi di Indonesia yang merupakan peleburan dari Negara Kesultanan Yogyakarta dan Negara Kadipaten Paku Alaman. Daerah Istimewa Yogyakarta terletak di bagian selatan Pulau Jawa, dan berbatasan dengan Provinsi Jawa Tengah dan Samudra Hindia. Daerah Istimewa yang memiliki luas 3.185,80 km2 ini terdiri atas satu kota, dan empat kabupaten, yang terbagi lagi menjadi 78 kapanewon/kemantren, dan 438 kalurahan/kelurahan. Menurut sensus penduduk 2010 memiliki populasi 3.452.390 jiwa dengan proporsi 1.705.404 laki-laki, dan 1.746.986 perempuan, serta memiliki kepadatan penduduk sebesar 1.084 jiwa per km2.',
 
             'sejarah' => 'Sebelum Indonesia merdeka, Yogyakarta merupakan daerah yang mempunyai pemerintahan sendiri atau disebut Zelfbestuurlandschappen/Daerah Swapraja, yaitu Kasultanan Ngayogyakarta Hadiningrat dan Kadipaten Pakualaman. Kasultanan Ngayogyakarta Hadiningrat didirikan oleh Pangeran Mangkubumi yang bergelar Sultan Hamengku Buwono I pada tahun 1755, sedangkan Kadipaten Pakualaman didirikan oleh Pangeran Natakusuma (saudara Sultan Hamengku Buwono II) yang bergelar Adipati Paku Alam I pada tahun 1813. Pemerintah Hindia Belanda mengakui Kasultanan, dan Pakualaman sebagai kerajaan dengan hak mengatur rumah tangganya sendiri yang dinyatakan dalam kontrak politik. Kontrak politik yang terakhir Kasultanan tercantum dalam Staatsblaad 1942 Nomor 47, sedangkan kontrak politik Pakualaman dalam Staatsblaad 1941 Nomor 577. Eksistensi kedua kerajaan tersebut telah mendapat pengakuan dari dunia internasional, baik pada masa penjajahan Belanda, Inggris, maupun Jepang. Ketika Jepang meninggalkan Indonesia, kedua kerajaan tersebut telah siap menjadi sebuah negara sendiri yang merdeka, lengkap dengan sistem pemerintahannya (susunan asli), wilayah, dan penduduknya.'

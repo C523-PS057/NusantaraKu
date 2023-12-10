@@ -70,7 +70,7 @@
                                 <option value="sulawesi utara" {{ $selectedValue === 'sulawesi utara' ? 'selected' : '' }}>Sulawesi Utara</option>
                                 <option value="sumatera selatan" {{ $selectedValue === 'sumatera selatan' ? 'selected' : '' }}>Sumatera Selatan</option>
                                 <option value="sumatera utara" {{ $selectedValue === 'sumatera utara' ? 'selected' : '' }}>Sumatera Utara</option>
-                                <option value="yogyakarta" {{ $selectedValue === 'yogyakarta' ? 'selected' : '' }}>Yogyakarta</option>
+                                <option value="yogyakarta" {{ $selectedValue === 'yogyakarta' ? 'selected' : '' }}>Daerah Istimewa Yogyakarta</option>
                             </select>
                         </form>
                         <form action="{{ route('rumah-adat.index') }}" method="GET" id="filterUrutkan">
