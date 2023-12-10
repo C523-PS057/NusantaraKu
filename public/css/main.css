@@ -1172,6 +1172,9 @@ input[type=checkbox] {
   gap: 1rem;
 }
 .detail__comment-item {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
   padding: 1rem 1.5rem;
   border: 1px solid #cbd5e1;
   border-radius: 0.5rem;
@@ -1204,7 +1207,12 @@ input[type=checkbox] {
   color: rgba(28, 28, 28, 0.75);
 }
 .detail__comment-text {
+  height: 100%;
+  width: 100% !important;
+  display: flex !important;
   margin-top: 0.5rem;
+  flex-wrap: wrap !important;
+  white-space: pre-wrap;
 }
 
 .comment__form {

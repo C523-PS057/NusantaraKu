@@ -126,6 +126,9 @@
         gap: 1rem;
 
         &-item {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
             padding: 1rem 1.5rem;
             border: 1px solid $border;
             border-radius: 0.5rem;
@@ -165,7 +168,12 @@
         }
 
         &-text {
+            height: 100%;
+            width: 100% !important;
+            display: flex !important;
             margin-top: 0.5rem;
+            flex-wrap: wrap !important;
+            white-space: pre-wrap;
         }
     }
 }

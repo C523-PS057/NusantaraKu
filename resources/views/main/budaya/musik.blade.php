@@ -56,7 +56,7 @@
                                                     class="detail__comment-date">{{ Carbon\Carbon::parse($item->created_at)->translatedFormat('d F Y') }}</span>
                                             </div>
                                         </div>
-                                        <div class="detail__comment-text">{{ $item->body_comment }}</div>
+                                        <p class="detail__comment-text">{{ $item->body_comment }}</p>
                                         @can('admin')
                                         <form class="detail__comment-action" method="POST"
                                             action="{{ route('detail-musik.destroy',$item->id) }}">
@@ -80,7 +80,7 @@
                                 <input type="hidden" name="budaya_id" value="{{ $data->budaya_id }}">
                                 <input type="hidden" name="musik_id" value="{{ $data->id }}">
                                 <h5>Tambahkan Komentar</h5>
-                                <textarea name="body_comment" id="comment" style="resize: none"
+                                <textarea name="body_comment" id="comment" style="resize: none" maxlength="255"
                                     placeholder="Ketik komentar disini..."></textarea>
                                 <button type="submit" class="btn btn-primary">Kirim Komentar</button>
                             </form>
