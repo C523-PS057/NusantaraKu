@@ -2,11 +2,6 @@ pipeline {
     agent any
 
     stages {
-         stage('Checkout') {
-            steps {
-                git branch: '', credentialsId: 'github', url: 'https://github.com/C523-PS057/NusantaraKu'
-            }
-        }
 
         stage('Build') {
             steps {
