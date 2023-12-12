@@ -2,13 +2,9 @@ pipeline {
     agent any
 
     stages {
-        stage('Checkout external proj') {
+         stage('Checkout') {
             steps {
-                git branch: 'backend',
-                    credentialsId: 'd73702f4731cf2c500cb5ab1b3c482f74efee9be',
-                    url: 'https://github.com/C523-PS057/NusantaraKu'
-    
-                sh "ls -lat"
+                checkout scm
             }
         }
 
