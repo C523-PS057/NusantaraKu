@@ -93,7 +93,7 @@
         }
     });
     </script>
-    <link rel="stylesheet" href="/icons/remixicon.css" />
+    <link rel="stylesheet" href="/css/remixicon.css" />
 </body>
 
 </html>

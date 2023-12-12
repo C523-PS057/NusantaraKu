@@ -9,8 +9,8 @@
     <meta name="generator" content="Hugo 0.84.0">
     <title>Dashboard Admin - NusantaraKu</title>
     <link href="/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/icons/remixicon.css" rel="stylesheet">
-    <link href="/icons/remixicon.woff2" rel="stylesheet">
+    <link href="/css/remixicon.css" rel="stylesheet">
+    <link href="/css/remixicon.woff2" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://unpkg.com/trix@2.0.0/dist/trix.css">
     <script type="text/javascript" src="https://unpkg.com/trix@2.0.0/dist/trix.umd.min.js"></script>
     <link href="/css/main.min.css" rel="stylesheet">

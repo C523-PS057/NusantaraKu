@@ -95,7 +95,7 @@
         </section>
     </main>
 
-    <link rel="stylesheet" href="./icons/remixicon.css" />
+    <link rel="stylesheet" href="./css/remixicon.css" />
     <script>
     const btnTogglePasswords = document.querySelectorAll('.btn-toggle-password');
     const passwordFields = document.querySelectorAll('[type="password"]');
