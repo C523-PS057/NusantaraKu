@@ -4,7 +4,7 @@ pipeline {
     stages {
          stage('Checkout') {
             steps {
-                git branch: 'backend', url: 'https://github.com/C523-PS057/NusantaraKu'
+                git branch: '', credentialsId: 'github', url: 'https://github.com/C523-PS057/NusantaraKu'
             }
         }
 
