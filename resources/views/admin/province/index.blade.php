@@ -16,7 +16,6 @@
     </div>
 </form>
 <div class="table-responsive col-lg-8">
-    <a href="{{ route('province.create') }}" class="btn btn-primary mb-3">Tambahkan Data Provinsi</a>
     <table class="table table-striped table-sm">
         <thead>
             <tr>
@@ -45,13 +44,6 @@
                         style="text-decoration: none">
                         <i class="ri-edit-line"></i>
                     </a>
-                    <form class="d-inline" action="{{ route('province.destroy',$item->id) }}" method="POST">
-                        @csrf
-                        @method('delete')
-                        <button class="badge bg-danger border-0" onclick="return confirm('Yakin Di Hapus?')">
-                            <i class="ri-delete-bin-line" style="font-size: 20px"></i>
-                        </button>
-                    </form>
                 </td>
             </tr>
             @endforeach
@@ -66,9 +58,6 @@
     <div>
         <h3>Tidak ada data provinsi</h2>
     </div>
-</div>
-<div class="d-flex justify-content-center my-1">
-    <div class=""><a href="{{ route('province.create') }}" class="btn btn-primary">Tambahkan Data Provinsi</a></div>
 </div>
 @endif
 @endsection

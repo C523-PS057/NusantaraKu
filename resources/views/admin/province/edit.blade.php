@@ -11,7 +11,7 @@
         @method('PUT')
         <div class="mb-3">
           <label for="province_name" class="form-label">Nama Provinsi</label>
-          <input type="text" class="form-control" id="province_name" name="province_name" autofocus value="{{ old('province_name',$province->province_name) }}">
+          <input type="text" class="form-control" id="province_name" name="province_name" autofocus value="{{ old('province_name',$province->province_name) }}" readonly>
           @error('province_name')
                 <p class="text-danger">{{ $message }}</p>
           @enderror
