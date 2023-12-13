@@ -1595,9 +1595,6 @@ trix-toolbar .trix-button {
 .navbar-dark img {
   width: 200px;
 }
-.navbar-dark .navbar-brand {
-  display: none;
-}
 
 .dashboard__stats-item {
   background-color: #fff;
@@ -1769,6 +1766,9 @@ trix-toolbar .trix-button {
   }
   .dashboard-admin__grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .navbar-brand {
+    display: none !important;
   }
 }
 @media screen and (max-width: 768px) {
