@@ -51,7 +51,11 @@
                                             <img src="{{ Storage::url($item->user->gambar) }}" alt="Foto Profil User"
                                                 class="detail__comment-image rounded-circle" />
                                             <div class="detail__comment-info">
-                                                <span class="detail__comment-name">{{ $item->user->name }}</span>
+                                                <span class="detail__comment-name">{{ $item->user->name }}
+                                                    @if ($item->user->role == 'admin')
+                                                    <i class="ri-verified-badge-fill admin-badge"></i>
+                                                    @endif
+                                                </span>
                                                 <span
                                                     class="detail__comment-date">{{ Carbon\Carbon::parse($item->created_at)->translatedFormat('d F Y') }}</span>
                                             </div>
