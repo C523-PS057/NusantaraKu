@@ -93,6 +93,7 @@
                         </form>
                     </div>
                 </div>
+                @if ($data->count() > 0)
                 <div class="categories__content">
                     <div class="row">
                         @foreach ($data as $item)
@@ -142,12 +143,18 @@
                         @endforeach
                     </div>
                 </div>
+                <div class="d-flex justify-content-center">
+                    {!! $data->links() !!}
+                </div>
+                @else
+                <div class="d-flex justify-content-center">
+                    <h3>Data Tidak Ditemukan</h3>
+                </div>
+                @endif
             </div>
         </div>
     </main>
-    <div class="d-flex justify-content-center">
-        {!! $data->links() !!}
-    </div>
+
     @extends('main.layouts.footer')
 
     <script src="../js/main.js" type="module"></script>
