@@ -11,6 +11,7 @@ use App\Models\Tari;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class DataUserController extends Controller
 {
@@ -35,13 +36,20 @@ class DataUserController extends Controller
 
     public function destroy($id)
     {
-        $user = User::find($id);
+        $user = User::findOrFail($id);
+        $comments = Comment::where('user_id', $user->id)->get();
+        if ($user->role == 'admin') {
+            flash()->addError('Tidak Dapat Menghapus Admin!');
+            return back();
+        }
+        if ($user->gambar !== null) {
+            Storage::delete($user->gambar);
+        }
+        foreach ($comments as $comment) {
+            $comment->delete();
+        }
         $user->delete();
-        $totalUser = User::count();
-        $users = User::paginate(10);
-        
-        flash('Berhasil Hapus Data');
-        return back();
-
+        flash('Berhasil Menghapus Data User');
+        return redirect()->route('data-user.index');
     }
 }

@@ -48,18 +48,4 @@ class UserController extends Controller
         flash('Berhasil Memperbarui Data');
         return back();
     }
-    public function destroy($id)
-    {
-        $user = User::findOrFail($id);
-        $comments = Comment::where('user_id', $user->id)->get();
-        if ($user->gambar !== null) {
-            Storage::delete($user->gambar);
-        }
-        foreach ($comments as $comment) {
-            $comment->delete();
-        }
-        $user->delete();
-        flash('Berhasil Menghapus Data User');
-        return redirect()->route('data-user.index');
-    }
 }

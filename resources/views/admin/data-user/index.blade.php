@@ -47,7 +47,7 @@
                         <i class="ri-eye-fill"></i>
                     </a>
                     <a href="{{ route('user-settings.edit',$item->id) }}" class="btn-icon mx-2"
-                        style="text-decoration: none">
+                        style="text-decoration: none" target="blank">
                         <i class="ri-edit-line"></i>
                     </a>
                     <form class="d-inline" id="delete-form" action="{{ route('data-user.destroy',$item->id) }}"

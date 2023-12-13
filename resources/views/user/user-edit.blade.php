@@ -62,7 +62,7 @@
                                     Perubahan</button>
                                 </div>
                             </form>
-                            <form action="{{ route('user-settings.destroy',$data->id) }}" method="POST">
+                            <form action="{{ route('data-user.destroy',$data->id) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-outline"
