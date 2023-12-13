@@ -68,6 +68,14 @@ trix-toolbar .trix-button {
     }
 }
 
+.sidebar {
+    .nav-link {
+        &:hover {
+            color: $red !important;
+        }
+    }
+}
+
 .navbar-dark {
     padding: 0.5rem 1rem !important;
     flex-wrap: wrap;
@@ -105,5 +113,38 @@ trix-toolbar .trix-button {
                 }
             }
         }
+    }
+}
+
+.page {
+    &-link {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        color: $text-black !important;
+    }
+}
+
+.pagination {
+    margin-bottom: 1rem;
+
+    .active > .page-link {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        color: $text-black !important;
+    }
+
+    .page-item.active {
+        .page-link {
+            border: 1px solid $red;
+            background-color: $red !important;
+            color: $white !important;
+        }
+    }
+
+    .page-link {
+        height: 44px !important;
+        width: 44px !important;
     }
 }
