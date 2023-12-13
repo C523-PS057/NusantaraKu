@@ -152,3 +152,9 @@ trix-toolbar .trix-button {
         width: 44px !important;
     }
 }
+
+input[type="search"]::-webkit-search-cancel-button {
+    position: relative;
+    right: 20px;
+    cursor: pointer;
+}
