@@ -96,51 +96,49 @@
                 <div class="categories__content">
                     <div class="row">
                         @foreach ($data as $item)
-                        @foreach ($item as $itemData)
                         @php
                         $kategori = '';
-                        if ($itemData->budaya_id == '1') {
+                        if ($item->budaya_id == '1') {
                         $kategori = 'Masakan';
-                        } elseif ($itemData->budaya_id == '2') {
+                        } elseif ($item->budaya_id == '2') {
                         $kategori = 'Musik';
-                        } elseif ($itemData->budaya_id == '3') {
+                        } elseif ($item->budaya_id == '3') {
                         $kategori = 'pakaian';
-                        } elseif ($itemData->budaya_id == '4') {
+                        } elseif ($item->budaya_id == '4') {
                         $kategori = 'Rumah';
-                        } elseif ($itemData->budaya_id == '5') {
+                        } elseif ($item->budaya_id == '5') {
                         $kategori = 'Tari';
                         }
                         @endphp
                         <div class="col-6 col-md-3">
-                            <a href="/detail-{{strtolower($kategori)}}/{{ $itemData->id }}" class="detail__item">
+                            <a href="/detail-{{strtolower($kategori)}}/{{ $item->id }}" class="detail__item">
                                 <div class="detail__item-image">
-                                    <img src="{{ Storage::url($itemData->gambar) }}" alt="Image" />
+                                    <img src="{{ Storage::url($item->gambar) }}" alt="Image" />
                                     <span class="detail__item-province">
                                         <i class="ri-map-pin-line"></i>
-                                        {{ $itemData->province->province_name }}
+                                        {{ $item->province->province_name }}
                                     </span>
                                 </div>
                                 <div class="detail__item-content">
-                                    @if ($itemData->budaya_id == '1')
-                                    <h6>{{ $itemData->masakan_name }}</h6>
+                                    @if ($item->budaya_id == '1')
+                                    <h6>{{ $item->name }}</h6>
                                     <p>Masakan Khas</p>
-                                    @elseif ($itemData->budaya_id == '2')
-                                    <h6>{{ $itemData->alat_musik_name }}</h6>
+                                    @elseif ($item->budaya_id == '2')
+                                    <h6>{{ $item->name }}</h6>
                                     <p>Alat Musik</p>
-                                    @elseif ($itemData->budaya_id == '3')
-                                    <h6>{{ $itemData->pakaian_name }}</h6>
+                                    @elseif ($item->budaya_id == '3')
+                                    <h6>{{ $item->name }}</h6>
                                     <p>Pakaian Adat</p>
-                                    @elseif ($itemData->budaya_id == '4')
-                                    <h6>Rumah {{ $itemData->rumah_adat_name }}</h6>
+                                    @elseif ($item->budaya_id == '4')
+                                    <h6>{{ $item->name }}</h6>
                                     <p>Rumah Adat</p>
-                                    @elseif ($itemData->budaya_id == '5')
-                                    <h6>Tari {{ $itemData->tarian_name }}</h6>
+                                    @elseif ($item->budaya_id == '5')
+                                    <h6>Tari {{ $item->name }}</h6>
                                     <p>Tari Tradisional</p>
                                     @endif
                                 </div>
                             </a>
                         </div>
-                        @endforeach
                         @endforeach
                     </div>
                 </div>

@@ -9,6 +9,7 @@ use App\Models\Province;
 use App\Models\Rumah;
 use App\Models\Tari;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class SemuaBudayaController extends Controller
 {
@@ -34,33 +35,68 @@ class SemuaBudayaController extends Controller
             switch ($filterKategori) {
                 case '1':
                     // Jika masakan yang dipilih
-                    $masakan[] = $masakanQuery->where('budaya_id', $filterKategori)->get();
                     $selectedValue = $request->input('filter-kategori');
+                    $masakan = $masakanQuery->where('budaya_id', $filterKategori)->get();
+                    $selectedData = $masakan->map(function ($item) {
+                        if (isset($item->masakan_name)) {
+                            $item->name = $item->masakan_name;
+                            unset($item->masakan_name);
+                        }
+                        return $item;
+                    });
                     return view('main.all-budaya.semua', ['data' => $masakan, 'selectedValue' => $selectedValue]);
                     break;
                 case '2':
                     // Jika musik yang dipilih
-                    $musik[] = $musikQuery->where('budaya_id', $filterKategori)->get();
                     $selectedValue = $request->input('filter-kategori');
-                    return view('main.all-budaya.semua', ['data' => $musik, 'selectedValue' => $selectedValue]);
+                    $musik = $musikQuery->where('budaya_id', $filterKategori)->get();
+                    $selectedData = $musik->map(function ($item) {
+                        if (isset($item->alat_musik_name)) {
+                            $item->name = $item->alat_musik_name;
+                            unset($item->alat_musik_name);
+                        }
+                        return $item;
+                    });
+                    return view('main.all-budaya.semua', ['data' => $selectedData, 'selectedValue' => $selectedValue]);
                     break;
                 case '3':
                     // Jika pakaian yang dipilih
-                    $pakaian[] = $pakaianQuery->where('budaya_id', $filterKategori)->get();
                     $selectedValue = $request->input('filter-kategori');
-                    return view('main.all-budaya.semua', ['data' => $pakaian, 'selectedValue' => $selectedValue]);
+                    $pakaian = $pakaianQuery->where('budaya_id', $filterKategori)->get();
+                    $selectedData = $pakaian->map(function ($item) {
+                        if (isset($item->pakaian_name)) {
+                            $item->name = $item->pakaian_name;
+                            unset($item->pakaian_name);
+                        }
+                        return $item;
+                    });
+                    return view('main.all-budaya.semua', ['data' => $selectedData, 'selectedValue' => $selectedValue]);
                     break;
                 case '4':
                     // Jika rumah yang dipilih
-                    $rumah[] = $rumahQuery->where('budaya_id', $filterKategori)->get();
                     $selectedValue = $request->input('filter-kategori');
-                    return view('main.all-budaya.semua', ['data' => $rumah, 'selectedValue' => $selectedValue]);
+                    $rumah = $rumahQuery->where('budaya_id', $filterKategori)->get();
+                    $selectedData = $rumah->map(function ($item) {
+                        if (isset($item->rumah_adat_name)) {
+                            $item->name = $item->rumah_adat_name;
+                            unset($item->rumah_adat_name);
+                        }
+                        return $item;
+                    });
+                    return view('main.all-budaya.semua', ['data' => $selectedData, 'selectedValue' => $selectedValue]);
                     break;
                 case '5':
                     // Jika tari yang dipilih
                     $selectedValue = $request->input('filter-kategori');
-                    $tari[] = $tariQuery->where('budaya_id', $filterKategori)->get();
-                    return view('main.all-budaya.semua', ['data' => $tari, 'selectedValue' => $selectedValue]);
+                    $tari = $tariQuery->where('budaya_id', $filterKategori)->get();
+                    $selectedData = $tari->map(function ($item) {
+                        if (isset($item->tarian_name)) {
+                            $item->name = $item->tarian_name;
+                            unset($item->tarian_name);
+                        }
+                        return $item;
+                    });
+                    return view('main.all-budaya.semua', ['data' => $selectedData, 'selectedValue' => $selectedValue]);
                     break;
                 default:
                     flash()->addError('Data Tidak Ditemukan');
@@ -77,9 +113,28 @@ class SemuaBudayaController extends Controller
                 $pakaian = $pakaianQuery->where('province_id', $province->id)->get();
                 $rumah = $rumahQuery->where('province_id', $province->id)->get();
                 $tari = $tariQuery->where('province_id', $province->id)->get();
-                $data = [$masakan, $musik, $pakaian, $rumah, $tari];
+                $data = $masakan->concat($musik)->concat($pakaian)->concat($rumah)->concat($tari);
+                $selectedData = $data->map(function ($item) {
+                    if (isset($item->masakan_name)) {
+                        $item->name = $item->masakan_name;
+                        unset($item->masakan_name);
+                    } elseif (isset($item->alat_musik_name)) {
+                        $item->name = $item->alat_musik_name;
+                        unset($item->alat_musik_name);
+                    } elseif (isset($item->pakaian_name)) {
+                        $item->name = $item->pakaian_name;
+                        unset($item->pakaian_name);
+                    } elseif (isset($item->rumah_adat_name)) {
+                        $item->name = $item->rumah_adat_name;
+                        unset($item->rumah_adat_name);
+                    } elseif (isset($item->tarian_name)) {
+                        $item->name = $item->tarian_name;
+                        unset($item->tarian_name);
+                    }
+                    return $item;
+                });
                 $selectedValue = $request->input('filter-provinsi');
-                return view('main.all-budaya.semua', ['data' => $data, 'selectedValue' => $selectedValue]);
+                return view('main.all-budaya.semua', ['data' => $selectedData, 'selectedValue' => $selectedValue]);
             } else {
                 flash()->addError('Data Tidak Ditemukan');
                 return back();
@@ -94,29 +149,51 @@ class SemuaBudayaController extends Controller
                     $pakaian = $pakaianQuery->latest()->get();
                     $rumah = $rumahQuery->latest()->get();
                     $tari = $tariQuery->latest()->get();
-                    $data = [$masakan, $musik, $pakaian, $rumah, $tari];
+                    $data = $masakan->concat($musik)->concat($pakaian)->concat($rumah)->concat($tari);
+                    $sortedData = $data->sortByDesc('created_at');
+                    $selectedData = $sortedData->map(function ($item) {
+                        if (isset($item->masakan_name)) {
+                            $item->name = $item->masakan_name;
+                            unset($item->masakan_name);
+                        } elseif (isset($item->alat_musik_name)) {
+                            $item->name = $item->alat_musik_name;
+                            unset($item->alat_musik_name);
+                        } elseif (isset($item->pakaian_name)) {
+                            $item->name = $item->pakaian_name;
+                            unset($item->pakaian_name);
+                        } elseif (isset($item->rumah_adat_name)) {
+                            $item->name = $item->rumah_adat_name;
+                            unset($item->rumah_adat_name);
+                        } elseif (isset($item->tarian_name)) {
+                            $item->name = $item->tarian_name;
+                            unset($item->tarian_name);
+                        }
+                        return $item;
+                    });
                     $selectedValue = 'terbaru';
-                    return view('main.all-budaya.semua', ['data' => $data, 'selectedValue' => $selectedValue]);
+                    return view('main.all-budaya.semua', ['data' => $selectedData, 'selectedValue' => $selectedValue]);
                     break;
                 case 'A-Z':
-                    $masakan = $masakanQuery->orderBy('masakan_name', 'asc')->get();
-                    $musik = $musikQuery->orderBy('alat_musik_name', 'asc')->get();
-                    $pakaian = $pakaianQuery->orderBy('pakaian_name', 'asc')->get();
-                    $rumah = $rumahQuery->orderBy('rumah_adat_name', 'asc')->get();
-                    $tari = $tariQuery->orderBy('tarian_name', 'asc')->get();
-                    $data = [$masakan, $musik, $pakaian, $rumah, $tari];
+                    $sortedData = Masakan::with('province')->select('masakan_name as name', 'id', 'deskripsi', 'sejarah', 'budaya_id', 'province_id', 'gambar')
+                        ->union(Musik::with('province')->select('alat_musik_name as name', 'id', 'deskripsi', 'sejarah', 'budaya_id', 'province_id', 'gambar'))
+                        ->union(Pakaian::with('province')->select('pakaian_name as name', 'id', 'deskripsi', 'sejarah', 'budaya_id', 'province_id', 'gambar'))
+                        ->union(Rumah::with('province')->select('rumah_adat_name as name', 'id', 'deskripsi', 'sejarah', 'budaya_id', 'province_id', 'gambar'))
+                        ->union(Tari::with('province')->select('tarian_name as name', 'id', 'deskripsi', 'sejarah', 'budaya_id', 'province_id', 'gambar'))
+                        ->orderBy('name')
+                        ->get();
                     $selectedValue = 'A-Z';
-                    return view('main.all-budaya.semua', ['data' => $data, 'selectedValue' => $selectedValue]);
+                    return view('main.all-budaya.semua', ['data' => $sortedData, 'selectedValue' => $selectedValue]);
                     break;
                 case 'Z-A':
-                    $masakan = $masakanQuery->orderBy('masakan_name', 'desc')->get();
-                    $musik = $musikQuery->orderBy('alat_musik_name', 'desc')->get();
-                    $pakaian = $pakaianQuery->orderBy('pakaian_name', 'desc')->get();
-                    $rumah = $rumahQuery->orderBy('rumah_adat_name', 'desc')->get();
-                    $tari = $tariQuery->orderBy('tarian_name', 'desc')->get();
-                    $data = [$masakan, $musik, $pakaian, $rumah, $tari];
+                    $sortedData = Masakan::with('province')->select('masakan_name as name', 'id', 'deskripsi', 'sejarah', 'budaya_id', 'province_id', 'gambar')
+                        ->union(Musik::with('province')->select('alat_musik_name as name', 'id', 'deskripsi', 'sejarah', 'budaya_id', 'province_id', 'gambar'))
+                        ->union(Pakaian::with('province')->select('pakaian_name as name', 'id', 'deskripsi', 'sejarah', 'budaya_id', 'province_id', 'gambar'))
+                        ->union(Rumah::with('province')->select('rumah_adat_name as name', 'id', 'deskripsi', 'sejarah', 'budaya_id', 'province_id', 'gambar'))
+                        ->union(Tari::with('province')->select('tarian_name as name', 'id', 'deskripsi', 'sejarah', 'budaya_id', 'province_id', 'gambar'))
+                        ->orderByDesc('name')
+                        ->get();
                     $selectedValue = 'Z-A';
-                    return view('main.all-budaya.semua', ['data' => $data, 'selectedValue' => $selectedValue]);
+                    return view('main.all-budaya.semua', ['data' => $sortedData, 'selectedValue' => $selectedValue]);
                     break;
                 default:
                     flash()->addError('Data Tidak Ditemukan');
@@ -131,10 +208,29 @@ class SemuaBudayaController extends Controller
         $rumah = $rumahQuery->get();
         $tari = $tariQuery->get();
 
-        $data = [$masakan, $musik, $pakaian, $rumah, $tari];
+        $data = $masakan->concat($musik)->concat($pakaian)->concat($rumah)->concat($tari);
+        $selectedData = $data->map(function ($item) {
+            if (isset($item->masakan_name)) {
+                $item->name = $item->masakan_name;
+                unset($item->masakan_name);
+            } elseif (isset($item->alat_musik_name)) {
+                $item->name = $item->alat_musik_name;
+                unset($item->alat_musik_name);
+            } elseif (isset($item->pakaian_name)) {
+                $item->name = $item->pakaian_name;
+                unset($item->pakaian_name);
+            } elseif (isset($item->rumah_adat_name)) {
+                $item->name = $item->rumah_adat_name;
+                unset($item->rumah_adat_name);
+            } elseif (isset($item->tarian_name)) {
+                $item->name = $item->tarian_name;
+                unset($item->tarian_name);
+            }
+            return $item;
+        });
 
         return view('main.all-budaya.semua', [
-            'data' => collect($data),
+            'data' => $selectedData,
             'selectedValue' => $selectedValue
         ]);
     }
