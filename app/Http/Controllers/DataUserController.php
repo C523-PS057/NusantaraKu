@@ -32,4 +32,16 @@ class DataUserController extends Controller
             'users' => $users
         ]);
     }
+
+    public function destroy($id)
+    {
+        $user = User::find($id);
+        $user->delete();
+        $totalUser = User::count();
+        $users = User::paginate(10);
+        
+        flash('Berhasil Hapus Data');
+        return back();
+
+    }
 }

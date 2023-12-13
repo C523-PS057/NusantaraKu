@@ -50,10 +50,12 @@
                         style="text-decoration: none">
                         <i class="ri-edit-line"></i>
                     </a>
-                    <form class="d-inline" action="{{ route('data-user.destroy',$item->id) }}" method="POST">
+                    <form class="d-inline" id="delete-form" action="{{ route('data-user.destroy',$item->id) }}"
+                        method="POST">
                         @csrf
                         @method('delete')
-                        <button class="badge bg-danger border-0" onclick="return confirm('Yakin Di Hapus?')">
+                        <button class="btn-delete badge bg-danger border-0"
+                            onclick="return confirm('Yakin hapus data user ini?');">
                             <i class="ri-delete-bin-line" style="font-size: 20px"></i>
                         </button>
                     </form>

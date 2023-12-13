@@ -14,7 +14,6 @@
     <link rel="stylesheet" type="text/css" href="https://unpkg.com/trix@2.0.0/dist/trix.css">
     <script type="text/javascript" src="https://unpkg.com/trix@2.0.0/dist/trix.umd.min.js"></script>
     <link href="/css/main.min.css" rel="stylesheet">
-    <link href="/css/dashboard.css" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="/img/favicon.ico" />
 
 </head>
@@ -42,7 +41,6 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"
         integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous">
     </script>
-    <script src="dashboard.js"></script>
     <script>
     document.addEventListener('trix-file-accept', function(e) {
         e.preventDefault();
