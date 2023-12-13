@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                checkout scm
+                sh 'https://github.com/C523-PS057/NusantaraKu.git'
             }
         }
 
@@ -21,13 +21,9 @@ pipeline {
         }
 
         stage('Deploy') {
-            when {
-                expression {
-                    currentBuild.result == null || currentBuild.result == 'SUCCESS' 
-                }
-            }
             steps {
-                sh 'make publish'
+                sh 'npm run build' 
+                sh 'npm start'
             }
         }
     }
