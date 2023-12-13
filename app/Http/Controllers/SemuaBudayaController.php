@@ -9,6 +9,7 @@ use App\Models\Province;
 use App\Models\Rumah;
 use App\Models\Tari;
 use Illuminate\Http\Request;
+use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Facades\DB;
 
 class SemuaBudayaController extends Controller
@@ -44,7 +45,18 @@ class SemuaBudayaController extends Controller
                         }
                         return $item;
                     });
-                    return view('main.all-budaya.semua', ['data' => $masakan, 'selectedValue' => $selectedValue]);
+                    $perPage = 16;
+                    $page = request()->get('page', 1);
+                    $offset = ($page - 1) * $perPage;
+                    $slicedData = $selectedData->slice($offset, $perPage);
+                    $paginator = new LengthAwarePaginator(
+                        $slicedData,
+                        $selectedData->count(),
+                        $perPage,
+                        $page,
+                        ['path' => request()->url(), 'query' => request()->query()]
+                    );
+                    return view('main.all-budaya.semua', ['data' => $paginator, 'selectedValue' => $selectedValue]);
                     break;
                 case '2':
                     // Jika musik yang dipilih
@@ -57,7 +69,18 @@ class SemuaBudayaController extends Controller
                         }
                         return $item;
                     });
-                    return view('main.all-budaya.semua', ['data' => $selectedData, 'selectedValue' => $selectedValue]);
+                    $perPage = 16;
+                    $page = request()->get('page', 1);
+                    $offset = ($page - 1) * $perPage;
+                    $slicedData = $selectedData->slice($offset, $perPage);
+                    $paginator = new LengthAwarePaginator(
+                        $slicedData,
+                        $selectedData->count(),
+                        $perPage,
+                        $page,
+                        ['path' => request()->url(), 'query' => request()->query()]
+                    );
+                    return view('main.all-budaya.semua', ['data' => $paginator, 'selectedValue' => $selectedValue]);
                     break;
                 case '3':
                     // Jika pakaian yang dipilih
@@ -70,7 +93,18 @@ class SemuaBudayaController extends Controller
                         }
                         return $item;
                     });
-                    return view('main.all-budaya.semua', ['data' => $selectedData, 'selectedValue' => $selectedValue]);
+                    $perPage = 16;
+                    $page = request()->get('page', 1);
+                    $offset = ($page - 1) * $perPage;
+                    $slicedData = $selectedData->slice($offset, $perPage);
+                    $paginator = new LengthAwarePaginator(
+                        $slicedData,
+                        $selectedData->count(),
+                        $perPage,
+                        $page,
+                        ['path' => request()->url(), 'query' => request()->query()]
+                    );
+                    return view('main.all-budaya.semua', ['data' => $paginator, 'selectedValue' => $selectedValue]);
                     break;
                 case '4':
                     // Jika rumah yang dipilih
@@ -83,7 +117,18 @@ class SemuaBudayaController extends Controller
                         }
                         return $item;
                     });
-                    return view('main.all-budaya.semua', ['data' => $selectedData, 'selectedValue' => $selectedValue]);
+                    $perPage = 16;
+                    $page = request()->get('page', 1);
+                    $offset = ($page - 1) * $perPage;
+                    $slicedData = $selectedData->slice($offset, $perPage);
+                    $paginator = new LengthAwarePaginator(
+                        $slicedData,
+                        $selectedData->count(),
+                        $perPage,
+                        $page,
+                        ['path' => request()->url(), 'query' => request()->query()]
+                    );
+                    return view('main.all-budaya.semua', ['data' => $paginator, 'selectedValue' => $selectedValue]);
                     break;
                 case '5':
                     // Jika tari yang dipilih
@@ -96,7 +141,18 @@ class SemuaBudayaController extends Controller
                         }
                         return $item;
                     });
-                    return view('main.all-budaya.semua', ['data' => $selectedData, 'selectedValue' => $selectedValue]);
+                    $perPage = 16;
+                    $page = request()->get('page', 1);
+                    $offset = ($page - 1) * $perPage;
+                    $slicedData = $selectedData->slice($offset, $perPage);
+                    $paginator = new LengthAwarePaginator(
+                        $slicedData,
+                        $selectedData->count(),
+                        $perPage,
+                        $page,
+                        ['path' => request()->url(), 'query' => request()->query()]
+                    );
+                    return view('main.all-budaya.semua', ['data' => $paginator, 'selectedValue' => $selectedValue]);
                     break;
                 default:
                     flash()->addError('Data Tidak Ditemukan');
@@ -133,8 +189,19 @@ class SemuaBudayaController extends Controller
                     }
                     return $item;
                 });
+                $perPage = 16;
+                $page = request()->get('page', 1);
+                $offset = ($page - 1) * $perPage;
+                $slicedData = $selectedData->slice($offset, $perPage);
+                $paginator = new LengthAwarePaginator(
+                    $slicedData,
+                    $selectedData->count(),
+                    $perPage,
+                    $page,
+                    ['path' => request()->url(), 'query' => request()->query()]
+                );
                 $selectedValue = $request->input('filter-provinsi');
-                return view('main.all-budaya.semua', ['data' => $selectedData, 'selectedValue' => $selectedValue]);
+                return view('main.all-budaya.semua', ['data' => $paginator, 'selectedValue' => $selectedValue]);
             } else {
                 flash()->addError('Data Tidak Ditemukan');
                 return back();
@@ -170,8 +237,19 @@ class SemuaBudayaController extends Controller
                         }
                         return $item;
                     });
+                    $perPage = 16;
+                    $page = request()->get('page', 1);
+                    $offset = ($page - 1) * $perPage;
+                    $slicedData = $sortedData->slice($offset, $perPage);
+                    $paginator = new LengthAwarePaginator(
+                        $slicedData,
+                        $sortedData->count(),
+                        $perPage,
+                        $page,
+                        ['path' => request()->url(), 'query' => request()->query()]
+                    );
                     $selectedValue = 'terbaru';
-                    return view('main.all-budaya.semua', ['data' => $selectedData, 'selectedValue' => $selectedValue]);
+                    return view('main.all-budaya.semua', ['data' => $paginator, 'selectedValue' => $selectedValue]);
                     break;
                 case 'A-Z':
                     $sortedData = Masakan::with('province')->select('masakan_name as name', 'id', 'deskripsi', 'sejarah', 'budaya_id', 'province_id', 'gambar')
@@ -181,8 +259,19 @@ class SemuaBudayaController extends Controller
                         ->union(Tari::with('province')->select('tarian_name as name', 'id', 'deskripsi', 'sejarah', 'budaya_id', 'province_id', 'gambar'))
                         ->orderBy('name')
                         ->get();
+                    $perPage = 16;
+                    $page = request()->get('page', 1);
+                    $offset = ($page - 1) * $perPage;
+                    $slicedData = $sortedData->slice($offset, $perPage);
+                    $paginator = new LengthAwarePaginator(
+                        $slicedData,
+                        $sortedData->count(),
+                        $perPage,
+                        $page,
+                        ['path' => request()->url(), 'query' => request()->query()]
+                    );
                     $selectedValue = 'A-Z';
-                    return view('main.all-budaya.semua', ['data' => $sortedData, 'selectedValue' => $selectedValue]);
+                    return view('main.all-budaya.semua', ['data' => $paginator, 'selectedValue' => $selectedValue]);
                     break;
                 case 'Z-A':
                     $sortedData = Masakan::with('province')->select('masakan_name as name', 'id', 'deskripsi', 'sejarah', 'budaya_id', 'province_id', 'gambar')
@@ -192,8 +281,19 @@ class SemuaBudayaController extends Controller
                         ->union(Tari::with('province')->select('tarian_name as name', 'id', 'deskripsi', 'sejarah', 'budaya_id', 'province_id', 'gambar'))
                         ->orderByDesc('name')
                         ->get();
+                    $perPage = 16;
+                    $page = request()->get('page', 1);
+                    $offset = ($page - 1) * $perPage;
+                    $slicedData = $sortedData->slice($offset, $perPage);
+                    $paginator = new LengthAwarePaginator(
+                        $slicedData,
+                        $sortedData->count(),
+                        $perPage,
+                        $page,
+                        ['path' => request()->url(), 'query' => request()->query()]
+                    );
                     $selectedValue = 'Z-A';
-                    return view('main.all-budaya.semua', ['data' => $sortedData, 'selectedValue' => $selectedValue]);
+                    return view('main.all-budaya.semua', ['data' => $paginator, 'selectedValue' => $selectedValue]);
                     break;
                 default:
                     flash()->addError('Data Tidak Ditemukan');
@@ -228,9 +328,20 @@ class SemuaBudayaController extends Controller
             }
             return $item;
         });
+        $perPage = 16;
+        $page = request()->get('page', 1);
+        $offset = ($page - 1) * $perPage;
+        $slicedData = $selectedData->slice($offset, $perPage);
+        $paginator = new LengthAwarePaginator(
+            $slicedData,
+            $selectedData->count(),
+            $perPage,
+            $page,
+            ['path' => request()->url(), 'query' => request()->query()]
+        );
 
         return view('main.all-budaya.semua', [
-            'data' => $selectedData,
+            'data' => $paginator,
             'selectedValue' => $selectedValue
         ]);
     }
