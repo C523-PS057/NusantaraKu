@@ -110,7 +110,7 @@
     <script src="../js/main.js" type="module"></script>
     <script src="../js/category.js" type="module"></script>
     <script src="../js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="../icons/remixicon.css" />
+    <link rel="stylesheet" href="../css/remixicon.css" />
     <script>
     document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('filter-provinsi').addEventListener('change', function() {
