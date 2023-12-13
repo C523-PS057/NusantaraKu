@@ -33,7 +33,7 @@
                     <div class="categories__filter-group group-3">
                         <form action="{{ route('semua-budaya.index') }}" method="GET" id="filterKategori">
                             <select class="categories__filter-select" name="filter-kategori" id="filter-kategori">
-                                <option value="" {{ $selectedValue === null ? 'selected' : '' }} disabled>Kategori</option>
+                                <option selected disabled>Kategori</option>
                                 <option value="1" {{ $selectedValue === '1' ? 'selected' : '' }}>Masakan Khas</option>
                                 <option value="2" {{ $selectedValue === '2' ? 'selected' : '' }}>Alat Musik</option>
                                 <option value="3" {{ $selectedValue === '3' ? 'selected' : '' }}>Pakaian Adat</option>
@@ -85,7 +85,7 @@
                         </form>
                         <form action="{{ route('semua-budaya.index') }}" method="GET" id="filterUrutkan">
                             <select class="categories__filter-select" name="filter-query" id="filter-query">
-                                <option value="" {{ $selectedValue === null ? 'selected' : '' }} disabled>Urutkan</option>
+                                <option selected disabled>Urutkan</option>
                                 <option value="terbaru" {{ $selectedValue === 'terbaru' ? 'selected' : '' }}>Terbaru</option>
                                 <option value="A-Z" {{ $selectedValue === 'A-Z' ? 'selected' : '' }}>A-Z</option>
                                 <option value="Z-A" {{ $selectedValue === 'Z-A' ? 'selected' : '' }}>Z-A</option>
