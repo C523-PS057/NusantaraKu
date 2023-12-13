@@ -49,7 +49,7 @@ class AllMasakanKhasController extends Controller
             }
         }
 
-        $data = $data->get();
+        $data = $data->paginate(12);
 
         return view('main.all-budaya.masakan', [
             'data' => $data,

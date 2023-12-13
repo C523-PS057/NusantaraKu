@@ -49,7 +49,7 @@ class AllRumahAdatController extends Controller
             }
         }
 
-        $data = $data->get();
+        $data = $data->paginate(12);
 
         return view('main.all-budaya.rumah', [
             'data' => $data,

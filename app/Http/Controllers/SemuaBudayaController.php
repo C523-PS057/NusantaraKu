@@ -45,7 +45,7 @@ class SemuaBudayaController extends Controller
                         }
                         return $item;
                     });
-                    $perPage = 16;
+                    $perPage = 12;
                     $page = request()->get('page', 1);
                     $offset = ($page - 1) * $perPage;
                     $slicedData = $selectedData->slice($offset, $perPage);
@@ -69,7 +69,7 @@ class SemuaBudayaController extends Controller
                         }
                         return $item;
                     });
-                    $perPage = 16;
+                    $perPage = 12;
                     $page = request()->get('page', 1);
                     $offset = ($page - 1) * $perPage;
                     $slicedData = $selectedData->slice($offset, $perPage);
@@ -93,7 +93,7 @@ class SemuaBudayaController extends Controller
                         }
                         return $item;
                     });
-                    $perPage = 16;
+                    $perPage = 12;
                     $page = request()->get('page', 1);
                     $offset = ($page - 1) * $perPage;
                     $slicedData = $selectedData->slice($offset, $perPage);
@@ -117,7 +117,7 @@ class SemuaBudayaController extends Controller
                         }
                         return $item;
                     });
-                    $perPage = 16;
+                    $perPage = 12;
                     $page = request()->get('page', 1);
                     $offset = ($page - 1) * $perPage;
                     $slicedData = $selectedData->slice($offset, $perPage);
@@ -141,7 +141,7 @@ class SemuaBudayaController extends Controller
                         }
                         return $item;
                     });
-                    $perPage = 16;
+                    $perPage = 12;
                     $page = request()->get('page', 1);
                     $offset = ($page - 1) * $perPage;
                     $slicedData = $selectedData->slice($offset, $perPage);
@@ -189,7 +189,7 @@ class SemuaBudayaController extends Controller
                     }
                     return $item;
                 });
-                $perPage = 16;
+                $perPage = 12;
                 $page = request()->get('page', 1);
                 $offset = ($page - 1) * $perPage;
                 $slicedData = $selectedData->slice($offset, $perPage);
@@ -237,7 +237,7 @@ class SemuaBudayaController extends Controller
                         }
                         return $item;
                     });
-                    $perPage = 16;
+                    $perPage = 12;
                     $page = request()->get('page', 1);
                     $offset = ($page - 1) * $perPage;
                     $slicedData = $sortedData->slice($offset, $perPage);
@@ -259,7 +259,7 @@ class SemuaBudayaController extends Controller
                         ->union(Tari::with('province')->select('tarian_name as name', 'id', 'deskripsi', 'sejarah', 'budaya_id', 'province_id', 'gambar'))
                         ->orderBy('name')
                         ->get();
-                    $perPage = 16;
+                    $perPage = 12;
                     $page = request()->get('page', 1);
                     $offset = ($page - 1) * $perPage;
                     $slicedData = $sortedData->slice($offset, $perPage);
@@ -281,7 +281,7 @@ class SemuaBudayaController extends Controller
                         ->union(Tari::with('province')->select('tarian_name as name', 'id', 'deskripsi', 'sejarah', 'budaya_id', 'province_id', 'gambar'))
                         ->orderByDesc('name')
                         ->get();
-                    $perPage = 16;
+                    $perPage = 12;
                     $page = request()->get('page', 1);
                     $offset = ($page - 1) * $perPage;
                     $slicedData = $sortedData->slice($offset, $perPage);
@@ -328,7 +328,7 @@ class SemuaBudayaController extends Controller
             }
             return $item;
         });
-        $perPage = 16;
+        $perPage = 12;
         $page = request()->get('page', 1);
         $offset = ($page - 1) * $perPage;
         $slicedData = $selectedData->slice($offset, $perPage);
