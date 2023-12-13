@@ -1,0 +1,21 @@
+@media screen and (min-width: 1280px) {
+    .navbar {
+        &-nav {
+            gap: 1rem !important;
+        }
+    }
+
+    .dropdown-provinsi {
+        top: 500% !important;
+
+        &.active {
+            top: 520% !important;
+        }
+    }
+
+    .login {
+        &__content {
+            padding: 4rem 7rem;
+        }
+    }
+}

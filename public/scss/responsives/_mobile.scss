@@ -1,0 +1,13 @@
+@media screen and (max-width: 576px) {
+    .category {
+        &__content {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    .login {
+        &__content {
+            padding: 2rem 4rem;
+        }
+    }
+}

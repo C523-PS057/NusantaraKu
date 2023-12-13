@@ -1,0 +1,49 @@
+.navbar {
+    padding: 1rem 0;
+    transition: all 0.3s ease;
+    background-color: rgba($color: $text-white, $alpha: 0.5);
+    backdrop-filter: blur(10px);
+
+    &-right {
+        display: flex;
+        gap: 0.5rem !important;
+    }
+
+    .container {
+        position: relative;
+    }
+
+    &-brand {
+        img {
+            width: 100%;
+            max-width: 200px;
+        }
+    }
+
+    &-nav {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    &-nav {
+        .nav-item {
+            font-size: 14px;
+            font-weight: 600;
+        }
+    }
+}
+
+.nav {
+    &-link {
+        text-align: center;
+
+        &:hover {
+            color: $red;
+        }
+
+        &.active {
+            color: $red !important;
+        }
+    }
+}

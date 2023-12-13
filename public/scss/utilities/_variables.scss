@@ -1,0 +1,16 @@
+$red: #e23535;
+$red-darken: darken($red, 10%);
+$black: #171717;
+$text-black: #1c1c1c;
+$text-black-secondary: rgba(
+    $color: $text-black,
+    $alpha: 0.75
+);
+$text-white: #f1f1f1;
+$text-white-secondary: rgba(
+    $color: $text-white,
+    $alpha: 0.75
+);
+$body: #f2f2f2;
+$red-light: #ffdddd;
+$white: #ffffff;

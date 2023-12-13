@@ -1,0 +1,52 @@
+@keyframes slide {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+.marquee {
+    overflow: hidden;
+    padding: 60px 0;
+    white-space: nowrap;
+    position: relative;
+
+    &__asterix {
+        width: 1.5rem;
+        height: 1.5rem;
+        aspect-ratio: 1/1;
+    }
+
+    &:before,
+    &:after {
+        position: absolute;
+        top: 0;
+        width: 250px;
+        height: 100%;
+        content: '';
+        z-index: 2;
+    }
+
+    &:before {
+        left: 0;
+    }
+
+    &:after {
+        right: 0;
+    }
+
+    &-slide {
+        display: inline-flex;
+        align-items: center;
+        animation: 30s slide infinite linear;
+    }
+
+    &-slide {
+        img {
+            height: 2rem;
+            margin: 0 15px;
+        }
+    }
+}
