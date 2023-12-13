@@ -21,7 +21,7 @@
             <label for="province_id" class="form-label">Provinsi</label>
             <select class="form-select" name="province_id">
               @foreach ($province as $item)
-              @if (old('province_id') == $item->id)
+              @if (old('province_id',$data->province_id) == $item->id)
               <option value="{{ $item->id }}" selected>{{ $item->province_name }}</option>
               @else
               <option value="{{ $item->id }}" >{{ $item->province_name }}</option>
