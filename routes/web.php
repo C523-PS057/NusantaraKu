@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminCommentController;
 use App\Http\Controllers\AllAlatMusikController;
 use App\Http\Controllers\AllMasakanKhasController;
 use App\Http\Controllers\AllPakaianAdatController;
@@ -53,6 +54,7 @@ Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
     Route::resource('rumah', RumahController::class);
     Route::resource('tari', TariController::class);
     Route::resource('data-user', DataUserController::class);
+    Route::resource('data-comment', AdminCommentController::class);
 });
 Route::resource('provinsi', ProvinsiController::class);
 

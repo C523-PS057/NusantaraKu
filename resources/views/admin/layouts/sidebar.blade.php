@@ -58,6 +58,13 @@
                     Data Pengguna
                 </a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link text-{{ Request::is('admin/data-comment*') ? 'danger' :'dark' }}"
+                    href="/admin/data-comment">
+                    <span data-feather="file"></span>
+                    Data Komentar
+                </a>
+            </li>
             <hr>
             <li class="nav-item">
                 <a class="nav-link text-dark" href="/">

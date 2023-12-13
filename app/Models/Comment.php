@@ -17,7 +17,7 @@ class Comment extends Model
 
     public function budaya()
     {
-        $this->belongsTo(Budaya::class, 'budaya_id');
+        return $this->belongsTo(Budaya::class, 'budaya_id');
     }
 
     public function masakan()
@@ -39,5 +39,13 @@ class Comment extends Model
     public function tari()
     {
         return $this->belongsTo(Tari::class, 'tari_id');
+    }
+    public function scopeSearch($query, $search)
+    {
+        return $query->where(function ($query) use ($search) {
+            $query->whereHas('user', function ($userQuery) use ($search) {
+                $userQuery->where('name', 'like', '%' . $search . '%');
+            })->orWhere('body_comment', 'like', '%' . $search . '%');;
+        });
     }
 }
