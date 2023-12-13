@@ -45,7 +45,7 @@ class Comment extends Model
         return $query->where(function ($query) use ($search) {
             $query->whereHas('user', function ($userQuery) use ($search) {
                 $userQuery->where('name', 'like', '%' . $search . '%');
-            })->orWhere('body_comment', 'like', '%' . $search . '%');;
+            })->orWhere('body_comment', 'like', '%' . $search . '%');
         });
     }
 }
