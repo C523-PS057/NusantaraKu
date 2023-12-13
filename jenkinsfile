@@ -5,7 +5,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 script{
-                    https://github.com/C523-PS057/NusantaraKu.git
+                    sh 'https://github.com/C523-PS057/NusantaraKu.git'
                 }
             }
         }
