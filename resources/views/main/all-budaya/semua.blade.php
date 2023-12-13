@@ -145,6 +145,9 @@
             </div>
         </div>
     </main>
+    <div class="d-flex justify-content-center">
+        {!! $data->links() !!}
+    </div>
     @extends('main.layouts.footer')
 
     <script src="../js/main.js" type="module"></script>
