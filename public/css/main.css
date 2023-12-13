@@ -1595,8 +1595,7 @@ trix-toolbar .trix-button {
 .navbar-dark img {
   width: 200px;
 }
-.navbar-dark button,
-.navbar-dark .navbar-nav {
+.navbar-dark .navbar-brand {
   display: none;
 }
 
