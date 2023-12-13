@@ -38,6 +38,10 @@ class DataUserController extends Controller
     {
         $user = User::findOrFail($id);
         $comments = Comment::where('user_id', $user->id)->get();
+        if ($user->id == auth()->user()->id) {
+            flash()->addError('Tidak Dapat Menghapus Diri Sendiri!');
+            return back();
+        }
         if ($user->role == 'admin') {
             flash()->addError('Tidak Dapat Menghapus Admin!');
             return back();
