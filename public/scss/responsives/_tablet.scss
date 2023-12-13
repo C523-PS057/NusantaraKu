@@ -208,8 +208,10 @@
         }
     }
 
-    .navbar-brand {
-        display: none !important;
+    .navbar-dark {
+        .navbar-brand {
+            display: none !important;
+        }
     }
 }
 

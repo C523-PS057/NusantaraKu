@@ -1807,7 +1807,7 @@ input[type=search]::-webkit-search-cancel-button {
   .dashboard-admin__grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  .navbar-brand {
+  .navbar-dark .navbar-brand {
     display: none !important;
   }
 }
