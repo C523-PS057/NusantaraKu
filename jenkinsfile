@@ -14,6 +14,7 @@ pipeline {
                 script {
                     def appKey = sh(script: 'php artisan key:generate --show', returnStdout: true).trim()
 
+                    sh 'pwd; ls -lah'
                     sh 'cp .env.template .env'
                     sh "sed -i 's|!APPKEY|${appKey}|g' .env"
                     
