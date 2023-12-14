@@ -24,6 +24,7 @@ body {
 }
 
 section {
+  overflow-x: hidden;
   padding: 5rem 0;
 }
 

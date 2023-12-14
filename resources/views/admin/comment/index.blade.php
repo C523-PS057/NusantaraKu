@@ -36,27 +36,33 @@
                 <td>{{ Str::limit($item->body_comment,15, '...') }}</td>
                 <td class="column-action">
                     @if ($item->budaya_id == 1)
-                    <a href="{{ route('detail-masakan.show',$item->masakan_id) }}" class="btn-icon" style="text-decoration: none" target="_blank" rel="noopener noreferrer">
+                    <a href="{{ route('detail-masakan.show',$item->masakan_id) }}" class="btn-icon"
+                        style="text-decoration: none" target="_blank" rel="noopener noreferrer">
                         <i class="ri-eye-fill"></i>
                     </a>
                     @elseif ($item->budaya_id == 2)
-                    <a href="{{ route('detail-musik.show',$item->musik_id) }}" class="btn-icon" style="text-decoration: none" target="_blank" rel="noopener noreferrer">
+                    <a href="{{ route('detail-musik.show',$item->musik_id) }}" class="btn-icon"
+                        style="text-decoration: none" target="_blank" rel="noopener noreferrer">
                         <i class="ri-eye-fill"></i>
                     </a>
                     @elseif ($item->budaya_id == 3)
-                    <a href="{{ route('detail-pakaian.show',$item->pakaian_id) }}" class="btn-icon" style="text-decoration: none" target="_blank" rel="noopener noreferrer">
+                    <a href="{{ route('detail-pakaian.show',$item->pakaian_id) }}" class="btn-icon"
+                        style="text-decoration: none" target="_blank" rel="noopener noreferrer">
                         <i class="ri-eye-fill"></i>
                     </a>
                     @elseif ($item->budaya_id == 4)
-                    <a href="{{ route('detail-rumah.show',$item->rumah_id) }}" class="btn-icon" style="text-decoration: none" target="_blank" rel="noopener noreferrer">
+                    <a href="{{ route('detail-rumah.show',$item->rumah_id) }}" class="btn-icon"
+                        style="text-decoration: none" target="_blank" rel="noopener noreferrer">
                         <i class="ri-eye-fill"></i>
                     </a>
                     @elseif ($item->budaya_id == 5)
-                    <a href="{{ route('detail-tari.show',$item->tari_id) }}" class="btn-icon" style="text-decoration: none" target="_blank" rel="noopener noreferrer">
+                    <a href="{{ route('detail-tari.show',$item->tari_id) }}" class="btn-icon"
+                        style="text-decoration: none" target="_blank" rel="noopener noreferrer">
                         <i class="ri-eye-fill"></i>
                     </a>
                     @endif
-                    <form class="d-inline" style="margin-left: 10px;" action="{{ route('data-comment.destroy',$item->id) }}" method="POST">
+                    <form class="d-inline" style="margin-left: 10px;"
+                        action="{{ route('data-comment.destroy',$item->id) }}" method="POST">
                         @csrf
                         @method('delete')
                         <button class="badge bg-danger border-0" onclick="return confirm('Yakin Di Hapus?')">
