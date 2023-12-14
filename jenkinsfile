@@ -37,13 +37,13 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh 'composer install --no-interaction --prefer-dist'
+                sh 'docker build -t nusantaraku .'
             }
         }
 
         stage('Deploy') {
              steps {
-                sh 'php artisan serve --port=8000'
+                sh 'docker-compose up -d'
             }
         }
     }
