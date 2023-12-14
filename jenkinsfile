@@ -29,10 +29,6 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'composer install --no-interaction --prefer-dist'
-                sh 'npm install'
-                sh 'php artisan key:generate'
-                sh 'php artisan config:cache'
-                sh 'npm run dev'
                 sh 'php artisan migrate --force --seed'
             }
         }
