@@ -15,6 +15,9 @@ pipeline {
         MAIL_PORT='env.MAIL_PORT'
         MAIL_USERNAME='env.MAIL_USERNAME'
         MAIL_PASSWORD='env.MAIL_PASSWORD'
+        GOOGLE_CLIENT_ID = 'env.GOOGLE_CLIENT_ID'
+        GOOGLE_CLIENT_SECRET = 'env.GOOGLE_CLIENT_SECRET'
+        GOOGLE_REDIRECT_URI = 'env.GOOGLE_REDIRECT_URI'
     }
 
     stages {
