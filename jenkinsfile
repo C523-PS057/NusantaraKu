@@ -1,8 +1,21 @@
 pipeline {
     agent any
-    tools {
-        maven 'Maven'
+
+    environment {
+        APP_ENV = 'production'
+        APP_KEY = env.APP_KEY
+        DB_CONNECTION = 'mysql'
+        DB_HOST = env.DB_HOST
+        DB_DATABASE = env.DB_DATABASE
+        DB_USERNAME = env.DB_USERNAME
+        DB_PASSWORD = env.DB_PASSWORD
+        MAIL_MAILER=smtp
+        MAIL_HOST=env.MAIL_HOST
+        MAIL_PORT=env.MAIL_PORT
+        MAIL_USERNAME=env.MAIL_USERNAME
+        MAIL_PASSWORD=env.MAIL_PASSWORD
     }
+
     stages {
         stage('Checkout') {
             steps {
@@ -14,22 +27,14 @@ pipeline {
 
         stage('Build') {
             steps {
-                script {
-                    sh 'mvn clean install'
-                }
-            }
-        }
-
-        stage('Test') {
-            steps {
-                sh 'mvn test'
+                sh 'composer install --no-interaction --prefer-dist'
+                sh 'php artisan migrate --force --seed'
             }
         }
 
         stage('Deploy') {
-            steps {
-                sh 'npm run build' 
-                sh 'npm start'
+             steps {
+                sh 'php artisan serve --port=8000'
             }
         }
     }
