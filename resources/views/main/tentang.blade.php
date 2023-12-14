@@ -130,10 +130,6 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
     AOS.init({
-        disable: function() {
-            var maxWidth = 992;
-            return window.innerWidth < maxWidth;
-        },
         duration: 1000,
         easing: "ease-in-out",
         mirror: true,
