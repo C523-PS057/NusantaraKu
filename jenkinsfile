@@ -31,7 +31,8 @@ pipeline {
                 sh 'composer install --no-interaction --prefer-dist'
                 sh 'php artisan key:generate'
                 sh 'php artisan config:cache'
-                sh 'php artisan migrate'
+                def migrateOutput = sh(script: 'php artisan migrate', returnStdout: true).trim()
+                echo "Migration Output: ${migrateOutput}"
                 sh 'php artisan migrate --force --seed'
             }
         }
