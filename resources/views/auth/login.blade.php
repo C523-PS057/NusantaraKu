@@ -81,6 +81,8 @@
     <script>
     const btnTogglePassword = document.querySelector('#btn-toggle-password');
     const inputPassword = document.querySelector('#password');
+    const inputEmail = document.querySelector('#email');
+    const loginForm = document.querySelector('.login__form');
 
     btnTogglePassword.addEventListener('click', (e) => {
         e.preventDefault();
@@ -92,6 +94,17 @@
             btnTogglePassword.innerHTML = '<i class="ri-eye-line"></i>';
         }
     });
+
+    inputPassword.addEventListener('keydown', function(e) {
+        if (e.keyCode === 13) {
+            e.preventDefault();
+        }
+    })
+    inputEmail.addEventListener('keydown', function(e) {
+        if (e.keyCode === 13) {
+            e.preventDefault();
+        }
+    })
     </script>
 </body>
 
