@@ -31,6 +31,7 @@ pipeline {
                 sh 'composer install --no-interaction --prefer-dist'
                 sh 'php artisan key:generate'
                 sh 'php artisan config:cache'
+                sh 'php artisan migrate'
                 sh 'php artisan migrate --force --seed'
             }
         }
