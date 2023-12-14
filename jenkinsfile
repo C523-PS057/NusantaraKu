@@ -1,25 +1,6 @@
 pipeline {
     agent any
 
-    environment {
-        APP_ENV = 'production'
-        APP_KEY = '${env.APP_KEY}'
-        DB_CONNECTION = 'mysql'
-        DB_HOST = '${env.DB_HOST}'
-        DB_PORT = '${env.DB_PORT}'
-        DB_DATABASE = '${env.DB_DATABASE}'
-        DB_USERNAME = '${env.DB_USERNAME}'
-        DB_PASSWORD = '${env.DB_PASSWORD}'
-        MAIL_MAILER='smtp'
-        MAIL_HOST='${env.MAIL_HOST}'
-        MAIL_PORT='${env.MAIL_PORT}'
-        MAIL_USERNAME='${env.MAIL_USERNAME}'
-        MAIL_PASSWORD='${env.MAIL_PASSWORD}'
-        GOOGLE_CLIENT_ID = '${env.GOOGLE_CLIENT_ID}'
-        GOOGLE_CLIENT_SECRET = '${env.GOOGLE_CLIENT_SECRET}'
-        GOOGLE_REDIRECT_URI = '${env.GOOGLE_REDIRECT_URI}'
-    }
-
     stages {
         stage('Checkout') {
             steps {
@@ -28,7 +9,33 @@ pipeline {
                 }
             }
         }
+        stage('Prepare Environment') {
+            steps {
+                script {
+                    def appKey = sh(script: 'php artisan key:generate --show', returnStdout: true).trim()
 
+                    sh 'cp .env.template .env'
+                    sh "sed -i 's|!APPKEY|${appKey}|g' .env"
+                    
+                    sh "sed -i 's|!HOST|${env.DB_HOST}|g' .env"
+                    sh "sed -i 's|!PORT|${env.DB_PORT}|g' .env"
+                    sh "sed -i 's|!DATABASE|${env.DB_DATABASE}|g' .env"
+                    sh "sed -i 's|!USERNAME|${env.DB_USERNAME}|g' .env"
+                    sh "sed -i 's|!PASSWORD|${env.DB_PASSWORD}|g' .env"
+
+                    sh "sed -i 's|!MAIL_HOST|${env.MAIL_HOST}|g' .env"
+                    sh "sed -i 's|!MAIL_PORT|${env.MAIL_PORT}|g' .env"
+                    sh "sed -i 's|!MAIL_USERNAME|${env.MAIL_USERNAME}|g' .env"
+                    sh "sed -i 's|!MAIL_PASSWORD|${env.MAIL_PASSWORD}|g' .env"
+                    
+                    sh "sed -i 's|!GOOGLE_CLIENT_ID|${env.GOOGLE_CLIENT_ID}|g' .env"
+                    sh "sed -i 's|!GOOGLE_CLIENT_SECRET|${env.GOOGLE_CLIENT_SECRET}|g' .env"
+                    sh "sed -i 's|!GOOGLE_REDIRECT_URI|${env.GOOGLE_CLIENT_URI}|g' .env"
+
+                    sh "cat .env"
+                }
+            }
+        }
         stage('Build') {
             steps {
                 sh 'composer install --no-interaction --prefer-dist'
