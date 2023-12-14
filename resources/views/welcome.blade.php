@@ -256,17 +256,16 @@
                             </div>
                         </div>
                         <div class="testimonial__list">
-                            <button class="testimonial__item active" data-index="0" data-aos="fade-up"
-                                data-aos-delay="300">
+                            <button class="testimonial__item active" data-index="0">
                                 <img src="/img/testimonial1.webp" />
                             </button>
-                            <button class="testimonial__item" data-index="1" data-aos="fade-up" data-aos-delay="400">
+                            <button class="testimonial__item" data-index="1">
                                 <img src="/img/testimonial2.webp" />
                             </button>
-                            <button class="testimonial__item" data-index="2" data-aos="fade-up" data-aos-delay="500">
+                            <button class="testimonial__item" data-index="2">
                                 <img src="/img/testimonial3.webp" />
                             </button>
-                            <button class="testimonial__item" data-index="3" data-aos="fade-up" data-aos-delay="600">
+                            <button class="testimonial__item" data-index="3">
                                 <img src="/img/testimonial4.webp" />
                             </button>
                         </div>
