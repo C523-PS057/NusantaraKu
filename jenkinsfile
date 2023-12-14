@@ -29,10 +29,10 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'composer install --no-interaction --prefer-dist'
+                sh 'npm install'
                 sh 'php artisan key:generate'
                 sh 'php artisan config:cache'
-                def migrateOutput = sh(script: 'php artisan migrate', returnStdout: true).trim()
-                echo "Migration Output: ${migrateOutput}"
+                sh 'npm run dev'
                 sh 'php artisan migrate --force --seed'
             }
         }
