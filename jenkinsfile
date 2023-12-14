@@ -14,7 +14,6 @@ pipeline {
                 script {
                     def appKey = sh(script: 'php artisan key:generate --show', returnStdout: true).trim()
 
-                    sh 'pwd; ls -lah'
                     sh 'cp .env.template .env'
                     sh "sed -i 's|!APPKEY|${appKey}|g' .env"
                     
@@ -31,16 +30,14 @@ pipeline {
                     
                     sh "sed -i 's|!GOOGLE_CLIENT_ID|${env.GOOGLE_CLIENT_ID}|g' .env"
                     sh "sed -i 's|!GOOGLE_CLIENT_SECRET|${env.GOOGLE_CLIENT_SECRET}|g' .env"
-                    sh "sed -i 's|!GOOGLE_REDIRECT_URI|${env.GOOGLE_CLIENT_URI}|g' .env"
+                    sh "sed -i 's|!GOOGLE_REDIRECT_URI|${env.GOOGLE_REDIRECT_URI}|g' .env"
 
-                    sh "cat .env"
                 }
             }
         }
         stage('Build') {
             steps {
                 sh 'composer install --no-interaction --prefer-dist'
-                sh 'php artisan migrate --force --seed'
             }
         }
 
