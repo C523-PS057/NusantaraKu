@@ -24,7 +24,6 @@ body {
 }
 
 section {
-  overflow-x: hidden;
   padding: 5rem 0;
 }
 
@@ -1810,6 +1809,9 @@ input[type=search]::-webkit-search-cancel-button {
   }
   .navbar-dark .navbar-brand {
     display: none !important;
+  }
+  section {
+    overflow: hidden;
   }
 }
 @media screen and (max-width: 768px) {

@@ -255,7 +255,7 @@
                                 <p class="testimonial__job">Web Developer di Tokopedia</p>
                             </div>
                         </div>
-                        <div class="testimonial__list">
+                        <div class="testimonial__list" data-aos="fade-up">
                             <button class="testimonial__item active" data-index="0">
                                 <img src="/img/testimonial1.webp" />
                             </button>
