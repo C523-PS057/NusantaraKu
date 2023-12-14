@@ -5,7 +5,8 @@ pipeline {
         stage('Checkout') {
             steps {
                 script{
-                    git url: 'https://github.com/C523-PS057/NusantaraKu.git'
+                    git url: 'https://github.com/C523-PS057/NusantaraKu.git',
+                    git branch: 'backend'
                 }
             }
         }
