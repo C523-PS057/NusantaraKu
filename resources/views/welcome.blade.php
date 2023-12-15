@@ -21,14 +21,14 @@
     <meta property="og:title" content="NusantaraKu: Jelajahi Ragam Budaya Nusantara">
     <meta property="og:description"
         content="Website NusantaraKu adalah sebuah platform online yang bertujuan untuk memperkenalkan dan mempromosikan ragam budaya dari berbagai daerah di Indonesia, yang dikenal sebagai Nusantara. Website ini menyajikan informasi terkait budaya yang ada di indonesia seperti Tari Tradisional, Rumah Adat, Masakan khas dan kategori budaya lainnya.">
-    <meta property="og:image" content="./thumbnail.webp">
+    <meta property="og:image" content="./thumbnail.jpg">
     <meta property="og:url" content="https://ininusantaraku.my.id/">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="NusantaraKu: Jelajahi Ragam Budaya Nusantara">
     <meta name="twitter:description"
         content="Website NusantaraKu adalah sebuah platform online yang bertujuan untuk memperkenalkan dan mempromosikan ragam budaya dari berbagai daerah di Indonesia, yang dikenal sebagai Nusantara. Website ini menyajikan informasi terkait budaya yang ada di indonesia seperti Tari Tradisional, Rumah Adat, Masakan khas dan kategori budaya lainnya.">
-    <meta name="twitter:image" content="./thumbnail.webp">
+    <meta name="twitter:image" content="./thumbnail.jpg">
     <meta name="twitter:url" content="https://ininusantaraku.my.id/">
 
 </head>

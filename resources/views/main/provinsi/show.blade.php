@@ -16,13 +16,13 @@
 
     <!-- Meta Tag for Share to Social Media -->
     <meta property="og:title" content="Profil Provinsi {{ ucfirst($provinsi->province_name) }} - NusantaraKu">
-    <meta property="og:image" content="./thumbnail.webp">
+    <meta property="og:image" content="./thumbnail.jpg">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Profil Provinsi {{ ucfirst($provinsi->province_name) }} - NusantaraKu">
     <meta name="twitter:description"
         content="Website NusantaraKu adalah sebuah platform online yang bertujuan untuk memperkenalkan dan mempromosikan ragam budaya dari berbagai daerah di Indonesia, yang dikenal sebagai Nusantara. Website ini menyajikan informasi terkait budaya yang ada di indonesia seperti Tari Tradisional, Rumah Adat, Masakan khas dan kategori budaya lainnya.">
-    <meta name="twitter:image" content="./thumbnail.webp">
+    <meta name="twitter:image" content="./thumbnail.jpg">
 </head>
 
 <body>
