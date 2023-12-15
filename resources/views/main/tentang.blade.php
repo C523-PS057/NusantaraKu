@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Profil Kami - NusantaraKu</title>
+    <title>Tentang Kami - NusantaraKu</title>
     <link rel="stylesheet" href="/css/bootstrap.min.css" />
     <link rel="stylesheet" href="/css/main.min.css" />
     <link rel="icon" type="image/x-icon" href="/img/favicon.ico" />
@@ -20,7 +20,7 @@
                 <div class="row">
                     <div class="col-12 col-lg-8 mx-auto">
                         <div class="about__header">
-                            <h2 data-aos="fade-up">Profil Kami</h2>
+                            <h2 data-aos="fade-up">Tentang Kami</h2>
                             <p data-aos="fade-up" data-aos-delay="100"> Latarbelakang dibuatnya website
                                 <strong>NusantaraKu</strong>
                             </p>
