@@ -30,14 +30,14 @@
                                 allowfullscreen></iframe>
 
                             <div class="detail__section">
-                                <h4>Deskripsi Singkat</h4>
+                                <h4>Deskripsi Provinsi {{ ucfirst($provinsi->province_name) }}</h4>
                                 <p>
                                     {{ $provinsi->deskripsi }}
                                 </p>
                             </div>
 
                             <div class="detail__section">
-                                <h4>Sejarah Singkat</h4>
+                                <h4>Sejarah Provinsi {{ ucfirst($provinsi->province_name) }}</h4>
                                 <p>
                                     {{ $provinsi->sejarah }}
                                 </p>

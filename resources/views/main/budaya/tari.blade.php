@@ -29,14 +29,14 @@
                             </div>
 
                             <div class="detail__section">
-                                <h4>Deskripsi Singkat</h4>
+                                <h4>Deskripsi Tari {{ ucfirst($data->tarian_name) }}</h4>
                                 <p>
                                     {{ $data->deskripsi }}
                                 </p>
                             </div>
 
                             <div class="detail__section">
-                                <h4>Sejarah Singkat</h4>
+                                <h4>Sejarah Tari {{ ucfirst($data->tarian_name) }}</h4>
                                 <p>
                                     {{ $data->sejarah }}
                                 </p>
