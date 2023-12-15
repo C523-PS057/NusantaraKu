@@ -11,6 +11,8 @@
     font-size: 14px;
     transition: all 0.3s ease;
     outline: none;
+    text-align: center;
+    justify-content: center;
 
     &--small {
         display: inline-flex;
@@ -31,21 +33,35 @@
         color: #fff;
         border: 1px solid $red;
 
-        &:hover {
-            background-color: $red-darken;
+        &[disabled] {
+            background-color: $red;
             border: 1px solid $red;
+            color: $text-white;
+        }
+
+        &:hover,
+        &:active,
+        &:focus {
+            background-color: $red-darken !important;
+            border: 1px solid $red !important;
             color: $text-white !important;
         }
     }
 
     &-outline {
         background-color: transparent;
-        color: #000;
-        border: 1px solid #000;
+        color: $text-black;
+        border: 1px solid $text-black;
+        text-decoration: none;
+        font-weight: 600;
 
-        &:hover {
+        &:hover,
+        &:active,
+        &:focus {
             border: 1px solid $red;
+            background-color: transparent;
             color: $red;
+            text-decoration: none;
         }
     }
 
@@ -56,8 +72,12 @@
         outline: none;
         transition: all 0.3s ease;
 
-        &:hover {
+        &:hover,
+        &:active,
+        &:focus {
+            background-color: transparent;
             color: red;
+            border: none;
         }
 
         i {
@@ -66,6 +86,6 @@
     }
 }
 
-input[type='checkbox'] {
+input[type="checkbox"] {
     accent-color: $red;
 }

@@ -1,0 +1,160 @@
+.form-label {
+    font-weight: 600 !important;
+}
+
+table {
+    border: 1px solid $border;
+    tbody {
+        td {
+            vertical-align: middle;
+            color: $text-black;
+        }
+    }
+
+    .column-action {
+        display: inline-flex;
+        gap: 0;
+
+        a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid $border;
+            border-radius: 0.25rem;
+
+            &:hover {
+                border: 1px solid $red;
+
+                i {
+                    color: $red !important;
+                }
+            }
+        }
+
+        .bg-danger {
+            transition: all 0.3s ease;
+            background-color: $red !important;
+
+            &:hover {
+                background-color: darken($red, 10%) !important;
+            }
+        }
+    }
+}
+
+trix-editor {
+    background-color: $white;
+}
+
+trix-toolbar .trix-button--icon::before {
+    height: 1.5rem;
+    width: 1.5rem;
+    background-position: center;
+}
+
+trix-toolbar .trix-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $white;
+}
+
+.dashboard-admin {
+    &__grid {
+        padding: 0;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+    }
+}
+
+.sidebar {
+    .nav-link {
+        &:hover {
+            color: $red !important;
+        }
+    }
+}
+
+.admin-badge {
+    color: #2f7cff;
+}
+
+.navbar-dark {
+    padding: 0.5rem 1rem !important;
+    flex-wrap: wrap;
+
+    .navbar-brand {
+        display: block;
+        font-size: 1rem;
+        color: $text-white-secondary;
+
+        strong {
+            color: $text-white;
+        }
+    }
+
+    img {
+        width: 200px;
+    }
+}
+
+.dashboard {
+    &__stats {
+        &-item {
+            background-color: #fff;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-radius: 0.5rem;
+            transition: all 0.3s ease;
+
+            &:hover {
+                background-color: $red;
+                color: $text-white;
+
+                p {
+                    color: $text-white;
+                }
+            }
+        }
+    }
+}
+
+.page {
+    &-link {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        color: $text-black !important;
+    }
+}
+
+.pagination {
+    margin-bottom: 1rem;
+
+    .active > .page-link {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        color: $text-black !important;
+    }
+
+    .page-item.active {
+        .page-link {
+            border: 1px solid $red;
+            background-color: $red !important;
+            color: $white !important;
+        }
+    }
+
+    .page-link {
+        height: 44px !important;
+        width: 44px !important;
+    }
+}
+
+input[type="search"]::-webkit-search-cancel-button {
+    position: relative;
+    right: 20px;
+    cursor: pointer;
+}

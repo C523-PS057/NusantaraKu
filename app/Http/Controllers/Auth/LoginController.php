@@ -45,7 +45,8 @@ class LoginController extends Controller
             flash('Selamat Datang ' . ucfirst($user->name));
             return redirect()->to('admin/dashboard');
         } elseif ($user->role == 'user') {
-            return redirect()->to('user/dashboard');
+            flash('Selamat Datang ' . ucfirst($user->name));
+            return redirect()->to('/');
         } else {
             flash('There was an issue unlocking your account.');
             return redirect()->route('login');

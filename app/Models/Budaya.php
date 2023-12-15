@@ -9,6 +9,10 @@ class Budaya extends Model
 {
     use HasFactory;
     protected $guarded = [''];
+    public function comment()
+    {
+        return $this->hasMany(Comment::class, 'budaya_id');
+    }
     public function masakan()
     {
         return $this->hasMany(Masakan::class, 'budaya_id');
@@ -19,11 +23,11 @@ class Budaya extends Model
     }
     public function pakaian()
     {
-        return $this->hasMany(Musik::class, 'budaya_id');
+        return $this->hasMany(Pakaian::class, 'budaya_id');
     }
     public function rumah()
     {
-        return $this->hasMany(Musik::class, 'budaya_id');
+        return $this->hasMany(Rumah::class, 'budaya_id');
     }
     public function tari()
     {

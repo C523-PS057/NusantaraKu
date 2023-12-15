@@ -19,7 +19,7 @@ class Musik extends Model
     }
     public function comment()
     {
-        return $this->hasMany(Comment::class, 'category_id');
+        return $this->hasMany(Comment::class, 'musik_id');
     }
     public function scopeSearch($query, $search)
     {

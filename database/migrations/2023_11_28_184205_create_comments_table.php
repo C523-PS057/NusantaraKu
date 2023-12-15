@@ -14,7 +14,12 @@ return new class extends Migration
         Schema::create('comments', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id');
-            $table->foreignId('category_id');
+            $table->foreignId('budaya_id');
+            $table->foreignId('masakan_id')->nullable();
+            $table->foreignId('tari_id')->nullable();
+            $table->foreignId('pakaian_id')->nullable();
+            $table->foreignId('rumah_id')->nullable();
+            $table->foreignId('musik_id')->nullable();
             $table->string('body_comment');
             $table->timestamps();
         });

@@ -3,10 +3,12 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
-use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Http\Request;
 
 class User extends Authenticatable
 {
@@ -21,6 +23,10 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'email_verified_at',
+        'role',
+        'gambar',
+        'tanggal_lahir'
     ];
 
     /**
@@ -45,5 +51,9 @@ class User extends Authenticatable
     public function comment()
     {
         return $this->hasMany(Comment::class, 'user_id');
+    }
+    public function scopeSearch($query, $search)
+    {
+        return $query->where('name', 'like', '%' . $search . '%');
     }
 }

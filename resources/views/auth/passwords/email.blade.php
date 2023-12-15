@@ -1,47 +1,46 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html lang="en">
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Reset Password') }}</div>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reset Password - NusantaraKu</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/main.min.css" />
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico" />
+</head>
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    <form method="POST" action="{{ route('password.email') }}">
-                        @csrf
-
-                        <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+<body>
+    <main class="reset__main">
+        <section class="reset">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-sm-8 col-lg-4 m-auto">
+                        <div class="reset__content">
+                            <div class="reset__title">
+                                <img src="/img/icon-key.svg" />
+                                <h5>Reset Password Akun</h5>
+                            </div>
+                            <form class="reset__input" method="POST" action="{{route('password.email')}}">
+                                @csrf
+                                <div class="input__group">
+                                    <label class="input__label" for="email">Alamat Email</label>
+                                    <input type="email" name="email" id="email" required />
+                                </div>
+                                <button class="btn btn-primary" type="submit">Reset Password</button>
+                            </form>
+                            <div class="reset__footer">
+                                <a href="/login"><i class="ri-arrow-left-line"></i> Kembali ke halaman Login</a>
                             </div>
                         </div>
-
-                        <div class="row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Send Password Reset Link') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-</div>
-@endsection
+        </section>
+    </main>
+
+    <link rel="stylesheet" href="/css/remixicon.css" />
+</body>
+
+</html>

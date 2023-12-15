@@ -7,8 +7,8 @@
 a,
 button,
 textarea,
-input[type='text'],
-input[type='email'] {
+input[type="text"],
+input[type="email"] {
     min-height: 44px !important;
     min-width: 44px !important;
 }
@@ -35,4 +35,12 @@ section {
 ::selection {
     color: $white;
     background: $red;
+}
+
+.bg-primary {
+    background-color: $red !important;
+}
+
+.text-primary {
+    color: $red !important;
 }

@@ -1,0 +1,51 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                script{
+                    git url: 'https://github.com/C523-PS057/NusantaraKu.git', branch: 'backend'
+                }
+            }
+        }
+        stage('Prepare Environment') {
+            steps {
+                script {
+                    def appKey = sh(script: 'php artisan key:generate --show', returnStdout: true).trim()
+
+                    sh 'cp .env.template .env'
+                    sh "sed -i 's|!APPKEY|${appKey}|g' .env"
+                    
+                    sh "sed -i 's|!HOST|${env.DB_HOST}|g' .env"
+                    sh "sed -i 's|!PORT|${env.DB_PORT}|g' .env"
+                    sh "sed -i 's|!DATABASE|${env.DB_DATABASE}|g' .env"
+                    sh "sed -i 's|!USERNAME|${env.DB_USERNAME}|g' .env"
+                    sh "sed -i 's|!PASSWORD|${env.DB_PASSWORD}|g' .env"
+
+                    sh "sed -i 's|!MAIL_HOST|${env.MAIL_HOST}|g' .env"
+                    sh "sed -i 's|!MAIL_PORT|${env.MAIL_PORT}|g' .env"
+                    sh "sed -i 's|!MAIL_USERNAME|${env.MAIL_USERNAME}|g' .env"
+                    sh "sed -i 's|!MAIL_PASSWORD|${env.MAIL_PASSWORD}|g' .env"
+                    
+                    sh "sed -i 's|!GOOGLE_CLIENT_ID|${env.GOOGLE_CLIENT_ID}|g' .env"
+                    sh "sed -i 's|!GOOGLE_CLIENT_SECRET|${env.GOOGLE_CLIENT_SECRET}|g' .env"
+                    sh "sed -i 's|!GOOGLE_REDIRECT_URI|${env.GOOGLE_REDIRECT_URI}|g' .env"
+
+                }
+            }
+        }
+        stage('Build') {
+            steps {
+                sh 'docker build -t nusantaraku .'
+            }
+        }
+
+        stage('Deploy') {
+             steps {
+                sh 'docker-compose up -d'
+                sh 'echo "Akses Web ==> http://202.10.40.58:8000/"'
+            }
+        }
+    }
+}

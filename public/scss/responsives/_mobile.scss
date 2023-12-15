@@ -11,3 +11,30 @@
         }
     }
 }
+
+@media screen and (max-width: 425px) {
+    .categories {
+        &__filter {
+            &-group {
+                display: flex !important;
+                flex-wrap: wrap !important;
+            }
+
+            select {
+                height: 40px;
+            }
+        }
+    }
+
+    .dashboard-admin {
+        &__grid {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+
+    .categories__content-admin {
+        .col-6 {
+            width: 100%;
+        }
+    }
+}

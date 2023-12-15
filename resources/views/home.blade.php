@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    {{ __('You are logged in!') }}
+                    <span>Anda Telah login Silahkan Mengarah Ke Halaman <a href="/">Utama</a></span>
                 </div>
             </div>
         </div>
