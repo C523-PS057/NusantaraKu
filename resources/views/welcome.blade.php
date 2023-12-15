@@ -151,7 +151,7 @@
         </section>
         <section class="benefit">
             <div class="container benefit__container">
-                <div class="province__header">
+                <div class="province__header" data-aos="fade-up">
                     <span class="headline">MANFAAT</span>
                     <h2>Manfaat <span class="red">NusantaraKu</span></h2>
                     <p>Manfaat dari dibuatnya platform <strong>NusantaraKu</strong></p>
