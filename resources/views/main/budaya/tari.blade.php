@@ -9,6 +9,18 @@
     <link rel="stylesheet" href="../css/bootstrap.min.css" />
     <link rel="stylesheet" href="../css/main.min.css" />
     <link rel="icon" type="image/x-icon" href="../img/favicon.ico" />
+
+    <!-- Global Meta Tag -->
+    <meta name="keywords" content="nusantaraku, budaya, ensiklopedia budaya, nusantara, budaya nusantara">
+    <meta http-equiv="Content-Language" content="id-ID">
+
+    <!-- Meta Tag for Share to Social Media -->
+    <meta property="og:title" content="Tari {{ ucfirst($data->tarian_name) }} - NusantaraKu">
+    <meta property="og:image" content="{{ Storage::url($data->gambar) }}">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Tari {{ ucfirst($data->tarian_name) }} - NusantaraKu">
+    <meta name="twitter:image" content="{{ Storage::url($data->gambar) }}">
 </head>
 
 <body>
@@ -20,7 +32,7 @@
                 <div class="row">
                     <div class="col-md-8 mx-auto detail__column">
                         <div class="detail__header">
-                            <span class="headline text-primary">DETAIL BUDAYA</span>
+                            <span class="headline text-primary">TARI TRADISIONAL</span>
                             <h1>Tari {{ ucfirst($data->tarian_name) }}</h1>
                         </div>
                         <div class="detail__content">

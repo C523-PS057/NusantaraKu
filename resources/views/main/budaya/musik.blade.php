@@ -9,6 +9,18 @@
     <link rel="stylesheet" href="../css/bootstrap.min.css" />
     <link rel="stylesheet" href="../css/main.min.css" />
     <link rel="icon" type="image/x-icon" href="../img/favicon.ico" />
+
+    <!-- Global Meta Tag -->
+    <meta name="keywords" content="nusantaraku, budaya, ensiklopedia budaya, nusantara, budaya nusantara">
+    <meta http-equiv="Content-Language" content="id-ID">
+
+    <!-- Meta Tag for Share to Social Media -->
+    <meta property="og:title" content="{{ ucfirst($data->alat_musik_name) }} - NusantaraKu">
+    <meta property="og:image" content="{{ Storage::url($data->gambar) }}">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ ucfirst($data->alat_musik_name) }} - NusantaraKu">
+    <meta name="twitter:image" content="{{ Storage::url($data->gambar) }}">
 </head>
 
 <body>
