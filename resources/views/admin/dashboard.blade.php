@@ -8,22 +8,22 @@
 
 <div class="row dashboard__stats">
     <div class="col-6 col-md-4">
-        <div class="dashboard__stats-item">
+        <a href="/admin/data-user" class="dashboard__stats-item">
             <h6>Total Pengguna</h6>
             <p>{{ $totalUser }} Orang</p>
-        </div>
+        </a>
     </div>
     <div class="col-6 col-md-4">
-        <div class="dashboard__stats-item">
+        <a href="/admin/data-comment" class="dashboard__stats-item">
             <h6>Total Komentar</h6>
             <p>{{ $totalComment }} Komentar</p>
-        </div>
+        </a>
     </div>
     <div class="col-6 col-md-4">
-        <div class="dashboard__stats-item">
+        <a href="/admin/budaya" class="dashboard__stats-item">
             <h6>Total Budaya</h6>
             <p>{{ $totalBudaya }} Halaman</p>
-        </div>
+        </a>
     </div>
 </div>
 

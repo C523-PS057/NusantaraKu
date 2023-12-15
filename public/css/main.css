@@ -1605,6 +1605,8 @@ trix-toolbar .trix-button {
 }
 
 .dashboard__stats-item {
+  display: block;
+  color: #1c1c1c;
   background-color: #fff;
   padding: 1.5rem;
   margin-bottom: 1rem;
@@ -1617,6 +1619,10 @@ trix-toolbar .trix-button {
 }
 .dashboard__stats-item:hover p {
   color: #f1f1f1;
+}
+.dashboard__search input {
+  height: 100%;
+  border-radius: 0.5rem 0 0 0.5rem;
 }
 
 .page-link {

@@ -102,6 +102,8 @@ trix-toolbar .trix-button {
 .dashboard {
     &__stats {
         &-item {
+            display: block;
+            color: $text-black;
             background-color: #fff;
             padding: 1.5rem;
             margin-bottom: 1rem;
@@ -116,6 +118,13 @@ trix-toolbar .trix-button {
                     color: $text-white;
                 }
             }
+        }
+    }
+
+    &__search {
+        input {
+            height: 100%;
+            border-radius: 0.5rem 0 0 0.5rem;
         }
     }
 }
