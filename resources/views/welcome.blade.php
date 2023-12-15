@@ -10,6 +10,27 @@
     <link rel="stylesheet" href="./css/main.min.css" />
     <link rel="icon" type="image/x-icon" href="./img/favicon.ico" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Global Meta Tag -->
+    <meta name="description"
+        content="Website NusantaraKu adalah sebuah platform online yang bertujuan untuk memperkenalkan dan mempromosikan ragam budaya dari berbagai daerah di Indonesia, yang dikenal sebagai Nusantara. Website ini menyajikan informasi terkait budaya yang ada di indonesia seperti Tari Tradisional, Rumah Adat, Masakan khas dan kategori budaya lainnya.">
+    <meta name="keywords" content="nusantaraku, budaya, ensiklopedia budaya, nusantara, budaya nusantara">
+    <meta http-equiv="Content-Language" content="id-ID">
+
+    <!-- Meta Tag for Share to Social Media -->
+    <meta property="og:title" content="NusantaraKu: Jelajahi Ragam Budaya Nusantara">
+    <meta property="og:description"
+        content="Website NusantaraKu adalah sebuah platform online yang bertujuan untuk memperkenalkan dan mempromosikan ragam budaya dari berbagai daerah di Indonesia, yang dikenal sebagai Nusantara. Website ini menyajikan informasi terkait budaya yang ada di indonesia seperti Tari Tradisional, Rumah Adat, Masakan khas dan kategori budaya lainnya.">
+    <meta property="og:image" content="./thumbnail.webp">
+    <meta property="og:url" content="https://ininusantaraku.my.id/">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="NusantaraKu: Jelajahi Ragam Budaya Nusantara">
+    <meta name="twitter:description"
+        content="Website NusantaraKu adalah sebuah platform online yang bertujuan untuk memperkenalkan dan mempromosikan ragam budaya dari berbagai daerah di Indonesia, yang dikenal sebagai Nusantara. Website ini menyajikan informasi terkait budaya yang ada di indonesia seperti Tari Tradisional, Rumah Adat, Masakan khas dan kategori budaya lainnya.">
+    <meta name="twitter:image" content="./thumbnail.webp">
+    <meta name="twitter:url" content="https://ininusantaraku.my.id/">
+
 </head>
 
 <body>
