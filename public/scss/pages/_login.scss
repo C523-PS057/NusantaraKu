@@ -1,4 +1,8 @@
 .login {
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+
     &__container {
         display: grid;
         grid-template-columns: repeat(2, 1fr);

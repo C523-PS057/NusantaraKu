@@ -28,6 +28,18 @@
         font-size: 18px;
     }
 
+    .nav {
+        &-item {
+            width: 100%;
+            justify-content: center;
+        }
+
+        &-link {
+            justify-content: center;
+            text-align: center;
+        }
+    }
+
     .navbar {
         background-color: rgba($color: $text-white, $alpha: 0.5);
         backdrop-filter: blur(10px);
@@ -230,6 +242,11 @@
     .navbar-dark {
         .navbar-brand {
             display: none !important;
+        }
+
+        .navbar-toggler {
+            background-color: lighten(#212529, 10%) !important;
+            border: 1px solid $text-white;
         }
     }
 
