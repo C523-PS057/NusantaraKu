@@ -4,6 +4,10 @@
     background-color: rgba($color: $text-white, $alpha: 0.5);
     backdrop-filter: blur(10px);
 
+    &-toggler {
+        background-color: $white !important;
+    }
+
     &-right {
         display: flex;
         gap: 0.5rem !important;
