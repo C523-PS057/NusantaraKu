@@ -208,6 +208,18 @@
         }
     }
 
+    .dashboard {
+        &__search {
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+
+            .col-md-5 {
+                width: 100%;
+                grid-column: span 7;
+            }
+        }
+    }
+
     .navbar-dark {
         .navbar-brand {
             display: none !important;

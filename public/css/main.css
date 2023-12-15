@@ -1807,6 +1807,14 @@ input[type=search]::-webkit-search-cancel-button {
   .dashboard-admin__grid {
     grid-template-columns: repeat(2, 1fr);
   }
+  .dashboard__search {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+  }
+  .dashboard__search .col-md-5 {
+    width: 100%;
+    grid-column: span 7;
+  }
   .navbar-dark .navbar-brand {
     display: none !important;
   }
@@ -1921,9 +1929,6 @@ input[type=search]::-webkit-search-cancel-button {
   }
   .dashboard-admin__grid {
     grid-template-columns: repeat(1, 1fr);
-  }
-  .categories__content-admin .col-6 {
-    width: 100%;
   }
 }
 @media screen and (min-width: 993px) {
