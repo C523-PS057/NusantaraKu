@@ -38,7 +38,7 @@
                                     ada di indonesia
                                     seperti Tari Tradisional, Rumah Adat, Masakan khas dan kategori budaya lainnya.
                                     Tujuannya adalah untuk mengedukasi dan menginspirasi masyarakat mengenai kekayaan
-                                    budaya Nusantara. Pengguna dapat dengan mudah melakukan pencarian dan filter
+                                    Budaya Indonesia. Pengguna dapat dengan mudah melakukan pencarian dan filter
                                     terhadap budaya yang
                                     ingin dicari, selain itu pengguna dapat memberikan kritik dan masukan dalam bentuk
                                     komentar terkait informasi budaya yang disajikan dan Admin dapat mengelola seluruh

@@ -11,7 +11,7 @@
     <link rel="icon" type="image/x-icon" href="../img/favicon.ico" />
 
     <!-- Global Meta Tag -->
-    <meta name="keywords" content="nusantaraku, budaya, ensiklopedia budaya, nusantara, budaya nusantara">
+    <meta name="keywords" content="nusantaraku, budaya, ensiklopedia budaya, nusantara, Budaya Indonesia">
     <meta http-equiv="Content-Language" content="id-ID">
 
     <!-- Meta Tag for Share to Social Media -->
