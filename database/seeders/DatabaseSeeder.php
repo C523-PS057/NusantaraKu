@@ -302,7 +302,7 @@ class DatabaseSeeder extends Seeder
         Province::create([
             'id' => 23,
             'province_name' => 'Papua',
-            'video_link' => '#',
+            'video_link' => 'https://www.youtube.com/embed/F29eyKB99nQ?si=KLyYL40NUfHZznFQ',
             'deskripsi' => 'Papua, adalah provinsi yang terletak di pesisir utara Papua Indonesia. Provinsi Papua sebelumnya bernama Irian Barat (1956 - 1973) dan Irian Jaya (1973 - 2000) yang mencakup seluruh Tanah Papua bekas Keresidenan Nugini Barat. Ibu kota Papua berada di Kota Jayapura, yang berbatasan langsung dengan negara Papua Nugini. Pada tanggal 30 Juni 2022, wilayah provinsi Papua mengalami pemekaran, yang membentuk provinsi baru yakni provinsi Papua Tengah, Papua Pegunungan, serta Papua Selatan. Setelah pemekaran provinsi baru, pada pertengahan tahun 2023, jumlah penduduk provinsi Papua sebanyak 1.077.141 jiwa.',
 
             'sejarah' => 'Papua berada di wilayah paling timur negara Indonesia. Ia merupakan pulau terbesar kedua setelah Pulau Greenland di Denmark. Luasnya mencapai 890.000 km2 (ini jika digabung dengan Papua New Guinea).
@@ -312,7 +312,7 @@ class DatabaseSeeder extends Seeder
         Province::create([
             'id' => 24,
             'province_name' => 'Papua Barat',
-            'video_link' => '#',
+            'video_link' => 'https://www.youtube.com/embed/pRUaKFYYAFQ?si=ZMY6Z0x1HRtdFVxU',
             'deskripsi' => 'Papua Barat (disingkat Pabar; dahulu Irian Jaya Barat) adalah sebuah provinsi Indonesia yang terletak di barat laut Provinsi Papua Tengah dan sebelah timur Provinsi Papua Barat Daya. Wilayah Papua Barat mencakup Semenanjung Bomberai dan Wandamen. Ibu kota provinsi ini terletak di Manokwari. Provinsi ini dimekarkan dari Provinsi Papua melalui Undang-Undang Nomor 45 Tahun 1999.
 
             Pada awalnya pembentukan provinsi ini mendapatkan penolakan dari masyarakat sehingga implementasi dari pemekaran ini baru dilaksanakan melalui Instruksi Presiden Nomor 1 Tahun 2003. Walaupun pada 11 November 2004 Mahkamah Konstitusi menyatakan bahwa dasar hukum pembentukan Provinsi Irian Jaya Barat sudah tidak memiliki kekuatan hukum yang mengikat, namun keberadaan provinsi ini dinyatakan tetap sah.
