@@ -11,8 +11,6 @@ Pengguna dapat dengan mudah melakukan pencarian dan filter terhadap budaya yang 
 ## Kontributor
 - **Agrey Tosira** (UI/UX Designer & Front-End Web Developer)
 - **Muhamad Zahran Yudha** (Back-End Developer)
-- **Hyuga Dewanto Kojyro** (Front-End Web Developer)
-- **Muhammad Sabilil Fajri** (Front-End Web Developer)
 - **Faris Ghina Purohita** (DevOps Engineer)
 
 ## Teknologi yang digunakan
