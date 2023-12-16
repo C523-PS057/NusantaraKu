@@ -4,6 +4,6 @@ services:
   app:
     image: nusantaraku:latest
     ports:
-      - "443:8443"
+      - "8000:8080"
     volumes:
       - .:/var/www/html
