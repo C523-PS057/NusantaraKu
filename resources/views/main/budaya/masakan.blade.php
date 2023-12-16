@@ -37,7 +37,10 @@
                         </div>
                         <div class="detail__content">
                             <div class="detail__image">
-                                <img src="{{ Storage::url($data->gambar) }}" alt="Tari Sekapur Sirih" />
+                                <img src="{{ Storage::url($data->gambar) }}" alt="{{ ucfirst($data->masakan_name) }}" />
+                                <div class="detail__image-overlay">
+                                    <i class="ri-map-pin-line"></i> {{ ucfirst($data->province->province_name) }}
+                                </div>
                             </div>
 
                             <div class="detail__section">

@@ -1074,6 +1074,9 @@ input[type=checkbox] {
 .detail {
   margin-top: -27.5rem;
 }
+.detail__image {
+  position: relative;
+}
 .detail__image img {
   width: 100%;
   height: auto;
@@ -1081,6 +1084,17 @@ input[type=checkbox] {
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 1rem;
+}
+.detail__image-overlay {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #e23535;
+  color: #f1f1f1;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 14px;
 }
 .detail__header {
   display: flex;
