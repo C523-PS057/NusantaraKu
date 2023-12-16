@@ -16,7 +16,7 @@
 
     <!-- Meta Tag for Share to Social Media -->
     <meta property="og:title" content="Rumah {{ ucfirst($data->rumah_adat_name) }} - NusantaraKu">
-    <meta property="og:image" content="{{ Storage::url($data->gambar) }}">
+    <meta property="og:image" itemprop="image" content="{{ Storage::url($data->gambar) }}">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Rumah {{ ucfirst($data->rumah_adat_name) }} - NusantaraKu">

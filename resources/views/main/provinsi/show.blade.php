@@ -16,7 +16,7 @@
 
     <!-- Meta Tag for Share to Social Media -->
     <meta property="og:title" content="Profil Provinsi {{ ucfirst($provinsi->province_name) }} - NusantaraKu">
-    <meta property="og:image" content="./thumbnail.jpg">
+    <meta property="og:image" itemprop="image" content="./thumbnail.jpg">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Profil Provinsi {{ ucfirst($provinsi->province_name) }} - NusantaraKu">
