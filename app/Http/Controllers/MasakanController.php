@@ -10,6 +10,9 @@ use App\Models\Province;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
+use Spatie\LaravelImageOptimizer\Facades\ImageOptimizer;
+use Spatie\ImageOptimizer\OptimizerChainFactory;
+use Illuminate\Support\Str;
 
 class MasakanController extends Controller
 {
@@ -55,6 +58,7 @@ class MasakanController extends Controller
     /**
      * Store a newly created resource in storage.
      */
+
     public function store(Request $request)
     {
         $validatedData = [
@@ -65,14 +69,35 @@ class MasakanController extends Controller
             'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'deskripsi' => 'required',
         ];
+
         $rules = $request->validate($validatedData);
         $rules['deskripsi'] = strip_tags($request->deskripsi);
         $rules['sejarah'] = strip_tags($request->sejarah);
-        $rules['gambar'] = $request->file('gambar')->store('/public/images');
+
+        if ($request->hasFile('gambar')) {
+            $image = $request->file('gambar');
+            $imageName = Str::random(20) . '.' . $image->getClientOriginalExtension();
+            $path = $image->storeAs('public/images', $imageName);
+
+            $fullFilePath = storage_path('app/' . $path);
+
+            ImageOptimizer::optimize($fullFilePath);
+
+            $newImageName = Str::replaceLast($image->getClientOriginalExtension(), 'webp', $imageName);
+            $newFilePath = storage_path('app/public/images/' . $newImageName);
+
+            $image = imagecreatefromstring(file_get_contents($fullFilePath));
+            imagewebp($image, $newFilePath, 80);
+            unlink($fullFilePath);
+            $rules['gambar'] = 'images/' . $newImageName;
+        }
+
         Masakan::create($rules);
         flash('Berhasil Menambahkan data');
         return redirect()->route('masakan.index');
     }
+
+
 
     /**
      * Display the specified resource.
