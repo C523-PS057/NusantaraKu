@@ -2,17 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Masakan;
-use App\Http\Requests\StoreMasakanRequest;
-use App\Http\Requests\UpdateMasakanRequest;
 use App\Models\Budaya;
+use App\Models\Masakan;
 use App\Models\Province;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
 use Spatie\LaravelImageOptimizer\Facades\ImageOptimizer;
-use Spatie\ImageOptimizer\OptimizerChainFactory;
-use Illuminate\Support\Str;
 
 class MasakanController extends Controller
 {
@@ -58,7 +54,6 @@ class MasakanController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-
     public function store(Request $request)
     {
         $validatedData = [
@@ -96,8 +91,6 @@ class MasakanController extends Controller
         flash('Berhasil Menambahkan data');
         return redirect()->route('masakan.index');
     }
-
-
 
     /**
      * Display the specified resource.
@@ -146,8 +139,22 @@ class MasakanController extends Controller
         $rules['deskripsi'] = strip_tags($request->deskripsi);
         $rules['sejarah'] = strip_tags($request->sejarah);
         if ($request->hasFile('gambar')) {
-            Storage::delete($masakan->gambar);
-            $rules['gambar'] = $request->file('gambar')->store('/public/images');
+            Storage::delete('/public/' . $masakan->gambar);
+            $image = $request->file('gambar');
+            $imageName = Str::random(20) . '.' . $image->getClientOriginalExtension();
+            $path = $image->storeAs('public/images', $imageName);
+
+            $fullFilePath = storage_path('app/' . $path);
+
+            ImageOptimizer::optimize($fullFilePath);
+
+            $newImageName = Str::replaceLast($image->getClientOriginalExtension(), 'webp', $imageName);
+            $newFilePath = storage_path('app/public/images/' . $newImageName);
+
+            $image = imagecreatefromstring(file_get_contents($fullFilePath));
+            imagewebp($image, $newFilePath, 80);
+            unlink($fullFilePath);
+            $rules['gambar'] = 'images/' . $newImageName;
         }
         $masakan->update($rules);
         flash('Berhasil Mengubah data');
@@ -159,9 +166,22 @@ class MasakanController extends Controller
      */
     public function destroy(Masakan $masakan)
     {
-        Storage::delete($masakan->gambar);
-        $masakan->delete();
-        flash('Berhasil Hapus Data');
+        $gambarPath = $masakan->gambar;
+        // Pastikan path gambar ada dan benar sebelum dihapus
+        if (Storage::exists('/public/' . $gambarPath)) {
+            // Lakukan upaya penghapusan
+            $deleted = Storage::delete('/public/' . $gambarPath);
+            // Cek apakah penghapusan berhasil atau tidak
+            if ($deleted) {
+                $masakan->delete();
+                flash('Berhasil Hapus Data dan Gambar');
+            } else {
+                flash('Gagal Hapus Gambar');
+            }
+        } else {
+            flash('Path Gambar Tidak Ditemukan');
+        }
+
         return back();
     }
 }
