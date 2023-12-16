@@ -2,13 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Pakaian;
-use App\Http\Requests\StorePakaianRequest;
-use App\Http\Requests\UpdatePakaianRequest;
 use App\Models\Budaya;
+use App\Models\Pakaian;
 use App\Models\Province;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use App\Http\Requests\StorePakaianRequest;
+use App\Http\Requests\UpdatePakaianRequest;
+use Spatie\LaravelImageOptimizer\Facades\ImageOptimizer;
 
 class PakaianController extends Controller
 {
@@ -63,10 +65,29 @@ class PakaianController extends Controller
             'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'deskripsi' => 'required',
         ];
+
         $rules = $request->validate($validatedData);
         $rules['deskripsi'] = strip_tags($request->deskripsi);
         $rules['sejarah'] = strip_tags($request->sejarah);
-        $rules['gambar'] = $request->file('gambar')->store('/public/images');
+
+        if ($request->hasFile('gambar')) {
+            $image = $request->file('gambar');
+            $imageName = Str::random(20) . '.' . $image->getClientOriginalExtension();
+            $path = $image->storeAs('public/images', $imageName);
+
+            $fullFilePath = storage_path('app/' . $path);
+
+            ImageOptimizer::optimize($fullFilePath);
+
+            $newImageName = Str::replaceLast($image->getClientOriginalExtension(), 'webp', $imageName);
+            $newFilePath = storage_path('app/public/images/' . $newImageName);
+
+            $image = imagecreatefromstring(file_get_contents($fullFilePath));
+            imagewebp($image, $newFilePath, 80);
+            unlink($fullFilePath);
+            $rules['gambar'] = 'images/' . $newImageName;
+        }
+
         Pakaian::create($rules);
         flash('Berhasil Menambahkan data');
         return redirect()->route('pakaian.index');
@@ -119,8 +140,22 @@ class PakaianController extends Controller
         $rules['deskripsi'] = strip_tags($request->deskripsi);
         $rules['sejarah'] = strip_tags($request->sejarah);
         if ($request->hasFile('gambar')) {
-            Storage::delete($pakaian->gambar);
-            $rules['gambar'] = $request->file('gambar')->store('/public/images');
+            Storage::delete('/public/' . $pakaian->gambar);
+            $image = $request->file('gambar');
+            $imageName = Str::random(20) . '.' . $image->getClientOriginalExtension();
+            $path = $image->storeAs('public/images', $imageName);
+
+            $fullFilePath = storage_path('app/' . $path);
+
+            ImageOptimizer::optimize($fullFilePath);
+
+            $newImageName = Str::replaceLast($image->getClientOriginalExtension(), 'webp', $imageName);
+            $newFilePath = storage_path('app/public/images/' . $newImageName);
+
+            $image = imagecreatefromstring(file_get_contents($fullFilePath));
+            imagewebp($image, $newFilePath, 80);
+            unlink($fullFilePath);
+            $rules['gambar'] = 'images/' . $newImageName;
         }
         $pakaian->update($rules);
         flash('Berhasil Mengubah data');
@@ -132,9 +167,19 @@ class PakaianController extends Controller
      */
     public function destroy(Pakaian $pakaian)
     {
-        Storage::delete($pakaian->gambar);
-        $pakaian->delete();
-        flash('Berhasil Hapus Data');
+        $gambarPath = $pakaian->gambar;
+        if (Storage::exists('/public/' . $gambarPath)) {
+            $deleted = Storage::delete('/public/' . $gambarPath);
+            if ($deleted) {
+                $pakaian->delete();
+                flash('Berhasil Hapus Data dan Gambar');
+            } else {
+                flash('Gagal Hapus Gambar');
+            }
+        } else {
+            flash('Path Gambar Tidak Ditemukan');
+        }
+
         return back();
     }
 }

@@ -3,12 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\Musik;
-use App\Http\Requests\StoreMusikRequest;
-use App\Http\Requests\UpdateMusikRequest;
 use App\Models\Budaya;
 use App\Models\Province;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use App\Http\Requests\StoreMusikRequest;
+use App\Http\Requests\UpdateMusikRequest;
+use Spatie\LaravelImageOptimizer\Facades\ImageOptimizer;
 
 class MusikController extends Controller
 {
@@ -63,10 +65,29 @@ class MusikController extends Controller
             'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'deskripsi' => 'required',
         ];
+
         $rules = $request->validate($validatedData);
         $rules['deskripsi'] = strip_tags($request->deskripsi);
         $rules['sejarah'] = strip_tags($request->sejarah);
-        $rules['gambar'] = $request->file('gambar')->store('/public/images');
+
+        if ($request->hasFile('gambar')) {
+            $image = $request->file('gambar');
+            $imageName = Str::random(20) . '.' . $image->getClientOriginalExtension();
+            $path = $image->storeAs('public/images', $imageName);
+
+            $fullFilePath = storage_path('app/' . $path);
+
+            ImageOptimizer::optimize($fullFilePath);
+
+            $newImageName = Str::replaceLast($image->getClientOriginalExtension(), 'webp', $imageName);
+            $newFilePath = storage_path('app/public/images/' . $newImageName);
+
+            $image = imagecreatefromstring(file_get_contents($fullFilePath));
+            imagewebp($image, $newFilePath, 80);
+            unlink($fullFilePath);
+            $rules['gambar'] = 'images/' . $newImageName;
+        }
+
         Musik::create($rules);
         flash('Berhasil Menambahkan data');
         return redirect()->route('musik.index');
@@ -119,8 +140,22 @@ class MusikController extends Controller
         $rules['deskripsi'] = strip_tags($request->deskripsi);
         $rules['sejarah'] = strip_tags($request->sejarah);
         if ($request->hasFile('gambar')) {
-            Storage::delete($musik->gambar);
-            $rules['gambar'] = $request->file('gambar')->store('/public/images');
+            Storage::delete('/public/' . $musik->gambar);
+            $image = $request->file('gambar');
+            $imageName = Str::random(20) . '.' . $image->getClientOriginalExtension();
+            $path = $image->storeAs('public/images', $imageName);
+
+            $fullFilePath = storage_path('app/' . $path);
+
+            ImageOptimizer::optimize($fullFilePath);
+
+            $newImageName = Str::replaceLast($image->getClientOriginalExtension(), 'webp', $imageName);
+            $newFilePath = storage_path('app/public/images/' . $newImageName);
+
+            $image = imagecreatefromstring(file_get_contents($fullFilePath));
+            imagewebp($image, $newFilePath, 80);
+            unlink($fullFilePath);
+            $rules['gambar'] = 'images/' . $newImageName;
         }
         $musik->update($rules);
         flash('Berhasil Mengubah data');
@@ -132,9 +167,19 @@ class MusikController extends Controller
      */
     public function destroy(Musik $musik)
     {
-        Storage::delete($musik->gambar);
-        $musik->delete();
-        flash('Berhasil Hapus Data');
+        $gambarPath = $musik->gambar;
+        if (Storage::exists('/public/' . $gambarPath)) {
+            $deleted = Storage::delete('/public/' . $gambarPath);
+            if ($deleted) {
+                $musik->delete();
+                flash('Berhasil Hapus Data dan Gambar');
+            } else {
+                flash('Gagal Hapus Gambar');
+            }
+        } else {
+            flash('Path Gambar Tidak Ditemukan');
+        }
+
         return back();
     }
 }

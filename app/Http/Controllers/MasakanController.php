@@ -167,11 +167,8 @@ class MasakanController extends Controller
     public function destroy(Masakan $masakan)
     {
         $gambarPath = $masakan->gambar;
-        // Pastikan path gambar ada dan benar sebelum dihapus
         if (Storage::exists('/public/' . $gambarPath)) {
-            // Lakukan upaya penghapusan
             $deleted = Storage::delete('/public/' . $gambarPath);
-            // Cek apakah penghapusan berhasil atau tidak
             if ($deleted) {
                 $masakan->delete();
                 flash('Berhasil Hapus Data dan Gambar');
