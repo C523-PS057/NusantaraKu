@@ -90,30 +90,6 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-6 col-md-4">
-                                        <div class="about__item" data-aos="fade-up" data-aos-delay="600">
-                                            <div class="about__item-image">
-                                                <img src="./img/about-3.webp" />
-                                            </div>
-                                            <div class="about__item-content">
-                                                <span class="about__item-id">F268YB295</span>
-                                                <h6>Hyuga Dewanto Kojyro</h6>
-                                                <p>Front-End Web Developer</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-6 col-md-4">
-                                        <div class="about__item" data-aos="fade-up" data-aos-delay="700">
-                                            <div class="about__item-image">
-                                                <img src="./img/about-4.webp" />
-                                            </div>
-                                            <div class="about__item-content">
-                                                <span class="about__item-id">F237YB298</span>
-                                                <h6>Muhammad Sabilil Fajri</h6>
-                                                <p>Front-End Web Developer</p>
-                                            </div>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
