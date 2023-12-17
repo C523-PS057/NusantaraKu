@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\StoreMusikRequest;
 use App\Http\Requests\UpdateMusikRequest;
+use App\Models\Comment;
 use Spatie\LaravelImageOptimizer\Facades\ImageOptimizer;
 
 class MusikController extends Controller
@@ -168,6 +169,9 @@ class MusikController extends Controller
     public function destroy(Musik $musik)
     {
         $gambarPath = $musik->gambar;
+        if ($musik->comment) {
+            Comment::where('musik_id', $musik->id)->delete();
+        }
         if (Storage::exists('/public/' . $gambarPath)) {
             $deleted = Storage::delete('/public/' . $gambarPath);
             if ($deleted) {

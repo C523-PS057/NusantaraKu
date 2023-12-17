@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\StorePakaianRequest;
 use App\Http\Requests\UpdatePakaianRequest;
+use App\Models\Comment;
 use Spatie\LaravelImageOptimizer\Facades\ImageOptimizer;
 
 class PakaianController extends Controller
@@ -110,6 +111,9 @@ class PakaianController extends Controller
     public function edit(Pakaian $pakaian)
     {
         $category = Budaya::where('id', 3)->first();
+        if ($pakaian->comment) {
+            Comment::where('pakaian_id', $pakaian->id)->delete();
+        }
         if (!$category) {
             flash()->addError('Kategori Tidak Ditemukan');
             return back();

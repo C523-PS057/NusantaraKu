@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Rumah;
 use App\Models\Budaya;
+use App\Models\Comment;
 use App\Models\Province;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
@@ -169,6 +170,9 @@ class RumahController extends Controller
     public function destroy(Rumah $rumah)
     {
         $gambarPath = $rumah->gambar;
+        if ($rumah->comment) {
+            Comment::where('rumah_id', $rumah->id)->delete();
+        }
         if (Storage::exists('/public/' . $gambarPath)) {
             $deleted = Storage::delete('/public/' . $gambarPath);
             if ($deleted) {

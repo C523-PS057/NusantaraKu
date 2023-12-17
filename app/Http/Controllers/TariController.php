@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\StoreTariRequest;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\UpdateTariRequest;
+use App\Models\Comment;
 use Spatie\LaravelImageOptimizer\Facades\ImageOptimizer;
 
 class TariController extends Controller
@@ -168,6 +169,9 @@ class TariController extends Controller
     public function destroy(Tari $tari)
     {
         $gambarPath = $tari->gambar;
+        if ($tari->comment) {
+            Comment::where('tari_id', $tari->id)->delete();
+        }
         if (Storage::exists('/public/' . $gambarPath)) {
             $deleted = Storage::delete('/public/' . $gambarPath);
             if ($deleted) {

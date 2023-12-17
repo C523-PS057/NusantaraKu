@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Budaya;
+use App\Models\Comment;
 use App\Models\Masakan;
 use App\Models\Province;
 use Illuminate\Support\Str;
@@ -167,6 +168,9 @@ class MasakanController extends Controller
     public function destroy(Masakan $masakan)
     {
         $gambarPath = $masakan->gambar;
+        if ($masakan->comment) {
+            Comment::where('masakan_id', $masakan->id)->delete();
+        }
         if (Storage::exists('/public/' . $gambarPath)) {
             $deleted = Storage::delete('/public/' . $gambarPath);
             if ($deleted) {
