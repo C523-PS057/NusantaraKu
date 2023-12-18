@@ -36,6 +36,22 @@ class DatabaseSeeder extends Seeder
             'gambar' => Storage::putFile('/public/images', $gambarDefaultPath),
             'password' => bcrypt('12345678'),
         ]);
+        User::create([
+            'name' => 'User Testing',
+            'email' => 'user@testing.com',
+            'email_verified_at' => now(),
+            'role' => 'user',
+            'gambar' => Storage::putFile('/public/images', $gambarDefaultPath),
+            'password' => bcrypt('12345678'),
+        ]);
+        User::create([
+            'name' => 'Admin Testing',
+            'email' => 'admin@testing.com',
+            'email_verified_at' => now(),
+            'role' => 'admin',
+            'gambar' => Storage::putFile('/public/images', $gambarDefaultPath),
+            'password' => bcrypt('admin1234'),
+        ]);
         Budaya::create([
             'id' => 1,
             'category_name' => 'Masakan Khas',
