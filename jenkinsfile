@@ -1,10 +1,6 @@
 pipeline {
     agent any
-    environment {
-        appPort = 8081
-        dockerComposeFile = 'docker-compose.yml'
-        serviceName = 'app'
-    }
+
     stages {
         stage('Checkout') {
             steps {
@@ -17,24 +13,6 @@ pipeline {
             steps {
                 script {
                     def appKey = sh(script: 'php artisan key:generate --show', returnStdout: true).trim()
-                    // Fungsi untuk mencari port yang tersedia
-                    def findAvailablePort = { startPort ->
-                        for (int i = startPort; i < startPort + 100; i++) {
-                            if (sh(script: "lsof -Pi :$i -sTCP:LISTEN -t >/dev/null", returnStatus: true) == 1) {
-                                return i
-                            }
-                        }
-                        return -1
-                    }
-
-                    // Mencari port yang tersedia
-                    def availablePort = findAvailablePort(appPort)
-                    if (availablePort != -1) {
-                        echo "Port $availablePort tersedia. Melanjutkan..."
-                        appPort = availablePort
-                    } else {
-                        error "Tidak dapat menemukan port yang tersedia dalam rentang 8000-8100."
-                    }
 
                     sh 'cp .env.template .env'
                     sh "sed -i 's|!APPKEY|${appKey}|g' .env"
@@ -65,14 +43,5 @@ pipeline {
             }
         }
     }
-    post {
-        always {
-            // Fungsi untuk membebaskan port setelah selesai
-            script {
-                echo "Menjalankan langkah pembersihan..."
-                sh(script: "docker-compose -f ${dockerComposeFile} down", returnStatus: true)
-                echo "Port ${appPort} dibebaskan kembali."
-            }
-        }
-    }
+
 }
