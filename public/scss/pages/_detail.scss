@@ -2,12 +2,26 @@
     margin-top: -27.5rem;
 
     &__image {
+        position: relative;
+
         img {
             width: 100%;
             height: auto;
             aspect-ratio: 16/9;
             object-fit: cover;
             border-radius: 1rem;
+        }
+
+        &-overlay {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            padding: 0.5rem 1rem;
+            background-color: $red;
+            color: $text-white;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            font-size: 14px;
         }
     }
 

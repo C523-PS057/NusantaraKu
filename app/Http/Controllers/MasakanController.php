@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Masakan;
-use App\Http\Requests\StoreMasakanRequest;
-use App\Http\Requests\UpdateMasakanRequest;
 use App\Models\Budaya;
+use App\Models\Comment;
+use App\Models\Masakan;
 use App\Models\Province;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
+use Spatie\LaravelImageOptimizer\Facades\ImageOptimizer;
 
 class MasakanController extends Controller
 {
@@ -65,10 +65,29 @@ class MasakanController extends Controller
             'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'deskripsi' => 'required',
         ];
+
         $rules = $request->validate($validatedData);
         $rules['deskripsi'] = strip_tags($request->deskripsi);
         $rules['sejarah'] = strip_tags($request->sejarah);
-        $rules['gambar'] = $request->file('gambar')->store('/public/images');
+
+        if ($request->hasFile('gambar')) {
+            $image = $request->file('gambar');
+            $imageName = Str::random(20) . '.' . $image->getClientOriginalExtension();
+            $path = $image->storeAs('public/images', $imageName);
+
+            $fullFilePath = storage_path('app/' . $path);
+
+            ImageOptimizer::optimize($fullFilePath);
+
+            $newImageName = Str::replaceLast($image->getClientOriginalExtension(), 'webp', $imageName);
+            $newFilePath = storage_path('app/public/images/' . $newImageName);
+
+            $image = imagecreatefromstring(file_get_contents($fullFilePath));
+            imagewebp($image, $newFilePath, 80);
+            unlink($fullFilePath);
+            $rules['gambar'] = 'images/' . $newImageName;
+        }
+
         Masakan::create($rules);
         flash('Berhasil Menambahkan data');
         return redirect()->route('masakan.index');
@@ -121,8 +140,22 @@ class MasakanController extends Controller
         $rules['deskripsi'] = strip_tags($request->deskripsi);
         $rules['sejarah'] = strip_tags($request->sejarah);
         if ($request->hasFile('gambar')) {
-            Storage::delete($masakan->gambar);
-            $rules['gambar'] = $request->file('gambar')->store('/public/images');
+            Storage::delete('/public/' . $masakan->gambar);
+            $image = $request->file('gambar');
+            $imageName = Str::random(20) . '.' . $image->getClientOriginalExtension();
+            $path = $image->storeAs('public/images', $imageName);
+
+            $fullFilePath = storage_path('app/' . $path);
+
+            ImageOptimizer::optimize($fullFilePath);
+
+            $newImageName = Str::replaceLast($image->getClientOriginalExtension(), 'webp', $imageName);
+            $newFilePath = storage_path('app/public/images/' . $newImageName);
+
+            $image = imagecreatefromstring(file_get_contents($fullFilePath));
+            imagewebp($image, $newFilePath, 80);
+            unlink($fullFilePath);
+            $rules['gambar'] = 'images/' . $newImageName;
         }
         $masakan->update($rules);
         flash('Berhasil Mengubah data');
@@ -134,9 +167,22 @@ class MasakanController extends Controller
      */
     public function destroy(Masakan $masakan)
     {
-        Storage::delete($masakan->gambar);
-        $masakan->delete();
-        flash('Berhasil Hapus Data');
+        $gambarPath = $masakan->gambar;
+        if ($masakan->comment) {
+            Comment::where('masakan_id', $masakan->id)->delete();
+        }
+        if (Storage::exists('/public/' . $gambarPath)) {
+            $deleted = Storage::delete('/public/' . $gambarPath);
+            if ($deleted) {
+                $masakan->delete();
+                flash('Berhasil Hapus Data dan Gambar');
+            } else {
+                flash('Gagal Hapus Gambar');
+            }
+        } else {
+            flash('Path Gambar Tidak Ditemukan');
+        }
+
         return back();
     }
 }

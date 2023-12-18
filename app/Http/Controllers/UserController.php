@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Comment;
 use App\Models\User;
+use App\Models\Comment;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Spatie\LaravelImageOptimizer\Facades\ImageOptimizer;
 
 class UserController extends Controller
 {
@@ -40,9 +42,23 @@ class UserController extends Controller
         }
         if ($request->hasFile('gambar')) {
             if ($user->gambar !== null) {
-                Storage::delete($user->gambar);
+                Storage::delete('/public/' . $user->gambar);
             }
-            $rules['gambar'] = $request->file('gambar')->store('/public/images');
+            $image = $request->file('gambar');
+            $imageName = Str::random(20) . '.' . $image->getClientOriginalExtension();
+            $path = $image->storeAs('public/images', $imageName);
+
+            $fullFilePath = storage_path('app/' . $path);
+
+            ImageOptimizer::optimize($fullFilePath);
+
+            $newImageName = Str::replaceLast($image->getClientOriginalExtension(), 'webp', $imageName);
+            $newFilePath = storage_path('app/public/images/' . $newImageName);
+
+            $image = imagecreatefromstring(file_get_contents($fullFilePath));
+            imagewebp($image, $newFilePath, 80);
+            unlink($fullFilePath);
+            $rules['gambar'] = 'images/' . $newImageName;
         }
         $user->update($rules);
         flash('Berhasil Memperbarui Data');

@@ -38,7 +38,7 @@
                                     ada di indonesia
                                     seperti Tari Tradisional, Rumah Adat, Masakan khas dan kategori budaya lainnya.
                                     Tujuannya adalah untuk mengedukasi dan menginspirasi masyarakat mengenai kekayaan
-                                    budaya Nusantara. Pengguna dapat dengan mudah melakukan pencarian dan filter
+                                    Budaya Indonesia. Pengguna dapat dengan mudah melakukan pencarian dan filter
                                     terhadap budaya yang
                                     ingin dicari, selain itu pengguna dapat memberikan kritik dan masukan dalam bentuk
                                     komentar terkait informasi budaya yang disajikan dan Admin dapat mengelola seluruh
@@ -87,30 +87,6 @@
                                                 <span class="about__item-id">S268YB451</span>
                                                 <h6>Faris Ghina Purohita</h6>
                                                 <p>DevOps Engineer</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-6 col-md-4">
-                                        <div class="about__item" data-aos="fade-up" data-aos-delay="600">
-                                            <div class="about__item-image">
-                                                <img src="./img/about-3.webp" />
-                                            </div>
-                                            <div class="about__item-content">
-                                                <span class="about__item-id">F268YB295</span>
-                                                <h6>Hyuga Dewanto Kojyro</h6>
-                                                <p>Front-End Web Developer</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-6 col-md-4">
-                                        <div class="about__item" data-aos="fade-up" data-aos-delay="700">
-                                            <div class="about__item-image">
-                                                <img src="./img/about-4.webp" />
-                                            </div>
-                                            <div class="about__item-content">
-                                                <span class="about__item-id">F237YB298</span>
-                                                <h6>Muhammad Sabilil Fajri</h6>
-                                                <p>Front-End Web Developer</p>
                                             </div>
                                         </div>
                                     </div>

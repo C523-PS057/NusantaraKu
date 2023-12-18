@@ -6,7 +6,7 @@
 
 
 <form action="{{ route('data-user.index') }}" method="GET">
-    <div class="input-group mb-3">
+    <div class="input-group mb-3 dashboard__search">
         <div class="col-md-5">
             <input name="search" type="text" class="form-control" placeholder="Cari Data Pengguna.." aria-label="search"
                 aria-describedby="basic-addon2" value="{{ request('search') }}">

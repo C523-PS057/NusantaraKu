@@ -47,7 +47,7 @@ class DataUserController extends Controller
             return back();
         }
         if ($user->gambar !== null) {
-            Storage::delete($user->gambar);
+            Storage::delete('/public/' . $user->gambar);
         }
         foreach ($comments as $comment) {
             $comment->delete();

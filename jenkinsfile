@@ -35,17 +35,13 @@ pipeline {
                 }
             }
         }
-        stage('Build') {
+        stage('Build and Deploy') {
             steps {
-                sh 'docker build -t nusantaraku .'
-            }
-        }
-
-        stage('Deploy') {
-             steps {
-                sh 'docker-compose up -d'
-                sh 'echo "Akses Web ==> http://202.10.40.58:8000/"'
+        		sh "sudo cp -Rf . /var/www/html"
+        		sh "sudo chown -R www-data:www-data /var/www/html"
+        		sh "sudo systemctl restart apache2 || true"
             }
         }
     }
+
 }

@@ -3,12 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Models\Tari;
-use App\Http\Requests\StoreTariRequest;
-use App\Http\Requests\UpdateTariRequest;
 use App\Models\Budaya;
 use App\Models\Province;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use App\Http\Requests\StoreTariRequest;
 use Illuminate\Support\Facades\Storage;
+use App\Http\Requests\UpdateTariRequest;
+use App\Models\Comment;
+use Spatie\LaravelImageOptimizer\Facades\ImageOptimizer;
 
 class TariController extends Controller
 {
@@ -63,10 +66,29 @@ class TariController extends Controller
             'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'deskripsi' => 'required',
         ];
+
         $rules = $request->validate($validatedData);
         $rules['deskripsi'] = strip_tags($request->deskripsi);
         $rules['sejarah'] = strip_tags($request->sejarah);
-        $rules['gambar'] = $request->file('gambar')->store('/public/images');
+
+        if ($request->hasFile('gambar')) {
+            $image = $request->file('gambar');
+            $imageName = Str::random(20) . '.' . $image->getClientOriginalExtension();
+            $path = $image->storeAs('public/images', $imageName);
+
+            $fullFilePath = storage_path('app/' . $path);
+
+            ImageOptimizer::optimize($fullFilePath);
+
+            $newImageName = Str::replaceLast($image->getClientOriginalExtension(), 'webp', $imageName);
+            $newFilePath = storage_path('app/public/images/' . $newImageName);
+
+            $image = imagecreatefromstring(file_get_contents($fullFilePath));
+            imagewebp($image, $newFilePath, 80);
+            unlink($fullFilePath);
+            $rules['gambar'] = 'images/' . $newImageName;
+        }
+
         Tari::create($rules);
         flash('Berhasil Menambahkan data');
         return redirect()->route('tari.index');
@@ -119,8 +141,22 @@ class TariController extends Controller
         $rules['deskripsi'] = strip_tags($request->deskripsi);
         $rules['sejarah'] = strip_tags($request->sejarah);
         if ($request->hasFile('gambar')) {
-            Storage::delete($tari->gambar);
-            $rules['gambar'] = $request->file('gambar')->store('/public/images');
+            Storage::delete('/public/' . $tari->gambar);
+            $image = $request->file('gambar');
+            $imageName = Str::random(20) . '.' . $image->getClientOriginalExtension();
+            $path = $image->storeAs('public/images', $imageName);
+
+            $fullFilePath = storage_path('app/' . $path);
+
+            ImageOptimizer::optimize($fullFilePath);
+
+            $newImageName = Str::replaceLast($image->getClientOriginalExtension(), 'webp', $imageName);
+            $newFilePath = storage_path('app/public/images/' . $newImageName);
+
+            $image = imagecreatefromstring(file_get_contents($fullFilePath));
+            imagewebp($image, $newFilePath, 80);
+            unlink($fullFilePath);
+            $rules['gambar'] = 'images/' . $newImageName;
         }
         $tari->update($rules);
         flash('Berhasil Mengubah data');
@@ -132,9 +168,22 @@ class TariController extends Controller
      */
     public function destroy(Tari $tari)
     {
-        Storage::delete($tari->gambar);
-        $tari->delete();
-        flash('Berhasil Hapus Data');
+        $gambarPath = $tari->gambar;
+        if ($tari->comment) {
+            Comment::where('tari_id', $tari->id)->delete();
+        }
+        if (Storage::exists('/public/' . $gambarPath)) {
+            $deleted = Storage::delete('/public/' . $gambarPath);
+            if ($deleted) {
+                $tari->delete();
+                flash('Berhasil Hapus Data dan Gambar');
+            } else {
+                flash('Gagal Hapus Gambar');
+            }
+        } else {
+            flash('Path Gambar Tidak Ditemukan');
+        }
+
         return back();
     }
 }

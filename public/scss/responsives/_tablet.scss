@@ -28,6 +28,18 @@
         font-size: 18px;
     }
 
+    .nav {
+        &-item {
+            width: 100%;
+            justify-content: center;
+        }
+
+        &-link {
+            justify-content: center;
+            text-align: center;
+        }
+    }
+
     .navbar {
         background-color: rgba($color: $text-white, $alpha: 0.5);
         backdrop-filter: blur(10px);
@@ -43,7 +55,6 @@
 
         &-collapse {
             padding: 1rem;
-            height: 100vh;
             overflow-y: scroll;
         }
     }
@@ -200,6 +211,14 @@
     .btn-group {
         flex-direction: column;
         gap: 1rem;
+
+        .dropdown-toggle {
+            img {
+                width: 3.5rem;
+                height: 3.5rem;
+                aspect-ratio: 1/1;
+            }
+        }
     }
 
     .dashboard-admin {
@@ -208,9 +227,26 @@
         }
     }
 
+    .dashboard {
+        &__search {
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+
+            .col-md-5 {
+                width: 100%;
+                grid-column: span 7;
+            }
+        }
+    }
+
     .navbar-dark {
         .navbar-brand {
             display: none !important;
+        }
+
+        .navbar-toggler {
+            background-color: lighten(#212529, 10%) !important;
+            border: 1px solid $text-white;
         }
     }
 

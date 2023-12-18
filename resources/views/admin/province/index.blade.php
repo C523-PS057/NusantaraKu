@@ -5,7 +5,7 @@
     <h1 class="h2">Kelola Data Provinsi</h1>
 </div>
 <form action="{{ route('province.index') }}" method="GET">
-    <div class="input-group mb-3">
+    <div class="input-group mb-3 dashboard__search">
         <div class="col-md-5">
             <input name="search" type="text" class="form-control" placeholder="Cari Data Provinsi..."
                 aria-label="search" aria-describedby="basic-addon2" value="{{ request('search') }}">
@@ -37,7 +37,8 @@
                 <td>{{ Str::limit($item->sejarah,10, '...') }}</td>
                 <td><a href="{{ $item->video_link }}" target="blank">Klik Disini</a></td>
                 <td class="column-action">
-                    <a href="{{ route('provinsi.show',$item->id) }}" class="btn-icon" style="text-decoration: none" target="_blank" rel="noopener noreferrer">
+                    <a href="{{ route('provinsi.show',$item->id) }}" class="btn-icon" style="text-decoration: none"
+                        target="_blank" rel="noopener noreferrer">
                         <i class="ri-eye-fill"></i>
                     </a>
                     <a href="{{ route('province.edit',$item->id) }}" class="btn-icon mx-2"

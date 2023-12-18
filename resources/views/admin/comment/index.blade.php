@@ -5,7 +5,7 @@
     <h1 class="h2">Kelola Data Komentar</h1>
 </div>
 <form action="{{ route('data-comment.index') }}" method="GET">
-    <div class="input-group mb-3">
+    <div class="input-group mb-3 dashboard__search">
         <div class="col-md-5">
             <input name="search" type="text" class="form-control" placeholder="Cari Data Komentar/Nama Pengomentar..."
                 aria-label="search" aria-describedby="basic-addon2" value="{{ request('search') }}">

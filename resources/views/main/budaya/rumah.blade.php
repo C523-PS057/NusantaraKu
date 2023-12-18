@@ -9,6 +9,19 @@
     <link rel="stylesheet" href="../css/bootstrap.min.css" />
     <link rel="stylesheet" href="../css/main.min.css" />
     <link rel="icon" type="image/x-icon" href="../img/favicon.ico" />
+
+    <!-- Global Meta Tag -->
+    <meta name="keywords" content="nusantaraku, budaya, ensiklopedia budaya, nusantara, Budaya Indonesia">
+    <meta http-equiv="Content-Language" content="id-ID">
+
+    <!-- Meta Tag for Share to Social Media -->
+    <meta property="og:title" content="Rumah {{ ucfirst($data->rumah_adat_name) }} - NusantaraKu">
+    <meta property="og:image" itemprop="image" content="{{ Storage::url($data->gambar) }}">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Rumah {{ ucfirst($data->rumah_adat_name) }} - NusantaraKu">
+    <meta name="twitter:image" content="{{ Storage::url($data->gambar) }}">
+
 </head>
 
 <body>
@@ -20,23 +33,27 @@
                 <div class="row">
                     <div class="col-md-8 mx-auto detail__column">
                         <div class="detail__header">
-                            <span class="headline text-primary">DETAIL BUDAYA</span>
+                            <span class="headline text-primary">RUMAH ADAT</span>
                             <h1>Rumah {{ ucfirst($data->rumah_adat_name) }}</h1>
                         </div>
                         <div class="detail__content">
                             <div class="detail__image">
-                                <img src="{{ Storage::url($data->gambar) }}" alt="Tari Sekapur Sirih" />
+                                <img src="{{ Storage::url($data->gambar) }}"
+                                    alt="Rumah {{ ucfirst($data->rumah_adat_name) }}" />
+                                <div class="detail__image-overlay">
+                                    <i class="ri-map-pin-line"></i> {{ ucfirst($data->province->province_name) }}
+                                </div>
                             </div>
 
                             <div class="detail__section">
-                                <h4>Deskripsi Singkat</h4>
+                                <h4>Deskripsi Rumah {{ ucfirst($data->rumah_adat_name) }}</h4>
                                 <p>
                                     {{ $data->deskripsi }}
                                 </p>
                             </div>
 
                             <div class="detail__section">
-                                <h4>Sejarah Singkat</h4>
+                                <h4>Sejarah Rumah {{ ucfirst($data->rumah_adat_name) }}</h4>
                                 <p>
                                     {{ $data->sejarah }}
                                 </p>

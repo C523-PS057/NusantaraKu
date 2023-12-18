@@ -10,6 +10,30 @@
     <link rel="stylesheet" href="./css/main.min.css" />
     <link rel="icon" type="image/x-icon" href="./img/favicon.ico" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Tag for Dicoding -->
+    <meta name="dicoding:email" content="agreytosira@gmail.com">
+
+    <!-- Global Meta Tag -->
+    <meta name="description"
+        content="Website NusantaraKu adalah sebuah platform online yang bertujuan untuk memperkenalkan dan mempromosikan ragam budaya dari berbagai daerah di Indonesia, yang dikenal sebagai Nusantara. Website ini menyajikan informasi terkait budaya yang ada di indonesia seperti Tari Tradisional, Rumah Adat, Masakan khas dan kategori budaya lainnya.">
+    <meta name="keywords" content="nusantaraku, budaya, ensiklopedia budaya, nusantara, Budaya Indonesia">
+    <meta http-equiv="Content-Language" content="id-ID">
+
+    <!-- Meta Tag for Share to Social Media -->
+    <meta property="og:title" content="NusantaraKu: Jelajahi Ragam Budaya Indonesia">
+    <meta property="og:description"
+        content="Website NusantaraKu adalah sebuah platform online yang bertujuan untuk memperkenalkan dan mempromosikan ragam budaya dari berbagai daerah di Indonesia, yang dikenal sebagai Nusantara. Website ini menyajikan informasi terkait budaya yang ada di indonesia seperti Tari Tradisional, Rumah Adat, Masakan khas dan kategori budaya lainnya.">
+    <meta property="og:image" itemprop="image" content="/img/thumbnail.jpg">
+    <meta property="og:url" content="https://ininusantaraku.my.id/">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="NusantaraKu: Jelajahi Ragam Budaya Indonesia">
+    <meta name="twitter:description"
+        content="Website NusantaraKu adalah sebuah platform online yang bertujuan untuk memperkenalkan dan mempromosikan ragam budaya dari berbagai daerah di Indonesia, yang dikenal sebagai Nusantara. Website ini menyajikan informasi terkait budaya yang ada di indonesia seperti Tari Tradisional, Rumah Adat, Masakan khas dan kategori budaya lainnya.">
+    <meta name="twitter:image" content="/img/thumbnail.jpg">
+    <meta name="twitter:url" content="https://ininusantaraku.my.id/">
+
 </head>
 
 <body>
@@ -151,7 +175,7 @@
         </section>
         <section class="benefit">
             <div class="container benefit__container">
-                <div class="province__header">
+                <div class="province__header" data-aos="fade-up">
                     <span class="headline">MANFAAT</span>
                     <h2>Manfaat <span class="red">NusantaraKu</span></h2>
                     <p>Manfaat dari dibuatnya platform <strong>NusantaraKu</strong></p>

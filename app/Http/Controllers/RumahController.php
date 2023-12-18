@@ -3,12 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Models\Rumah;
-use App\Http\Requests\StoreRumahRequest;
-use App\Http\Requests\UpdateRumahRequest;
 use App\Models\Budaya;
+use App\Models\Comment;
 use App\Models\Province;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use App\Http\Requests\StoreRumahRequest;
+use App\Http\Requests\UpdateRumahRequest;
+use Spatie\LaravelImageOptimizer\Facades\ImageOptimizer;
 
 class RumahController extends Controller
 {
@@ -64,10 +67,29 @@ class RumahController extends Controller
             'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'deskripsi' => 'required',
         ];
+
         $rules = $request->validate($validatedData);
         $rules['deskripsi'] = strip_tags($request->deskripsi);
         $rules['sejarah'] = strip_tags($request->sejarah);
-        $rules['gambar'] = $request->file('gambar')->store('/public/images');
+
+        if ($request->hasFile('gambar')) {
+            $image = $request->file('gambar');
+            $imageName = Str::random(20) . '.' . $image->getClientOriginalExtension();
+            $path = $image->storeAs('public/images', $imageName);
+
+            $fullFilePath = storage_path('app/' . $path);
+
+            ImageOptimizer::optimize($fullFilePath);
+
+            $newImageName = Str::replaceLast($image->getClientOriginalExtension(), 'webp', $imageName);
+            $newFilePath = storage_path('app/public/images/' . $newImageName);
+
+            $image = imagecreatefromstring(file_get_contents($fullFilePath));
+            imagewebp($image, $newFilePath, 80);
+            unlink($fullFilePath);
+            $rules['gambar'] = 'images/' . $newImageName;
+        }
+
         Rumah::create($rules);
         flash('Berhasil Menambahkan data');
         return redirect()->route('rumah.index');
@@ -120,8 +142,22 @@ class RumahController extends Controller
         $rules['deskripsi'] = strip_tags($request->deskripsi);
         $rules['sejarah'] = strip_tags($request->sejarah);
         if ($request->hasFile('gambar')) {
-            Storage::delete($rumah->gambar);
-            $rules['gambar'] = $request->file('gambar')->store('/public/images');
+            Storage::delete('/public/' . $rumah->gambar);
+            $image = $request->file('gambar');
+            $imageName = Str::random(20) . '.' . $image->getClientOriginalExtension();
+            $path = $image->storeAs('public/images', $imageName);
+
+            $fullFilePath = storage_path('app/' . $path);
+
+            ImageOptimizer::optimize($fullFilePath);
+
+            $newImageName = Str::replaceLast($image->getClientOriginalExtension(), 'webp', $imageName);
+            $newFilePath = storage_path('app/public/images/' . $newImageName);
+
+            $image = imagecreatefromstring(file_get_contents($fullFilePath));
+            imagewebp($image, $newFilePath, 80);
+            unlink($fullFilePath);
+            $rules['gambar'] = 'images/' . $newImageName;
         }
         $rumah->update($rules);
         flash('Berhasil Mengubah data');
@@ -133,9 +169,22 @@ class RumahController extends Controller
      */
     public function destroy(Rumah $rumah)
     {
-        Storage::delete($rumah->gambar);
-        $rumah->delete();
-        flash('Berhasil Hapus Data');
+        $gambarPath = $rumah->gambar;
+        if ($rumah->comment) {
+            Comment::where('rumah_id', $rumah->id)->delete();
+        }
+        if (Storage::exists('/public/' . $gambarPath)) {
+            $deleted = Storage::delete('/public/' . $gambarPath);
+            if ($deleted) {
+                $rumah->delete();
+                flash('Berhasil Hapus Data dan Gambar');
+            } else {
+                flash('Gagal Hapus Gambar');
+            }
+        } else {
+            flash('Path Gambar Tidak Ditemukan');
+        }
+
         return back();
     }
 }
