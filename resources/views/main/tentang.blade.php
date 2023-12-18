@@ -20,7 +20,7 @@
                 <div class="row">
                     <div class="col-12 col-lg-8 mx-auto">
                         <div class="about__header">
-                            <h2 data-aos="fade-up">Profile Kami</h2>
+                            <h2 data-aos="fade-up">Tentang Kami</h2>
                             <p data-aos="fade-up" data-aos-delay="100"> Latarbelakang dibuatnya website
                                 <strong>NusantaraKu</strong>
                             </p>
