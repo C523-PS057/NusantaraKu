@@ -1,7 +1,7 @@
 # NusantaraKu
 Project Capstone oleh Tim C523-PS057 untuk program Studi Independen Bersertfikat Batch 5 di Dicoding Indonesia.
 
-![ss](https://github.com/C523-PS057/NusantaraKu/assets/44093021/7e89b801-e5b8-4f2c-929c-623e9db2748d)
+![Slide 1](https://github.com/C523-PS057/NusantaraKu/assets/44093021/fe24f90a-6be6-46de-b66a-7ac7514eb504)
 
 
 ## Apa itu NusantaraKu?
