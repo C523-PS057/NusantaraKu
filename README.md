@@ -9,7 +9,7 @@ NusantaraKu adalah sebuah platform online yang bertujuan untuk memperkenalkan da
 Pengguna dapat dengan mudah melakukan pencarian dan filter terhadap budaya yang ingin dicari, selain itu pengguna dapat memberikan kritik dan masukan dalam bentuk komentar terkait informasi budaya yang disajikan dan Admin dapat mengelola seluruh informasi seperti menambahkan, mengubah, dan menghapus data budaya.
 
 ## Cara Menjalankan Aplikasi
-*Sebelum memulai, pastikan sistem Anda telah memenuhi persyaratan berikut:*
+**Sebelum memulai, pastikan sistem Anda telah memenuhi persyaratan berikut:**
 - PHP (versi 8.2 atau yang lebih baru)
 - Composer
 - Node.js
@@ -17,7 +17,7 @@ Pengguna dapat dengan mudah melakukan pencarian dan filter terhadap budaya yang 
 - Apache Web Server (bisa menggunakan XAMPP/Laragon)
 - Git
 
-*Langkah-langkah untuk menjalankan aplikasi:*
+**Langkah-langkah untuk menjalankan aplikasi:**
 - Clone Repository pada terminal menggunakan perintah berikut: <br/>
 ``` git clone https://github.com/C523-PS057/NusantaraKu.git ```
 - Masuk ke direktori yang dibuat oleh perintah sebelumnya <br/>
@@ -40,6 +40,17 @@ Pengguna dapat dengan mudah melakukan pencarian dan filter terhadap budaya yang 
 - Jalankan server website <br/>
 ``` php artisan serve ```
 - Sekarang web bisa diakses melalui http://localhost:8000 <br/>
+
+Kami telah menyediakan 2 akun demo dengan kredensial sebagai berikut:
+
+- **Akun Role User:**
+Email: user@testing.com
+Password: 12345678
+
+- **Akun Role Admin:**
+Email: admin@testing.com
+Password: admin1234
+
 
 ## Kontributor
 - **Agrey Tosira** (UI/UX Designer & Front-End Web Developer)
