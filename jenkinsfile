@@ -37,8 +37,9 @@ pipeline {
         }
         stage('Build and Deploy') {
             steps {
-                sh 'docker stop $(docker ps -a -q)'
-                sh 'docker-compose up --build -d'
+        		sh "sudo cp -Rf . /var/www/html"
+        		sh "sudo chown -R www-data:www-data /var/www/html"
+        		sh "sudo systemctl restart apache2 || true"
             }
         }
     }
