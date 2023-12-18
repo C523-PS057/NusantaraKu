@@ -1,7 +1,9 @@
 pipeline {
     agent any
     environment {
-        jenkinsPort = 8080
+        appPort = 8081
+        dockerComposeFile = 'docker-compose.yml'
+        serviceName = 'app'
     }
     stages {
         stage('Checkout') {
@@ -15,22 +17,23 @@ pipeline {
             steps {
                 script {
                     def appKey = sh(script: 'php artisan key:generate --show', returnStdout: true).trim()
-                    // Fungsi untuk memeriksa apakah port tersedia
-                    def checkPortAvailability = { port ->
-                        return sh(script: "lsof -Pi :$port -sTCP:LISTEN -t >/dev/null", returnStatus: true) == 1
+                    // Fungsi untuk mencari port yang tersedia
+                    def findAvailablePort = { startPort ->
+                        for (int i = startPort; i < startPort + 100; i++) {
+                            if (sh(script: "lsof -Pi :$i -sTCP:LISTEN -t >/dev/null", returnStatus: true) == 1) {
+                                return i
+                            }
+                        }
+                        return -1
                     }
 
-                    // Fungsi untuk menghentikan proses yang menggunakan port tertentu
-                    def stopProcessUsingPort = { port ->
-                        sh(script: "kill -9 \$(lsof -Pi :$port -sTCP:LISTEN -t)", returnStatus: true)
-                    }
-
-                    // Pemeriksaan awal untuk memastikan port tersedia
-                    if (checkPortAvailability(env.jenkinsPort)) {
-                        echo "Port ${env.jenkinsPort} tersedia. Melanjutkan..."
+                    // Mencari port yang tersedia
+                    def availablePort = findAvailablePort(appPort)
+                    if (availablePort != -1) {
+                        echo "Port $availablePort tersedia. Melanjutkan..."
+                        appPort = availablePort
                     } else {
-                        echo "Port ${env.jenkinsPort} sedang digunakan oleh proses lain. Menghentikan proses..."
-                        stopProcessUsingPort(env.jenkinsPort)
+                        error "Tidak dapat menemukan port yang tersedia dalam rentang 8000-8100."
                     }
 
                     sh 'cp .env.template .env'
@@ -56,9 +59,9 @@ pipeline {
         }
         stage('Build and Deploy') {
             steps {
+                sh(script: "sed -i 's/\\${APP_PORT}/${appPort}/g' ${dockerComposeFile}", returnStatus: true)
                 sh 'docker-compose down --volumes --remove-orphans || true'
                 sh 'docker-compose up --build -d'
-                sh 'echo "Akses Web ==> http://202.10.40.58:8000/"'
             }
         }
     }
@@ -67,15 +70,8 @@ pipeline {
             // Fungsi untuk membebaskan port setelah selesai
             script {
                 echo "Menjalankan langkah pembersihan..."
-                def releasePort = { port ->
-                    sh(script: "fuser -k ${port}/tcp", returnStatus: true)
-                }
-
-                if (releasePort(env.jenkinsPort) == 0) {
-                    echo "Port ${env.jenkinsPort} dibebaskan kembali."
-                } else {
-                    echo "Gagal membebaskan port ${env.jenkinsPort}."
-                }
+                sh(script: "docker-compose -f ${dockerComposeFile} down", returnStatus: true)
+                echo "Port ${appPort} dibebaskan kembali."
             }
         }
     }
