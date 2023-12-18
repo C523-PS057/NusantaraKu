@@ -18,37 +18,37 @@ Pengguna dapat dengan mudah melakukan pencarian dan filter terhadap budaya yang 
 - Git
 
 **Langkah-langkah untuk menjalankan aplikasi:**
-- Clone Repository pada terminal menggunakan perintah berikut: <br/>
+- Clone Repository pada terminal menggunakan perintah berikut:     
 ``` git clone https://github.com/C523-PS057/NusantaraKu.git ```
-- Masuk ke direktori yang dibuat oleh perintah sebelumnya <br/>
+- Masuk ke direktori yang dibuat oleh perintah sebelumnya   
 ``` cd NusantaraKu ```
-- Install package composer yang diperlukan <br/>
+- Install package composer yang diperlukan      
 ``` composer install ```
-- Download File Konfigurasi .env dari link berikut, salin ke folder project <br/>
-``` https://safksaofaksasf ```
-- Generate Kunci Aplikasi <br/>
+- Download File Konfigurasi .env dari link berikut, salin ke folder project (File terpisah karena alasan keamanan)          
+[**Download File .env**](https://drive.google.com/file/d/1QljyieY6yKRHBke8rEbu-Xop4oO5YqA3/view).
+- Generate Kunci Aplikasi     
 ``` php artisan key:generate ```
-- Buat database MySQL baru dengan nama *“nusantaraku”* (sesuai dengan .env) <br/>
-- Jalankan perintah migrasi database <br/>
+- Buat database MySQL baru dengan nama *“nusantaraku”* (sesuai dengan .env)        
+- Jalankan perintah migrasi database         
 ``` php artisan migrate ```
-- Jalankan perintah seeder database <br/>
+- Jalankan perintah seeder database     
 ``` php artisan db:seed ```
-- Install package nodejs yang diperlukan <br/>
+- Install package nodejs yang diperlukan     
 ``` npm install ```
-- Jalankan NodeJS (hanya perlu 1x saja) <br/>
+- Jalankan NodeJS (hanya perlu 1x saja)     
 ``` npm run dev ```
-- Jalankan server website <br/>
+- Jalankan server website      
 ``` php artisan serve ```
-- Sekarang web bisa diakses melalui http://localhost:8000 <br/>
+- Sekarang web bisa diakses melalui http://localhost:8000      
 
 Kami telah menyediakan 2 akun demo dengan kredensial sebagai berikut:
 
-- **Akun Role User:**
-Email: user@testing.com
+- **Akun Role User:**    
+Email: user@testing.com     
 Password: 12345678
 
-- **Akun Role Admin:**
-Email: admin@testing.com
+- **Akun Role Admin:**     
+Email: admin@testing.com     
 Password: admin1234
 
 
