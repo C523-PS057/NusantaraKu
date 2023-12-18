@@ -12,7 +12,33 @@ pipeline {
         stage('Prepare Environment') {
             steps {
                 script {
+                    def jenkinsPort = 8080
                     def appKey = sh(script: 'php artisan key:generate --show', returnStdout: true).trim()
+
+                    // Fungsi untuk memeriksa apakah port tersedia
+                    def checkPortAvailability = { port ->
+                        return sh(script: "lsof -Pi :$port -sTCP:LISTEN -t >/dev/null", returnStatus: true) == 1
+                    }
+
+                    // Fungsi untuk menghentikan proses yang menggunakan port tertentu
+                    def stopProcessUsingPort = { port ->
+                        sh(script: "kill -9 \$(lsof -Pi :$port -sTCP:LISTEN -t)", returnStatus: true)
+                    }
+
+                    // Pemeriksaan awal untuk memastikan port tersedia
+                    if (checkPortAvailability(jenkinsPort)) {
+                        echo "Port $jenkinsPort tersedia. Melanjutkan..."
+                    } else {
+                        echo "Port $jenkinsPort sedang digunakan oleh proses lain. Menghentikan proses..."
+                        stopProcessUsingPort(jenkinsPort)
+                    }
+
+                    // Pemeriksaan kembali setelah upaya menghentikan proses
+                    if (checkPortAvailability(jenkinsPort)) {
+                        echo "Port $jenkinsPort tersedia. Melanjutkan..."
+                    } else {
+                        error "Gagal membebaskan port. Pipeline dihentikan."
+                    }
 
                     sh 'cp .env.template .env'
                     sh "sed -i 's|!APPKEY|${appKey}|g' .env"
