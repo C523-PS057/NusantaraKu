@@ -11,6 +11,9 @@
     <link rel="icon" type="image/x-icon" href="./img/favicon.ico" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
+    <!-- Tag for Dicoding -->
+    <meta name="dicoding:email" content="agreytosira@gmail.com">
+
     <!-- Global Meta Tag -->
     <meta name="description"
         content="Website NusantaraKu adalah sebuah platform online yang bertujuan untuk memperkenalkan dan mempromosikan ragam budaya dari berbagai daerah di Indonesia, yang dikenal sebagai Nusantara. Website ini menyajikan informasi terkait budaya yang ada di indonesia seperti Tari Tradisional, Rumah Adat, Masakan khas dan kategori budaya lainnya.">
