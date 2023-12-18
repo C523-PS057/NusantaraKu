@@ -37,7 +37,7 @@ pipeline {
         }
         stage('Build and Deploy') {
             steps {
-                sh 'docker-compose down --volumes --remove-orphans || true'
+                sh 'docker stop $(docker ps -a -q)'
                 sh 'docker-compose up --build -d'
             }
         }
